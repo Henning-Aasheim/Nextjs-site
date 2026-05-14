@@ -1,0 +1,6 @@
+{"nav": {"home": "Home", "about": "About", "blog": "Blog"},
+ "footer": {"copyright": "© 2024 Henning Åsheim.", "description": "Poorly developed with Next.js and Tailwind CSS."},
+ "LocaleSwitcher": {"en": "English", "ja": "Japanese", "no": "Norwegian"},
+ "home": {"header": "Welcome to my blog"},
+ "about": {"heading": "About me"},
+ "blog": {"heading": "Blog"}}

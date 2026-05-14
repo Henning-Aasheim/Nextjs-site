@@ -1,14 +1,21 @@
-import { getSortedArticles } from "./lib/articles"
+import { getSortedArticles } from "../lib/articles"
 import Link from "next/link"
 import Date from "@/components/date";
+import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-export default function Home() {
-  
+export default function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const {locale} = use(params);
+ 
+  // Enable static rendering
+  setRequestLocale(locale);
+  const t = useTranslations('home');
   const allArticlesData = getSortedArticles();
 
   return (
     <div className="text-center pt-12">
-      <h1 className="text-4xl mb-6 font-playfair font-bold">Welcome to my blog</h1>
+      <h1 className="text-4xl mb-6 font-playfair font-bold">{t('header')}</h1>
 
       <div className="grid gap-8">
         {allArticlesData.map((article) => (

@@ -1,5 +1,7 @@
 import { getArticleData, getAllArticleIds } from "@/app/lib/articles";
 import Date from "@/components/date";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
 
 export default async function Article(props: { params: Promise<{id: string}> }) {

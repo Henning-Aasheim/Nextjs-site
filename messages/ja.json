@@ -1,0 +1,7 @@
+{"nav": {"home": "ホーム", "about": "私について", "blog": "ブログ"},
+ "LocaleSwitcher": {"en": "英語", "ja": "日本語", "no": "ノルウェー語"},
+ "footer": {"copyright": "© 2024 Henning Åsheim.", "description": "Next.jsとTailwind CSSで雑に開発されました。"},
+ "home": {"header": "私のブログへようこそ"},
+ "about": {"heading": "私について"},
+ "blog": {"heading": "ブログ"}}
+
