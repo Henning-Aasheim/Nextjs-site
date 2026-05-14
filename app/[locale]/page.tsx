@@ -24,7 +24,7 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
           <article key={article.id} className="group">
               <Link href={`/blog/${article.id}`}>
               <h2 className="text-2xl font-default font-semibold">{article.title}</h2>
-              <div className="font-playfair-sc text-black/70 dark:text-olive-400">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
+              <div className="font-default text-black/70 dark:text-olive-400">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
             </Link>
           </article>
         ))}
