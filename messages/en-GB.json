@@ -28,8 +28,10 @@
 
     "about": 
     {
-        "heading": "About me"
+        "heading": "About me",
+        "resume": "Download CV"
     },
+    
     "blog": 
     {
         "heading": "Blog"
