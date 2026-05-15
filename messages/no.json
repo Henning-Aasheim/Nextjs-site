@@ -29,7 +29,15 @@
     "about": 
     {
         "heading": "Om meg",
-        "resume": "Last ned CV"
+        "description": "Mitt navn er Henning Åsheim og jeg er en statsviter som for tiden arbeider som vitenskapsassistent ved Universitetet i Oslo. Til daglig jobber jeg både med forskning og undervisning, og har min styrke innenfor kvantitative metoder. Jeg er også interessert i programmering og jobber mye med å innhente, bearbeide og analysere data. I tillegg er jeg interessert i politikk og det som foregår både i det norske samfunnet og i verden for øvrig. Denne siden er en presentasjon av meg, samt inkluderer en blogg hvor jeg skriver om det som interesserer meg.",
+        "profile-heading": "Henning Åsheim",
+        "work-title": "Vitenskapsassistent",
+        "employer": "Universitetet i Oslo",
+        "resume": "Last ned CV",
+        "experience-heading": "Erfaring",
+        "experience-1-title": "Vitenskapsassistent",
+        "experience-1-employer": "Universitetet i Oslo",
+        "experience-1-date": "August 2025 - Nåværende"
     },
 
  "blog": 

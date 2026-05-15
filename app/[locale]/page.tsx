@@ -16,10 +16,12 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
   const dateTime = new Date(allArticlesData[0].date)
 
   return (
-    <div className="text-center pt-12">
+    <div className="text-center pt-12 mb-10">
+      <img src='/profile_image.jpg' alt="Profile Image" className="w-48 h-48 object-cover rounded-full mx-auto mb-6" />
+
       <h1 className="text-4xl mb-6 font-default font-bold">{t('header')}</h1>
 
-      <p className="text-lg text-left mb-12 w-4/5 md:w-1/2 xl:w-0.4 mx-auto font-default text-black/70 dark:text-olive-400">{t('description')}</p>
+      <p className="text-xl text-left mb-12 w-4/5 md:w-1/2 xl:w-0.4 mx-auto font-default text-black/80 dark:text-gray-300">{t('description')}</p>
 
       <h1 className="text-4xl mb-6 font-default font-bold">{t('blog')}</h1>
       <div className="grid gap-8">
@@ -27,7 +29,7 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
           <article key={article.id} className="group">
               <Link href={`/blog/${article.id}`}>
               <h2 className="text-2xl font-default font-semibold">{article.title}</h2>
-              <div className="font-default text-black/70 dark:text-olive-400">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
+              <div className="font-default text-black/70 dark:text-gray-300">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
             </Link>
           </article>
         ))}

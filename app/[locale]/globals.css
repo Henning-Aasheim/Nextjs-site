@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:wght@400..900&family=Yuji+Syuku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-default:
-    var(--font-playfair),
+    var(--font-noto-serif),
     var(--font-yuji),
     system-ui,
     -apple-system,
@@ -15,6 +17,7 @@
     "Segoe UI",
     sans-serif;
 
+  --font-noto-serif: 'Noto Serif', 'serif';
   --font-playfair: 'Playfair Display', 'serif';
   --font-yuji: 'Yuji Syuku', 'serif';
   --font-playfair-sc: 'Playfair Display SC', 'serif';
@@ -22,5 +25,5 @@
 
 
 .article{
-  @apply flex flex-col gap-3 font-playfair tracking-wide mb-20 text-lg
+  @apply flex flex-col gap-3 font-default tracking-wide mb-20 text-lg
 }

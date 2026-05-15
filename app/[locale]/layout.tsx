@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku } from "next/font/google";
+import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -18,6 +18,12 @@ const playfairSC = Playfair_Display_SC({
   variable: '--font-playfair-sc',
   subsets: ['latin'],
   weight: ['400', '700', '900'],
+});
+
+const notoSerif = Noto_Serif({
+  variable: '--font-notoSerif',
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 const yuji = Yuji_Syuku({
@@ -55,7 +61,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${playfair.variable} ${yuji.variable} h-full antialiased`}
+      className={`${playfair.variable} ${notoSerif.variable} ${yuji.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-default">
         <NextIntlClientProvider locale={locale}>
