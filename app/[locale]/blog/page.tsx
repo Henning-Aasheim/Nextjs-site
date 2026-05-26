@@ -20,13 +20,16 @@ export default function BlogPage({ params }: { params: Promise<{ locale: string,
         <div className="text-center pt-12 mb-10 w-10/11 mx-auto 2xl:w-5/6">
             <h1 className="text-3xl font-bold mb-8 font-default">{t('heading')}</h1>
 
-            <div className="grid grid-cols-1 w-10/11 mx-auto md:grid-cols-2 md:gap-10 2xl:grid-cols-3 md:w-4/5 2xl:w-10/11">
+            <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 
+                            w-4/5 sm:w-3/5 md:w-4/5 2xl:w-10/11
+                            mx-auto md:gap-10">
                 {allArticlesData.map((article) => (
-                    <article key={article.id} className="group hover:scale-105 transition-transform duration-100">
+                    <article key={article.id} className="group hover:scale-105 transition-transform duration-100 mb-5">
                         <div className="flex justify-center mb-5">
-                            <Link href={`/blog/${article.id}`}>
-                                <img src={article.image} alt={article.title} className="rounded-lg mb-2 w-full h-65 object-cover" />
-                                <h2 className="text-lg sm:text-2xl font-default font-semibold text-center group-hover:text-indigo-600">{article.title}</h2>
+                            <Link href={`/blog/${article.id}`} className="w-full">
+                                <img src={article.image} alt={article.title} className="rounded-lg mb-2 w-full aspect-3/2 object-cover" />
+                                <h2 className="text-lg sm:text-2xl font-default font-semibold 
+                                               text-center group-hover:text-indigo-600">{article.title}</h2>
                                 <div className="font-default text-black/70 dark:text-gray-300 group-hover:text-indigo-600">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
                             </Link>
                         </div>
