@@ -6,6 +6,11 @@ import Shinshu from "../../icons/shinshu.svg";
 import Civita from "../../icons/civita.svg";
 import UiO from "../../icons/uio_segl.svg";
 
+export async function generateStaticParams() {
+  const locales = ['en', 'ja', 'no']
+
+  return locales.flatMap((locale) => ({ locale }))
+}
 
 export default function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
     const {locale} = use(params);
@@ -197,3 +202,4 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
         </div>
     );
 }
+
