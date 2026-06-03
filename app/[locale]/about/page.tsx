@@ -5,14 +5,9 @@ import { FileDown } from "lucide-react";
 import Shinshu from "../../icons/shinshu.svg";
 import Civita from "../../icons/civita.svg";
 import UiO from "../../icons/uio_segl.svg";
-import { routing } from "@/i18n/routing";
 
-export function generateStaticParams() {
-  return [{ locale: 'no' }, { locale: 'ja' }, { locale: 'en-GB' }];
-}
-
-export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
-    const {locale} = await use(params);
+export default function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+    const {locale} = use(params);
      
       // Enable static rendering
       setRequestLocale(locale);
