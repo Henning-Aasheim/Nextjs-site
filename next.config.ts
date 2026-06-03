@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  output: 'export',
+  //output: 'export',
 };
 
 const withNextIntl = createNextIntlPlugin();
