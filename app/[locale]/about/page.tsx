@@ -11,8 +11,8 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => ({ locale }));
 }
 
-export default function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
-    const {locale} = use(params);
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+    const {locale} = await use(params);
      
       // Enable static rendering
       setRequestLocale(locale);
