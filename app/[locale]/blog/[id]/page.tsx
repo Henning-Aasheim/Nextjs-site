@@ -1,6 +1,17 @@
-import { getArticleData } from "@/app/lib/articles";
+import { getArticleData, getAllArticleIds } from "@/app/lib/articles";
 import { getFormatter, setRequestLocale} from 'next-intl/server';
 
+export async function generateStaticParams() {
+  const locales = ['en', 'ja', 'no']
+  const posts = await getAllArticleIds()
+
+  return locales.flatMap((locale) => 
+    posts.map((post) => ({
+    locale,
+    id: post.params.id,
+  }))
+ )
+}
 
 export default async function Article(props: { params: Promise<{id: string, locale: string, date: string}> }) {
     const params = await props.params
