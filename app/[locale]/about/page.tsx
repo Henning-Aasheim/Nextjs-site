@@ -5,11 +5,10 @@ import { FileDown } from "lucide-react";
 import Shinshu from "../../icons/shinshu.svg";
 import Civita from "../../icons/civita.svg";
 import UiO from "../../icons/uio_segl.svg";
+import { routing } from "@/i18n/routing";
 
-export async function generateStaticParams() {
-  const locales = ['en', 'ja', 'no']
-
-  return locales.flatMap((locale) => ({ locale }))
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
