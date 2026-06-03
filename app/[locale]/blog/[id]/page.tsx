@@ -1,8 +1,9 @@
 import { getArticleData, getAllArticleIds } from "@/app/lib/articles";
+import { routing } from "@/i18n/routing";
 import { getFormatter, setRequestLocale} from 'next-intl/server';
 
 export async function generateStaticParams() {
-  const locales = ['en', 'ja', 'no']
+  const locales = await routing.locales
   const posts = await getAllArticleIds()
 
   return locales.flatMap((locale) => 
