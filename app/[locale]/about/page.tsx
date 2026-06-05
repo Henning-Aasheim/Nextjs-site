@@ -110,7 +110,7 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                 {t('heading')}
                 </h1>
 
-                <p className="text-sm sm:text-xl mb-10 text-left font-default text-black/80 dark:text-gray-300">
+                <p className="text-base sm:text-xl mb-10 text-left font-default text-black/80 dark:text-gray-300">
                 {t('description')}
                 </p>
 
@@ -237,6 +237,23 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                 </div>
                             </div>
                         </li>
+
+
+    {/* Bachelor's degree */}
+
+
+                        <li className="mb-2 list-none flex items-center">
+                            <div className="relative">
+                                <span>
+                                    <UiO width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white" />
+                                </span>
+                                <div className="flex flex-col ml-8 pl-15">
+                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-3-title')}</h2>
+                                    <h3 className="text-base sm:text-1xl font-default italic">{t('education-3-university')}</h3>
+                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-3-date')}</time>
+                                </div>
+                            </div>
+                        </li>
     
 
     {/* Exchange */}
@@ -248,9 +265,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <Shinshu width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-3-title')}</h2>
-                                    <h3 className="text-base sm:text-1xl font-default italic">{t('education-3-university')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-3-date')}</time>
+                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-4-title')}</h2>
+                                    <h3 className="text-base sm:text-1xl font-default italic">{t('education-4-university')}</h3>
+                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-4-date')}</time>
                                 </div>
                             </div>
                         </li>
@@ -268,9 +285,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                         {civita.map((item) => (
                             <article key={item.id} className="group">
                                 <a href={item.url}>
-                                    <div className='mb-4 border-solid border-2 rounded-xl hover:bg-khaki-dark'>
-                                    <img src={item.image} alt={item.title} className="inline-block w-35 h-20 object-cover rounded-lg" />
-                                    <h2 className='text-2xl font-bold inline-block ml-8'>{item.title}</h2>
+                                    <div className="flex flex-row flex-wrap border-solid border-2 rounded-xl mb-4 items-center">
+                                        <img src={item.image} alt={item.title} className="w-24 h-16 object-cover rounded-lg mr-4" />
+                                        <h2 className="font-bold text-base sm:text-xl md:text-2xl flex-1">{item.title}</h2>
                                     </div>
                                 </a>
                             </article>
