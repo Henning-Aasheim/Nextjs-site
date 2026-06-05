@@ -1,4 +1,10 @@
 {
+    "meta": 
+    {
+        "title": "ヘンニングのブログ", 
+        "description": "Next.jsとTailwind CSSで雑に開発されました。"
+    },
+
     "nav": 
     {
         "home": "ホーム", 
@@ -32,6 +38,12 @@
         "blog": "ブログ"
     },
 
+    "metaAbout":
+    {
+        "title": "ヘンニング・オーサイムについて",
+        "description": "私はヘンニング・オーサイムと申します。これが私のやっていることです。"
+    },
+
     "about": 
     {
         "heading": "履歴",
@@ -61,6 +73,11 @@
         "education-3-university": "信州大学",
         "education-3-date": "2021年10月 - 2022年8月",
         "previous-work": "以前の仕事"
+    },
+    "metaBlog":
+    {
+        "title": "ヘンニングのブログ",
+        "description": "ヘンニング・オーサイムのブログです。"
     },
 
     "blog": 

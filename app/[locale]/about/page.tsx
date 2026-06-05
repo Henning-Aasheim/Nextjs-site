@@ -1,10 +1,25 @@
 import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { use } from "react";
 import { FileDown } from "lucide-react";
+import { Metadata } from "next";
 import Shinshu from "../../icons/shinshu.svg";
 import Civita from "../../icons/civita.svg";
 import UiO from "../../icons/uio_segl.svg";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata>{
+  const {locale} = await params;
+
+  setRequestLocale(locale);
+
+  const t = await getTranslations('metaAbout');
+
+  return {
+    title: t("title"), // e.g. "My site – English", "Meine Seite – Deutsch"
+    description: t("description"),
+    // etc.
+  };
+}
 
 export default function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
     const {locale} = use(params);

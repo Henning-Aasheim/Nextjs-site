@@ -1,8 +1,23 @@
 import { useFormatter, useTranslations } from "next-intl";
 import { getSortedArticles } from "../../lib/articles";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { use } from "react";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata>{
+  const {locale} = await params;
+
+  setRequestLocale(locale);
+
+  const t = await getTranslations('metaBlog');
+
+  return {
+    title: t("title"), // e.g. "My site – English", "Meine Seite – Deutsch"
+    description: t("description"),
+    // etc.
+  };
+}
 
 export default function BlogPage({ params }: { params: Promise<{ locale: string, date: string }> }) {
     const {locale} = use(params);

@@ -1,4 +1,9 @@
 {
+    "meta": 
+    {
+        "title": "Hennings blogg", 
+        "description": "Generert av create next app"
+    },
     "nav": 
     {
         "home": "Hjem", 
@@ -32,6 +37,12 @@
         "blog": "Blogg"
     },
 
+    "metaAbout":
+    {
+        "title": "Om Henning Åsheim",
+        "description": "Mitt navn er Henning Åsheim og dette er hva jeg gjør."
+    },
+
     "about": 
     {
         "heading": "Om meg",
@@ -63,7 +74,13 @@
         "previous-work": "Tidligere arbeid"
     },
 
- "blog": 
+    "metaBlog":
+    {
+        "title": "Hennings blogg",
+        "description": "Dette er bloggen til Henning Åsheim."
+    },
+
+    "blog": 
     {
         "heading": "Blogg"
     }
