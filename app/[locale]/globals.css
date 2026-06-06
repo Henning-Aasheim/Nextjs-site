@@ -22,6 +22,7 @@
   --font-yuji: 'Yuji Syuku', 'serif';
   --font-playfair-sc: 'Playfair Display SC', 'serif';
 
+  --breakpoint-s: 576px;
   --breakpoint-xs: 475px;
   --breakpoint-2xs: 350px;
 

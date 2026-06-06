@@ -13,7 +13,7 @@ export default function Header() {
 
 
     return (
-        <header className="w-screen border-b border-black/10 dark:border-white/70 py-6 px-10">
+        <header className="w-screen border-b border-black/10 dark:border-white/70 py-6 px-5 md:px-10">
           <nav className=" flex flex-col items-center w-full md:flex-row md:items-center">
 
   {/* Left spacer (desktop) */}
@@ -28,7 +28,7 @@ export default function Header() {
               <DarkMode />
 
   {/* Mobile menu button */}
-  
+
               <button
                 className={`md:hidden ${isOpen ? "text-red-500" : "text-textblue dark:text-gray-300"}`}
                 onClick={() => setIsOpen(!isOpen)}
@@ -86,6 +86,7 @@ export default function Header() {
                 text-xl font-bold
                 order-2
                 md:order-1 md:flex-1 md:justify-center
+                mt-4 md:mt-0
               `}
             >
             

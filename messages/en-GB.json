@@ -22,7 +22,8 @@
         "about": "About", 
         "blog": "Blog",
         "titleCol_1": "Sitemap",
-        "titleCol_2": "About"
+        "titleCol_2": "About",
+        "titleCol_3": "Something"
     },
 
     "LocaleSwitcher": 

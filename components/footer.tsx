@@ -13,30 +13,27 @@ export default function Footer() {
 
     {/* Upper part of the footer */}
 
-            <div className="mb-6 ">
+            <div className="mb-6 grid grid-cols-1 s:grid-cols-2 md:grid-cols-5 gap-5">
 
     {/* First column: author description */}
 
-                <div className="block w-10/11 mx-auto text-left align-top mb-4
-                                xs:w-4/5
-                                md:w-3/5
-                                lg:inline-block lg:w-80 lg:mx-0 lg:mb-0">
-                    <div className="mb-4">
+                <div className="inline-block md:col-span-2">
+                    <div className="mb-4 text-left">
                         <div className="inline-block align-middle">
                             <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-gold border"></img>
                         </div>
-                        <div className="inline-block ml-4 align-middle text-2xl">{t('author')}</div>
+                        <div className="inline-block ml-4 align-middle text-lg md:text-xl lg:text-2xl font-bold">{t('author')}</div>
                     </div>
-                    <div className="">
+                    <div className="text-left max-w-[34ch]">
                         <p>{t('authorDescription')}</p>
                     </div>
                 </div>
 
     {/* Second column: currently sitemap */}
 
-                <div className="inline-block w-35 text-left 
-                                md:ml-5 
-                                lg:ml-15">
+                <div className="inline-block text-left 
+                                mr-10 
+                                lg:mr-15">
                     <div className="text-lg font-bold mb-2">{t('titleCol_1')}</div>
                     <ul className="flex-col text-black/70 dark:text-white/70">
                         <li className="mb-2">
@@ -53,7 +50,7 @@ export default function Footer() {
 
     {/* Third column: colophon ++ */}
 
-                <div className="inline-block w-35 text-left md:ml-5 lg:ml-15">
+                <div className="inline-block text-left mr-10 lg:mr-15">
                     <div className="text-lg font-bold mb-2">{t('titleCol_2')}</div>
                     <ul className="flex-col text-black/70 dark:text-white/70">
                         <li className="mb-2">
@@ -68,7 +65,25 @@ export default function Footer() {
                     </ul>
                 </div>
 
+    {/* Third column: colophon ++ */}
+
+                <div className="inline-block text-left mr-10 lg:mr-15">
+                    <div className="text-lg font-bold mb-2">{t('titleCol_3')}</div>
+                    <ul className="flex-col text-black/70 dark:text-white/70">
+                        <li className="mb-2">
+                            <Link href='/' className="hover:border-b">Colophon</Link>
+                        </li>
+                        <li className="mb-2">
+                            <Link href='/about' className="hover:border-b">temp</Link>
+                        </li>
+                        <li className="mb-2">
+                            <Link href='/blog' className="hover:border-b">temp</Link>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
+
 
     {/* Lower part of the footer */}
 
