@@ -82,7 +82,7 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col font-default bg-khaki dark:bg-gray-900 text-textblue dark:text-white">
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider attribute='class' enableSystem defaultTheme="system">
-            <Warning /> {/* Temporary warning component */}
+            <Warning /> {/* Temporary warning component. If I remove this, I have to change the about page sticky profile image. */}
             <Header />
               {children}
             <Footer />

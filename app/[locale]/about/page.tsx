@@ -80,7 +80,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
             <div className="flex-none min-w-40 lg:mr-10 pr-0 mb-8">
-                <div className="flex justify-center items-center flex-col">
+                <div className="sticky flex top-30 
+                                justify-center items-center flex-col"> {/* The top-30 has to change when the warning banner is removed */}
                 <img
                     src="/profile_image.jpg"
                     alt="Profile Image"
