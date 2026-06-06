@@ -22,7 +22,14 @@
     "footer": 
     {
         "copyright": "© 2024 ヘンニング・オーサイム", 
-        "description": "Next.jsとTailwind CSSで雑に開発されました。"
+        "description": "Next.jsとTailwind CSSで雑に開発されました。",
+        "author": "ヘンニング・オーサイム",
+        "authorDescription": "私は社会現象、統計学などに興味があり、今ウェブ開発にも関心が高まっています。",
+        "home": "ホーム", 
+        "about": "履歴", 
+        "blog": "ブログ",
+        "titleCol_1": "サイトマップ",
+        "titleCol_2": "について"
     },
 
     "warning":

@@ -21,7 +21,14 @@
     "footer": 
     {
         "copyright": "© 2024 Henning Åsheim.", 
-        "description": "Dårlig utviklet med Next.js og Tailwind CSS."
+        "description": "Dårlig utviklet med Next.js og Tailwind CSS.",
+        "author": "Henning Åsheim",
+        "authorDescription": "Jeg er veldig interessert i sosiale fenomen, statistikk og nå også webutvikling.",
+        "home": "Hjem", 
+        "about": "Om meg", 
+        "blog": "Blogg",
+        "titleCol_1": "Oversikt",
+        "titleCol_2": "Om"
     },
 
     "warning":

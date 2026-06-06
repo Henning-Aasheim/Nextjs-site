@@ -15,7 +15,14 @@
    "footer": 
     {
         "copyright": "© 2024 Henning Åsheim.", 
-        "description": "Poorly developed with Next.js and Tailwind CSS."
+        "description": "Poorly developed with Next.js and Tailwind CSS.",
+        "author": "Henning Åsheim",
+        "authorDescription": "I am very interested in social phenomenon, statistics, and now also web development.",
+        "home": "Home", 
+        "about": "About", 
+        "blog": "Blog",
+        "titleCol_1": "Sitemap",
+        "titleCol_2": "About"
     },
 
     "LocaleSwitcher": 
