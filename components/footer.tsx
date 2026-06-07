@@ -59,10 +59,10 @@ export default function Footer() {
                             <Link href='/colophon' className="hover:border-b hover:text-orange">{t('link1_col3')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b hover:text-orange">{t('link2_col3')}</Link>
+                            <Link href='/library' className="hover:border-b hover:text-orange">{t('link2_col3')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b hover:text-orange">{t('link2_col3')}</Link>
+                            <Link href='/' className="hover:border-b hover:text-orange">{t('link3_col3')}</Link>
                         </li>
                     </ul>
                 </div>

@@ -103,9 +103,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                 
                 <div className="mt-4">
                     <ul className="flex-row">
-                        <li className="inline mx-2"><a href='https://bsky.app/profile/henningaasheim.bsky.social'><FaBluesky className="inline w-6 h-6 hover:text-orange"/></a></li>
-                        <li className="inline mx-2"><a href='https://github.com/Henning-Aasheim'><FaGithub className="inline w-6 h-6 hover:text-orange"/></a></li>
-                        <li className="inline mx-2"><a href='https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/'><FaLinkedin className="inline w-6 h-6 hover:text-orange"/></a></li>
+                        <li className="inline mx-2"><a href='https://bsky.app/profile/henningaasheim.bsky.social' target="_blank" rel="noopener noreferrer"><FaBluesky className="inline w-6 h-6 hover:text-orange"/></a></li>
+                        <li className="inline mx-2"><a href='https://github.com/Henning-Aasheim' target="_blank" rel="noopener noreferrer"><FaGithub className="inline w-6 h-6 hover:text-orange"/></a></li>
+                        <li className="inline mx-2"><a href='https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/' target="_blank" rel="noopener noreferrer"><FaLinkedin className="inline w-6 h-6 hover:text-orange"/></a></li>
                         <li className="inline mx-2"><a href='mailto:henning.aasheim@outlook.com'><IoMdMail className="inline w-7 h-7 hover:text-orange"/></a></li>
                     </ul>
                 </div>
@@ -137,8 +137,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                 <div className="flex justify-center lg:justify-start">
                     <a
                     href={cvHref}
-                    className="p-3 mb-3 font-bold border-solid border-2 border-textblue bg-khaki-dark hover:text-white
-                               hover:bg-purple dark:bg-gray-700 dark:text-white
+                    className="p-3 mb-3 font-bold border-solid border-2 border-gold text-white
+                               bg-orange hover:bg-orangeDark dark:bg-gray-700
                                 text-lg font-default rounded-xl"
                     download
                     >

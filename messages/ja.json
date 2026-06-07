@@ -9,7 +9,8 @@
     {
         "home": "ホーム", 
         "about": "履歴", 
-        "blog": "ブログ"
+        "blog": "ブログ",
+        "library": "図書館"
     },
 
     "LocaleSwitcher": 
@@ -32,7 +33,7 @@
         "titleCol_2": "について",
         "titleCol_3": "について",
         "link1_col3": "奥付",
-        "link2_col3": "仮題",
+        "link2_col3": "図書館",
         "link3_col3": "仮題"
     },
 
@@ -109,6 +110,18 @@
     {
         "title": "奥付",
         "description": "奥付につきまして"
+    },
+
+    "metaLibrary":
+    {
+        "title": "図書館",
+        "description": "ここは好きで、自慢で読んだと言える本:)"
+    },
+
+    "library":
+    {
+        "title": "図書館",
+        "description": "ここは好きで、自慢で読んだと言える本:)"
     }
 }
 

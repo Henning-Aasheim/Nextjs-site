@@ -21,8 +21,7 @@ export default function Header() {
             <div className="hidden md:flex md:flex-1" />
 
   {/* Top row on mobile: locale, dark mode, hamburger */}
-            <div
-              className='flex w-full gap-8 mr-6 mb-2 md:mb-0 justify-end items-center order-1 md:order-2 md:flex-1'>
+            <div className='flex w-full gap-8 mr-6 mb-2 md:mb-0 justify-end items-center order-1 md:order-2 md:flex-1'>
               
               <LocaleSwitcher />
               <DarkMode />
@@ -87,6 +86,7 @@ export default function Header() {
                 order-2
                 md:order-1 md:flex-1 md:justify-center
                 mt-4 md:mt-0
+                whitespace-nowrap
               `}
             >
             
@@ -112,6 +112,13 @@ export default function Header() {
                 onClick={() => setIsOpen(false)}
               >
                 {t("blog")}
+              </Link>
+              <Link
+                href="/library"
+                className="text-textblue dark:text-gray-300 font-bold hover:scale-110"
+                onClick={() => setIsOpen(false)}
+              >
+                {t("library")}
               </Link>
             </div>
           </nav>

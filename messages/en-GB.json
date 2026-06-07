@@ -9,7 +9,8 @@
     {
         "home": "Home", 
         "about": "About", 
-        "blog": "Blog"
+        "blog": "Blog",
+        "library": "Library"
     },
  
    "footer": 
@@ -25,7 +26,7 @@
         "titleCol_2": "About",
         "titleCol_3": "Something",
         "link1_col3": "Colophon",
-        "link2_col3": "temp",
+        "link2_col3": "Library",
         "link3_col3": "temp"
     },
 
@@ -110,5 +111,17 @@
     {
         "title": "Colophon",
         "description": "Something about colophon"
+    },
+
+    "metaLibrary":
+    {
+        "title": "Library",
+        "description": "Here are the books I have read and like and I am proud of having read:)"
+    },
+
+    "library":
+    {
+        "title": "Library",
+        "description": "Here are the books I have read and like and I am proud of having read:)"
     }
 }

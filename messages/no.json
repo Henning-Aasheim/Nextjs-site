@@ -8,7 +8,8 @@
     {
         "home": "Hjem", 
         "about": "Om meg", 
-        "blog": "Blogg"
+        "blog": "Blogg",
+        "library": "Bibliotek"
     },
 
     "LocaleSwitcher": 
@@ -31,7 +32,7 @@
         "titleCol_2": "Om",
         "titleCol_3": "Noe",
         "link1_col3": "Kolofon",
-        "link2_col3": "temp",
+        "link2_col3": "Bibliotek",
         "link3_col3": "temp"
     },
 
@@ -109,5 +110,17 @@
     {
         "title": "Kolofon",
         "description": "Noe om hva en kolofon er"
+    },
+
+    "metaLibrary":
+    {
+        "title": "Bibliotek",
+        "description": "Her er bøkene jeg har lest og liker og er stolt av å ha lest:)"
+    },
+
+    "library":
+    {
+        "title": "Bibliotek",
+        "description": "Her er bøkene jeg har lest og liker og er stolt av å ha lest:)"
     }
 }
