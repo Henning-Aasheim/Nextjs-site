@@ -7,6 +7,8 @@ export default function Footer() {
 
     const t = useTranslations('footer');
 
+    const currentYear = new Date().getFullYear();
+
     return (
     <footer className="text-sm sm:text-base mt-auto border-t border-black/10 dark:border-white/70 px-6 py-6 text-center font-default">
         <div className="w-10/11 xs:6/8 mx-auto">
@@ -37,13 +39,13 @@ export default function Footer() {
                     <div className="text-lg font-bold mb-2">{t('titleCol_1')}</div>
                     <ul className="flex-col text-black/70 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b">Home</Link>
+                            <Link href='/' className="hover:border-b hover:text-orange">Home</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/about' className="hover:border-b">About</Link>
+                            <Link href='/about' className="hover:border-b hover:text-orange">About</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/blog' className="hover:border-b">Blog</Link>
+                            <Link href='/blog' className="hover:border-b hover:text-orange">Blog</Link>
                         </li>
                     </ul>
                 </div>
@@ -54,30 +56,30 @@ export default function Footer() {
                     <div className="text-lg font-bold mb-2">{t('titleCol_2')}</div>
                     <ul className="flex-col text-black/70 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b">Colophon</Link>
+                            <Link href='/colophon' className="hover:border-b hover:text-orange">{t('link1_col3')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/about' className="hover:border-b">temp</Link>
+                            <Link href='/' className="hover:border-b hover:text-orange">{t('link2_col3')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/blog' className="hover:border-b">temp</Link>
+                            <Link href='/' className="hover:border-b hover:text-orange">{t('link2_col3')}</Link>
                         </li>
                     </ul>
                 </div>
 
-    {/* Third column: colophon ++ */}
+    {/* Fourth column: colophon ++ */}
 
                 <div className="inline-block text-left mr-10 lg:mr-15">
                     <div className="text-lg font-bold mb-2">{t('titleCol_3')}</div>
                     <ul className="flex-col text-black/70 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b">Colophon</Link>
+                            <Link href='/' className="hover:border-b hover:text-orange">Colophon</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/about' className="hover:border-b">temp</Link>
+                            <Link href='/about' className="hover:border-b hover:text-orange">temp</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/blog' className="hover:border-b">temp</Link>
+                            <Link href='/blog' className="hover:border-b hover:text-orange">temp</Link>
                         </li>
                     </ul>
                 </div>
@@ -90,7 +92,7 @@ export default function Footer() {
             <div className="mb-5 border-solid border-b border-textblue dark:border-white/70"/>
 
             <div>
-                {t('copyright')} {t('description')}
+                © {currentYear} {t('copyright')} {t('description')}
             </div>
         </div>
     </footer>

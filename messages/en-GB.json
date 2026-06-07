@@ -14,7 +14,7 @@
  
    "footer": 
     {
-        "copyright": "© 2024 Henning Åsheim.", 
+        "copyright": "Henning Åsheim.", 
         "description": "Poorly developed with Next.js and Tailwind CSS.",
         "author": "Henning Åsheim",
         "authorDescription": "I am very interested in social phenomenon, statistics, and now also web development.",
@@ -23,7 +23,10 @@
         "blog": "Blog",
         "titleCol_1": "Sitemap",
         "titleCol_2": "About",
-        "titleCol_3": "Something"
+        "titleCol_3": "Something",
+        "link1_col3": "Colophon",
+        "link2_col3": "temp",
+        "link3_col3": "temp"
     },
 
     "LocaleSwitcher": 
@@ -95,5 +98,17 @@
     "blog": 
     {
         "heading": "Blog"
+    },
+
+    "metaColophon":
+    {
+        "title": "Colophon",
+        "description": "This is where I explain how I made this site."
+    },
+
+    "colophon":
+    {
+        "title": "Colophon",
+        "description": "Something about colophon"
     }
 }

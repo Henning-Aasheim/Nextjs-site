@@ -20,7 +20,7 @@
 
     "footer": 
     {
-        "copyright": "© 2024 Henning Åsheim.", 
+        "copyright": "Henning Åsheim.", 
         "description": "Dårlig utviklet med Next.js og Tailwind CSS.",
         "author": "Henning Åsheim",
         "authorDescription": "Jeg er veldig interessert i sosiale fenomen, statistikk og nå også webutvikling.",
@@ -29,7 +29,10 @@
         "blog": "Blogg",
         "titleCol_1": "Oversikt",
         "titleCol_2": "Om",
-        "titleCol_3": "Noe"
+        "titleCol_3": "Noe",
+        "link1_col3": "Kolofon",
+        "link2_col3": "temp",
+        "link3_col3": "temp"
     },
 
     "warning":
@@ -94,5 +97,17 @@
     "blog": 
     {
         "heading": "Blogg"
+    },
+
+    "metaColophon":
+    {
+        "title": "Kolofon",
+        "description": "Dette er hvor jeg forklarer hvordan jeg laget denne siden."
+    },
+
+    "colophon":
+    {
+        "title": "Kolofon",
+        "description": "Noe om hva en kolofon er"
     }
 }

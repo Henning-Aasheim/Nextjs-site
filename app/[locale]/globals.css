@@ -26,12 +26,12 @@
   --breakpoint-xs: 475px;
   --breakpoint-2xs: 350px;
 
-  --color-khaki: #efeae3;
-  --color-khaki-dark: #c1bdb7;
-  --color-khaki-darker: #9a9792;
   --color-textblue: #1a4b6e;
-  --color-purple: #402d63;
-  --color-gold: #d4aa04;
+  --color-khaki: #c7c5b8;
+  --color-purple: #49053e;
+  --color-gold: #fec804; /* #d4aa04 */
+  --color-darkBlue: #181b46;
+  --color-orange: #e45f23;
 }
 
 
