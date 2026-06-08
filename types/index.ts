@@ -10,4 +10,14 @@ export interface ArticleItem {
     title: string
     author: string
     date: string
+    language: string
+}
+
+export interface Books {
+    id: string
+    title: string
+    author: string
+    translator: string
+    image: string
+    thoughts: string
 }
