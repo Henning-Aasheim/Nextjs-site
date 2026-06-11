@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function Home({ params }: { params: Promise<{ locale: string, date: string }> }) {
+export default function Colophon({ params }: { params: Promise<{ locale: string, date: string }> }) {
   const {locale} = use(params);
  
   // Enable static rendering

@@ -300,7 +300,7 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                     <div className=''>
                         {civita.map((item) => (
                             <article key={item.id} className="group">
-                                <div className="xs:w-4/5 sm:w-full mx-auto max-w-[300px] sm:max-w-none">
+                                <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
                                     <a href={item.url}>
                                         <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
                                                       bg-khaki shadow-lg dark:bg-gray-950

@@ -13,11 +13,14 @@ export interface ArticleItem {
     language: string
 }
 
-export interface Books {
+export type BookMeta = {
     id: string
     title: string
     author: string
-    translator: string
+    translator?: string
     image: string
-    thoughts: string
+}
+
+export type Book = BookMeta & {
+    content: string
 }
