@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:wght@400..900&family=Yuji+Syuku&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Felipa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
 
 @import "tailwindcss";
@@ -23,6 +25,8 @@
   --font-yuji: 'Yuji Syuku', 'serif';
   --font-playfair-sc: 'Playfair Display SC', 'serif';
   --font-quint: 'Quintessential', 'serif';
+  --font-felipa: 'Felipa', 'serif';
+  --font-cgaramond: 'Cormorant Garamond', 'serif';
 
   --breakpoint-s: 576px;
   --breakpoint-xs: 475px;
@@ -31,10 +35,12 @@
   --color-textblue: #1a4b6e;
   --color-khaki: #fff7ed;
   --color-purple: #49053e;
-  --color-gold: #fec804; /* #d4aa04 */
+  --color-gold: #b89d4f; /* #d4aa04 */
   --color-darkBlue: #181b46;
   --color-orange: #e45f23;
   --color-orangeDark: #ba4b17;
+  --color-darkbg: #04000a;
+  --color-darkAccent: #0a0019;
 }
 
 
@@ -43,19 +49,19 @@
 }
 
 .dropcap {
-  @apply text-base sm:text-xl text-left font-default 
-  first-letter:float-left first-letter:text-6xl first-letter:mt-1 first-letter:mr-1 first-letter:font-quint first-letter:text-textblue
-  mb-12 w-4/5 md:w-1/2 xl:w-2/5 mx-auto text-black/80 dark:text-gray-300
+  @apply first-letter:float-left first-letter:text-[3.5em] first-letter:leading-[1.8] first-letter:font-felipa 
+  first-letter:text-textblue dark:first-letter:text-gold
+  text-black/80 dark:text-gray-300
 }
 
 :lang(ja) .dropcap:first-letter {
-  @apply text-5xl font-default mt-2.5
+  @apply font-default text-[3em]
 }
 
 .nameLogo {
-  @apply text-6xl sm:text-[130px] mb-6 font-quint font-bold inline-block
+  @apply mb-6 font-cgaramond font-bold inline-block first-letter:font-felipa
 }
 
 :lang(ja) .nameLogo {
-  @apply font-default
+  @apply font-default first-letter:font-default text-[clamp(1rem,5.5vw,4rem)] lg:text-[clamp(1.5rem,3.5vw,3.33rem)]
 }

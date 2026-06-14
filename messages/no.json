@@ -136,7 +136,7 @@
         "era": 
         {
             "BCE": "fvt.",
-            "CE": "fvt."
+            "CE": "evt."
         },
         "approx": "ca.",
         "year": "{approx} {value} {era}",

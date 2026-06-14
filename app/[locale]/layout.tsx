@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential } from "next/font/google";
+import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -15,6 +15,7 @@ import Warning from "@/components/warning";
 const playfair = Playfair_Display({
   variable: '--font-playfair',
   subsets: ['latin'],
+  weight: ['400'],
 });
 
 const playfairSC = Playfair_Display_SC({
@@ -37,6 +38,16 @@ const yuji = Yuji_Syuku({
 const quint = Quintessential({
   variable: '--font-quint',
   weight: '400',
+})
+
+const felipa = Felipa({
+  variable: '--font-quint',
+  weight: '400',
+})
+
+const cgaramond = Cormorant_Garamond({
+  variable: '--font-cgaramond',
+  weight: ["400", "500", "600", "700"],
 })
 
 // Metadata for the main page
@@ -82,9 +93,9 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${playfair.variable} ${notoSerif.variable} ${yuji.variable} ${quint.variable} h-full antialiased`}
+      className={`${playfair.variable} ${notoSerif.variable} ${yuji.variable} ${quint.variable} ${felipa.variable} ${cgaramond.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-default bg-khaki dark:bg-gray-900 text-textblue dark:text-white">
+      <body className="min-h-full flex flex-col font-default bg-khaki dark:bg-darkbg text-textblue dark:text-white">
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider attribute='class' enableSystem defaultTheme="system">
             <Warning /> {/* Temporary warning component. If I remove this, I have to change the about page sticky profile image. */}

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useFormatter, useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
+import Hero from "@/components/hero";
 
 export default function Home({ params }: { params: Promise<{ locale: string, date: string }> }) {
   const {locale} = use(params);
@@ -17,24 +18,16 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
   const dateTime = new Date(allArticlesData[0].date)
 
   return (
-    <div className="text-center pt-12">
+    <div className="w-full">
 
-      <div className="flex w-4/5 mx-auto">
-        <div className="mx-auto">
-          <h1 className="nameLogo">{t('header1')}</h1>
-          <img src='/profile_image.jpg' alt="Profile Image" className="w-48 h-48 object-cover rounded-full mb-6 inline-block mx-10" />
-          <h1 className="nameLogo">{t('header2')}</h1>
-        </div>
-      </div>
-
-      <p className="dropcap">{t('description')}</p>
+      <Hero t={t} />
 
   {/* Blog div */}
 
-      <div className="bg-indigo-950 text-gold py-10">
+      <div className="dark:bg-darkAccent text-gold py-10 border-t border-solid border-gold">
 
         <h1 className="text-2xl sm:text-4xl mb-6 pb-3 font-default font-bold w-4/5 
-                       md:w-1/2 xl:w-0.4 mx-auto border-gold border-solid border-b-2">{t('blog')}</h1>
+                       md:w-1/2 xl:w-0.4 mx-auto border-gold border-solid border-b">{t('blog')}</h1>
         <div className="grid gap-8 w-4/5 md:w-1/2 xl:w-0.4 mx-auto">
           {allArticlesData.map((article) => (
             <article key={article.id} className="group max-w-lg mx-auto">

@@ -42,9 +42,13 @@ export default function Library(
         {t('title')}
       </h1>
 
-      <p className="dropcap">{t('description')}</p>
-
-      <h2 className="text-6xl">{t('books')}:</h2>
+      <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left'>
+        <p className="dropcap">{t('description')}</p>
+      </div>
+      
+      <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto'>
+        <h2 className="text-6xl">{t('books')}:</h2>
+      </div>
 
       <div className="w-10/11 md:w-4/5 mx-auto my-12">
         <ul className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 items-start text-left">
