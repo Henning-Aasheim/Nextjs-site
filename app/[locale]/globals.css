@@ -28,6 +28,7 @@
   --font-felipa: 'Felipa', 'serif';
   --font-cgaramond: 'Cormorant Garamond', 'serif';
 
+  --breakpoint-huge: 2000px;
   --breakpoint-s: 576px;
   --breakpoint-xs: 475px;
   --breakpoint-2xs: 350px;
@@ -37,6 +38,7 @@
   --color-darkKhaki: #fff5e5;
   --color-purple: #49053e;
   --color-gold: #b89d4f; /* #d4aa04 */
+  --color-darkGold: #ad8f44;
   --color-darkBlue: #181b46;
   --color-orange: #e45f23;
   --color-orangeDark: #ba4b17;
@@ -54,7 +56,7 @@
 }
 
 .dropcap:first-letter {
-  @apply float-left text-[3.5em] font-felipa text-textblue leading-[0.8] pt-[0.1em] pr-[0.05em]
+  @apply float-left text-[3.5em] text-textblue leading-[0.8] pt-[0.1em] pr-[0.05em]
 }
 
 .dark .dropcap:first-letter {
@@ -66,9 +68,21 @@
 }
 
 .nameLogo {
-  @apply mb-6 font-cgaramond font-bold inline-block first-letter:font-felipa
+  @apply mb-6 font-cgaramond font-bold inline-block
 }
 
 :lang(ja) .nameLogo {
   @apply font-default first-letter:font-default text-[clamp(1rem,5.5vw,4rem)] lg:text-[clamp(1.5rem,3.5vw,3.33rem)]
+}
+
+.soMeButton {
+  @apply inline w-6 h-6 hover:text-gold
+}
+
+.experienceItems {
+  @apply relative hover:text-gold
+}
+
+.experienceIcons {
+  @apply block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-gold
 }

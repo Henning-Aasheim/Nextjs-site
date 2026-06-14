@@ -42,7 +42,7 @@ export default function Library(
         {t('title')}
       </h1>
 
-      <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left'>
+      <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left mb-10'>
         <p className="dropcap">{t('description')}</p>
       </div>
       

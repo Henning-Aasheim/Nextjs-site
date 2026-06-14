@@ -95,7 +95,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${playfair.variable} ${notoSerif.variable} ${yuji.variable} ${quint.variable} ${felipa.variable} ${cgaramond.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-default bg-khaki dark:bg-darkbg text-textblue dark:text-white">
+      <body className="min-h-full flex flex-col font-default bg-khaki text-textblue dark:text-white dark:bg-gradient-to-r dark:from-darkbg dark:to-darkAccent">
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider attribute='class' enableSystem defaultTheme="system">
             <Warning /> {/* Temporary warning component. If I remove this, I have to change the about page sticky profile image. */}

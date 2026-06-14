@@ -103,10 +103,10 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                 
                 <div className="mt-4">
                     <ul className="flex-row">
-                        <li className="inline mx-2"><a href='https://bsky.app/profile/henningaasheim.bsky.social' target="_blank" rel="noopener noreferrer"><FaBluesky className="inline w-6 h-6 hover:text-orange"/></a></li>
-                        <li className="inline mx-2"><a href='https://github.com/Henning-Aasheim' target="_blank" rel="noopener noreferrer"><FaGithub className="inline w-6 h-6 hover:text-orange"/></a></li>
-                        <li className="inline mx-2"><a href='https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/' target="_blank" rel="noopener noreferrer"><FaLinkedin className="inline w-6 h-6 hover:text-orange"/></a></li>
-                        <li className="inline mx-2"><a href='mailto:henning.aasheim@outlook.com'><IoMdMail className="inline w-7 h-7 hover:text-orange"/></a></li>
+                        <li className="inline mx-2"><a href='https://bsky.app/profile/henningaasheim.bsky.social' target="_blank" rel="noopener noreferrer"><FaBluesky className="soMeButton"/></a></li>
+                        <li className="inline mx-2"><a href='https://github.com/Henning-Aasheim' target="_blank" rel="noopener noreferrer"><FaGithub className="soMeButton"/></a></li>
+                        <li className="inline mx-2"><a href='https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/' target="_blank" rel="noopener noreferrer"><FaLinkedin className="soMeButton"/></a></li>
+                        <li className="inline mx-2"><a href='mailto:henning.aasheim@outlook.com'><IoMdMail className="inline w-7 h-7 hover:text-gold"/></a></li>
                     </ul>
                 </div>
                     
@@ -137,8 +137,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                 <div className="flex justify-center lg:justify-start">
                     <a
                     href={cvHref}
-                    className="p-3 mb-3 font-bold border-solid border-2 border-gold text-white
-                               bg-orange hover:bg-orangeDark dark:bg-gray-700
+                    className="p-3 mb-3 font-bold  text-white
+                               bg-gold hover:bg-darkGold 
                                 text-lg font-default rounded-xl"
                     download
                     >
@@ -162,9 +162,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
                         <li className="mb-2 list-none flex items-center">
-                            <div className="relative group hover:text-orange">
+                            <div className="experienceItems group">
                                 <span>
-                                    <UiO width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-orange" />
+                                    <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
                                     <h2 className="text-lg sm:text-2xl font-default font-bold">{t('experience-1-title')}</h2>
@@ -179,9 +179,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
                         <li className="mb-2 list-none flex items-center">
-                            <div className="relative group hover:text-orange">
+                            <div className="experienceItems group">
                                 <span>
-                                    <UiO width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-orange" />
+                                    <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
                                     <h2 className="text-lg sm:text-2xl font-default font-bold">{t('experience-2-title')}</h2>
@@ -196,9 +196,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
                         <li className="mb-2 list-none flex items-center">
-                            <div className="relative group hover:text-orange">
+                            <div className="experienceItems group">
                                 <span>
-                                    <Civita width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-orange" />
+                                    <Civita width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
                                     <h2 className="text-lg sm:text-2xl font-default font-bold">{t('experience-3-title')}</h2>
@@ -225,9 +225,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
                         <li className="mb-2 list-none flex items-center">
-                            <div className="relative group hover:text-orange">
+                            <div className="experienceItems group">
                                 <span>
-                                    <UiO width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-orange" />
+                                    <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
                                     <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-1-title')}</h2>
@@ -242,9 +242,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
                         <li className="mb-2 list-none flex items-center">
-                            <div className="relative group hover:text-orange">
+                            <div className="experienceItems group">
                                 <span>
-                                    <UiO width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-orange" />
+                                    <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
                                     <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-2-title')}</h2>
@@ -259,9 +259,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
                         <li className="mb-2 list-none flex items-center">
-                            <div className="relative group hover:text-orange">
+                            <div className="experienceItems group">
                                 <span>
-                                    <UiO width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-orange" />
+                                    <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
                                     <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-3-title')}</h2>
@@ -276,9 +276,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
 
 
                         <li className="mb-2 list-none flex items-center">
-                            <div className="relative group hover:text-orange">
+                            <div className="experienceItems group">
                                 <span>
-                                    <Shinshu width={60} height={60} className="block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-orange" />
+                                    <Shinshu width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
                                     <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-4-title')}</h2>
@@ -304,9 +304,9 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <a href={item.url}>
                                         <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
                                                       bg-darkKhaki shadow-lg dark:bg-gray-950
-                                                        hover:border-solid hover:border hover:border-orange 
+                                                        hover:border-solid hover:border hover:border-gold 
                                                         hover:scale-102 hover:transition-transform transition-colors duration-500 ease-in-out
-                                                        hover:shadow-xl hover:text-orange">
+                                                        hover:shadow-xl hover:text-gold">
                                                 <img src={item.image} 
                                                     alt={item.title} 
                                                     className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4" />
