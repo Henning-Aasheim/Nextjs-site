@@ -53,7 +53,11 @@
 }
 
 .dropcap:first-letter {
-  @apply float-left text-[3.5em] font-felipa text-textblue text-gold leading-[0.8] pt-[0.1em] pr-[0.05em]
+  @apply float-left text-[3.5em] font-felipa text-textblue leading-[0.8] pt-[0.1em] pr-[0.05em]
+}
+
+.dark .dropcap:first-letter {
+  @apply  text-gold
 }
 
 :lang(ja) .dropcap:first-letter {
