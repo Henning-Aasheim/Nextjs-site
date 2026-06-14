@@ -76,13 +76,21 @@
 }
 
 .soMeButton {
-  @apply inline w-6 h-6 hover:text-gold
+  @apply inline w-6 h-6 hover:text-darkGold
 }
 
 .experienceItems {
-  @apply relative hover:text-gold
+  @apply relative hover:text-darkGold
 }
 
 .experienceIcons {
-  @apply block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-gold
+  @apply block absolute left-0 top-1 fill-textblue dark:fill-white group-hover:fill-darkGold
+}
+
+.localeButton {
+  @apply block w-full py-2 px-10 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-darkbg dark:hover:text-gold cursor-pointer
+}
+
+.toggleButtons {
+  @apply hover:scale-110 hover:text-gold cursor-pointer
 }

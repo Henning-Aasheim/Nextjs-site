@@ -29,7 +29,7 @@ export default function Header() {
   {/* Mobile menu button */}
 
               <button
-                className={`md:hidden ${isOpen ? "text-red-500" : "text-textblue dark:text-gray-300"}`}
+                className={`md:hidden ${isOpen ? "text-red-500 hover:scale-110 cursor-pointer" : "toggleButtons"}`}
                 onClick={() => setIsOpen(!isOpen)}
               >
                 {isOpen ? (
