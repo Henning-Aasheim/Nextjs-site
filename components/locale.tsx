@@ -32,7 +32,7 @@ export default function LocaleSwitcher() {
         <Earth size={30} className='hover:scale-110'/>
       </button>
       {isOpen && (
-        <div className='absolute right-0 bg-gray-200 dark:bg-gray-700 rounded-md py-2 w-50 mt-2 shadow-lg z-10'>
+        <div className='absolute right-0 bg-darkKhaki dark:bg-darkAccent rounded-md py-2 w-50 mt-2 shadow-lg z-10'>
           <button onClick={() => switchLocale('en-GB')} className={locale === 'en-GB' ? 'block w-full py-2 px-10 font-bold text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600' : 'block w-full py-2 px-10 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}>{t('en')}</button>
           <button onClick={() => switchLocale('ja')}    className={locale === 'ja'    ? 'block w-full py-2 px-10 font-bold text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600' : 'block w-full py-2 px-10 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}>{t('ja')}</button>
           <button onClick={() => switchLocale('no')}    className={locale === 'no'    ? 'block w-full py-2 px-10 font-bold text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600' : 'block w-full py-2 px-10 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}>{t('no')}</button>

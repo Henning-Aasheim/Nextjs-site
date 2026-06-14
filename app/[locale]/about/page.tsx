@@ -303,7 +303,7 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                 <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
                                     <a href={item.url}>
                                         <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
-                                                      bg-khaki shadow-lg dark:bg-gray-950
+                                                      bg-darkKhaki shadow-lg dark:bg-gray-950
                                                         hover:border-solid hover:border hover:border-orange 
                                                         hover:scale-102 hover:transition-transform transition-colors duration-500 ease-in-out
                                                         hover:shadow-xl hover:text-orange">
