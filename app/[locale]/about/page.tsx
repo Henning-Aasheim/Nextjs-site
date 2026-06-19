@@ -303,9 +303,10 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                 <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
                                     <a href={item.url}>
                                         <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
-                                                      bg-darkKhaki shadow-lg dark:bg-gray-950
+                                                      bg-lightAccent shadow-lg dark:bg-gray-950
                                                         hover:border-solid hover:border hover:border-gold 
-                                                        hover:scale-102 hover:transition-transform transition-colors duration-500 ease-in-out
+                                                        hover:scale-102 hover:transition-transform 
+                                                        transition-colors duration-500 ease-in-out
                                                         hover:shadow-xl hover:text-gold">
                                                 <img src={item.image} 
                                                     alt={item.title} 

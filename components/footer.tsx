@@ -89,7 +89,7 @@ export default function Footer() {
 
     {/* Lower part of the footer */}
 
-            <div className="mb-5 border-solid border-b border-textblue dark:border-gold"/>
+            <div className="mb-5 border-solid border-b border-lightText dark:border-gold"/>
 
             <div>
                 © {currentYear} {t('copyright')} {t('description')}
