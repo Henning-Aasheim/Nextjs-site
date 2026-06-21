@@ -89,7 +89,7 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                 <img
                     src="/profile_image.jpg"
                     alt="Profile Image"
-                    className="w-40 h-40 object-cover rounded-full"
+                    className="w-40 h-40 object-cover rounded-full border-2 border-gold"
                 />
                 <h1 className="text-lg sm:text-2xl font-bold font-default mt-5">
                     {t('profile-heading')}
@@ -310,7 +310,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                                         hover:shadow-xl hover:text-gold">
                                                 <img src={item.image} 
                                                     alt={item.title} 
-                                                    className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4" />
+                                                    className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4
+                                                               mask-b-from-50% sm:mask-r-from-50% sm:mask-b-from-100%" />
                                                 <h2 className="font-bold text-base 2xs:text-xl md:text-2xl flex-1
                                                             items-center sm:items-baseline 
                                                             my-4 sm:my-0

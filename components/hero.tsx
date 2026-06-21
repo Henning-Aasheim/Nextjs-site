@@ -16,10 +16,10 @@ export default function Hero({ t }: { t: (key: string) => string }) {
 
         {/* Text side */}
         <div className="w-full lg:w-1/2 order-2 md:order-1 flex items-center ">
-          <div className="px-6 lg:px-10 py-8 lg:py-0 space-y-4 max-w-[40rem] mx-auto lg:mx-0" >
+          <div className="px-6 lg:px-10 py-8 lg:py-0 space-y-4 max-w-160 mx-auto lg:mx-0" >
             <h1 className="nameLogo dark:text-white text-[clamp(2rem,9vw,5rem)] lg:text-[clamp(2rem,5vw,5rem)]">{t('header1')}</h1>
 
-            <h1 className="nameLogo ml-4 text-gold italic text-[clamp(2rem,9vw,5rem)] lg:text-[clamp(2rem,5vw,5rem)]">{t('header2')}</h1>
+            <h1 className="nameLogo ml-4 text-orange dark:text-gold italic text-[clamp(2rem,9vw,5rem)] lg:text-[clamp(2rem,5vw,5rem)]">{t('header2')}</h1>
 
             <p className="dropcap text-[clamp(1rem,1.5vw,1.25rem)]">{t('description')}</p>
           </div>

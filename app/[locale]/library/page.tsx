@@ -50,7 +50,7 @@ export default function Library(
         <h2 className="text-6xl">{t('books')}:</h2>
       </div>
 
-      <div className="w-10/11 md:w-4/5 mx-auto my-12">
+      <div className="w-7/11 s:w-6/7 md:w-4/5 mx-auto my-12">
         <ul className="grid grid-cols-1 s:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 items-start text-left">
           {books.map((book) => {
             const yearLabel = formatBookYear(tDate, {
@@ -59,29 +59,48 @@ export default function Library(
             });
 
             return (
-              <li key={book.id} className="mb-2">
-                <Link
-                  href={`/${locale}/library/${book.id}`}
-                  className="flex flex-col h-full items-center" // center card contents
+              <li key={book.id} className="mb-2 group">
+                <div
+                  className="
+                    rounded-lg shadow-md bg-black text-white
+                    dark:hover:bg-black
+                    overflow-hidden
+                    transform-gpu will-change-transform
+                    group-hover:-translate-y-3 transition-transform duration-300
+                    pb-2 aspect-auto
+                  "
                 >
-                  {/* Fixed-width, fixed-height image slot */}
-                  <div className="w-[180px] h-[270px] flex items-start justify-center">
-                    <Image
-                      src={book.image}
-                      alt={book.title}
-                      width={180}
-                      height={270}
-                      className="w-[180px] h-auto max-h-[270px]"
-                    />
-                  </div>
+                  <div className="flex flex-col h-full items-center">
+                    <Link
+                      href={`/${locale}/library/${book.id}`}
+                      className="relative flex flex-col h-full items-center"
+                    >
+                      <div className="w-full overflow-hidden z-0">
+                        <Image
+                          src={book.image}
+                          alt={book.title}
+                          width={600}
+                          height={900}
+                          className="block w-full h-auto object-cover"
+                        />
+                      </div>
 
-                  {/* Text always starts after the same slot height */}
-                  <div className="mt-2 w-[180px] text-left">
-                    <h2 className="text-xl">{book.title}</h2>
-                    <p>{book.author}</p>
-                    {yearLabel && <p>{yearLabel}</p>}
+                      <div
+                        className="
+                          absolute inset-0
+                          bg-gradient-to-t ease-in-out
+                          from-black via-darkBg/80 via-30% to-transparent
+                        "
+                      />
+
+                      <div className="absolute left-3 bottom-4 w-4/5 text-left z-10 truncate">
+                        <h2 className="text-lg font-bold">{book.title}</h2>
+                        <p className=''>{book.author}</p>
+                        {yearLabel && <p>{yearLabel}</p>}
+                      </div>
+                    </Link>
                   </div>
-                </Link>
+                </div>
               </li>
             );
           })}

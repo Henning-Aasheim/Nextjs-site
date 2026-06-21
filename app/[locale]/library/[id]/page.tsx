@@ -65,7 +65,7 @@ export default async function BookPage(
 
   return (
     <main>
-      <article className='max-w-100 mx-auto mt-6 px-4 sx:p-0'>
+      <article className='max-w-160 mx-auto mt-6 px-4 sx:p-0'>
         <header>
           <Image src={book.image} alt={book.title} width={400} height={600} className='mx-auto mb-4'/>
           <h1 className='text-2xl text-center mb-4'>{book.title}</h1>
