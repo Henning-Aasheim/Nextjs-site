@@ -28,18 +28,48 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
 
         <h1 className="text-2xl sm:text-4xl mb-6 pb-3 font-default font-bold w-4/5 
                        md:w-1/2 xl:w-0.4 mx-auto border-gold border-solid border-b">{t('blog')}</h1>
-        <div className="grid gap-8 w-4/5 md:w-1/2 xl:w-0.4 mx-auto">
-          {allArticlesData.map((article) => (
-            <article key={article.id} className="group max-w-lg mx-auto">
-                <Link href={`/blog/${article.id}`}>
-                  <h2 className="text-lg sm:text-2xl mb-2 mx-2 sm:mx-0 font-default font-semibold 
-                              group-hover:scale-110 group-hover:transition-transform transition-duration-100">{article.title}</h2>
-                  <div className="font-default text-gray-300 
-                                group-hover:scale-110 group-hover:transition-transform transition-duration-100">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
-              </Link>
-            </article>
-          ))}
-        </div>
+
+        <div className="my-12">
+  <ul className="grid grid-cols-1 gap-6 w-full items-start text-left">
+    {allArticlesData.slice(0, 2).map((article, index) => {
+      const dateTime = new Date(article.date);
+
+      return (
+        <li
+          key={article.id}
+          className="group w-4/5 mx-auto mb-2 border-b border-gray-700 pb-4"
+        >
+          <Link
+            href={`/blog/${article.id}`}
+            className="flex items-start gap-4"
+          >
+            {/* Number */}
+            <div className="text-2xl font-mono text-gray-500 w-8 text-right">
+              {index + 1}
+            </div>
+
+            {/* Main content */}
+            <div className="flex-1">
+              {/* Meta: date + category */}
+              <div className="mb-1 flex flex-wrap items-center gap-2 text-sm text-gray-400">
+                <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
+                <span className="h-1 w-1 rounded-full bg-gray-500" />
+                <h2 className="text-lg sm:text-2xl font-default font-semibold mb-1">{article.title} </h2>
+                <span className="h-1 w-1 rounded-full bg-gray-500" />
+                <span className="uppercase tracking-wide text-xs font-semibold text-indigo-400">
+                  {article.category}
+                </span>
+              </div>
+
+              {/* Title */}
+              
+            </div>
+          </Link>
+        </li>
+      );
+    })}
+  </ul>
+</div>
 
       </div>
 
