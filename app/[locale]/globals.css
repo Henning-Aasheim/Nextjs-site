@@ -52,11 +52,11 @@
 }
 
 .dropcap {
-  @apply text-black/80 dark:text-gray-300 leading-relaxed
+  @apply text-black/80 dark:text-gray-300 leading-6
 }
 
 .dropcap:first-letter {
-  @apply float-left text-[3.5em] text-lightText leading-[0.8] pt-[0.1em] pr-[0.05em]
+  @apply float-left text-[2.9em] text-lightText leading-[0.8] pt-[0.1em] pr-[0.05em]
 }
 
 .dark .dropcap:first-letter {
@@ -64,7 +64,7 @@
 }
 
 :lang(ja) .dropcap:first-letter {
-  @apply font-default text-[3em]
+  @apply font-default text-[2.4em]
 }
 
 .nameLogo {
