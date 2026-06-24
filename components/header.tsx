@@ -13,7 +13,7 @@ export default function Header() {
 
 
     return (
-        <header className="w-screen border-b border-gold py-6 px-5 md:px-10">
+        <header className="w-screen py-6 px-5 md:px-10 bg-darkBlue mb-10">
           <nav className=" flex flex-col items-center w-full md:flex-row md:items-center">
 
   {/* Left spacer (desktop) */}

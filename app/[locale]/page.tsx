@@ -29,11 +29,11 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
   return (
     <div className="w-full">
 
-      <Hero t={t} />
+        <Hero t={t} />
 
   {/* Blog div */}
 
-      <div className="dark:bg-darkAccent text-gold py-10 border-t border-solid border-gold">
+      <div className="dark:bg-darkAccent text-gold py-10">
 
         <h1 className="text-2xl sm:text-4xl mb-6 pb-3 font-default font-bold w-4/5 
                        md:w-1/2 xl:w-0.4 mx-auto border-gold border-solid border-b">{t('blog')}</h1>
