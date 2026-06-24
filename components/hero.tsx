@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero({ t }: { t: (key: string) => string }) {
   return (
-    <div className="max-w-[1200px] md:mx-auto bg-darkBlue">
+    <div className="md:mx-auto bg-darkBlue">
       <div className="relative flex flex-col lg:flex-row min-h-[40vh]">
 
         {/* Image side */}
