@@ -47,7 +47,7 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
               return (
                 <li
                   key={article.id}
-                  className="group w-4/5 md:w-1/2 mx-auto mb-2 border-b border-gray-700 pb-4"
+                  className="group w-4/5 2xl:w-1/2 mx-auto mb-2 border-b border-gray-700 pb-4"
                 >
                   <Link
                     href={`/blog/${article.id}`}
@@ -63,9 +63,7 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
                       {/* Meta: date + category */}
                       <div className="mb-1 flex flex-wrap items-center gap-2 text-sm text-gray-400">
                         <span className="min-w-[9rem]">{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
-                        <span className="w-15 text-gray-500">•</span>
                         <span className="min-w-[7rem] uppercase tracking-wide text-xs font-semibold text-indigo-400">{article.category}</span>
-                        <span className="w-15 text-gray-500">•</span>
                         <h2 className="text-lg sm:text-2xl font-default font-semibold mb-1">{article.title}</h2>
                       </div>
 
