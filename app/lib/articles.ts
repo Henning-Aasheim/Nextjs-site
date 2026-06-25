@@ -39,6 +39,17 @@ export function getAllArticleIds() {
   })
 }
 
+export function getExcerptFromHtml(html: string, maxChars = 200): string {
+  // Strip tags
+  const text = html
+    .replace(/<[^>]+>/g, ' ')   // remove all HTML tags
+    .replace(/\s+/g, ' ')       // collapse whitespace
+    .trim();
+
+  if (text.length <= maxChars) return text;
+  return text.slice(0, maxChars).trimEnd() + '…';
+}
+
 export async function getArticleData(id : string) {
   const fullPath = path.join(articlesDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -52,10 +63,13 @@ export async function getArticleData(id : string) {
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
  
+  const excerpt = getExcerptFromHtml(contentHtml, 220);
+
   // Combine the data with the id and contentHtml
   return {
     id,
     contentHtml,
+    excerpt,
     ...(matterResult.data as ArticleItem),
   };
 }

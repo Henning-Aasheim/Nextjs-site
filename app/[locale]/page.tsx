@@ -1,20 +1,23 @@
-import { getSortedArticles } from "../lib/articles"
+import { getSortedArticles, getArticleData } from "../lib/articles"
 import Link from "next/link"
-import { useFormatter, useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
-import { use } from "react";
+import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import Hero from "@/components/hero";
 
-export default function Home({ params }: { params: Promise<{ locale: string, date: string }> }) {
-  const {locale} = use(params);
+export default async function Home({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
  
   // Enable static rendering
   setRequestLocale(locale);
-  
-  const t = useTranslations('home');
-  const allArticlesData = getSortedArticles();
 
-  const format = useFormatter()
+  // SERVER APIs instead of hooks
+  const t = await getTranslations({ locale, namespace: "home" });
+  const format = await getFormatter({ locale });
+
+  const allArticlesData = getSortedArticles();
   
   const visibleArticles = [...allArticlesData]
   .sort((a, b) => {
@@ -24,18 +27,25 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
   })
   .slice(0, 5); 
 
+  const newestArticleMeta = visibleArticles[0] ?? null;
+
+  // Load full newest article (with contentHtml + excerpt) safely
+  const newestArticle = newestArticleMeta
+    ? await getArticleData(newestArticleMeta.id)
+    : null;
+
   const totalArticles = allArticlesData.length;
 
   return (
     <div className="w-full">
       <div className="m-4 xs:m-10">
-        <div className="flex flex-col lg:grid lg:grid-cols-6 grid-rows-5 lg:grid-rows-9 gap-10 max-w-[1200px] mx-auto">
+        <div className="flex flex-col lg:grid lg:grid-cols-6 grid-rows-5 lg:grid-rows-9 gap-10 max-w-[1200px] mx-auto auto-rows-auto">
 
         <div className="lg:col-span-6 lg:row-span-3 bg-darkBlue">
           <Hero t={t} />
         </div>
 
-        <div className="lg:col-span-4 lg:col-start-1 lg:row-span-2 lg:row-start-4 bg-orange">
+        <div className="lg:col-span-4 lg:col-start-1 lg:row-span-3 lg:row-start-4 bg-orange">
 
           {/* Blog div */}
 
@@ -75,9 +85,29 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
           </div>
         </div>
 
-        <div className="lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-4 bg-darkBlue">9</div>
-        <div className="lg:col-span-3 lg:row-span-2 lg:row-start-6 bg-orange">10</div>
-        <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-6 bg-orange">11</div>
+        <div className="lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4 bg-darkBlue">
+            <div>
+              {newestArticle && (
+                <section className="m-3">
+                  <h2 className="text-lightBg text-4xl text-center my-5">{t('newestArticle')}</h2>
+                  <Link href={`/blog/${newestArticle.id}`} className="block">
+                    <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 lg:w-full aspect-3/2 object-cover max-h-[20rem] mx-auto" />
+                    <div className="text-lightBg text-2xl mb-2">{newestArticle.title}</div>
+                    <div className="relative w-full mx-auto min-h-[1rem] text-gray-300 text-sm">
+                      <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
+                      <span className="absolute right-0 uppercase">{newestArticle.category}</span>
+                    </div>
+                    <p className="mt-3 text-lightBg text-sm">
+                      {newestArticle.excerpt}
+                    </p>
+                  </Link>
+                </section>
+              )}
+            </div>
+        </div>
+
+        <div className="lg:col-span-3 lg:row-span-2 lg:row-start-7 bg-orange">10</div>
+        <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-7 bg-orange">11</div>
 
       </div>
       </div>
