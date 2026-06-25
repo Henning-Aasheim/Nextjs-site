@@ -72,7 +72,7 @@
 }
 
 :lang(ja) .nameLogo {
-  @apply font-default first-letter:font-default text-[clamp(1rem,5.5vw,4rem)] lg:text-[clamp(1.5rem,3.5vw,3.33rem)]
+  @apply font-default first-letter:font-default text-[clamp(1rem,5.5vw,4rem)] lg:text-[clamp(1.5rem,3.5vw,3.18rem)]
 }
 
 .soMeButton {
