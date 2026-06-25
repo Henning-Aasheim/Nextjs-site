@@ -28,7 +28,7 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
 
   return (
     <div className="w-full">
-      <div className="m-10">
+      <div className="m-4 xs:m-10">
         <div className="grid grid-cols-1 lg:grid-cols-6 grid-rows-5 lg:grid-rows-9 gap-10 max-w-[1200px] mx-auto">
 
         <div className="col-span-1 lg:col-span-6 lg:row-span-3 bg-darkBlue">
