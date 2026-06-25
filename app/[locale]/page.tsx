@@ -28,7 +28,8 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-6 grid-rows-15 lg:grid-rows-9 gap-10 max-w-[1200px] mx-auto">
+      <div className="m-10">
+        <div className="grid grid-cols-1 lg:grid-cols-6 grid-rows-5 lg:grid-rows-9 gap-10 max-w-[1200px] mx-auto">
 
         <div className="col-span-1 lg:col-span-6 lg:row-span-3 bg-darkBlue">
           <Hero t={t} />
@@ -75,11 +76,12 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
         </div>
 
         <div className="col-span-1 lg:col-span-2 lg:row-span-3 col-start-1 lg:col-start-5 lg:row-start-4 bg-darkBlue">
-          
+
         </div>
         <div className="col-span-1 lg:col-span-3 lg:row-span-3 lg:row-start-7 bg-orange">10</div>
         <div className="col-span-1 lg:col-span-3 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-7 bg-orange">11</div>
 
+      </div>
       </div>
     </div>  
   )
