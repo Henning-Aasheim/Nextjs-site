@@ -31,11 +31,11 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
       <div className="m-4 xs:m-10">
         <div className="flex flex-col lg:grid lg:grid-cols-6 grid-rows-5 lg:grid-rows-9 gap-10 max-w-[1200px] mx-auto">
 
-        <div className="col-span-1 lg:col-span-6 lg:row-span-3 bg-darkBlue">
+        <div className="lg:col-span-6 lg:row-span-3 bg-darkBlue">
           <Hero t={t} />
         </div>
 
-        <div className="col-span-1 lg:col-span-4 col-start-1 lg:row-span-3 lg:row-start-4 bg-orange">
+        <div className="lg:col-span-4 lg:col-start-1 lg:row-span-2 lg:row-start-4 bg-orange">
 
           {/* Blog div */}
 
@@ -56,11 +56,11 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
                         {/* Main content */}
                         <div className="flex-1">
                           {/* Meta: date + category */}
-                          <div className="mb-1 flex items-center gap-2 text-sm text-lightBg overflow-hidden">
+                          <div className="flex items-center gap-2 text-sm text-lightBg overflow-hidden">
                             <span className="min-w-[2rem] text-2xl font-display text-lightBg text-center">{ displayNumber }</span>
                             <span className="min-w-[9rem]">{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
                             <span className="min-w-[7rem] uppercase tracking-wide text-xs font-semibold text-lightText">{article.category}</span>
-                            <h2 className="min-w[9rem] text-lg sm:text-lg font-default font-semibold mb-1 text-wrap">{article.title}</h2>
+                            <h2 className="min-w-[9rem] text-lg sm:text-lg font-default font-semibold text-wrap">{article.title}</h2>
                           </div>
 
                           {/* Title */}
@@ -75,11 +75,9 @@ export default function Home({ params }: { params: Promise<{ locale: string, dat
           </div>
         </div>
 
-        <div className="col-span-1 lg:col-span-2 lg:row-span-3 col-start-1 lg:col-start-5 lg:row-start-4 bg-darkBlue">
-
-        </div>
-        <div className="col-span-1 lg:col-span-3 lg:row-span-3 lg:row-start-7 bg-orange">10</div>
-        <div className="col-span-1 lg:col-span-3 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-7 bg-orange">11</div>
+        <div className="lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-4 bg-darkBlue">9</div>
+        <div className="lg:col-span-3 lg:row-span-2 lg:row-start-6 bg-orange">10</div>
+        <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-6 bg-orange">11</div>
 
       </div>
       </div>

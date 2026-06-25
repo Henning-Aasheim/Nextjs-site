@@ -15,11 +15,11 @@ export default function Footer() {
 
     {/* Upper part of the footer */}
 
-            <div className="mb-6 grid grid-cols-1 s:grid-cols-2 md:grid-cols-5 gap-5">
+            <div className="mb-6 grid grid-cols-1 s:grid-cols-2 lg:grid-cols-5 gap-5">
 
     {/* First column: author description */}
 
-                <div className="inline-block md:col-span-2">
+                <div className="inline-block lg:col-span-2">
                     <div className="mb-4 text-left">
                         <div className="inline-block align-middle">
                             <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-gold border"></img>
