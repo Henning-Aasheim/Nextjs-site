@@ -126,7 +126,7 @@ export default async function Home({
                       <div className="text-white text-2xl mb-2">{newestArticle.title}</div>
                       <div className="relative w-full mx-auto min-h-[1rem] text-gray-300 text-sm">
                         <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
-                        <span className="absolute right-0 uppercase">{newestArticle.category}</span>
+                        <span className="absolute right-0 uppercase text-background">{newestArticle.category}</span>
                       </div>
                       <p className="mt-3 text-white text-sm">{newestArticle.excerpt}</p>
                     </Link>
