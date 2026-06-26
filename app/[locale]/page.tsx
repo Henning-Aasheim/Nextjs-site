@@ -49,9 +49,9 @@ export default async function Home({
 
           {/* Blog div */}
 
-          <div className="dark:bg-darkAccent text-lightBg py-10 w-10/11 mx-auto">
+          <div className="dark:bg-darkAccent text-white py-10 w-10/11 mx-auto">
 
-            <h1 className="text-2xl sm:text-4xl pb-3 font-default font-bold mx-auto border-lightBg border-solid border-b">{t('blog')}</h1>
+            <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-white border-solid border-b">{t('articles')}</h1>
 
             <div className="w-full overflow-hidden">
               <ul className="grid grid-cols-1 w-full items-start text-left">
@@ -60,21 +60,52 @@ export default async function Home({
                   const dateTime = new Date(article.date);
 
                   return (
-                    <li key={article.id} className="group w-full mx-auto border-b border-lightBg py-4 hover:bg-primary">
-                      <Link href={`/blog/${article.id}`} className="flex w-full items-start gap-6">
+                    <li
+                      key={article.id}
+                      className="group w-full mx-auto border-b border-white py-4 hover:bg-primary"
+                    >
+                      <Link
+                        href={`/blog/${article.id}`}
+                        className="flex w-full items-stretch gap-6"
+                      >
+                        {/* Number column (always vertically centered) */}
+                        <div className="flex items-center">
+                          <span className="min-w-[2rem] text-2xl font-display text-lightBg text-center">
+                            {displayNumber}
+                          </span>
+                        </div>
 
-                        {/* Main content */}
+                        {/* Right side: date, category, title */}
                         <div className="flex-1">
-                          {/* Meta: date + category */}
-                          <div className="flex items-center gap-2 text-sm text-lightBg overflow-hidden">
-                            <span className="min-w-[2rem] text-2xl font-display text-lightBg text-center">{ displayNumber }</span>
-                            <span className="min-w-[9rem]">{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
-                            <span className="min-w-[7rem] uppercase tracking-wide text-xs font-semibold text-background">{article.category}</span>
-                            <h2 className="min-w-[9rem] text-lg sm:text-lg font-default font-semibold text-wrap">{article.title}</h2>
-                          </div>
+                          {/* Wrapper for meta + title */}
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 w-full text-sm text-white">
+                            {/* Date + category row */}
+                            <div
+                              className="
+                                w-full
+                                flex justify-between
+                                sm:w-auto sm:justify-start sm:items-center sm:gap-2
+                              "
+                            >
+                              <span className="sm:min-w-[9rem]">
+                                {format.dateTime(dateTime, { dateStyle: "long" })}
+                              </span>
 
-                          {/* Title */}
-                          
+                              <span
+                                className="
+                                  uppercase tracking-wide text-xs font-semibold text-background
+                                  text-right sm:text-left sm:min-w-[7rem]
+                                "
+                              >
+                                {article.category}
+                              </span>
+                            </div>
+
+                            {/* Title */}
+                            <h2 className="sm:min-w-[9rem] text-lg font-default font-semibold text-wrap">
+                              {article.title}
+                            </h2>
+                          </div>
                         </div>
                       </Link>
                     </li>
@@ -97,9 +128,7 @@ export default async function Home({
                         <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
                         <span className="absolute right-0 uppercase">{newestArticle.category}</span>
                       </div>
-                      <p className="mt-3 text-white text-sm">
-                        {newestArticle.excerpt}
-                      </p>
+                      <p className="mt-3 text-white text-sm">{newestArticle.excerpt}</p>
                     </Link>
                   </div>
                 </section>
