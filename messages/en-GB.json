@@ -9,7 +9,7 @@
     {
         "home": "Home", 
         "about": "About", 
-        "blog": "Blog",
+        "blog": "Articles",
         "library": "Library"
     },
  
@@ -21,7 +21,7 @@
         "authorDescription": "I am very interested in social phenomenon, statistics, and now also web development.",
         "home": "Home", 
         "about": "About", 
-        "blog": "Blog",
+        "blog": "Articles",
         "titleCol_1": "Sitemap",
         "titleCol_2": "About",
         "titleCol_3": "Something",
@@ -107,7 +107,7 @@
 
     "blog": 
     {
-        "heading": "Blog"
+        "heading": "Articles"
     },
 
     "metaColophon":

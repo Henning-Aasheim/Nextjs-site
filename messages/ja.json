@@ -9,7 +9,7 @@
     {
         "home": "ホーム", 
         "about": "履歴", 
-        "blog": "ブログ",
+        "blog": "記事",
         "library": "図書館"
     },
 
@@ -28,8 +28,8 @@
         "authorDescription": "私は社会現象、統計学などに興味があり、今ウェブ開発にも関心が高まっています。",
         "home": "ホーム", 
         "about": "履歴", 
-        "blog": "ブログ",
-        "titleCol_1": "サイトマップ",
+        "blog": "記事",
+        "titleCol_1": "サイト案内",
         "titleCol_2": "について",
         "titleCol_3": "について",
         "link1_col3": "奥付",
@@ -105,7 +105,7 @@
 
     "blog": 
     {
-        "heading": "ブログ"
+        "heading": "記事の一覧"
     },
 
     "metaColophon":

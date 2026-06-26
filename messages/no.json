@@ -8,7 +8,7 @@
     {
         "home": "Hjem", 
         "about": "Om meg", 
-        "blog": "Blogg",
+        "blog": "Artikler",
         "library": "Bibliotek"
     },
 
@@ -27,7 +27,7 @@
         "authorDescription": "Jeg er veldig interessert i sosiale fenomen, statistikk og nå også webutvikling.",
         "home": "Hjem", 
         "about": "Om meg", 
-        "blog": "Blogg",
+        "blog": "Artikler",
         "titleCol_1": "Oversikt",
         "titleCol_2": "Om",
         "titleCol_3": "Noe",
@@ -105,7 +105,7 @@
 
     "blog": 
     {
-        "heading": "Blogg"
+        "heading": "Artikler"
     },
 
     "metaColophon":
