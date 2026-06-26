@@ -102,7 +102,7 @@ export default async function RootLayout({
 
     >
       <body className="min-h-full flex flex-col font-default 
-                     bg-lightBg text-lightText dark:text-white 
+                     bg-background text-white dark:text-white 
                        dark:bg-linear-to-r dark:from-darkAccent  dark:to-purple">
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider attribute='class' enableSystem defaultTheme="system">

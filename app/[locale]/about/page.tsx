@@ -167,8 +167,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('experience-1-title')}</h2>
-                                    <h3 className="text-base sm:text-1xl font-default italic">{t('experience-1-employer')}</h3>
+                                    <h2 className="experienceTitle sm:text-2xl">{t('experience-1-title')}</h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">{t('experience-1-employer')}</h3>
                                     <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('experience-1-date')}</time>
                                 </div>
                             </div>
@@ -184,8 +184,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('experience-2-title')}</h2>
-                                    <h3 className="text-1xl font-default italic">{t('experience-2-employer')}</h3>
+                                    <h2 className="experienceTitle sm:text-2xl">{t('experience-2-title')}</h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">{t('experience-2-employer')}</h3>
                                     <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('experience-2-date')}</time>
                                 </div>
                             </div>
@@ -201,8 +201,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <Civita width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('experience-3-title')}</h2>
-                                    <h3 className="text-base sm:text-1xl font-default italic">{t('experience-3-employer')}</h3>
+                                    <h2 className="experienceTitle sm:text-2xl">{t('experience-3-title')}</h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">{t('experience-3-employer')}</h3>
                                     <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('experience-3-date')}</time>
                                 </div>
                             </div>
@@ -230,8 +230,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-1-title')}</h2>
-                                    <h3 className="text-base sm:text-1xl font-default italic">{t('education-1-university')}</h3>
+                                    <h2 className="experienceTitle sm:text-2xl">{t('education-1-title')}</h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-1-university')}</h3>
                                     <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-1-date')}</time>
                                 </div>
                             </div>
@@ -247,8 +247,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-2-title')}</h2>
-                                    <h3 className="text-base sm:text-1xl font-default italic">{t('education-2-university')}</h3>
+                                    <h2 className="experienceTitle sm:text-2xl">{t('education-2-title')}</h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-2-university')}</h3>
                                     <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-2-date')}</time>
                                 </div>
                             </div>
@@ -264,8 +264,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <UiO width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-3-title')}</h2>
-                                    <h3 className="text-base sm:text-1xl font-default italic">{t('education-3-university')}</h3>
+                                    <h2 className="experienceTitle sm:text-2xl">{t('education-3-title')}</h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-3-university')}</h3>
                                     <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-3-date')}</time>
                                 </div>
                             </div>
@@ -281,8 +281,8 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                     <Shinshu width={60} height={60} className="experienceIcons" />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="text-lg sm:text-2xl font-default font-bold">{t('education-4-title')}</h2>
-                                    <h3 className="text-base sm:text-1xl font-default italic">{t('education-4-university')}</h3>
+                                    <h2 className="experienceTitle sm:text-2xl">{t('education-4-title')}</h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-4-university')}</h3>
                                     <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-4-date')}</time>
                                 </div>
                             </div>
@@ -303,15 +303,15 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                                 <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
                                     <a href={item.url}>
                                         <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
-                                                      bg-lightAccent shadow-lg dark:bg-gray-950
-                                                        hover:border-solid hover:border hover:border-gold 
+                                                      bg-secondary shadow-lg dark:bg-gray-950 text-white
+                                                        hover:border-solid hover:border hover:border-danger
                                                         hover:scale-102 hover:transition-transform 
                                                         transition-colors duration-500 ease-in-out
-                                                        hover:shadow-xl hover:text-gold">
+                                                        hover:shadow-xl hover:text-background">
                                                 <img src={item.image} 
                                                     alt={item.title} 
                                                     className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4
-                                                               mask-b-from-50% sm:mask-r-from-50% sm:mask-b-from-100%" />
+                                                               mask-b-from-90% sm:mask-r-from-90% sm:mask-b-from-100%" />
                                                 <h2 className="font-bold text-base 2xs:text-xl md:text-2xl flex-1
                                                             items-center sm:items-baseline 
                                                             my-4 sm:my-0

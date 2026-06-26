@@ -12,7 +12,7 @@ export default function LocaleSwitcher() {
   const router = useRouter()
   const pathname = usePathname()
   const locale = useLocale()
-  const t = useTranslations('LocaleSwitcher')
+  const t = useTranslations('localeSwitcher')
 
   const switchLocale = (newLocale: string) => {
     if (newLocale !== locale) {
@@ -32,7 +32,7 @@ export default function LocaleSwitcher() {
         <Earth size={30} className='toggleButtons'/>
       </button>
       {isOpen && (
-        <div className='absolute right-0 bg-darkBlue dark:bg-darkAccent rounded-md py-2 w-50 mt-2 shadow-lg z-20'>
+        <div className='absolute right-0 bg-secondary dark:bg-darkAccent rounded-md py-2 w-50 mt-2 shadow-lg z-20'>
           <button onClick={() => switchLocale('en-GB')} className={locale === 'en-GB' ? 'localeButton font-bold' : 'localeButton'}>{t('en')}</button>
           <button onClick={() => switchLocale('ja')}    className={locale === 'ja'    ? 'localeButton font-bold' : 'localeButton'}>{t('ja')}</button>
           <button onClick={() => switchLocale('no')}    className={locale === 'no'    ? 'localeButton font-bold' : 'localeButton'}>{t('no')}</button>

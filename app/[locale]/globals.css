@@ -44,6 +44,11 @@
   --color-orangeDark: #ba4b17;
   --color-darkBg: #04000a;
   --color-darkAccent: #0a0019;
+
+  --color-danger: #9b5353;
+  --color-background: #dfc6af;
+  --color-primary: #65657e;
+  --color-secondary: #6c7869;
 }
 
 
@@ -52,11 +57,11 @@
 }
 
 .dropcap {
-  @apply text-lightBg leading-6
+  @apply text-white leading-6
 }
 
 .dropcap:first-letter {
-  @apply float-left text-[2.9em] text-orange leading-[0.8] pt-[0.1em] pr-[0.05em]
+  @apply float-left text-[2.9em] text-background leading-[0.8] pt-[0.1em] pr-[0.05em]
 }
 
 .dark .dropcap:first-letter {
@@ -79,23 +84,31 @@
   @apply inline w-6 h-6 hover:text-darkGold
 }
 
+.experienceTitle{
+  @apply text-lg font-default font-bold text-danger
+}
+
+.experienceSubtitle{
+  @apply text-base font-default italic text-danger
+}
+
 .experienceItems {
-  @apply relative hover:text-darkGold
+  @apply relative hover:text-primary
 }
 
 .experienceIcons {
-  @apply block absolute left-0 top-1 fill-lightText dark:fill-white group-hover:fill-darkGold
+  @apply block absolute left-0 top-1 fill-danger dark:fill-white group-hover:fill-primary
 }
 
 .localeButton {
-  @apply block w-full py-2 px-10 text-gray-800 dark:text-gray-300 hover:bg-gray-300 
+  @apply block w-full py-2 px-10 text-white dark:text-gray-300 hover:bg-danger hover:text-background
        dark:hover:bg-darkBg dark:hover:text-gold cursor-pointer
 }
 
 .toggleButtons {
-  @apply text-lightBg hover:scale-110 hover:text-gold cursor-pointer
+  @apply text-white hover:scale-110 hover:text-background cursor-pointer
 }
 
 .navLinks {
-  @apply text-lightBg dark:text-gray-300 font-bold hover:scale-110 hover:text-gold
+  @apply text-white dark:text-gray-300 font-bold hover:scale-110 hover:text-background
 }

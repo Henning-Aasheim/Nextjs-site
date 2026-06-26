@@ -45,7 +45,7 @@ export default async function Home({
           <Hero t={t} />
         </div>
 
-        <div className="lg:col-span-4 lg:col-start-1 lg:row-span-3 lg:row-start-4 bg-orange">
+        <div className="lg:col-span-4 lg:col-start-1 lg:row-span-3 lg:row-start-4 bg-secondary">
 
           {/* Blog div */}
 
@@ -60,7 +60,7 @@ export default async function Home({
                   const dateTime = new Date(article.date);
 
                   return (
-                    <li key={article.id} className="group w-full mx-auto border-b border-lightBg py-4 hover:bg-orangeDark">
+                    <li key={article.id} className="group w-full mx-auto border-b border-lightBg py-4 hover:bg-primary">
                       <Link href={`/blog/${article.id}`} className="flex w-full items-start gap-6">
 
                         {/* Main content */}
@@ -69,7 +69,7 @@ export default async function Home({
                           <div className="flex items-center gap-2 text-sm text-lightBg overflow-hidden">
                             <span className="min-w-[2rem] text-2xl font-display text-lightBg text-center">{ displayNumber }</span>
                             <span className="min-w-[9rem]">{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
-                            <span className="min-w-[7rem] uppercase tracking-wide text-xs font-semibold text-lightText">{article.category}</span>
+                            <span className="min-w-[7rem] uppercase tracking-wide text-xs font-semibold text-background">{article.category}</span>
                             <h2 className="min-w-[9rem] text-lg sm:text-lg font-default font-semibold text-wrap">{article.title}</h2>
                           </div>
 
@@ -85,29 +85,29 @@ export default async function Home({
           </div>
         </div>
 
-        <div className="lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4 bg-darkBlue">
-            <div>
+        <div className="lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4 bg-danger">
               {newestArticle && (
-                <section className="m-3">
-                  <h2 className="text-lightBg text-4xl text-center my-5">{t('newestArticle')}</h2>
-                  <Link href={`/blog/${newestArticle.id}`} className="block">
-                    <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 lg:w-full aspect-3/2 object-cover max-h-[20rem] mx-auto" />
-                    <div className="text-lightBg text-2xl mb-2">{newestArticle.title}</div>
-                    <div className="relative w-full mx-auto min-h-[1rem] text-gray-300 text-sm">
-                      <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
-                      <span className="absolute right-0 uppercase">{newestArticle.category}</span>
-                    </div>
-                    <p className="mt-3 text-lightBg text-sm">
-                      {newestArticle.excerpt}
-                    </p>
-                  </Link>
+                <section className="m-5">
+                  <h2 className="text-white text-4xl text-center my-5">{t('newestArticle')}</h2>
+                  <div className="max-w-[20rem] mx-auto">
+                    <Link href={`/blog/${newestArticle.id}`} className="block">
+                      <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 lg:w-full aspect-3/2 object-cover max-h-[20rem] mx-auto" />
+                      <div className="text-white text-2xl mb-2">{newestArticle.title}</div>
+                      <div className="relative w-full mx-auto min-h-[1rem] text-gray-300 text-sm">
+                        <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
+                        <span className="absolute right-0 uppercase">{newestArticle.category}</span>
+                      </div>
+                      <p className="mt-3 text-white text-sm">
+                        {newestArticle.excerpt}
+                      </p>
+                    </Link>
+                  </div>
                 </section>
               )}
-            </div>
         </div>
 
-        <div className="lg:col-span-3 lg:row-span-2 lg:row-start-7 bg-orange">10</div>
-        <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-7 bg-orange">11</div>
+        <div className="lg:col-span-3 lg:row-span-2 lg:row-start-7 bg-primary">10</div>
+        <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-7 bg-secondary">11</div>
 
       </div>
       </div>

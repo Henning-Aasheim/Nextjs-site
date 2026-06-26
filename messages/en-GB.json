@@ -30,7 +30,7 @@
         "link3_col3": "temp"
     },
 
-    "LocaleSwitcher": 
+    "localeSwitcher": 
     {
         "en": "English", 
         "ja": "Japanese", 
@@ -50,6 +50,13 @@
         "blog": "Blog",
         "newestArticle": "Newest article"
 
+    },
+
+    "hero":
+    {
+        "left": "Tinkerer",
+        "centre": "Curious",
+        "right":"Athlete"
     },
 
     "metaAbout":
