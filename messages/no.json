@@ -8,7 +8,7 @@
     {
         "home": "Hjem", 
         "about": "Om meg", 
-        "blog": "Artikler",
+        "articles": "Artikler",
         "library": "Bibliotek"
     },
 
@@ -27,7 +27,7 @@
         "authorDescription": "Jeg er veldig interessert i sosiale fenomen, statistikk og nå også webutvikling.",
         "home": "Hjem", 
         "about": "Om meg", 
-        "blog": "Artikler",
+        "articles": "Artikler",
         "titleCol_1": "Oversikt",
         "titleCol_2": "Om",
         "titleCol_3": "Noe",
@@ -97,13 +97,13 @@
         "previous-work": "Tidligere arbeid"
     },
 
-    "metaBlog":
+    "metaArticles":
     {
-        "title": "Hennings blogg",
-        "description": "Dette er bloggen til Henning Åsheim."
+        "title": "Hennings artikler",
+        "description": "Dette er artikler Henning Åsheim har skrevet."
     },
 
-    "blog": 
+    "articles": 
     {
         "heading": "Artikler"
     },

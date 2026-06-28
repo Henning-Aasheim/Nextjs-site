@@ -45,7 +45,7 @@ export default function Footer() {
                             <Link href='/about' className="hover:border-b hover:text-background">About</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/blog' className="hover:border-b hover:text-background">Blog</Link>
+                            <Link href='/articles' className="hover:border-b hover:text-background">Articles</Link>
                         </li>
                     </ul>
                 </div>
@@ -79,7 +79,7 @@ export default function Footer() {
                             <Link href='/about' className="hover:border-b hover:text-background">temp</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/blog' className="hover:border-b hover:text-background">temp</Link>
+                            <Link href='/articles' className="hover:border-b hover:text-background">temp</Link>
                         </li>
                     </ul>
                 </div>

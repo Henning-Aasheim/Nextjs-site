@@ -94,7 +94,7 @@ export default function Header() {
 
               <Link href="/" className="navLinks" onClick={() => setIsOpen(false)}>{t("home")}</Link>
               <Link href="/about" className="navLinks" onClick={() => setIsOpen(false)}>{t("about")}</Link>
-              <Link href="/blog" className="navLinks" onClick={() => setIsOpen(false)}>{t("blog")}</Link>
+              <Link href="/articles" className="navLinks" onClick={() => setIsOpen(false)}>{t("articles")}</Link>
               <Link href="/library" className="navLinks" onClick={() => setIsOpen(false)}>{t("library")}</Link>
             </div>
           </nav>

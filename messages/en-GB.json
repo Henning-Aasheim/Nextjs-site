@@ -9,7 +9,7 @@
     {
         "home": "Home", 
         "about": "About", 
-        "blog": "Articles",
+        "articles": "Articles",
         "library": "Library"
     },
  
@@ -21,7 +21,7 @@
         "authorDescription": "I am very interested in social phenomenon, statistics, and now also web development.",
         "home": "Home", 
         "about": "About", 
-        "blog": "Articles",
+        "articles": "Articles",
         "titleCol_1": "Sitemap",
         "titleCol_2": "About",
         "titleCol_3": "Something",
@@ -99,13 +99,13 @@
         "previous-work": "Previous work"
     },
     
-    "metaBlog":
+    "metaArticles":
     {
-        "title": "Henning's blog",
-        "description": "This is the blog of Henning Åsheim."
+        "title": "Henning's articles",
+        "description": "Articles written by Henning Åsheim."
     },
 
-    "blog": 
+    "articles": 
     {
         "heading": "Articles"
     },

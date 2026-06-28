@@ -9,7 +9,7 @@
     {
         "home": "ホーム", 
         "about": "履歴", 
-        "blog": "記事",
+        "articles": "記事",
         "library": "図書館"
     },
 
@@ -28,7 +28,7 @@
         "authorDescription": "私は社会現象、統計学などに興味があり、今ウェブ開発にも関心が高まっています。",
         "home": "ホーム", 
         "about": "履歴", 
-        "blog": "記事",
+        "articles": "記事",
         "titleCol_1": "サイト案内",
         "titleCol_2": "について",
         "titleCol_3": "について",
@@ -97,13 +97,13 @@
         "education-4-date": "2021年10月 - 2022年8月",
         "previous-work": "以前の仕事"
     },
-    "metaBlog":
+    "metaArticles":
     {
         "title": "ヘンニングのブログ",
         "description": "ヘンニング・オーサイムのブログです。"
     },
 
-    "blog": 
+    "articles": 
     {
         "heading": "記事の一覧"
     },

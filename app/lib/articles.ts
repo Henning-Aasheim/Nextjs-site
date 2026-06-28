@@ -11,7 +11,7 @@ export function getSortedArticles() {
   const fileNames = fs.readdirSync(articlesDirectory)
 
   const allArticlesData = fileNames.map(fileName => {
-    const id = fileName.replace(/\.md$/, '')
+    const id = fileName.replace(/\.mdx$/, '')
 
     const fullPath = path.join(articlesDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -51,7 +51,7 @@ export function getExcerptFromHtml(html: string, maxChars = 200): string {
 }
 
 export async function getArticleData(id : string) {
-  const fullPath = path.join(articlesDirectory, `${id}.md`);
+  const fullPath = path.join(articlesDirectory, `${id}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
  
   // Use gray-matter to parse the post metadata section

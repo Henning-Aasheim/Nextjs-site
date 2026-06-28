@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   setRequestLocale(locale);
 
-  const t = await getTranslations('metaBlog');
+  const t = await getTranslations('metaArticles');
 
   return {
     title: t("title"),
@@ -22,13 +22,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 // This is the main page component 
 
-export default function BlogPage({ params }: { params: Promise<{ locale: string, date: string }> }) {
+export default function articlesPage({ params }: { params: Promise<{ locale: string, date: string }> }) {
     const {locale} = use(params);
              
     // Enable static rendering
     setRequestLocale(locale);
 
-    const t = useTranslations('blog');
+    const t = useTranslations('articles');
 
     const allArticlesData = getSortedArticles();
     const format = useFormatter()
@@ -44,7 +44,7 @@ export default function BlogPage({ params }: { params: Promise<{ locale: string,
                 {allArticlesData.map((article) => (
                     <article key={article.id} className="group hover:scale-105 transition-transform duration-100 mb-5">
                         <div className="flex justify-center mb-5">
-                            <Link href={`/blog/${article.id}`} className="w-full">
+                            <Link href={`/articles/${article.id}`} className="w-full">
                                 <img src={article.image} alt={article.title} className="rounded-lg mb-2 w-full aspect-3/2 object-cover" />
                                 <h2 className="text-lg sm:text-2xl font-default font-semibold 
                                                text-center">{article.title}</h2>
