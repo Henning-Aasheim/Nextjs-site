@@ -81,7 +81,7 @@
 }
 
 .soMeButton {
-  @apply inline w-6 h-6 hover:text-darkGold
+  @apply inline w-6 h-6 hover:text-white
 }
 
 .experienceTitle{

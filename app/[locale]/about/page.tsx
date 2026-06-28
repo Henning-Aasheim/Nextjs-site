@@ -1,24 +1,25 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { use } from "react";
-import { FileDown} from "lucide-react";
+import { FileDown } from "lucide-react";
 import { Metadata } from "next";
 import { FaBluesky, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import Shinshu from "../../icons/shinshu.svg";
-import Civita from "../../icons/civita.svg";
+import CivitaIcon from "../../icons/civita.svg";
 import UiO from "../../icons/uio_segl.svg";
 
-
-
 // This is the metadata for the page
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata>{
-  const {locale} = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
 
   setRequestLocale(locale);
 
-  const t = await getTranslations('metaAbout');
+  const t = await getTranslations("metaAbout");
 
   return {
     title: t("title"),
@@ -26,308 +27,352 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-// This is the main page component
+// ---- Data: CV path per locale <ref: index=10406232 firstWord=1 lastWord=25/> ----
 
-export default function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
-    const {locale} = use(params);
-     
-      // Enable static rendering
-      setRequestLocale(locale);
+const localeToCvPath: Record<string, string> = {
+  no: "/resumes/cv-no.pdf",
+  "en-GB": "/resumes/cv-en-GB.pdf",
+  // ja: "/resumes/cv-ja-JP.pdf",
+};
 
-    const t = useTranslations('about');
+// ---- Data: previous Civita work (unchanged) <ref: index=10406203 firstWord=1 lastWord=40/> ----
 
-    const localeToCvPath: Record<string, string> = {
-    "no": "/resumes/cv-no.pdf",
-    "en-GB": "/resumes/cv-en-GB.pdf",
-    //"ja": "/resumes/cv-ja-JP.pdf",
-  };
+const civita = [
+  {
+    id: 1,
+    url: "https://civita.no/notat/mikrobrikkekrigen/",
+    title: "Mikrobrikkekrigen",
+    image: "/civita/mikrobrikker.webp",
+  },
+  {
+    id: 2,
+    url: "https://civita.no/notat/det-indiske-valget-er-india-pa-vei-bort-fra-sin-demokratiske-tradisjon/",
+    title: "Det indiske valget",
+    image: "/civita/india.webp",
+  },
+  {
+    id: 3,
+    url: "https://civita.no/podcast/digitale-utfordringer-del-3-kampen-om-mikrochipene/",
+    title: "Kampen om mikrochipene",
+    image: "/civita/podkast.webp",
+  },
+  {
+    id: 4,
+    url: "https://civita.no/notat/har-norsk-offentlig-sektor-et-produktivitetsproblem/",
+    title: "Norsk offentlig sektor og produktivitet",
+    image: "/civita/offentlig_sektor.webp",
+  },
+];
 
-    const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"]; // default to Norwegian
+// ---- Data: Experience items (replaces repeated JSX in the experience section) ----
+// Mirrors the three list items from the original experience block
+//   UiO, UiO, CivitaIcon, with translation keys:
+//   experience-1-title/employer/date, experience-2-..., experience-3-...
+// See original markup in <ref: index=10406202 firstWord=1 lastWord=35/> and <ref: index=10406206 firstWord=1 lastWord=30/>.
 
+type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
-    // This is the links to the civita work
+interface ExperienceItem {
+  id: string;
+  icon: IconComponent;
+  titleKey: string;
+  subtitleKey: string;
+  dateKey: string;
+}
 
+const experienceItems: ExperienceItem[] = [
+  {
+    id: "experience-1",
+    icon: UiO,
+    titleKey: "experience-1-title",
+    subtitleKey: "experience-1-employer",
+    dateKey: "experience-1-date",
+  },
+  {
+    id: "experience-2",
+    icon: UiO,
+    titleKey: "experience-2-title",
+    subtitleKey: "experience-2-employer",
+    dateKey: "experience-2-date",
+  },
+  {
+    id: "experience-3",
+    icon: CivitaIcon,
+    titleKey: "experience-3-title",
+    subtitleKey: "experience-3-employer",
+    dateKey: "experience-3-date",
+  },
+];
 
-    const civita = [
-        {
-            id: 1,
-            url: 'https://civita.no/notat/mikrobrikkekrigen/',
-            title: 'Mikrobrikkekrigen',
-            image: '/civita/mikrobrikker.webp',
-        },
-        {
-            id: 2,
-            url: 'https://civita.no/notat/det-indiske-valget-er-india-pa-vei-bort-fra-sin-demokratiske-tradisjon/',
-            title: 'Det indiske valget',
-            image: '/civita/india.webp',
-        },
-        {
-            id: 3,
-            url: 'https://civita.no/podcast/digitale-utfordringer-del-3-kampen-om-mikrochipene/',
-            title: 'Kampen om mikrochipene',
-            image: '/civita/podkast.webp',
-        },
-        {
-            id: 4,
-            url: 'https://civita.no/notat/har-norsk-offentlig-sektor-et-produktivitetsproblem/',
-            title: 'Norsk offentlig sektor og produktivitet',
-            image: '/civita/offentlig_sektor.webp',
-        },
-    ];
+// ---- Data: Education items (replaces repeated JSX in the education section) ----
+// Mirrors the four list items from the original education block:
+//   UiO, UiO, UiO, Shinshu with translation keys education-1-... through education-4-...
+// See original markup in <ref: index=10406209 firstWord=1 lastWord=40/> and related segments <ref: index=10406212 firstWord=1 lastWord=30/>.
 
+interface EducationItem {
+  id: string;
+  icon: IconComponent;
+  titleKey: string;
+  subtitleKey: string;
+  dateKey: string;
+}
 
-    return (
-        <div className="relative w-10/11 md:w-4/5 xl:w-2/3 mx-auto pt-12 mb-10 flex flex-col lg:flex-row">
+const educationItems: EducationItem[] = [
+  {
+    id: "education-1",
+    icon: UiO,
+    titleKey: "education-1-title",
+    subtitleKey: "education-1-university",
+    dateKey: "education-1-date",
+  },
+  {
+    id: "education-2",
+    icon: UiO,
+    titleKey: "education-2-title",
+    subtitleKey: "education-2-university",
+    dateKey: "education-2-date",
+  },
+  {
+    id: "education-3",
+    icon: UiO,
+    titleKey: "education-3-title",
+    subtitleKey: "education-3-university",
+    dateKey: "education-3-date",
+  },
+  {
+    id: "education-4",
+    icon: Shinshu,
+    titleKey: "education-4-title",
+    subtitleKey: "education-4-university",
+    dateKey: "education-4-date",
+  },
+];
 
+// ---- Main page component ----
 
-    {/* PROFILE IMAGE */}
+export default function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = use(params);
 
+  // Enable static rendering
+  setRequestLocale(locale);
 
-            <div className="flex-none min-w-40 lg:mr-10 pr-0 mb-8">
-                <div className="sticky flex top-30 
-                                justify-center items-center flex-col"> {/* The top-30 has to change when the warning banner is removed */}
+  const t = useTranslations("about");
+
+  const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"]; // default to Norwegian
+
+  return (
+    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 mx-auto pt-12 mb-10 flex flex-col lg:flex-row">
+
+        {/* PROFILE IMAGE (left column) */}
+        <div className="flex-none min-w-40 lg:mr-10 pr-0 mb-8 text-primary">
+            <div className="sticky flex top-30 justify-center items-center flex-col">
+                {/* The top-30 has to change when the warning banner is removed */}
                 <img
-                    src="/profile_image.jpg"
-                    alt="Profile Image"
-                    className="w-40 h-40 object-cover rounded-full border-2 border-gold"
+                src="/profile_image.jpg"
+                alt="Profile Image"
+                className="w-40 h-40 object-cover rounded-full border-2 border-primary"
                 />
                 <h1 className="text-lg sm:text-2xl font-bold font-default mt-5">
-                    {t('profile-heading')}
+                {t("profile-heading")}
                 </h1>
                 <h2 className="text-base sm:text-1xl font-default italic mt-1">
-                    {t('work-title')}
+                {t("work-title")}
                 </h2>
                 <h2 className="text-base sm:text-1xl font-default mt-1">
-                    {t('employer')}
+                {t("employer")}
                 </h2>
-                
-                <div className="mt-4">
-                    <ul className="flex-row">
-                        <li className="inline mx-2"><a href='https://bsky.app/profile/henningaasheim.bsky.social' target="_blank" rel="noopener noreferrer"><FaBluesky className="soMeButton"/></a></li>
-                        <li className="inline mx-2"><a href='https://github.com/Henning-Aasheim' target="_blank" rel="noopener noreferrer"><FaGithub className="soMeButton"/></a></li>
-                        <li className="inline mx-2"><a href='https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/' target="_blank" rel="noopener noreferrer"><FaLinkedin className="soMeButton"/></a></li>
-                        <li className="inline mx-2"><a href='mailto:henning.aasheim@outlook.com'><IoMdMail className="inline w-7 h-7 hover:text-gold"/></a></li>
-                    </ul>
-                </div>
-                    
 
+                <div className="mt-4">
+                <ul className="flex-row">
+                    <li className="inline mx-2">
+                    <a
+                        href="https://bsky.app/profile/henningaasheim.bsky.social"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaBluesky className="soMeButton" />
+                    </a>
+                    </li>
+                    <li className="inline mx-2">
+                    <a
+                        href="https://github.com/Henning-Aasheim"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaGithub className="soMeButton" />
+                    </a>
+                    </li>
+                    <li className="inline mx-2">
+                    <a
+                        href="https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaLinkedin className="soMeButton" />
+                    </a>
+                    </li>
+                    <li className="inline mx-2">
+                    <a href="mailto:henning.aasheim@outlook.com">
+                        <IoMdMail className="inline w-7 h-7 hover:text-white" />
+                    </a>
+                    </li>
+                </ul>
                 </div>
             </div>
+        </div>
 
+        {/* RIGHT COLUMN: flex container with gap-5 <ref: index=10406226 firstWord=17 lastWord=25/> */}
+        <div className="lg:w-2/3 mx-auto flex flex-col gap-5">
 
-    {/* Introduction and experience */}
-
-
-            <div className="lg:w-2/3 mx-auto">
-
-    {/* Introduction and resume */}
-
-                <h1 className="text-xl sm:text-3xl font-bold font-default">
-                {t('heading')}
+            {/* INTRODUCTION + RESUME, with background */}
+            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
+                <h1 className="text-xl sm:text-3xl font-bold font-default text-primary">
+                {t("heading")}
                 </h1>
 
                 <p className="text-base sm:text-xl mb-10 text-left font-default text-black/80 dark:text-gray-300">
-                {t('description')}
+                {t("description")}
                 </p>
 
-
-    {/* Resume download button */}
-
-
                 <div className="flex justify-center lg:justify-start">
-                    <a
+                <a
                     href={cvHref}
-                    className="p-3 mb-3 font-bold  text-white
-                               bg-gold hover:bg-darkGold 
-                                text-lg font-default rounded-xl"
+                    className="p-3 mb-3 font-bold text-white
+                            bg-gold hover:bg-darkGold 
+                            text-lg font-default rounded-xl"
                     download
-                    >
+                >
                     <FileDown className="inline mr-2 mb-0.5" />
-                    {t('resume')}
-                    </a>
+                    {t("resume")}
+                </a>
                 </div>
+            </section>
 
-
-    {/* Experience */}
-
-
-                <div className="mt-8 lg:mt-10">
+            {/* EXPERIENCE, using data array and background <ref: index=10406213 firstWord=1 lastWord=20/> */}
+            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
+                <div className="mt-2 lg:mt-4">
                     <h1 className="text-xl sm:text-3xl font-bold font-default">
-                        {t('experience-heading')}
+                        {t("experience-heading")}
                     </h1>
                     <ol className="list-disc list-inside mb-10 mt-8">
-
-
-    {/* Current experience */}
-
-
-                        <li className="mb-2 list-none flex items-center">
+                        {experienceItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <li
+                            key={item.id}
+                            className="mb-2 list-none flex items-center"
+                            >
                             <div className="experienceItems group">
                                 <span>
-                                    <UiO width={60} height={60} className="experienceIcons" />
+                                <Icon
+                                    width={60}
+                                    height={60}
+                                    className="experienceIcons"
+                                />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">{t('experience-1-title')}</h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">{t('experience-1-employer')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('experience-1-date')}</time>
+                                <h2 className="experienceTitle sm:text-2xl">
+                                    {t(item.titleKey)}
+                                </h2>
+                                <h3 className="experienceSubtitle sm:text-1xl">
+                                    {t(item.subtitleKey)}
+                                </h3>
+                                <time className="text-sm font-default text-black/70 dark:text-gray-300">
+                                    {t(item.dateKey)}
+                                </time>
                                 </div>
                             </div>
-                        </li>
-
-    
-    {/* 2nd experience */}
-
-
-                        <li className="mb-2 list-none flex items-center">
-                            <div className="experienceItems group">
-                                <span>
-                                    <UiO width={60} height={60} className="experienceIcons" />
-                                </span>
-                                <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">{t('experience-2-title')}</h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">{t('experience-2-employer')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('experience-2-date')}</time>
-                                </div>
-                            </div>
-                        </li>
-
-
-    {/* 3rd experience */}
-
-
-                        <li className="mb-2 list-none flex items-center">
-                            <div className="experienceItems group">
-                                <span>
-                                    <Civita width={60} height={60} className="experienceIcons" />
-                                </span>
-                                <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">{t('experience-3-title')}</h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">{t('experience-3-employer')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('experience-3-date')}</time>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        );
+                        })}
                     </ol>
                 </div>
+            </section>
 
-
-    {/* Education */}
-
-
-                <div className="mt-8 lg:mt-10">
+            {/* EDUCATION, using data array and background <ref: index=10406209 firstWord=1 lastWord=20/> */}
+            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
+                <div className="mt-2 lg:mt-4">
                     <h1 className="text-xl sm:text-3xl font-bold font-default">
-                        {t('education-heading')}
+                        {t("education-heading")}
                     </h1>
                     <ol className="list-disc list-inside mb-10 mt-8">
-
-
-    {/* Master's degree */}
-
-
-                        <li className="mb-2 list-none flex items-center">
+                        {educationItems.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <li
+                            key={item.id}
+                            className="mb-2 list-none flex items-center"
+                            >
                             <div className="experienceItems group">
                                 <span>
-                                    <UiO width={60} height={60} className="experienceIcons" />
+                                <Icon
+                                    width={60}
+                                    height={60}
+                                    className="experienceIcons"
+                                />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">{t('education-1-title')}</h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-1-university')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-1-date')}</time>
+                                <h2 className="experienceTitle sm:text-2xl">
+                                    {t(item.titleKey)}
+                                </h2>
+                                <h3 className="experienceSubtitle sm:text-1xl">
+                                    {t(item.subtitleKey)}
+                                </h3>
+                                <time className="text-sm font-default text-black/70 dark:text-gray-300">
+                                    {t(item.dateKey)}
+                                </time>
                                 </div>
                             </div>
-                        </li>
-
-
-    {/* Bachelor's degree */}
-
-
-                        <li className="mb-2 list-none flex items-center">
-                            <div className="experienceItems group">
-                                <span>
-                                    <UiO width={60} height={60} className="experienceIcons" />
-                                </span>
-                                <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">{t('education-2-title')}</h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-2-university')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-2-date')}</time>
-                                </div>
-                            </div>
-                        </li>
-
-
-    {/* Bachelor's degree */}
-
-
-                        <li className="mb-2 list-none flex items-center">
-                            <div className="experienceItems group">
-                                <span>
-                                    <UiO width={60} height={60} className="experienceIcons" />
-                                </span>
-                                <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">{t('education-3-title')}</h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-3-university')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-3-date')}</time>
-                                </div>
-                            </div>
-                        </li>
-    
-
-    {/* Exchange */}
-
-
-                        <li className="mb-2 list-none flex items-center">
-                            <div className="experienceItems group">
-                                <span>
-                                    <Shinshu width={60} height={60} className="experienceIcons" />
-                                </span>
-                                <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">{t('education-4-title')}</h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">{t('education-4-university')}</h3>
-                                    <time className="text-sm font-default text-black/70 dark:text-gray-300">{t('education-4-date')}</time>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        );
+                        })}
                     </ol>
                 </div>
+            </section>
 
+            {/* PREVIOUS WORK, with background <ref: index=10406219 firstWord=1 lastWord=25/>, <ref: index=10406210 firstWord=1 lastWord=20/> */}
+            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
+                <div className="lg:mt-2">
+                    <h1 className="text-xl sm:text-3xl font-bold font-default mb-6">
+                        {t("previous-work")}
+                    </h1>
 
-    {/* Previous work */}
-
-
-                <div className="lg:mt-10">
-                    <h1 className="text-xl sm:text-3xl font-bold font-default mb-6">{t('previous-work')}</h1>
-
-                    <div className=''>
+                    <div>
                         {civita.map((item) => (
-                            <article key={item.id} className="group">
-                                <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
-                                    <a href={item.url}>
-                                        <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
-                                                      bg-secondary shadow-lg dark:bg-gray-950 text-white
-                                                        hover:border-solid hover:border hover:border-danger
-                                                        hover:scale-102 hover:transition-transform 
-                                                        transition-colors duration-500 ease-in-out
-                                                        hover:shadow-xl hover:text-background">
-                                                <img src={item.image} 
-                                                    alt={item.title} 
-                                                    className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4
-                                                               mask-b-from-90% sm:mask-r-from-90% sm:mask-b-from-100%" />
-                                                <h2 className="font-bold text-base 2xs:text-xl md:text-2xl flex-1
-                                                            items-center sm:items-baseline 
-                                                            my-4 sm:my-0
-                                                            mx-3 sm:mx-0">{item.title}</h2>
-                                        </div>
-                                    </a>
-
+                        <article key={item.id} className="group">
+                            <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
+                            <a href={item.url}>
+                                <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
+                                                bg-secondary shadow-lg dark:bg-gray-950 text-white
+                                                hover:border-solid hover:border hover:border-danger
+                                                hover:scale-102 hover:transition-transform 
+                                                transition-colors duration-500 ease-in-out
+                                                hover:shadow-xl hover:text-background">
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4
+                                            mask-b-from-90% sm:mask-r-from-90% sm:mask-b-from-100%"
+                                />
+                                <h2 className="font-bold text-base 2xs:text-xl md:text-2xl flex-1
+                                                items-center sm:items-baseline 
+                                                my-4 sm:my-0
+                                                mx-3 sm:mx-0">
+                                    {item.title}
+                                </h2>
                                 </div>
-                            </article>
+                            </a>
+                            </div>
+                        </article>
                         ))}
                     </div>
-                    
                 </div>
-
-            </div>
+            </section>
         </div>
-    );
+    </div>
+  );
 }
-

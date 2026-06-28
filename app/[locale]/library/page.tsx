@@ -93,8 +93,8 @@ export default function Library(
                         "
                       />
 
-                      <div className="absolute left-3 bottom-4 w-4/5 text-left z-10 truncate">
-                        <h2 className="text-lg font-bold">{book.title}</h2>
+                      <div className="absolute bottom-4 w-9/10 mx-auto text-left z-10 min-w-0">
+                        <h2 className="text-lg font-bold truncate">{book.title}</h2>
                         <p className=''>{book.author}</p>
                         {yearLabel && <p>{yearLabel}</p>}
                       </div>
