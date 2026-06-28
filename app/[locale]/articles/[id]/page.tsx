@@ -41,8 +41,8 @@ export default async function Article(props: { params: Promise<{id: string, loca
     const dateTime = new Date(articleContent.date)
 
     return (
-        <section className="mx-auto mb-10 w-4/5 md:w-1/2 xl:w-1/3">
-            <img src={articleContent.image} alt={articleContent.title} className="rounded-lg mt-10 object-cover aspect-3/2" />
+        <section className="mx-auto md:w-1/2 xl:w-2/5 p-10 m-5 bg-secondary">
+            <img src={articleContent.image} alt={articleContent.title} className="object-cover aspect-3/2" />
             <h1 className="flex text-2xl sm:text-4xl font-default font-bold text-center py-5">{articleContent.title}</h1>
                 <div className="font-default text-black/70 dark:text-white/70 pb-5">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
             <article className="article" dangerouslySetInnerHTML={{ __html: articleContent.contentHtml }} />
