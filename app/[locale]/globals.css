@@ -8,6 +8,7 @@
 
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -81,23 +82,27 @@
 }
 
 .soMeButton {
-  @apply inline w-6 h-6 hover:text-white
+  @apply inline w-6 h-6 hover:text-background
 }
 
-.experienceTitle{
-  @apply text-lg font-default font-bold text-danger
+.experienceTitle {
+  @apply text-lg font-default font-bold group-hover:text-background
 }
 
-.experienceSubtitle{
-  @apply text-base font-default italic text-danger
+.experienceSubtitle {
+  @apply text-base font-default italic group-hover:text-background
+}
+
+.experienceDate {
+ @apply text-sm font-default text-background dark:text-gray-300
 }
 
 .experienceItems {
-  @apply relative hover:text-primary
+  @apply relative
 }
 
 .experienceIcons {
-  @apply block absolute left-0 top-1 fill-danger dark:fill-white group-hover:fill-primary
+  @apply block absolute left-0 top-1 fill-white dark:fill-white group-hover:fill-background
 }
 
 .localeButton {

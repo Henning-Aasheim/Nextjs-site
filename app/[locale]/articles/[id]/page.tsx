@@ -41,11 +41,13 @@ export default async function Article(props: { params: Promise<{id: string, loca
     const dateTime = new Date(articleContent.date)
 
     return (
-        <section className="mx-auto md:w-4/5 xl:w-3/5 max-w-[1000px] p-10 m-5 bg-secondary">
+        <section className="mx-auto md:w-4/5 xl:w-3/5 max-w-[900px] p-10 m-5 bg-white/20">
             <img src={articleContent.image} alt={articleContent.title} className="object-cover aspect-3/2 mx-auto" />
-            <h1 className="text-xl sm:text-4xl font-default font-bold text-center py-5 mx-auto text-center">{articleContent.title}</h1>
+              <div className="max-w-[65ch] mx-auto">
+                <h1 className="text-xl sm:text-4xl font-default font-bold text-center py-5 mx-auto text-center text-primary">{articleContent.title}</h1>
                 <div className="font-default text-black/70 dark:text-white/70 pb-5">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
-            <article className="article" dangerouslySetInnerHTML={{ __html: articleContent.contentHtml }} />
+            </div>
+          <article className="prose mx-auto prose-ul:marker:text-black prose-h2:before:content-['§ ']" dangerouslySetInnerHTML={{ __html: articleContent.contentHtml }} />
         </section>
     );
 }
