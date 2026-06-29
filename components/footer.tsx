@@ -22,7 +22,7 @@ export default function Footer() {
                 <div className="inline-block lg:col-span-2">
                     <div className="mb-4 text-left">
                         <div className="inline-block align-middle">
-                            <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-danger border"></img>
+                            <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-background border"></img>
                         </div>
                         <div className="inline-block ml-4 align-middle text-lg md:text-xl lg:text-2xl font-bold">{t('author')}</div>
                     </div>
@@ -37,7 +37,7 @@ export default function Footer() {
                                 mr-10 
                                 lg:mr-15">
                     <div className="text-lg font-bold mb-2">{t('titleCol_1')}</div>
-                    <ul className="flex-col text-gray-800 dark:text-white/70">
+                    <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
                             <Link href='/' className="hover:border-b hover:text-background">Home</Link>
                         </li>
@@ -54,7 +54,7 @@ export default function Footer() {
 
                 <div className="inline-block text-left mr-10 lg:mr-15">
                     <div className="text-lg font-bold mb-2">{t('titleCol_2')}</div>
-                    <ul className="flex-col text-gray-800 dark:text-white/70">
+                    <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
                             <Link href='/colophon' className="hover:border-b hover:text-background">{t('link1_col3')}</Link>
                         </li>
@@ -71,7 +71,7 @@ export default function Footer() {
 
                 <div className="inline-block text-left mr-10 lg:mr-15">
                     <div className="text-lg font-bold mb-2">{t('titleCol_3')}</div>
-                    <ul className="flex-col text-gray-800 dark:text-white/70">
+                    <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
                             <Link href='/' className="hover:border-b hover:text-background">Colophon</Link>
                         </li>

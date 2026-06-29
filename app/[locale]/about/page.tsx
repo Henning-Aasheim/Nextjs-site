@@ -165,24 +165,24 @@ export default function AboutPage({
   const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"]; // default to Norwegian
 
   return (
-    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 mx-auto pt-12 mb-10 flex flex-col lg:flex-row">
+    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5 flex flex-col lg:flex-row">
 
         {/* PROFILE IMAGE (left column) */}
-        <div className="flex-none min-w-40 lg:mr-10 pr-0 mb-8 text-primary">
-            <div className="sticky flex top-30 justify-center items-center flex-col">
+        <div className="flex-none min-w-40 lg:mr-10 pr-0 mb-8 text-white">
+            <div className="sticky flex top-30 justify-center items-center flex-col bg-danger p-5">
                 {/* The top-30 has to change when the warning banner is removed */}
                 <img
                 src="/profile_image.jpg"
                 alt="Profile Image"
-                className="w-40 h-40 object-cover rounded-full border-2 border-primary"
+                className="w-40 h-40 object-cover rounded-full border-2 border-background"
                 />
                 <h1 className="text-lg sm:text-2xl font-bold font-default mt-5">
                 {t("profile-heading")}
                 </h1>
-                <h2 className="text-base sm:text-1xl font-default italic mt-1">
+                <h2 className="text-base text-background sm:text-1xl font-default italic mt-1">
                 {t("work-title")}
                 </h2>
-                <h2 className="text-base sm:text-1xl font-default mt-1">
+                <h2 className="text-base text-background sm:text-1xl font-default mt-1">
                 {t("employer")}
                 </h2>
 
@@ -217,7 +217,7 @@ export default function AboutPage({
                     </li>
                     <li className="inline mx-2">
                     <a href="mailto:henning.aasheim@outlook.com">
-                        <IoMdMail className="inline w-7 h-7 hover:text-white" />
+                        <IoMdMail className="inline w-7 h-7 hover:text-background" />
                     </a>
                     </li>
                 </ul>
@@ -225,35 +225,35 @@ export default function AboutPage({
             </div>
         </div>
 
-        {/* RIGHT COLUMN: flex container with gap-5 <ref: index=10406226 firstWord=17 lastWord=25/> */}
+        {/* RIGHT COLUMN */}
         <div className="lg:w-2/3 mx-auto flex flex-col gap-5">
 
-            {/* INTRODUCTION + RESUME, with background */}
-            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
-                <h1 className="text-xl sm:text-3xl font-bold font-default text-primary">
+            {/* INTRODUCTION + RESUME */}
+            <section className="bg-secondary dark:bg-gray-900/60 p-5">
+                <h1 className="text-xl sm:text-3xl font-bold font-default text-white">
                 {t("heading")}
                 </h1>
 
-                <p className="text-base sm:text-xl mb-10 text-left font-default text-black/80 dark:text-gray-300">
+                <p className="text-base sm:text-xl mb-10 text-left font-default text-gray-200 dark:text-gray-300">
                 {t("description")}
                 </p>
 
                 <div className="flex justify-center lg:justify-start">
-                <a
-                    href={cvHref}
-                    className="p-3 mb-3 font-bold text-white
-                            bg-gold hover:bg-darkGold 
-                            text-lg font-default rounded-xl"
-                    download
-                >
-                    <FileDown className="inline mr-2 mb-0.5" />
-                    {t("resume")}
+                <a href={cvHref} className="mb-3 font-bold text-lg font-default 
+                                            text-background bg-danger/70
+                                            border-2 border-background 
+                                            hover:text-white hover:border-white" 
+                download>
+                    <div className="p-3 hover:bg-gray-200/5">
+                        <FileDown className="inline mr-2 mb-0.5" />
+                        {t("resume")}
+                    </div>
                 </a>
                 </div>
             </section>
 
             {/* EXPERIENCE, using data array and background <ref: index=10406213 firstWord=1 lastWord=20/> */}
-            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
+            <section className="bg-primary dark:bg-gray-900/60 p-5">
                 <div className="mt-2 lg:mt-4">
                     <h1 className="text-xl sm:text-3xl font-bold font-default">
                         {t("experience-heading")}
@@ -281,7 +281,7 @@ export default function AboutPage({
                                 <h3 className="experienceSubtitle sm:text-1xl">
                                     {t(item.subtitleKey)}
                                 </h3>
-                                <time className="text-sm font-default text-black/70 dark:text-gray-300">
+                                <time className="experienceDate">
                                     {t(item.dateKey)}
                                 </time>
                                 </div>
@@ -294,7 +294,7 @@ export default function AboutPage({
             </section>
 
             {/* EDUCATION, using data array and background <ref: index=10406209 firstWord=1 lastWord=20/> */}
-            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
+            <section className="bg-danger dark:bg-gray-900/60 p-5">
                 <div className="mt-2 lg:mt-4">
                     <h1 className="text-xl sm:text-3xl font-bold font-default">
                         {t("education-heading")}
@@ -309,22 +309,22 @@ export default function AboutPage({
                             >
                             <div className="experienceItems group">
                                 <span>
-                                <Icon
-                                    width={60}
-                                    height={60}
-                                    className="experienceIcons"
-                                />
+                                    <Icon
+                                        width={60}
+                                        height={60}
+                                        className="experienceIcons"
+                                    />
                                 </span>
                                 <div className="flex flex-col ml-8 pl-15">
-                                <h2 className="experienceTitle sm:text-2xl">
-                                    {t(item.titleKey)}
-                                </h2>
-                                <h3 className="experienceSubtitle sm:text-1xl">
-                                    {t(item.subtitleKey)}
-                                </h3>
-                                <time className="text-sm font-default text-black/70 dark:text-gray-300">
-                                    {t(item.dateKey)}
-                                </time>
+                                    <h2 className="experienceTitle sm:text-2xl">
+                                        {t(item.titleKey)}
+                                    </h2>
+                                    <h3 className="experienceSubtitle sm:text-1xl">
+                                        {t(item.subtitleKey)}
+                                    </h3>
+                                    <time className="experienceDate">
+                                        {t(item.dateKey)}
+                                    </time>
                                 </div>
                             </div>
                             </li>
@@ -335,7 +335,7 @@ export default function AboutPage({
             </section>
 
             {/* PREVIOUS WORK, with background <ref: index=10406219 firstWord=1 lastWord=25/>, <ref: index=10406210 firstWord=1 lastWord=20/> */}
-            <section className="bg-secondary/10 dark:bg-gray-900/60 rounded-xl p-5">
+            <section className="bg-secondary dark:bg-gray-900/60 p-5">
                 <div className="lg:mt-2">
                     <h1 className="text-xl sm:text-3xl font-bold font-default mb-6">
                         {t("previous-work")}
@@ -346,12 +346,11 @@ export default function AboutPage({
                         <article key={item.id} className="group">
                             <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
                             <a href={item.url}>
-                                <div className="flex flex-row flex-wrap rounded-xl mb-4 items-center overflow-hidden 
-                                                bg-secondary shadow-lg dark:bg-gray-950 text-white
-                                                hover:border-solid hover:border hover:border-danger
+                                <div className="flex flex-row flex-wrap mb-4 items-center overflow-hidden 
+                                                bg-gray-200/10 shadow-lg dark:bg-gray-950 text-background
                                                 hover:scale-102 hover:transition-transform 
-                                                transition-colors duration-500 ease-in-out
-                                                hover:shadow-xl hover:text-background">
+                                                transition-colors duration-600 ease-in-out
+                                                hover:shadow-xl hover:text-white">
                                 <img
                                     src={item.image}
                                     alt={item.title}
