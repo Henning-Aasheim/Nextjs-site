@@ -69,7 +69,7 @@ export default async function Home({
                       className="group w-full mx-auto border-b border-white py-4 hover:bg-primary"
                     >
                       <Link
-                        href={`/blog/${article.id}`}
+                        href={`/articles/${article.id}`}
                         className="flex w-full items-stretch gap-6"
                       >
                         {/* Number column (always vertically centered) */}
@@ -125,7 +125,7 @@ export default async function Home({
                 <section className="m-5">
                   <h2 className="text-white text-4xl text-center my-5">{t('newestArticle')}</h2>
                   <div className="max-w-[20rem] mx-auto">
-                    <Link href={`/blog/${newestArticle.id}`} className="block">
+                    <Link href={`/articles/${newestArticle.id}`} className="block">
                       <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 lg:w-full aspect-3/2 object-cover max-h-[20rem] mx-auto" />
                       <div className="text-white text-2xl mb-2">{newestArticle.title}</div>
                       <div className="relative w-full mx-auto min-h-[1rem] text-gray-300 text-sm">
