@@ -47,7 +47,10 @@ export default async function Article(props: { params: Promise<{id: string, loca
                 <h1 className="text-xl sm:text-4xl font-default font-bold text-center py-5 mx-auto text-center text-primary">{articleContent.title}</h1>
                 <div className="font-default text-black/70 dark:text-white/70 pb-5">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
             </div>
-          <article className="prose mx-auto prose-ul:marker:text-black prose-h2:before:content-['§ ']" dangerouslySetInnerHTML={{ __html: articleContent.contentHtml }} />
+          <article className="prose mx-auto prose-ul:marker:text-black prose-h2:before:content-['§_'] 
+                            prose-h2:before:text-primary prose-h2:before:text-sm prose-h2:before:top-1
+                              prose-h2:before:left-0 prose-h2:before:absolute prose-h2:relative prose-h2:pl-2" 
+                            dangerouslySetInnerHTML={{ __html: articleContent.contentHtml }} />
         </section>
     );
 }
