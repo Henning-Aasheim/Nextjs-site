@@ -4,13 +4,19 @@ export interface ArticlePost {
     date: string
 }
 
-export interface ArticleItem {
+export interface ArticleMeta {
     image: string
     category: string
     title: string
     author: string
     date: string
     language: string
+}
+
+export interface ArticleContent {
+    id: string
+    frontmatter: ArticleMeta
+    content:string
 }
 
 export type Era = 'BCE'|'CE'

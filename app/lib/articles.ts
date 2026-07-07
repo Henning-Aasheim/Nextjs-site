@@ -1,30 +1,40 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { ArticleMeta, ArticleContent } from '@/types'
+
 import { remark } from 'remark'
 import html from 'remark-html'
-import { ArticleItem } from '@/types'
+
 
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles')
 
-export function getSortedArticles() {
-  const fileNames = fs.readdirSync(articlesDirectory)
+export function getAllArticles(): ArticleContent[] {
+  const fileNames = fs.readdirSync(articlesDirectory).filter((f) => f.endsWith('.mdx'))
 
-  const allArticlesData = fileNames.map(fileName => {
+  return fileNames.map((fileName) => {
     const id = fileName.replace(/\.mdx$/, '')
-
     const fullPath = path.join(articlesDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-    const matterResult = matter(fileContents)
-
+    const raw = fs.readFileSync(fullPath, 'utf8')
+    const { data, content } = matter(raw)
     return {
       id,
-      ...(matterResult.data as ArticleItem),
+      frontmatter: data as ArticleMeta,
+      content,
     }
-  })
+  }).sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1));
+}
 
-  return allArticlesData.sort((a, b) => (a.date > b.date ? -1 : 1));
+export function getArticleById(id: string): ArticleContent | null {
+  const filePath = path.join(articlesDirectory, `${id}.mdx`)
+  if (!fs.existsSync(filePath)) return null
+  const raw = fs.readFileSync(filePath, 'utf8')
+  const { data, content } = matter(raw)
+  return {
+    id,
+    frontmatter: data as ArticleMeta,
+    content,
+  }
 }
 
 export function getAllArticleIds() {
@@ -70,6 +80,6 @@ export async function getArticleData(id : string) {
     id,
     contentHtml,
     excerpt,
-    ...(matterResult.data as ArticleItem),
+    ...(matterResult.data as ArticleMeta),
   };
 }

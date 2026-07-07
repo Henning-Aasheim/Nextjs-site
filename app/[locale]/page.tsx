@@ -1,4 +1,4 @@
-import { getSortedArticles, getArticleData } from "../lib/articles"
+import { getAllArticles, getArticleData } from "../lib/articles"
 import Link from "next/link"
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import Hero from "@/components/hero";
@@ -17,12 +17,12 @@ export default async function Home({
   const t = await getTranslations({ locale, namespace: "home" });
   const format = await getFormatter({ locale });
 
-  const allArticlesData = getSortedArticles();
+  const allArticlesData = getAllArticles();
   
   const visibleArticles = [...allArticlesData]
   .sort((a, b) => {
-    const aTime = new Date(a.date).getTime();
-    const bTime = new Date(b.date).getTime();
+    const aTime = new Date(a.frontmatter.date).getTime();
+    const bTime = new Date(b.frontmatter.date).getTime();
     return bTime - aTime; // newest first
   })
   .slice(0, 5); 
@@ -61,7 +61,7 @@ export default async function Home({
               <ul className="grid grid-cols-1 w-full items-start text-left">
                 {visibleArticles.map((article, index) => {
                   const displayNumber = totalArticles - index;
-                  const dateTime = new Date(article.date);
+                  const dateTime = new Date(article.frontmatter.date);
 
                   return (
                     <li
@@ -101,13 +101,13 @@ export default async function Home({
                                   text-right sm:text-left sm:min-w-[7rem]
                                 "
                               >
-                                {article.category}
+                                {article.frontmatter.category}
                               </span>
                             </div>
 
                             {/* Title */}
                             <h2 className="sm:min-w-[9rem] text-lg font-default font-semibold text-wrap">
-                              {article.title}
+                              {article.frontmatter.title}
                             </h2>
                           </div>
                         </div>
