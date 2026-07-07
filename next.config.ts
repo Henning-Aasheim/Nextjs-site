@@ -3,8 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-    turbopack: {
+  turbopack: {
     rules: {
       '*.svg': {
         loaders: ['@svgr/webpack'],
@@ -19,6 +18,9 @@ const withNextIntl = createNextIntlPlugin();
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter'],
+  },
 })
 
 export default withNextIntl(withMDX(nextConfig));

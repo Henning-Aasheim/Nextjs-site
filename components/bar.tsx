@@ -21,8 +21,7 @@ ChartJS.register(
     Legend,
 )
 
-export function BarChart(data: any) {
+export function BarChart({ data }: { data: any }) {
     const options = {}
-
     return <Bar data={data} options={options} />
 }
