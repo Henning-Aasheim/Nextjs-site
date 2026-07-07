@@ -38,13 +38,11 @@ export default async function Article({ params }: ArticleProps) {
   const { id, locale } = await params
   const article = await getArticleById(id)
 
-  console.log(article)
-  setRequestLocale(locale)
-
   const format = await getFormatter()
-  const dateTime = new Date(article.frontmatter.date)
 
   if (!article) notFound()
+
+  const dateTime = new Date(article.frontmatter.date)
   return (
     <section className="mx-auto md:w-4/5 xl:w-3/5 max-w-[900px] p-10 m-5 bg-white/20">
       <img src={article.frontmatter.image} alt={article.frontmatter.title} className="object-cover aspect-3/2 mx-auto" />
