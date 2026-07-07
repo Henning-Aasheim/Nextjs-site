@@ -4,6 +4,9 @@ import { getFormatter, setRequestLocale} from 'next-intl/server';
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { useMDXComponents } from "@/mdx-components";
+import { BarChart } from "@/components/bar";
+
 
 interface ArticleProps {
   params: Promise<{ id: string, locale: string }>;
@@ -37,12 +40,15 @@ export async function generateMetadata({ params }: ArticleProps) {
 export default async function Article({ params }: ArticleProps) {
   const { id, locale } = await params
   const article = await getArticleById(id)
+  
+  setRequestLocale(locale)
 
   const format = await getFormatter()
 
   if (!article) notFound()
 
   const dateTime = new Date(article.frontmatter.date)
+
   return (
     <section className="mx-auto md:w-4/5 xl:w-3/5 max-w-[900px] p-10 m-5 bg-white/20">
       <img src={article.frontmatter.image} alt={article.frontmatter.title} className="object-cover aspect-3/2 mx-auto" />
@@ -53,7 +59,7 @@ export default async function Article({ params }: ArticleProps) {
           <article className="prose mx-auto prose-ul:marker:text-black prose-h2:before:content-['§_'] 
                             prose-h2:before:text-primary prose-h2:before:text-sm prose-h2:before:top-1
                               prose-h2:before:left-0 prose-h2:before:absolute prose-h2:relative prose-h2:pl-2">
-            <MDXRemote source={article.content} />
+            <MDXRemote source={article.content} components={{BarChart}} />
           </article>
         </section>
 

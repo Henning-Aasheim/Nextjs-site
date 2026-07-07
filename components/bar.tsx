@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import * as React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { 
     Chart as ChartJS, 
@@ -19,7 +21,7 @@ ChartJS.register(
     Legend,
 )
 
-export default function BarChart(data: any) {
+export function BarChart(data: any) {
     const options = {}
 
     return <Bar data={data} options={options} />

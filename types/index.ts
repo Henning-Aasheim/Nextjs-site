@@ -16,7 +16,7 @@ export interface ArticleMeta {
 export interface ArticleContent {
     id: string
     frontmatter: ArticleMeta
-    content:string
+    content: string
 }
 
 export type Era = 'BCE'|'CE'
