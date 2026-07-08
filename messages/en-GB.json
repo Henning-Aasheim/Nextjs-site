@@ -110,6 +110,11 @@
         "heading": "Articles"
     },
 
+    "toc":
+    {
+        "title": "Contents"
+    },
+
     "metaColophon":
     {
         "title": "Colophon",

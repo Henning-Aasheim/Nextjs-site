@@ -108,6 +108,11 @@
         "heading": "記事の一覧"
     },
 
+    "toc":
+    {
+        "title": "目次"
+    },
+
     "metaColophon":
     {
         "title": "奥付",

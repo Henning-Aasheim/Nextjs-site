@@ -20,6 +20,7 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: ['remark-frontmatter', 'remark-mdx-frontmatter'],
+    rehypePlugins: ['rehype-slug'],
   },
 })
 

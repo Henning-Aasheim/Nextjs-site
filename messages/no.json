@@ -108,6 +108,11 @@
         "heading": "Artikler"
     },
 
+    "toc":
+    {
+        "title": "Innhold"
+    },
+
     "metaColophon":
     {
         "title": "Kolofon",
