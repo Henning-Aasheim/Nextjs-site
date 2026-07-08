@@ -22,6 +22,13 @@ ChartJS.register(
 )
 
 export function BarChart({ data }: { data: any }) {
-    const options = {}
+    const options = {
+        plugins: {
+            tooltip: {
+                backgroundColor: 'rgba(101, 101, 126, 1)',
+                bodyColor: 'rgba(223, 198, 175, 1)',
+            }
+        }
+    }
     return <Bar data={data} options={options} />
 }

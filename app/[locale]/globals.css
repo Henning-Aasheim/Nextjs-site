@@ -53,6 +53,7 @@
 }
 
 
+
 .article{
   @apply flex flex-col gap-3 font-default tracking-wide text-base sm:text-lg
 }
@@ -116,4 +117,26 @@
 
 .navLinks {
   @apply text-white dark:text-gray-300 font-bold hover:scale-110 hover:text-background
+}
+
+@layer components {
+  .article-body {
+    counter-reset: section-counter;
+  }
+
+  .article-body h2 {
+    position: relative;
+    padding-left: 2.2rem; /* reserve space for the "§ 01" marker */
+  }
+
+  .article-body h2::before {
+    counter-increment: section-counter;
+    content: "§ " counter(section-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
 }
