@@ -24,7 +24,7 @@ export default function Footer() {
                         <div className="inline-block align-middle">
                             <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-background border"></img>
                         </div>
-                        <div className="inline-block ml-4 align-middle text-lg md:text-xl lg:text-2xl font-bold">{t('author')}</div>
+                        <div className="inline-block ml-4 align-middle text-lg md:text-xl lg:text-2xl font-bold text-white">{t('author')}</div>
                     </div>
                     <div className="text-left max-w-[34ch]">
                         <p className="text-gray-300">{t('authorDescription')}</p>
@@ -36,7 +36,7 @@ export default function Footer() {
                 <div className="inline-block text-left 
                                 mr-10 
                                 lg:mr-15">
-                    <div className="text-lg font-bold mb-2">{t('titleCol_1')}</div>
+                    <div className="text-lg font-bold mb-2 text-white border-gray-300 border-b">{t('titleCol_1')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
                             <Link href='/' className="hover:border-b hover:text-background">{t('link1_col2')}</Link>
@@ -53,7 +53,7 @@ export default function Footer() {
     {/* Third column: colophon ++ */}
 
                 <div className="inline-block text-left mr-10 lg:mr-15">
-                    <div className="text-lg font-bold mb-2">{t('titleCol_2')}</div>
+                    <div className="text-lg font-bold mb-2 text-white border-gray-300 border-b">{t('titleCol_2')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
                             <Link href='/colophon' className="hover:border-b hover:text-background">{t('link1_col3')}</Link>
@@ -70,7 +70,7 @@ export default function Footer() {
     {/* Fourth column: colophon ++ */}
 
                 <div className="inline-block text-left mr-10 lg:mr-15">
-                    <div className="text-lg font-bold mb-2">{t('titleCol_3')}</div>
+                    <div className="text-lg font-bold mb-2 text-white border-gray-300 border-b">{t('titleCol_3')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
                             <Link href='/' className="hover:border-b hover:text-background">{t('link1_col4')}</Link>

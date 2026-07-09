@@ -102,8 +102,7 @@ export default async function RootLayout({
 
     >
       <body className="min-h-full flex flex-col font-default 
-                     bg-background text-white dark:text-white 
-                       dark:bg-linear-to-r dark:from-darkAccent  dark:to-purple">
+                     bg-background text-primary dark:text-white dark:bg-darkBlue">
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider attribute='class' enableSystem defaultTheme="system">
             <Warning /> {/* Temporary warning component. If I remove this, I have to change the about page sticky profile image. */}

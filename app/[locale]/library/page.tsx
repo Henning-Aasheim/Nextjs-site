@@ -38,11 +38,11 @@ export default function Library(
 
   return (
     <div className="text-center pt-12">
-      <h1 className="text-2xl 2xs:text-6xl md:text-[130px] mb-6 font-default font-bold w-4/5 xl:w-2/5 mx-auto">
+      <h1 className="text-2xl 2xs:text-6xl md:text-[130px] mb-6 font-default font-bold w-4/5 xl:w-2/5 mx-auto text-danger">
         {t('title')}
       </h1>
 
-      <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left mb-10'>
+      <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left mb-10 text-primary'>
         <p className="dropcap" style={{ '--dropcap-color': 'var(--color-danger)' } as React.CSSProperties}>{t('description')}</p>
       </div>
       

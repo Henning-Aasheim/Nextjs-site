@@ -59,7 +59,7 @@
 }
 
 .dropcap {
-  @apply text-white leading-6;
+  @apply leading-6;
   --dropcap-color: var(--color-background);
 }
 
@@ -73,7 +73,7 @@
 }
 
 .dark .dropcap:first-letter {
-  --dropcap-color: var(--color-gold);
+  --dropcap-color: var(--color-background);
 }
 
 :lang(ja) .dropcap:first-letter {

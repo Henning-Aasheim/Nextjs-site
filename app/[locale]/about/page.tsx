@@ -166,7 +166,7 @@ export default function AboutPage({
 
   return (
     <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5">
-    <div className="flex flex-col gap-5 xl:grid xl:grid-cols-[16rem_1fr] xl:gap-5">
+    <div className="flex flex-col gap-5 xl:grid xl:grid-cols-[16rem_1fr] xl:gap-5 text-white">
 
       {/* PROFILE IMAGE */}
       <div className="flex-none text-white xl:col-start-1 xl:row-start-1">

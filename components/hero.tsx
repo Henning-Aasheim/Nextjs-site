@@ -60,7 +60,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
             {t('header2')}
           </h1>
 
-          <p className="dropcap text-[clamp(1rem,1.5vw,1.25rem)]">
+          <p className="dropcap text-white text-[clamp(1rem,1.5vw,1.25rem)]">
             {t('description')}
           </p>
         </div>
