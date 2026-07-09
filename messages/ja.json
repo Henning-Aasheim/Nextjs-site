@@ -32,9 +32,15 @@
         "titleCol_1": "サイト案内",
         "titleCol_2": "について",
         "titleCol_3": "について",
+        "link1_col2": "ホーム",
+        "link2_col2": "履歴",
+        "link3_col2": "記事",
         "link1_col3": "奥付",
         "link2_col3": "図書館",
-        "link3_col3": "仮題"
+        "link3_col3": "仮題",
+        "link1_col4": "仮題",
+        "link2_col4": "仮題",
+        "link3_col4": "仮題"
     },
 
     "warning":

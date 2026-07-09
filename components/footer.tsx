@@ -39,13 +39,13 @@ export default function Footer() {
                     <div className="text-lg font-bold mb-2">{t('titleCol_1')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b hover:text-background">Home</Link>
+                            <Link href='/' className="hover:border-b hover:text-background">{t('link1_col2')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/about' className="hover:border-b hover:text-background">About</Link>
+                            <Link href='/about' className="hover:border-b hover:text-background">{t('link2_col2')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/articles' className="hover:border-b hover:text-background">Articles</Link>
+                            <Link href='/articles' className="hover:border-b hover:text-background">{t('link3_col2')}</Link>
                         </li>
                     </ul>
                 </div>
@@ -73,13 +73,13 @@ export default function Footer() {
                     <div className="text-lg font-bold mb-2">{t('titleCol_3')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b hover:text-background">Colophon</Link>
+                            <Link href='/' className="hover:border-b hover:text-background">{t('link1_col4')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/about' className="hover:border-b hover:text-background">temp</Link>
+                            <Link href='/about' className="hover:border-b hover:text-background">{t('link2_col4')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/articles' className="hover:border-b hover:text-background">temp</Link>
+                            <Link href='/articles' className="hover:border-b hover:text-background">{t('link3_col4')}</Link>
                         </li>
                     </ul>
                 </div>

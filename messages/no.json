@@ -31,9 +31,15 @@
         "titleCol_1": "Oversikt",
         "titleCol_2": "Om",
         "titleCol_3": "Noe",
+        "link1_col2": "Hjem",
+        "link2_col2": "Om meg",
+        "link3_col2": "Artikler",
         "link1_col3": "Kolofon",
         "link2_col3": "Bibliotek",
-        "link3_col3": "temp"
+        "link3_col3": "Temp",
+        "link1_col4": "Temp",
+        "link2_col4": "Temp",
+        "link3_col4": "temp"
     },
 
     "warning":

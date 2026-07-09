@@ -24,10 +24,16 @@
         "articles": "Articles",
         "titleCol_1": "Sitemap",
         "titleCol_2": "About",
-        "titleCol_3": "Something",
+        "titleCol_3": "Articles",
+        "link1_col2": "Home",
+        "link2_col2": "About",
+        "link3_col2": "Articles",
         "link1_col3": "Colophon",
         "link2_col3": "Library",
-        "link3_col3": "temp"
+        "link3_col3": "temp",
+        "link1_col4": "temp",
+        "link2_col4": "temp",
+        "link3_col4": "temp"
     },
 
     "localeSwitcher": 

@@ -43,7 +43,7 @@ export default function Library(
       </h1>
 
       <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left mb-10'>
-        <p className="dropcap">{t('description')}</p>
+        <p className="dropcap" style={{ '--dropcap-color': 'var(--color-danger)' } as React.CSSProperties}>{t('description')}</p>
       </div>
       
       <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto'>

@@ -59,19 +59,26 @@
 }
 
 .dropcap {
-  @apply text-white leading-6
+  @apply text-white leading-6;
+  --dropcap-color: var(--color-background);
 }
 
 .dropcap:first-letter {
-  @apply float-left text-[2.9em] text-background leading-[0.8] pt-[0.1em] pr-[0.05em]
+  @apply float-left;
+  color: var(--dropcap-color);
+  font-size: 3.5rem;
+  line-height: 3rem;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
 }
 
 .dark .dropcap:first-letter {
-  @apply  text-gold
+  --dropcap-color: var(--color-gold);
 }
 
 :lang(ja) .dropcap:first-letter {
-  @apply font-default text-[2.4em]
+  @apply font-default;
+  font-size: 3.1rem;   /* rem here too — line-height (3rem) is inherited from the rule above */
 }
 
 .nameLogo {
