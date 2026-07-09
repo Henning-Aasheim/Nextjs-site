@@ -165,75 +165,67 @@ export default function AboutPage({
   const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"]; // default to Norwegian
 
   return (
-    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5 flex flex-col lg:flex-row">
+    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5">
+    <div className="flex flex-col gap-5 xl:grid xl:grid-cols-[16rem_1fr] xl:gap-5">
 
-        {/* MAIN SECTION — now the thing that's centered */}
-        <div className="relative lg:w-2/3 mx-auto flex flex-col gap-5">
+      {/* PROFILE IMAGE */}
+      <div className="flex-none text-white xl:col-start-1 xl:row-start-1">
+        <div className="xl:sticky xl:top-30 bg-danger p-5
+                         flex flex-col items-center justify-center text-center gap-0
+                         xs:flex-row xs:items-center xs:justify-center xs:text-left xs:gap-5
+                         xl:flex-col xl:items-center xl:justify-center xl:text-center xl:gap-0">
+          {/* The top-30 has to change when the warning banner is removed */}
+          <img
+            src="/profile_image.jpg"
+            alt="Profile Image"
+            className="w-40 h-40 object-cover rounded-full border-2 border-background shrink-0"
+          />
+          <div className="mt-5 xs:mt-0 xl:mt-5">
+            <h1 className="text-lg sm:text-2xl font-bold font-default">
+              {t("profile-heading")}
+            </h1>
+            <h2 className="text-base text-background sm:text-1xl font-default italic mt-1">
+              {t("work-title")}
+            </h2>
+            <h2 className="text-base text-background sm:text-1xl font-default mt-1">
+              {t("employer")}
+            </h2>
 
-            {/* PROFILE IMAGE (left column) */}
-            <div className="flex-none xl:min-w-65 text-white
-                             xl:absolute xl:top-0 xl:right-full xl:mr-5">
-                <div className="sticky flex top-30 justify-center items-center flex-col bg-danger p-5">
-                    {/* The top-30 has to change when the warning banner is removed */}
-                    <img
-                    src="/profile_image.jpg"
-                    alt="Profile Image"
-                    className="w-40 h-40 object-cover rounded-full border-2 border-background"
-                    />
-                    <div className="">
-                        <h1 className="text-lg sm:text-2xl font-bold font-default mt-5">
-                        {t("profile-heading")}
-                        </h1>
-                        <h2 className="text-base text-background sm:text-1xl font-default italic mt-1 text-center">
-                        {t("work-title")}
-                        </h2>
-                        <h2 className="text-base text-background sm:text-1xl font-default mt-1 text-center">
-                        {t("employer")}
-                        </h2>
-
-                        <div className="mt-4">
-                        <ul className="flex-row mx-auto">
-                            <li className="inline mx-2">
-                            <a
-                                href="https://bsky.app/profile/henningaasheim.bsky.social"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaBluesky className="soMeButton" />
-                            </a>
-                            </li>
-                            <li className="inline mx-2">
-                            <a
-                                href="https://github.com/Henning-Aasheim"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaGithub className="soMeButton" />
-                            </a>
-                            </li>
-                            <li className="inline mx-2">
-                            <a
-                                href="https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <FaLinkedin className="soMeButton" />
-                            </a>
-                            </li>
-                            <li className="inline mx-2">
-                            <a href="mailto:henning.aasheim@outlook.com">
-                                <IoMdMail className="inline w-7 h-7 hover:text-background" />
-                            </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                </div>
+            <div className="mt-4">
+              <ul className="flex flex-row flex-wrap gap-4
+                              justify-center xs:justify-start xl:justify-center">
+                <li>
+                  <a href="https://bsky.app/profile/henningaasheim.bsky.social" target="_blank" rel="noopener noreferrer">
+                    <FaBluesky className="soMeButton" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Henning-Aasheim" target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="soMeButton" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin className="soMeButton" />
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:henning.aasheim@outlook.com">
+                    <IoMdMail className="inline w-7 h-7 hover:text-background" />
+                  </a>
+                </li>
+              </ul>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CONTENT COLUMN */}
+      <div className="flex flex-col gap-5 xl:col-start-2 xl:row-start-1">
 
             {/* INTRODUCTION + RESUME */}
-            <section className="bg-secondary dark:bg-gray-900/60 px-10 py-5">
-                    <h1 className="text-xl sm:text-3xl font-bold font-default text-white">
+            <section className="bg-secondary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+                    <h1 className="text-xl sm:text-3xl font-bold font-default text-white mb-2">
                     {t("heading")}
                     </h1>
 
@@ -256,7 +248,7 @@ export default function AboutPage({
             </section>
 
             {/* EXPERIENCE, using data array and background <ref: index=10406213 firstWord=1 lastWord=20/> */}
-            <section className="bg-primary dark:bg-gray-900/60 px-10 py-5">
+            <section className="bg-primary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
                     <div className="mt-2 lg:mt-4">
                         <h1 className="text-xl sm:text-3xl font-bold font-default">
                             {t("experience-heading")}
@@ -267,7 +259,7 @@ export default function AboutPage({
                             return (
                                 <li
                                 key={item.id}
-                                className="mb-2 list-none flex items-center"
+                                className="mb-5 list-none flex items-center"
                                 >
                                 <div className="experienceItems group">
                                     <span>
@@ -297,7 +289,7 @@ export default function AboutPage({
             </section>
 
             {/* EDUCATION, using data array and background <ref: index=10406209 firstWord=1 lastWord=20/> */}
-            <section className="bg-danger dark:bg-gray-900/60 px-10 py-5">
+            <section className="bg-danger dark:bg-gray-900/60 px-5 sm:px-10 py-5">
                     <div className="mt-2 lg:mt-4">
                         <h1 className="text-xl sm:text-3xl font-bold font-default">
                             {t("education-heading")}
@@ -308,7 +300,7 @@ export default function AboutPage({
                             return (
                                 <li
                                 key={item.id}
-                                className="mb-2 list-none flex items-center"
+                                className="mb-5 list-none flex items-center"
                                 >
                                 <div className="experienceItems group">
                                     <span>
@@ -338,7 +330,7 @@ export default function AboutPage({
             </section>
 
             {/* PREVIOUS WORK, with background <ref: index=10406219 firstWord=1 lastWord=25/>, <ref: index=10406210 firstWord=1 lastWord=20/> */}
-            <section className="bg-secondary dark:bg-gray-900/60 px-10 py-5">
+            <section className="bg-secondary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
                     <div className="lg:mt-2">
                         <h1 className="text-xl sm:text-3xl font-bold font-default mb-6">
                             {t("previous-work")}
@@ -377,6 +369,7 @@ export default function AboutPage({
 
         </div>
 
+    </div>
     </div>
   );
 }
