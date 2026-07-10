@@ -62,7 +62,7 @@ html {
 }
 
 .dropcap {
-  @apply leading-8;
+  @apply leading-8; /* 2rem — this defines the paragraph's own line height, untouched */
   --dropcap-color: var(--color-background);
 }
 
@@ -70,10 +70,9 @@ html {
   @apply float-left;
   color: var(--dropcap-color);
   font-size: 4.1rem;
-  margin-top: 0.2rem;
-  padding-top: 0.1em;
+  line-height: 1;        /* removes ambiguous half-leading entirely — box now hugs the glyph */
+  margin-top: 0.45rem;   /* pure box-model offset — same result on every engine/platform */
   padding-right: 0.05em;
-  vertical-align: top;
 }
 
 .dark .dropcap:first-letter {
@@ -82,15 +81,16 @@ html {
 
 :lang(ja) .dropcap:first-letter {
   @apply font-default;
-  font-size: 3.9rem;   /* rem here too — line-height (3rem) is inherited from the rule above */
+  font-size: 3.9rem;
+  line-height: 1;
 }
 
 .nameLogo {
-  @apply mb-6 font-cgaramond font-bold inline-block
+  @apply mb-6 font-cgaramond font-bold inline-block text-center xl:text-left
 }
 
 :lang(ja) .nameLogo {
-  @apply font-default first-letter:font-default text-[clamp(1rem,5.5vw,4rem)] lg:text-[clamp(1.5rem,3.5vw,3.18rem)]
+  @apply font-default first-letter:font-default text-[clamp(2rem,6vw,4rem)] lg:text-[clamp(1.5rem,3.5vw,3.18rem)]
 }
 
 .soMeButton {
