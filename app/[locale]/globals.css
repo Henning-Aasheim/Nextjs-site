@@ -76,6 +76,8 @@ html {
   padding-bottom: 0;
   margin-top: 0.65rem;
   overflow: hidden;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic; /* trims to top of capital letters / baseline */
 }
 
 .dark .dropcap:first-letter {
