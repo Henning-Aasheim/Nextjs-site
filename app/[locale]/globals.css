@@ -64,11 +64,12 @@
 .dropcap:first-letter {
   @apply float-left;
   color: var(--dropcap-color);
-  font-size: 3.9rem;
+  font-size: 4rem;
   line-height: 1;        /* removes ambiguous half-leading entirely — box now hugs the glyph */
-  padding-top: 0.65rem;   /* pure box-model offset — same result on every engine/platform */
   padding-right: 0.05em;
   background-color: aqua;
+  padding-bottom: 0;
+  margin-top: 0.65rem;
 }
 
 .dark .dropcap:first-letter {
