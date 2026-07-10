@@ -68,6 +68,7 @@
   line-height: 1;        /* removes ambiguous half-leading entirely — box now hugs the glyph */
   padding-top: 0.65rem;   /* pure box-model offset — same result on every engine/platform */
   padding-right: 0.05em;
+  background-color: aqua;
 }
 
 .dark .dropcap:first-letter {
@@ -76,7 +77,7 @@
 
 :lang(ja) .dropcap:first-letter {
   @apply font-default;
-  font-size: 3.9rem;
+  font-size: 3.5rem;
   line-height: 1;
 }
 
@@ -85,7 +86,7 @@
 }
 
 :lang(ja) .nameLogo {
-  @apply font-default first-letter:font-default text-[clamp(2rem,6vw,4rem)] lg:text-[clamp(1.5rem,3.5vw,3.18rem)]
+  @apply font-default first-letter:font-default
 }
 
 .soMeButton {
