@@ -69,11 +69,12 @@ html {
 .dropcap:first-letter {
   @apply float-left;
   color: var(--dropcap-color);
-  font-size: 3.5rem;
+  font-size: 2.9rem;
   line-height: 3rem;
+  height: 3rem;
+  overflow: hidden; /* clips the float box to exactly 3rem regardless of font's internal leading */
   padding-top: 0.1em;
   padding-right: 0.05em;
-  vertical-align: top;
 }
 
 .dark .dropcap:first-letter {
