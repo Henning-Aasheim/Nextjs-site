@@ -72,11 +72,10 @@ html {
   font-size: 4rem;
   line-height: 1;        /* removes ambiguous half-leading entirely — box now hugs the glyph */
   padding-right: 0.05em;
-  background-color: aqua;
   padding-bottom: 0;
   margin-top: 0.65rem;
   overflow: hidden;
-  text-box-trim: trim-both;
+  text-box-trim: trim-both; /* This fixes the CSS on mobile. If this is not included the drop cap gets placed wrong and has an unwanted padding on the bottom */
   text-box-edge: cap alphabetic; /* trims to top of capital letters / baseline */
 }
 
