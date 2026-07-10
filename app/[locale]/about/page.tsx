@@ -224,7 +224,7 @@ export default function AboutPage({
       <div className="flex flex-col gap-5 xl:col-start-2 xl:row-start-1">
 
             {/* INTRODUCTION + RESUME */}
-            <section className="bg-secondary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+            <section className="bg-primary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
                     <h1 className="text-xl sm:text-3xl font-bold font-default text-white mb-2">
                     {t("heading")}
                     </h1>
@@ -248,7 +248,7 @@ export default function AboutPage({
             </section>
 
             {/* EXPERIENCE, using data array and background <ref: index=10406213 firstWord=1 lastWord=20/> */}
-            <section className="bg-primary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+            <section className="bg-secondary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
                     <div className="mt-2 lg:mt-4">
                         <h1 className="text-xl sm:text-3xl font-bold font-default">
                             {t("experience-heading")}
@@ -330,7 +330,7 @@ export default function AboutPage({
             </section>
 
             {/* PREVIOUS WORK, with background <ref: index=10406219 firstWord=1 lastWord=25/>, <ref: index=10406210 firstWord=1 lastWord=20/> */}
-            <section className="bg-secondary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+            <section className="bg-primary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
                     <div className="lg:mt-2">
                         <h1 className="text-xl sm:text-3xl font-bold font-default mb-6">
                             {t("previous-work")}

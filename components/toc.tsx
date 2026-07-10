@@ -43,7 +43,7 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
 
   return (
     <nav className="text-sm sticky top-8 self-start w-[clamp(10rem,20vw,16rem)]">
-      <p className="font-semibold text-lg mb-2 text-black/80 dark:text-white/80">
+      <p className="font-semibold text-xl mb-4 text-black/80 dark:text-white/80 border-b border-primary">
         {t('title')}
       </p>
       <ol className="space-y-1 border-l border-black/10 dark:border-white/10">

@@ -56,11 +56,11 @@ export default function Hero({ t }: { t: (key: string) => string }) {
             {t('header1')}
           </h1>
 
-          <h1 className="nameLogo ml-4 text-background dark:text-gold text-[clamp(2rem,9vw,5rem)] lg:text-[clamp(2rem,5vw,5rem)]">
+          <h1 className="nameLogo ml-4 text-background text-[clamp(2rem,9vw,5rem)] lg:text-[clamp(2rem,5vw,5rem)]">
             {t('header2')}
           </h1>
 
-          <p className="dropcap text-white text-[clamp(1rem,1.5vw,1.25rem)]">
+          <p className="dropcap text-white sm:text-lg lg:text-xl">
             {t('description')}
           </p>
         </div>

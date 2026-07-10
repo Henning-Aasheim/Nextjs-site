@@ -141,7 +141,6 @@ html {
     padding-left: 2.2rem; /* reserve space for the "§ 01" marker */
     padding-top: 0.5rem;
     border-top: 1px solid var(--color-primary);
-    font-size: 24px;
   }
 
   .article-body h2::before {

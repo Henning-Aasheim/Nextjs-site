@@ -70,7 +70,7 @@ export default async function Article({ params }: ArticleProps) {
           <TableOfContents headings={headings} />
         </aside>
 
-        <article className="article-body prose mx-auto prose-ul:marker:text-black prose-h2:scroll-mt-24 prose-h3:scroll-mt-24">
+        <article className="article-body prose mx-auto prose-ul:marker:text-black prose-h2:scroll-mt-24 prose-h3:scroll-mt-24 prose-h2:text-3xl">
           <ArticleContent />
         </article>
 
