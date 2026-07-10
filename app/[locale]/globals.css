@@ -62,20 +62,18 @@ html {
 }
 
 .dropcap {
-  @apply leading-6;
+  @apply leading-8;
   --dropcap-color: var(--color-background);
 }
 
 .dropcap:first-letter {
   @apply float-left;
   color: var(--dropcap-color);
-  font-size: 2.9rem;
-  line-height: 3rem;
-  height: 3rem;
-  overflow: hidden;
-  margin-top: 0.1em;
-  margin-right: 0.05em;
-  padding: 0;
+  font-size: 4.1rem;
+  margin-top: 0.2rem;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  vertical-align: top;
 }
 
 .dark .dropcap:first-letter {
@@ -84,7 +82,7 @@ html {
 
 :lang(ja) .dropcap:first-letter {
   @apply font-default;
-  font-size: 3.1rem;   /* rem here too — line-height (3rem) is inherited from the rule above */
+  font-size: 3.9rem;   /* rem here too — line-height (3rem) is inherited from the rule above */
 }
 
 .nameLogo {
