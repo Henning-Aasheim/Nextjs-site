@@ -161,5 +161,15 @@
         "year": "{approx} {value} {era}",
         "yearApprox": "{approx} {value} {era}",
         "yearRange": "{start}–{end}"
-    }
+    },
+
+        "eras": {
+        "archaic": "Arkaisk",
+        "classical": "Klassisk",
+        "medieval": "Middelalder",
+        "earlyModern": "Tidlig moderne",
+        "modern": "Moderne"
+    },
+    "loadMore": "Vis mer",
+    "showLess": "Vis mindre"
 }

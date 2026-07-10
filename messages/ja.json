@@ -161,6 +161,16 @@
     "year": "{era}{value}年",
     "yearApprox": "{era}{value}年ごろ",
     "yearRange": "{start}〜{end}"
-    }
+    },
+
+    "eras": {
+        "archaic": "アルカイック期",
+        "classical": "古典期",
+        "medieval": "中世",
+        "earlyModern": "近世",
+        "modern": "近代"
+    },
+    "loadMore": "もっと見る",
+    "showLess": "閉じる"
 }
 
