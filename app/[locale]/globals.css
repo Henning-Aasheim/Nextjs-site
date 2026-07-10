@@ -50,6 +50,10 @@
   --color-background: #dfc6af;
   --color-primary: #65657e;
   --color-secondary: #6c7869;
+
+/* New dark-mode palette */
+  --color-darkNavy: #020310;       /* page background: near-black deep blue */
+  --color-darkNavyLight: #0a0e24;  /* component background: still dark, one notch up */
 }
 
 html {

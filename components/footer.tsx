@@ -10,7 +10,11 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-    <footer className="text-sm sm:text-base mt-auto bg-secondary dark:border-gold px-6 py-6 text-center font-default">
+    <footer className="text-sm sm:text-base mt-auto px-6 py-6 text-center font-default
+                    bg-secondary
+                    dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+                    dark:border-t dark:border-secondary/60
+                    dark:shadow-[0_-4px_20px] dark:shadow-secondary/10">
         <div className="w-10/11 xs:6/8 mx-auto">
 
     {/* Upper part of the footer */}

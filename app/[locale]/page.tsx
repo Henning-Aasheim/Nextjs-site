@@ -49,11 +49,14 @@ export default async function Home({
           <Hero t={t} />
         </div>
 
-        <div className="lg:col-span-4 lg:col-start-1 lg:row-span-3 lg:row-start-4 bg-secondary">
+        {/* Blog div */}
+        <div className="lg:col-span-4 lg:col-start-1 lg:row-span-3 lg:row-start-4 
+                        bg-secondary dark:rounded-xl
+                        dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+                        dark:border dark:border-secondary/60
+                        dark:shadow-[0_0_20px] dark:shadow-secondary/10">
 
-          {/* Blog div */}
-
-          <div className="dark:bg-darkAccent text-white py-10 w-10/11 mx-auto">
+          <div className="text-white py-10 w-10/11 mx-auto">
 
             <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-white border-solid border-b">{t('articles')}</h1>
 
@@ -120,7 +123,12 @@ export default async function Home({
           </div>
         </div>
 
-        <div className="lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4 bg-danger">
+        {/* Newest article */}
+        <div className="lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4 
+                        bg-danger dark:rounded-xl
+                        dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+                        dark:border dark:border-danger/60
+                        dark:shadow-[0_0_20px] dark:shadow-danger/10">
               {newestArticle && (
                 <section className="m-5">
                   <h2 className="text-white text-4xl text-center my-5">{t('newestArticle')}</h2>
@@ -139,8 +147,16 @@ export default async function Home({
               )}
         </div>
 
-        <div className="lg:col-span-3 lg:row-span-2 lg:row-start-7 bg-primary">10</div>
-        <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-7 bg-secondary">11</div>
+        <div className="lg:col-span-3 lg:row-span-2 lg:row-start-7 
+                        bg-primary dark:rounded-xl
+                        dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
+                        dark:border dark:border-primary/60
+                        dark:shadow-[0_0_20px] dark:shadow-primary/10">10</div>
+        <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-7 
+                        bg-secondary dark:rounded-xl
+                        dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+                        dark:border dark:border-secondary/60
+                        dark:shadow-[0_0_20px] dark:shadow-secondary/10">11</div>
 
       </div>
       </div>
