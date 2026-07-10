@@ -1,7 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { BookMeta, Book, YearValue, YearRange } from '@/types'
+import { BookMeta, Book, YearValue, YearRange, BookEra } from '@/types'
+
+export const BOOK_ERAS: BookEra[] = ['archaic', 'classical', 'medieval', 'earlyModern', 'modern']
+
 
 // --- Main path to the mdx files ---
 
@@ -24,6 +27,7 @@ export function getBookById(locale: string, id: string): Book {
     image: data.image,
     year: data.year as YearValue | undefined,
     yearRange: data.yearRange as YearRange | undefined,
+    era: data.era as BookEra | undefined,
   };
 
   return { ...meta, content };
@@ -79,4 +83,19 @@ function getBookSortKey(book: BookMeta): number {
 
 export function sortBooksByDate<T extends BookMeta>(books: T[]): T[] {
   return [...books].sort((a, b) => getBookSortKey(a) - getBookSortKey(b));
+}
+
+export function groupBooksByEra<T extends BookMeta>(books: T[]): Record<BookEra, T[]> {
+  const grouped = BOOK_ERAS.reduce((acc, era) => {
+    acc[era] = []
+    return acc
+  }, {} as Record<BookEra, T[]>)
+
+  for (const book of books) {
+    if (book.era && grouped[book.era]) {
+      grouped[book.era].push(book)
+    }
+  }
+
+  return grouped
 }
