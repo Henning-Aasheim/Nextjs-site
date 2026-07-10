@@ -72,9 +72,10 @@ html {
   font-size: 2.9rem;
   line-height: 3rem;
   height: 3rem;
-  overflow: hidden; /* clips the float box to exactly 3rem regardless of font's internal leading */
-  padding-top: 0.1em;
-  padding-right: 0.05em;
+  overflow: hidden;
+  margin-top: 0.1em;
+  margin-right: 0.05em;
+  padding: 0;
 }
 
 .dark .dropcap:first-letter {
