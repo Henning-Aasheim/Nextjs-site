@@ -171,9 +171,13 @@ export default function AboutPage({
       {/* PROFILE IMAGE */}
       <div className="flex-none text-white xl:col-start-1 xl:row-start-1">
         <div className="xl:sticky xl:top-30 bg-danger p-5
-                         flex flex-col items-center justify-center text-center gap-0
-                         xs:flex-row xs:items-center xs:justify-center xs:text-left xs:gap-5
-                         xl:flex-col xl:items-center xl:justify-center xl:text-center xl:gap-0">
+                 dark:rounded-lg
+                 dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+                 dark:border dark:border-danger/60
+                 dark:shadow-[0_0_20px] dark:shadow-danger/10
+                 flex flex-col items-center justify-center text-center gap-0
+                 xs:flex-row xs:items-center xs:justify-center xs:text-left xs:gap-5
+                 xl:flex-col xl:items-center xl:justify-center xl:text-center xl:gap-0">
           {/* The top-30 has to change when the warning banner is removed */}
           <img
             src="/profile_image.jpg"
@@ -224,7 +228,11 @@ export default function AboutPage({
       <div className="flex flex-col gap-5 xl:col-start-2 xl:row-start-1">
 
             {/* INTRODUCTION + RESUME */}
-            <section className="bg-primary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+            <section className="bg-primary px-5 sm:px-10 py-5
+                     dark:rounded-lg
+                     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
+                     dark:border dark:border-primary/60
+                     dark:shadow-[0_0_20px] dark:shadow-primary/10">
                     <h1 className="text-xl sm:text-3xl font-bold font-default text-white mb-2">
                     {t("heading")}
                     </h1>
@@ -248,7 +256,11 @@ export default function AboutPage({
             </section>
 
             {/* EXPERIENCE, using data array and background <ref: index=10406213 firstWord=1 lastWord=20/> */}
-            <section className="bg-secondary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+            <section className="bg-secondary px-5 sm:px-10 py-5
+                     dark:rounded-lg
+                     dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+                     dark:border dark:border-secondary/60
+                     dark:shadow-[0_0_20px] dark:shadow-secondary/10">
                     <div className="mt-2 lg:mt-4">
                         <h1 className="text-xl sm:text-3xl font-bold font-default">
                             {t("experience-heading")}
@@ -289,7 +301,11 @@ export default function AboutPage({
             </section>
 
             {/* EDUCATION, using data array and background <ref: index=10406209 firstWord=1 lastWord=20/> */}
-            <section className="bg-danger dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+            <section className="bg-danger px-5 sm:px-10 py-5
+                     dark:rounded-lg
+                     dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+                     dark:border dark:border-danger/60
+                     dark:shadow-[0_0_20px] dark:shadow-danger/10">
                     <div className="mt-2 lg:mt-4">
                         <h1 className="text-xl sm:text-3xl font-bold font-default">
                             {t("education-heading")}
@@ -330,7 +346,11 @@ export default function AboutPage({
             </section>
 
             {/* PREVIOUS WORK, with background <ref: index=10406219 firstWord=1 lastWord=25/>, <ref: index=10406210 firstWord=1 lastWord=20/> */}
-            <section className="bg-primary dark:bg-gray-900/60 px-5 sm:px-10 py-5">
+            <section className="bg-primary px-5 sm:px-10 py-5
+                     dark:rounded-lg
+                     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
+                     dark:border dark:border-primary/60
+                     dark:shadow-[0_0_20px] dark:shadow-primary/10">
                     <div className="lg:mt-2">
                         <h1 className="text-xl sm:text-3xl font-bold font-default mb-6">
                             {t("previous-work")}
