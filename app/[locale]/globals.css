@@ -52,6 +52,11 @@
   --color-secondary: #6c7869;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 .article{
   @apply flex flex-col gap-3 font-default tracking-wide text-base sm:text-lg
 }
@@ -70,6 +75,7 @@
   background-color: aqua;
   padding-bottom: 0;
   margin-top: 0.65rem;
+  overflow: hidden;
 }
 
 .dark .dropcap:first-letter {
