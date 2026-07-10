@@ -52,10 +52,7 @@
   --color-secondary: #6c7869;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
+
 
 .article{
   @apply flex flex-col gap-3 font-default tracking-wide text-base sm:text-lg
@@ -69,10 +66,11 @@ html {
 .dropcap:first-letter {
   @apply float-left;
   color: var(--dropcap-color);
-  font-size: 3.5rem;
+  font-size: 2.9rem;
   line-height: 3rem;
   padding-top: 0.1em;
   padding-right: 0.05em;
+  font-synthesis: none; /* stop browser from faking bold/italic metrics on fallback */
 }
 
 .dark .dropcap:first-letter {
