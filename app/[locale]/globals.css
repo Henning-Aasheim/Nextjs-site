@@ -52,7 +52,10 @@
   --color-secondary: #6c7869;
 }
 
-
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 .article{
   @apply flex flex-col gap-3 font-default tracking-wide text-base sm:text-lg
