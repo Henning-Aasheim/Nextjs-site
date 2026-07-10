@@ -33,6 +33,8 @@ export type YearRange = {
   approx?: boolean;
 };
 
+export type BookEra = 'archaic' | 'classical' | 'medieval' | 'earlyModern' | 'modern'
+
 export type BookMeta = {
     id: string
     title: string
@@ -42,6 +44,7 @@ export type BookMeta = {
     image: string
     year?: YearValue
     yearRange?: YearRange
+    era?: BookEra
 }
 
 export type Book = BookMeta & {
