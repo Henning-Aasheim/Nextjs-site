@@ -7,7 +7,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
 
   return (
   <div className="lg:mx-auto bg-primary h-full
-                 dark:rounded-xl dark:overflow-hidden
+                 dark:rounded-lg dark:overflow-hidden
                  dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                  dark:border dark:border-primary/60
                  dark:shadow-[0_0_20px] dark:shadow-primary/10">

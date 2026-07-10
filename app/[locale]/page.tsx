@@ -51,7 +51,7 @@ export default async function Home({
 
         {/* Blog div */}
         <div className="lg:col-span-4 lg:col-start-1 lg:row-span-3 lg:row-start-4 
-                        bg-secondary dark:rounded-xl
+                        bg-secondary dark:rounded-lg
                         dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
                         dark:border dark:border-secondary/60
                         dark:shadow-[0_0_20px] dark:shadow-secondary/10">
@@ -125,7 +125,7 @@ export default async function Home({
 
         {/* Newest article */}
         <div className="lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4 
-                        bg-danger dark:rounded-xl
+                        bg-danger dark:rounded-lg
                         dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                         dark:border dark:border-danger/60
                         dark:shadow-[0_0_20px] dark:shadow-danger/10">
@@ -148,12 +148,12 @@ export default async function Home({
         </div>
 
         <div className="lg:col-span-3 lg:row-span-2 lg:row-start-7 
-                        bg-primary dark:rounded-xl
+                        bg-primary dark:rounded-lg
                         dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                         dark:border dark:border-primary/60
                         dark:shadow-[0_0_20px] dark:shadow-primary/10">10</div>
         <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-7 
-                        bg-secondary dark:rounded-xl
+                        bg-secondary dark:rounded-lg
                         dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
                         dark:border dark:border-secondary/60
                         dark:shadow-[0_0_20px] dark:shadow-secondary/10">11</div>
