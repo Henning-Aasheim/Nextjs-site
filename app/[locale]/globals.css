@@ -52,11 +52,6 @@
   --color-secondary: #6c7869;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
 .article{
   @apply flex flex-col gap-3 font-default tracking-wide text-base sm:text-lg
 }
@@ -69,9 +64,9 @@ html {
 .dropcap:first-letter {
   @apply float-left;
   color: var(--dropcap-color);
-  font-size: 4.1rem;
+  font-size: 3.9rem;
   line-height: 1;        /* removes ambiguous half-leading entirely — box now hugs the glyph */
-  margin-top: 0.45rem;   /* pure box-model offset — same result on every engine/platform */
+  padding-top: 0.65rem;   /* pure box-model offset — same result on every engine/platform */
   padding-right: 0.05em;
 }
 

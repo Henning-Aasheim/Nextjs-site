@@ -52,11 +52,10 @@ export default function Hero({ t }: { t: (key: string) => string }) {
         lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2
       ">
         <div className="px-6 lg:px-8 py-8 space-y-4 max-w-160 mx-auto">
-          <h1 className="nameLogo text-white text-[clamp(2rem,9vw,5rem)] lg:text-[clamp(2rem,5vw,5rem)]">
+          <h1 className="nameLogo text-white text-4xl xs:text-5xl sm:text-6xl xl:text-7xl">
             {t('header1')}
           </h1>
-
-          <h1 className="nameLogo ml-4 text-background text-[clamp(2rem,9vw,5rem)] lg:text-[clamp(2rem,5vw,5rem)]">
+          <h1 className="nameLogo ml-4 text-background dark:text-gold text-4xl xs:text-5xl sm:text-6xl xl:text-7xl">
             {t('header2')}
           </h1>
 
