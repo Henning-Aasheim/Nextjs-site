@@ -97,6 +97,11 @@ html {
   --dropcap-color: var(--color-white);
 }
 
+.dropcap-clamp-3 {
+  max-height: 6rem; /* 3 lines × leading-8 (2rem) */
+  overflow: hidden;
+}
+
 .nameLogo {
   @apply mb-6 font-cgaramond font-bold inline-block text-center xl:text-left
 }
