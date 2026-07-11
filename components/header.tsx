@@ -5,6 +5,7 @@ import { DarkMode } from "./darkmode";
 import { useTranslations } from 'next-intl';
 import LocaleSwitcher from './locale';
 import { useState } from 'react';
+import { House, User, Newspaper, Library } from 'lucide-react';
 
 
 export default function Header() {
@@ -24,10 +25,12 @@ export default function Header() {
             <div className="hidden md:flex md:flex-1" />
 
   {/* Top row on mobile: locale, dark mode, hamburger */}
-            <div className='flex w-full gap-8 mr-6 mb-2 md:mb-0 justify-end items-center order-1 md:order-2 md:flex-1'>
+            <div className='flex w-full gap-8 mr-6 mb-2 md:mb-0 justify-between md:justify-end items-center order-1 md:order-2 md:flex-1'>
               
-              <LocaleSwitcher />
-              <DarkMode />
+              <div className='flex items-center gap-8'>
+                <LocaleSwitcher />
+                <DarkMode />
+              </div>
 
   {/* Mobile menu button */}
 
@@ -95,10 +98,25 @@ export default function Header() {
             
 {/* The actual links */}
 
-              <Link href="/" className="navLinks" onClick={() => setIsOpen(false)}>{t("home")}</Link>
-              <Link href="/about" className="navLinks" onClick={() => setIsOpen(false)}>{t("about")}</Link>
-              <Link href="/articles" className="navLinks" onClick={() => setIsOpen(false)}>{t("articles")}</Link>
-              <Link href="/library" className="navLinks" onClick={() => setIsOpen(false)}>{t("library")}</Link>
+              <Link href="/" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                <House size={20} className="text-white shrink-0" />
+                <span>{t("home")}</span>
+              </Link>
+
+              <Link href="/about" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                <User size={20} className="text-white shrink-0" />
+                <span>{t("about")}</span>
+              </Link>
+
+              <Link href="/articles" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                <Newspaper size={20} className="text-white shrink-0" />
+                <span>{t("articles")}</span>
+              </Link>
+
+              <Link href="/library" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                <Library size={20} className="text-white shrink-0" />
+                <span>{t("library")}</span>
+              </Link>
             </div>
           </nav>
         </header>
