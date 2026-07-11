@@ -37,7 +37,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
                       dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                       dark:border dark:border-danger/60
                       dark:shadow-[0_0_20px] dark:shadow-danger/10'>
-        <h1 className="text-2xl 2xs:text-6xl md:text-[130px] mb-5 font-default font-bold w-4/5 mx-auto text-white">
+        <h1 className="text-4xl xs:text-6xl lg:text-[130px] mb-5 font-default font-bold mx-auto text-white">
           {t('title')}
         </h1>
 
