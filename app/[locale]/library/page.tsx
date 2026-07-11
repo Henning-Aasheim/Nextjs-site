@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { use } from 'react';
 import { Metadata } from 'next';
 import { getAllBooks, sortBooksByDate, groupBooksByEra, BOOK_ERAS } from '@/app/lib/books';
+import { formatBookYear } from '@/app/lib/yearFormat';
 import { LibraryCategory } from '@/components/library-category';
 
 type Params = { locale: string };
@@ -23,7 +24,10 @@ export default function Library({ params }: { params: Promise<Params> }) {
   const t = useTranslations('library');
   const tDate = useTranslations('Date');
 
-  const books = sortBooksByDate(getAllBooks(locale));
+  const books = sortBooksByDate(getAllBooks(locale)).map((book) => ({
+    ...book,
+    yearLabel: formatBookYear(tDate, { year: book.year, yearRange: book.yearRange }),
+  }));
   const grouped = groupBooksByEra(books);
 
   return (
@@ -45,7 +49,6 @@ export default function Library({ params }: { params: Promise<Params> }) {
             era={era}
             books={grouped[era]}
             locale={locale}
-            tDate={tDate}
           />
         ))}
       </div>

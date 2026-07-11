@@ -141,7 +141,16 @@
     {
         "title": "Bibliotek",
         "description": "I biblioteket har jeg samlet et utdrag av bøkene jeg har lest. De fleste av bøkene er bøker jeg er stolt av å ha lest og som gjerne er tenkt på som klassiske mesterverk, men er ikke begrenset til dette. Her ønsker jeg å skrive kort om handlingen og mine tanker rundt bøkene og historien rundt. Dette er hundre prosent for meg selv, men jeg må ha et sted å oppbevare tankene mine; et sted som jeg faktisk kommer til å bruke. Jeg har også delt bøkene inn i tidsepoker ettersom når de er skrevet. Dette er førklassiske, klassiske, middelalderske, tidlig moderne og moderne tekster. For meg har historie alltid vært fascinerende og å kunne dykke ned i og forstå tidligere tider, resonnerer sterkt med meg.",
-        "books": "Bøker"
+        "books": "Bøker",
+        "eras": {
+            "archaic": "Arkaisk",
+            "classical": "Klassisk",
+            "medieval": "Middelalder",
+            "earlyModern": "Tidlig moderne",
+            "modern": "Moderne"
+        },
+        "loadMore": "Vis mer",
+        "showLess": "Vis mindre"
     },
 
     "books":
@@ -161,15 +170,5 @@
         "year": "{approx} {value} {era}",
         "yearApprox": "{approx} {value} {era}",
         "yearRange": "{start}–{end}"
-    },
-
-        "eras": {
-        "archaic": "Arkaisk",
-        "classical": "Klassisk",
-        "medieval": "Middelalder",
-        "earlyModern": "Tidlig moderne",
-        "modern": "Moderne"
-    },
-    "loadMore": "Vis mer",
-    "showLess": "Vis mindre"
+    }
 }

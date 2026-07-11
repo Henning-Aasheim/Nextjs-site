@@ -143,7 +143,16 @@
     {
         "title": "Library",
         "description": "Here are the books I have read and like and I am proud of having read:)",
-        "books": "Books"
+        "books": "Books",
+        "eras": {
+            "archaic": "Archaic",
+            "classical": "Classical",
+            "medieval": "Medieval",
+            "earlyModern": "Early Modern",
+            "modern": "Modern"
+        },
+        "loadMore": "Show more",
+        "showLess": "Show less"
     },
 
     "books":
@@ -163,15 +172,5 @@
         "year": "{value} {era}",
         "yearApprox": "{approx} {value} {era}",
         "yearRange": "{start} – {end}"
-    },
-
-    "eras": {
-        "archaic": "Archaic",
-        "classical": "Classical",
-        "medieval": "Medieval",
-        "earlyModern": "Early Modern",
-        "modern": "Modern"
-    },
-    "loadMore": "Show more",
-    "showLess": "Show less"
+    }
 }

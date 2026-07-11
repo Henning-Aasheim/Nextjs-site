@@ -7,6 +7,8 @@ import { BookMeta, BookEra } from '@/types'
 import { BookCard } from './book-card'
 import { DateTranslator } from '@/app/lib/yearFormat'
 
+type BookWithYearLabel = BookMeta & { yearLabel: string | null }
+
 function useTwoRowClip(itemCount: number) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [maxHeight, setMaxHeight] = useState<number | null>(null)
@@ -58,12 +60,10 @@ export function LibraryCategory({
   era,
   books,
   locale,
-  tDate,
 }: {
   era: BookEra
-  books: BookMeta[]
+  books: (BookMeta & { yearLabel: string | null })[]
   locale: string
-  tDate: DateTranslator
 }) {
   const t = useTranslations('library')
   const [expanded, setExpanded] = useState(false)
@@ -90,7 +90,7 @@ export function LibraryCategory({
           }}
         >
           {books.map((book) => (
-            <BookCard key={book.id} book={book} locale={locale} tDate={tDate} />
+            <BookCard key={book.id} book={book} locale={locale} yearLabel={book.yearLabel} />
           ))}
         </div>
 
@@ -121,7 +121,7 @@ export function LibraryCategory({
         >
           {books.map((book) => (
             <div key={book.id} className="w-40 xs:w-48 shrink-0 snap-start">
-              <BookCard book={book} locale={locale} tDate={tDate} />
+              <BookCard book={book} locale={locale} yearLabel={book.yearLabel} />
             </div>
           ))}
         </div>
