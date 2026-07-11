@@ -84,13 +84,20 @@ export function LibraryCategory({
       </div>
 
       {/* Mobile: carousel */}
-      <div className="lg:hidden -mx-4 px-4">
-        <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {books.map((book) => (
-            <div key={book.id} className="w-28 xs:w-32 shrink-0 snap-start">
-              <BookCard book={book} yearLabel={book.yearLabel} />
+      <div className="lg:hidden -mx-4 relative">
+        <div
+            className="
+            flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth
+            px-12 xs:px-16 pb-4
+            mask-l-from-70% mask-r-from-70%
+            [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+            "
+        >
+            {books.map((book) => (
+            <div key={book.id} className="w-36 xs:w-40 shrink-0 snap-center">
+                <BookCard book={book} yearLabel={book.yearLabel} />
             </div>
-          ))}
+            ))}
         </div>
       </div>
     </section>
