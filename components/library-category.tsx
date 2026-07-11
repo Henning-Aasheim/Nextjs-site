@@ -57,7 +57,7 @@ export function LibraryCategory({
   const visibleBooks = expanded ? books : books.slice(0, VISIBLE_COUNT)
 
   return (
-    <section className={`mb-16 p-5 sm:p-6 dark:rounded-lg ${ERA_STYLES[era]}`}>
+    <section className={`mb-5 p-5 sm:p-6 dark:rounded-lg ${ERA_STYLES[era]}`}>
       <h3 className="text-3xl sm:text-4xl font-default font-bold mb-6 text-white">
         {t(`eras.${era}` as 'eras.archaic')}
       </h3>

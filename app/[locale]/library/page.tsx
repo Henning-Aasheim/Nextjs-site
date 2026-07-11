@@ -32,12 +32,20 @@ export default function Library({ params }: { params: Promise<Params> }) {
   const grouped = groupBooksByEra(books);
 
   return (
-    <div className="text-center pt-12">
-      <h1 className="text-2xl 2xs:text-6xl md:text-[130px] mb-6 font-default font-bold w-4/5 xl:w-2/5 mx-auto text-danger">
+    <div className="text-center mt-5 ">
+      <h1 className="text-2xl 2xs:text-6xl md:text-[130px] mb-5 font-default font-bold w-4/5 mx-auto text-white
+                     bg-secondary dark:rounded-lg p-5
+                        dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+                        dark:border dark:border-secondary/60
+                        dark:shadow-[0_0_20px] dark:shadow-secondary/10">
         {t('title')}
       </h1>
 
-      <div className="w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-lg text-left mb-10 text-primary dark:text-gray-300">
+      <div className="w-10/11 md:w-4/5 mx-auto text-lg text-left mb-5 text-gray-300 p-5
+                      bg-danger dark:rounded-lg
+                      dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+                      dark:border dark:border-danger/60
+                      dark:shadow-[0_0_20px] dark:shadow-danger/10">
 
         {/* Mobile: collapsible preview */}
         <div className="lg:hidden">
@@ -49,7 +57,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
         </p>
       </div>
 
-      <div className="w-10/11 md:w-4/5 mx-auto my-12 text-left">
+      <div className="w-10/11 md:w-4/5 mx-auto text-left">
         {BOOK_ERAS.map((era) => (
           <LibraryCategory
             key={era}

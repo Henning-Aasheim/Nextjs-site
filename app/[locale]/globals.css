@@ -90,7 +90,7 @@ html {
 }
 
 .dropcap-library {
-  --dropcap-color: var(--color-danger);
+  --dropcap-color: var(--color-white);
 }
 
 .dark .dropcap-library {
