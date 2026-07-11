@@ -8,51 +8,30 @@ import { BookCard } from './book-card'
 
 type BookWithYearLabel = BookMeta & { yearLabel: string | null }
 
-function useTwoRowClip(itemCount: number) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [maxHeight, setMaxHeight] = useState<number | null>(null)
-  const [canExpand, setCanExpand] = useState(false)
+const BREAKPOINTS = [
+  { minWidth: 2000, columns: 5 },
+  { minWidth: 1280, columns: 4 },
+  { minWidth: 1024, columns: 3 },
+]
+
+function getColumns(width: number) {
+  for (const bp of BREAKPOINTS) {
+    if (width >= bp.minWidth) return bp.columns
+  }
+  return 3
+}
+
+function useGridColumns() {
+  const [columns, setColumns] = useState(3)
 
   useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
+    const update = () => setColumns(getColumns(window.innerWidth))
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
 
-    const measure = () => {
-      if (!el.clientWidth) return // hidden (mobile view) — skip until visible
-      const items = Array.from(el.children) as HTMLElement[]
-      if (items.length === 0) return
-
-      const firstTop = items[0].offsetTop
-      const secondRowItem = items.find((i) => i.offsetTop > firstTop)
-
-      if (!secondRowItem) {
-        setMaxHeight(null)
-        setCanExpand(false)
-        return
-      }
-
-      const secondTop = secondRowItem.offsetTop
-      const secondRowHeight = items
-        .filter((i) => i.offsetTop === secondTop)
-        .reduce((max, i) => Math.max(max, i.offsetHeight), 0)
-
-      const thirdRowItem = items.find((i) => i.offsetTop > secondTop)
-
-      setMaxHeight(secondTop - firstTop + secondRowHeight)
-      setCanExpand(Boolean(thirdRowItem))
-    }
-
-    measure()
-    const ro = new ResizeObserver(measure)
-    ro.observe(el)
-    window.addEventListener('resize', measure)
-    return () => {
-      ro.disconnect()
-      window.removeEventListener('resize', measure)
-    }
-  }, [itemCount])
-
-  return { containerRef, maxHeight, canExpand }
+  return columns
 }
 
 export function LibraryCategory({
@@ -66,29 +45,26 @@ export function LibraryCategory({
 }) {
   const t = useTranslations('library')
   const [expanded, setExpanded] = useState(false)
-  const { containerRef, maxHeight, canExpand } = useTwoRowClip(books.length)
+  const columns = useGridColumns()
 
   if (books.length === 0) return null
 
+  const visibleCount = columns * 2
+  const canExpand = books.length > visibleCount
+  const visibleBooks = expanded ? books : books.slice(0, visibleCount)
+
   return (
-    <section className="mb-16">
+    <section className="mb-16 p-5 dark:border dark:border-danger dark:rounded-lg
+                        dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+                        dark:shadow-danger/10">
       <h3 className="text-3xl sm:text-4xl font-default font-bold mb-6">
         {t(`eras.${era}`)}
       </h3>
 
       {/* Desktop / tablet: clipped grid */}
-      <div className="hidden lg:block relative">
-        <div
-          ref={containerRef}
-          className="
-            grid grid-cols-3 xl:grid-cols-4 huge:grid-cols-5 gap-6 items-start
-            overflow-hidden transition-[max-height] duration-500 ease-in-out
-          "
-          style={{
-            maxHeight: expanded ? undefined : maxHeight ? `${maxHeight}px` : undefined,
-          }}
-        >
-          {books.map((book) => (
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-3 xl:grid-cols-4 huge:grid-cols-5 gap-6 items-start">
+          {visibleBooks.map((book) => (
             <BookCard key={book.id} book={book} locale={locale} yearLabel={book.yearLabel} />
           ))}
         </div>
