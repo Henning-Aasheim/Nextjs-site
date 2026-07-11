@@ -56,6 +56,26 @@
   --color-darkNavyLight: #0a0e24;  /* component background: still dark, one notch up */
 }
 
+:root {
+  --chart-grid-color: rgba(4, 0, 10, 0.08);
+  --chart-tick-color: rgba(4, 0, 10, 0.65);
+  --chart-border-color: rgba(4, 0, 10, 0.2);
+  --chart-legend-color: rgba(4, 0, 10, 0.8);
+  --chart-tooltip-bg: rgba(255, 255, 255, 0.95);
+  --chart-tooltip-text: rgba(4, 0, 10, 0.9);
+  --chart-tooltip-border: rgba(4, 0, 10, 0.1);
+}
+
+.dark {
+  --chart-grid-color: rgba(255, 255, 255, 0.12);
+  --chart-tick-color: rgba(255, 255, 255, 0.65);
+  --chart-border-color: rgba(255, 255, 255, 0.25);
+  --chart-legend-color: rgba(255, 255, 255, 0.85);
+  --chart-tooltip-bg: rgba(10, 14, 36, 0.95);
+  --chart-tooltip-text: rgba(255, 255, 255, 0.92);
+  --chart-tooltip-border: rgba(101, 101, 126, 0.6);
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;

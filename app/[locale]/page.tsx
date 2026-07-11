@@ -40,11 +40,11 @@ export default async function Home({
     <div className="w-full">
       <div className="m-4 xs:m-6">
         <div className="
-  flex flex-col
-  lg:grid lg:grid-cols-6 lg:grid-rows-9
-  lg:auto-rows-[1fr]      // each row = 1fr at lg
-  gap-6 max-w-[1200px] mx-auto
-">
+          flex flex-col
+          lg:grid lg:grid-cols-6 lg:grid-rows-9
+          lg:auto-rows-[1fr]      // each row = 1fr at lg
+          gap-6 max-w-[1200px] mx-auto
+        ">
         <div className="lg:col-span-6 lg:row-span-3 lg:h-full">
           <Hero t={t} />
         </div>
