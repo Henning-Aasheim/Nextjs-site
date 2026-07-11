@@ -25,7 +25,7 @@ export default function Header() {
             <div className="hidden md:flex md:flex-1" />
 
   {/* Top row on mobile: locale, dark mode, hamburger */}
-            <div className='flex w-full gap-8 mr-6 mb-2 md:mb-0 justify-between md:justify-end items-center order-1 md:order-2 md:flex-1'>
+            <div className='flex w-full gap-8 mx-6 mb-2 md:mb-0 justify-between md:justify-end items-center order-1 md:order-2 md:flex-1'>
               
               <div className='flex items-center gap-8'>
                 <LocaleSwitcher />
@@ -81,13 +81,15 @@ export default function Header() {
 
 {/* Menu links: under the buttons on mobile, centered on desktop */}
 
+{/* The actual links */}
+
             <div
               className={`
-                ${isOpen ? "flex" : "hidden"}  /* mobile: toggle */
-                md:flex                       /* desktop: always show */
-                flex-col md:flex-row
+                ${isOpen ? "flex" : "hidden"}
+                md:flex
+                flex-col items-start
+                md:flex-row md:items-center
                 gap-5 sm:gap-8
-                items-center
                 text-xl font-bold
                 order-2
                 md:order-1 md:flex-1 md:justify-center
@@ -95,26 +97,34 @@ export default function Header() {
                 whitespace-nowrap
               `}
             >
-            
+
 {/* The actual links */}
 
-              <Link href="/" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                <House size={20} className="text-white shrink-0" />
+              <Link href="/" className="navLinks flex items-center gap-3 text-gray-300 hover:text-white active:text-white" onClick={() => setIsOpen(false)}>
+                <span className="w-6 flex justify-center shrink-0 md:hidden">
+                  <House size={25} />
+                </span>
                 <span>{t("home")}</span>
               </Link>
 
-              <Link href="/about" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                <User size={20} className="text-white shrink-0" />
+              <Link href="/about" className="navLinks flex items-center gap-3" onClick={() => setIsOpen(false)}>
+                <span className="w-6 flex justify-center shrink-0 md:hidden">
+                  <User size={25} />
+                </span>
                 <span>{t("about")}</span>
               </Link>
 
-              <Link href="/articles" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                <Newspaper size={20} className="text-white shrink-0" />
+              <Link href="/articles" className="navLinks flex items-center gap-3" onClick={() => setIsOpen(false)}>
+                <span className="w-6 flex justify-center shrink-0 md:hidden">
+                  <Newspaper size={25} />
+                </span>
                 <span>{t("articles")}</span>
               </Link>
 
-              <Link href="/library" className="navLinks flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                <Library size={20} className="text-white shrink-0" />
+              <Link href="/library" className="navLinks flex items-center gap-3" onClick={() => setIsOpen(false)}>
+                <span className="w-6 flex justify-center shrink-0 md:hidden">
+                  <Library size={25} />
+                </span>
                 <span>{t("library")}</span>
               </Link>
             </div>
