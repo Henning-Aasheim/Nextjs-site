@@ -60,7 +60,7 @@ export default async function Article({ params }: ArticleProps) {
           alt={frontmatter.title}
           className="object-cover aspect-3/2 mx-auto w-full"
         />
-        <h1 className="text-xl sm:text-4xl font-default font-bold text-center py-5 mx-auto text-primary">{frontmatter.title}</h1>
+        <h1 className="text-xl sm:text-4xl font-default font-bold text-center py-5 mx-auto text-primary dark:text-white">{frontmatter.title}</h1>
         <div className="font-default text-black/70 dark:text-white/70 pb-5 text-center">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
       </div>
 
@@ -70,7 +70,9 @@ export default async function Article({ params }: ArticleProps) {
           <TableOfContents headings={headings} />
         </aside>
 
-        <article className="article-body prose mx-auto prose-ul:marker:text-black prose-h2:scroll-mt-24 prose-h3:scroll-mt-24 prose-h2:text-3xl">
+        <article className="article-body prose mx-auto prose-ul:marker:text-black prose-h2:scroll-mt-24 prose-h3:scroll-mt-24 prose-h2:text-3xl
+                            dark:prose-h2:text-white dark:prose-h3:text-gray-300 dark:prose-p:text-gray-300 dark:prose-em:text-white
+                            dark:prose-strong:text-white dark:prose-li:text-gray-300 dark:prose-ul:marker:text-white">
           <ArticleContent />
         </article>
 
