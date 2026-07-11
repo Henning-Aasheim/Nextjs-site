@@ -135,7 +135,7 @@ html {
 }
 
 .toggleButtons {
-  @apply text-white hover:scale-110 hover:text-background cursor-pointer
+  @apply text-gray-300 hover:scale-110 hover:text-white cursor-pointer
 }
 
 .navLinks {
