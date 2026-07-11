@@ -128,7 +128,7 @@ export default async function Home({
                         bg-danger dark:rounded-lg
                         dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                         dark:border dark:border-danger/60
-                        dark:shadow-[0_0_20px] dark:shadow-danger/10">
+                        dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40">
               {newestArticle && (
                 <section className="m-5">
                   <h2 className="text-white text-4xl text-center my-5">{t('newestArticle')}</h2>

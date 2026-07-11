@@ -32,7 +32,10 @@ export default function LocaleSwitcher() {
         <Earth size={30} className='toggleButtons'/>
       </button>
       {isOpen && (
-        <div className='absolute left-0 bg-primary dark:bg-darkAccent rounded-md py-2 w-50 mt-2 shadow-lg z-20'>
+        <div className='absolute left-0 md:left-auto md:right-0 bg-secondary rounded-md py-2 w-50 mt-2 shadow-lg z-20
+                        dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+                        dark:border dark:border-secondary/60
+                        dark:shadow-[0_0_20px] dark:shadow-secondary/10'>
           <button onClick={() => switchLocale('en-GB')} className={locale === 'en-GB' ? 'localeButton font-bold' : 'localeButton'}>{t('en')}</button>
           <button onClick={() => switchLocale('ja')}    className={locale === 'ja'    ? 'localeButton font-bold' : 'localeButton'}>{t('ja')}</button>
           <button onClick={() => switchLocale('no')}    className={locale === 'no'    ? 'localeButton font-bold' : 'localeButton'}>{t('no')}</button>
