@@ -1,34 +1,44 @@
-// components/book-card.tsx
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { BookMeta } from '@/types'
 
 export function BookCard({
   book,
-  locale,
   yearLabel,
 }: {
   book: BookMeta
-  locale: string
   yearLabel: string | null
 }) {
   return (
     <div className="group">
-      <div className="rounded-lg shadow-md bg-black text-white dark:hover:bg-black overflow-hidden transform-gpu will-change-transform group-hover:-translate-y-3 transition-transform duration-300 pb-2">
-        <div className="flex flex-col h-full items-center">
-          <Link href={`/library/${book.id}`} className="relative flex flex-col h-full items-center">
-            <div className="w-full overflow-hidden z-0">
-              <Image src={book.image} alt={book.title} width={600} height={900} className="block w-full h-auto object-cover" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t ease-in-out from-black via-darkBg/80 via-30% to-transparent" />
-            <div className="absolute bottom-4 w-9/10 mx-auto text-left z-10 min-w-0">
-              <h2 className="text-lg font-bold truncate">{book.title}</h2>
-              <p>{book.author}</p>
-              {yearLabel && <p>{yearLabel}</p>}
-            </div>
-          </Link>
+      <Link
+        href={`/library/${book.id}`}
+        className="
+          flex flex-col
+          transform-gpu will-change-transform
+          group-hover:-translate-y-2 transition-transform duration-300
+        "
+      >
+        {/* Image: full cover shown, never cropped */}
+        <div className="relative w-full aspect-[2/3]">
+          <Image
+            src={book.image}
+            alt={book.title}
+            fill
+            className="object-contain"
+            sizes="(max-width: 1024px) 30vw, 12vw"
+          />
         </div>
-      </div>
+
+        {/* Text: below the image, natural height */}
+        <div className="px-2 py-2 text-left">
+          <h2 className="text-sm font-bold leading-tight line-clamp-2 text-primary dark:text-white">
+            {book.title}
+          </h2>
+          <p className="text-xs text-primary/70 dark:text-gray-300 truncate">{book.author}</p>
+          {yearLabel && <p className="text-xs text-primary/50 dark:text-gray-400">{yearLabel}</p>}
+        </div>
+      </Link>
     </div>
   )
 }

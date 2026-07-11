@@ -48,7 +48,6 @@ export default function Library({ params }: { params: Promise<Params> }) {
             key={era}
             era={era}
             books={grouped[era]}
-            locale={locale}
           />
         ))}
       </div>

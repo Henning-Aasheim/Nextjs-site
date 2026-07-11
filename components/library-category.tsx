@@ -1,83 +1,80 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { BookMeta, BookEra } from '@/types'
 import { BookCard } from './book-card'
 
-type BookWithYearLabel = BookMeta & { yearLabel: string | null }
+const VISIBLE_COUNT = 6
 
-const BREAKPOINTS = [
-  { minWidth: 2000, columns: 5 },
-  { minWidth: 1280, columns: 4 },
-  { minWidth: 1024, columns: 3 },
-]
-
-function getColumns(width: number) {
-  for (const bp of BREAKPOINTS) {
-    if (width >= bp.minWidth) return bp.columns
-  }
-  return 3
-}
-
-function useGridColumns() {
-  const [columns, setColumns] = useState(3)
-
-  useEffect(() => {
-    const update = () => setColumns(getColumns(window.innerWidth))
-    update()
-    window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
-  }, [])
-
-  return columns
+const ERA_STYLES: Record<BookEra, string> = {
+  archaic: `
+    bg-primary
+    dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
+    dark:border dark:border-primary/60
+    dark:shadow-[0_0_20px] dark:shadow-primary/10
+  `,
+  classical: `
+    bg-secondary
+    dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+    dark:border dark:border-secondary/60
+    dark:shadow-[0_0_20px] dark:shadow-secondary/10
+  `,
+  medieval: `
+    bg-danger
+    dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+    dark:border dark:border-danger/60
+    dark:shadow-[0_0_20px] dark:shadow-danger/10
+  `,
+  earlyModern: `
+    bg-primary
+    dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
+    dark:border dark:border-primary/60
+    dark:shadow-[0_0_20px] dark:shadow-primary/10
+  `,
+  modern: `
+    bg-secondary
+    dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+    dark:border dark:border-secondary/60
+    dark:shadow-[0_0_20px] dark:shadow-secondary/10
+  `,
 }
 
 export function LibraryCategory({
   era,
   books,
-  locale,
 }: {
   era: BookEra
   books: (BookMeta & { yearLabel: string | null })[]
-  locale: string
 }) {
   const t = useTranslations('library')
   const [expanded, setExpanded] = useState(false)
-  const columns = useGridColumns()
 
   if (books.length === 0) return null
 
-  const visibleCount = columns * 2
-  const canExpand = books.length > visibleCount
-  const visibleBooks = expanded ? books : books.slice(0, visibleCount)
+  const canExpand = books.length > VISIBLE_COUNT
+  const visibleBooks = expanded ? books : books.slice(0, VISIBLE_COUNT)
 
   return (
-    <section className="mb-16 p-5 dark:border dark:border-danger dark:rounded-lg
-                        dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-                        dark:shadow-danger/10">
-      <h3 className="text-3xl sm:text-4xl font-default font-bold mb-6">
-        {t(`eras.${era}`)}
+    <section className={`mb-16 p-5 sm:p-6 dark:rounded-lg ${ERA_STYLES[era]}`}>
+      <h3 className="text-3xl sm:text-4xl font-default font-bold mb-6 text-white">
+        {t(`eras.${era}` as 'eras.archaic')}
       </h3>
 
-      {/* Desktop / tablet: clipped grid */}
+      {/* Desktop / tablet: fixed 8-column grid */}
       <div className="hidden lg:block">
-        <div className="grid grid-cols-3 xl:grid-cols-4 huge:grid-cols-5 gap-6 items-start">
+        <div className="grid grid-cols-6 gap-3 items-start">
           {visibleBooks.map((book) => (
-            <BookCard key={book.id} book={book} locale={locale} yearLabel={book.yearLabel} />
+            <BookCard key={book.id} book={book} yearLabel={book.yearLabel} />
           ))}
         </div>
 
-        {canExpand && !expanded && (
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background dark:from-darkNavy to-transparent pointer-events-none" />
-        )}
-
         {canExpand && (
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-6">
             <button
               onClick={() => setExpanded((v) => !v)}
-              className="flex items-center gap-2 font-bold text-primary dark:text-white hover:text-danger cursor-pointer"
+              className="flex items-center gap-2 font-bold text-white hover:text-background cursor-pointer"
             >
               {expanded ? t('showLess') : t('loadMore')}
               {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
@@ -88,15 +85,10 @@ export function LibraryCategory({
 
       {/* Mobile: carousel */}
       <div className="lg:hidden -mx-4 px-4">
-        <div
-          className="
-            flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth
-            [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
-          "
-        >
+        <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {books.map((book) => (
-            <div key={book.id} className="w-40 xs:w-48 shrink-0 snap-start">
-              <BookCard book={book} locale={locale} yearLabel={book.yearLabel} />
+            <div key={book.id} className="w-28 xs:w-32 shrink-0 snap-start">
+              <BookCard book={book} yearLabel={book.yearLabel} />
             </div>
           ))}
         </div>
