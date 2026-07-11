@@ -16,7 +16,7 @@ export function ExpandableText({
 
   return (
     <div>
-      <p className={`dropcap ${dropcapClassName} ${expanded ? '' : `dropcap-clamp-3 mask-b-from-80%`}`}>
+      <p className={`dropcap ${dropcapClassName} ${expanded ? '' : `dropcap-clamp-3 mask-b-from-70%`}`}>
         {children}
       </p>
 
