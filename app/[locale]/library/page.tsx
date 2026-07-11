@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { getAllBooks, sortBooksByDate, groupBooksByEra, BOOK_ERAS } from '@/app/lib/books';
 import { formatBookYear } from '@/app/lib/yearFormat';
 import { LibraryCategory } from '@/components/library-category';
+import { ExpandableText } from '@/components/expandable-text';
 
 type Params = { locale: string };
 
@@ -37,7 +38,13 @@ export default function Library({ params }: { params: Promise<Params> }) {
       </h1>
 
       <div className="w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-lg text-left mb-10 text-primary dark:text-gray-300">
-        <p className="dropcap" style={{ '--dropcap-color': 'var(--color-danger)' } as React.CSSProperties}>
+
+        {/* Mobile: collapsible preview */}
+        <div className="lg:hidden">
+          <ExpandableText dropcapClassName='dropcap-library'>{t('description')}</ExpandableText>
+        </div>
+
+        <p className="dropcap dropcap-library hidden lg:block">
           {t('description')}
         </p>
       </div>
