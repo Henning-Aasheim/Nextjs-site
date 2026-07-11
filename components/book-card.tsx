@@ -25,7 +25,7 @@ export function BookCard({
             src={book.image}
             alt={book.title}
             fill
-            className="object-contain"
+            className="object-contain object-top"
             sizes="(max-width: 1024px) 30vw, 12vw"
           />
         </div>
