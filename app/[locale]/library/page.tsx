@@ -36,7 +36,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
         {t('title')}
       </h1>
 
-      <div className="w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left mb-10 text-primary">
+      <div className="w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-lg text-left mb-10 text-primary dark:text-gray-300">
         <p className="dropcap" style={{ '--dropcap-color': 'var(--color-danger)' } as React.CSSProperties}>
           {t('description')}
         </p>

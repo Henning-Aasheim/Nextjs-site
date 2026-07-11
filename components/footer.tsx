@@ -93,7 +93,7 @@ export default function Footer() {
 
     {/* Lower part of the footer */}
 
-            <div className="mb-5 border-solid border-b border-gray-300 dark:border-gold"/>
+            <div className="mb-5 border-solid border-b border-gray-300 dark:border-secondary"/>
 
             <div className="text-gray-300">
                 © {currentYear} {t('copyright')} {t('description')}
