@@ -16,7 +16,7 @@ export function BookCard({
     <div className="group">
       <div className="rounded-lg shadow-md bg-black text-white dark:hover:bg-black overflow-hidden transform-gpu will-change-transform group-hover:-translate-y-3 transition-transform duration-300 pb-2">
         <div className="flex flex-col h-full items-center">
-          <Link href={`/${locale}/library/${book.id}`} className="relative flex flex-col h-full items-center">
+          <Link href={`/library/${book.id}`} className="relative flex flex-col h-full items-center">
             <div className="w-full overflow-hidden z-0">
               <Image src={book.image} alt={book.title} width={600} height={900} className="block w-full h-auto object-cover" />
             </div>

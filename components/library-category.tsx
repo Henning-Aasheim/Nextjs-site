@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { BookMeta, BookEra } from '@/types'
 import { BookCard } from './book-card'
-import { DateTranslator } from '@/app/lib/yearFormat'
 
 type BookWithYearLabel = BookMeta & { yearLabel: string | null }
 
