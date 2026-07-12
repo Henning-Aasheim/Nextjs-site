@@ -4,9 +4,17 @@ export interface ArticlePost {
     date: string
 }
 
+export type ArticleCategory =
+  | 'politics'
+  | 'international'
+  | 'economy'
+  | 'society'
+  | 'webDevelopment'
+
 export interface ArticleMeta {
     image: string
-    category: string
+    category: ArticleCategory
+    tags?: string[]
     title: string
     author: string
     date: string

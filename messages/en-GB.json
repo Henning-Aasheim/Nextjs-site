@@ -116,6 +116,23 @@
         "heading": "Articles"
     },
 
+    "categories": {
+        "all": "All",
+        "politics": "Politics",
+        "international": "International",
+        "economy": "Economy",
+        "society": "Society",
+        "webDevelopment": "Web Development"
+    },
+
+    "categoriesShort": {
+        "politics": "Politics",
+        "international": "Int'l",
+        "economy": "Economy",
+        "society": "Society",
+        "webDevelopment": "Web Dev"
+    },
+
     "toc":
     {
         "title": "Contents"

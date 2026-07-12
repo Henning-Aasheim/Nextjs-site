@@ -114,6 +114,23 @@
         "heading": "記事の一覧"
     },
 
+    "categories": {
+        "all": "すべて",
+        "politics": "政治",
+        "international": "国際",
+        "economy": "経済",
+        "society": "社会",
+        "webDevelopment": "ウェブ開発"
+    },
+
+    "categoriesShort": {
+        "politics": "政治",
+        "international": "国際",
+        "economy": "経済",
+        "society": "社会",
+        "webDevelopment": "ウェブ"
+    },
+
     "toc":
     {
         "title": "目次"

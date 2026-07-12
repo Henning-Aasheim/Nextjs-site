@@ -1,11 +1,18 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { ArticleMeta, ArticleContent } from '@/types'
+import { ArticleMeta, ArticleContent, ArticleCategory } from '@/types'
 
 import { remark } from 'remark'
 import html from 'remark-html'
 
+export const ARTICLE_CATEGORIES: ArticleCategory[] = [
+  'politics',
+  'international',
+  'economy',
+  'society',
+  'webDevelopment',
+]
 
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles')
 

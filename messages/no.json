@@ -114,6 +114,23 @@
         "heading": "Artikler"
     },
 
+    "categories": {
+        "all": "Alle",
+        "politics": "Politikk",
+        "international": "Internasjonalt",
+        "economy": "Økonomi",
+        "society": "Samfunn",
+        "webDevelopment": "Webutvikling"
+    },
+
+    "categoriesShort": {
+        "politics": "Politikk",
+        "international": "Inter.",
+        "economy": "Økonomi",
+        "society": "Samfunn",
+        "webDevelopment": "IT"
+    },
+
     "toc":
     {
         "title": "Innhold"

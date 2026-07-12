@@ -2,6 +2,7 @@ import { getAllArticles, getArticleData } from "../lib/articles"
 import Link from "next/link"
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import Hero from "@/components/hero";
+import { CategoryBadge } from "@/components/category-badge";
 
 export default async function Home({
   params,
@@ -98,14 +99,9 @@ export default async function Home({
                                 {format.dateTime(dateTime, { dateStyle: "long" })}
                               </span>
 
-                              <span
-                                className="
-                                  uppercase tracking-wide text-xs font-semibold text-background
-                                  text-right sm:text-left sm:min-w-[7rem]
-                                "
-                              >
-                                {article.frontmatter.category}
-                              </span>
+                              <div className="text-right sm:text-left sm:min-w-[7rem]">
+                                <CategoryBadge category={article.frontmatter.category} variant="compact" />
+                              </div>
                             </div>
 
                             {/* Title */}
