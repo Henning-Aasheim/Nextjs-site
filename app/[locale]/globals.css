@@ -120,6 +120,10 @@ html {
   line-height: 1;
 }
 
+.dark .dropcap:first-letter {
+  --dropcap-color: var(--color-danger);
+}
+
 .dropcap-library {
   --dropcap-color: var(--color-white);
 }
@@ -134,11 +138,11 @@ html {
 }
 
 .nameLogo {
-  @apply mb-6 font-cgaramond font-bold inline-block text-center xl:text-left
+  @apply mb-6 font-bold lg:inline-block text-center xl:text-left text-6xl s:text-5xl sm:text-6xl
 }
 
 :lang(ja) .nameLogo {
-  @apply font-default first-letter:font-default
+  @apply font-default first-letter:font-default text-4xl 2xs:text-5xl
 }
 
 .soMeButton {

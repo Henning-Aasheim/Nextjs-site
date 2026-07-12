@@ -233,7 +233,7 @@ export default function AboutPage({
                      dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                      dark:border dark:border-primary/60
                      dark:shadow-[0_0_20px] dark:shadow-primary/10">
-                    <h1 className="text-xl sm:text-3xl font-bold font-default text-white mb-2">
+                    <h1 className="text-xl sm:text-3xl font-bold text-white mb-2">
                     {t("heading")}
                     </h1>
 
@@ -242,7 +242,7 @@ export default function AboutPage({
                     </p>
 
                     <div className="flex justify-center lg:justify-start">
-                    <a href={cvHref} className="mb-3 font-bold text-lg font-default  text-background bg-danger/70
+                    <a href={cvHref} className="mb-3 font-bold text-lg text-background bg-danger/70
                                                 border-2 border-background hover:text-white hover:border-white
                                                 hover:bg-danger/60
                                                 dark:rounded-3xl dark:text-gray-300 dark:border dark:border-danger

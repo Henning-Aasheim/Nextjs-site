@@ -69,7 +69,7 @@ export default async function Home({
                   return (
                     <li
                       key={article.id}
-                      className="group w-full mx-auto border-b border-white py-4 hover:bg-primary"
+                      className="group w-full mx-auto border-b border-white py-4 hover:bg-primary dark:hover:bg-secondary/20"
                     >
                       <Link
                         href={`/articles/${article.id}`}

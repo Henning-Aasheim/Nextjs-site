@@ -20,7 +20,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
                     left-7/24  -translate-x-7/24
                     lg:left-1/4  lg:-translate-x-1/4
                     xl:left-9/40 xl:-translate-x-9/40 
-                    border border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
+                    border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
     <span className='absolute mt-5 left-1/2 transform -translate-x-1/2 uppercase text-sm md:text-base'>{trsl('centre')}</span>
 
@@ -28,7 +28,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
                     left-17/24  -translate-x-17/24
                     lg:left-3/4 lg:-translate-x-3/4 
                     xl:left-31/40 xl:-translate-x-31/40 
-                    border border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
+                    border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
     <span className='absolute mt-5 right-10 text-right uppercase text-sm md:text-base'>{trsl('right')}</span>
 
@@ -53,10 +53,10 @@ export default function Hero({ t }: { t: (key: string) => string }) {
       {/* Text side */}
       <div className="w-full lg:w-2/3 lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2">
         <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
-          <h1 className="nameLogo text-white text-[clamp(2.25rem,4vw+1rem,6rem)]">{t('header1')}</h1>
-          <h1 className="nameLogo ml-4 text-background text-[clamp(2.25rem,4vw+1rem,6rem)]">{t('header2')}</h1>
+          <h1 className="nameLogo text-white">{t('header1')}</h1>
+          <h1 className="nameLogo lg:ml-4 text-background dark:text-danger">{t('header2')}</h1>
 
-          <p className="dropcap text-white xl:text-lg lg:pr-50">
+          <p className="dropcap text-white xl:text-lg lg:pr-25 xl:pr-50">
             {t('description')}
           </p>
         </div>
