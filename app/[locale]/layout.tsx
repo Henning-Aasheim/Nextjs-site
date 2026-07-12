@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond, Asul } from "next/font/google";
+import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond, Asul, Cutive_Mono, New_Tegomin } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -55,6 +55,16 @@ const asul = Asul({
   weight: ["400", "700"],
 })
 
+const cutive = Cutive_Mono({
+  variable: '--font-cutive',
+  weight: "400",
+})
+
+const tegomin = New_Tegomin({
+  variable: '--font-tegomin',
+  weight: '400'
+})
+
 // Metadata for the main page
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata>{
@@ -104,7 +114,9 @@ export default async function RootLayout({
                   ${quint.variable} 
                   ${felipa.variable} 
                   ${cgaramond.variable}
-                  ${asul.variable} h-full antialiased`}
+                  ${asul.variable}
+                  ${cutive.variable}
+                  ${tegomin.variable} h-full antialiased`}
 
     >
       <body className="min-h-full flex flex-col font-default dark:font-dark

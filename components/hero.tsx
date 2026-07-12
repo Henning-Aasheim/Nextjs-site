@@ -11,10 +11,11 @@ export default function Hero({ t }: { t: (key: string) => string }) {
                  dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                  dark:border dark:border-primary/60
                  dark:shadow-[0_0_20px] dark:shadow-primary/10">
+                  
     {/* Labels */}
     <div className='relative z-10 text-white hidden xs:block'>
 
-    <span className='absolute mt-5 left-10 uppercase text-sm md:text-base'>{trsl('left')}</span>
+    <span className='hero-top absolute mt-5 left-10'>{trsl('left')}</span>
 
     <div className='absolute mt-8 hidden md:block transform
                     left-7/24  -translate-x-7/24
@@ -22,7 +23,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
                     xl:left-9/40 xl:-translate-x-9/40 
                     border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
-    <span className='absolute mt-5 left-1/2 transform -translate-x-1/2 uppercase text-sm md:text-base'>{trsl('centre')}</span>
+    <span className='hero-top left-1/2 transform -translate-x-1/2'>{trsl('centre')}</span>
 
     <div className='absolute mt-8 hidden md:block transform
                     left-17/24  -translate-x-17/24
@@ -30,7 +31,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
                     xl:left-31/40 xl:-translate-x-31/40 
                     border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
-    <span className='absolute mt-5 right-10 text-right uppercase text-sm md:text-base'>{trsl('right')}</span>
+    <span className='hero-top right-10 text-right'>{trsl('right')}</span>
 
   </div>
 

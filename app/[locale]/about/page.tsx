@@ -43,24 +43,32 @@ const civita = [
     url: "https://civita.no/notat/mikrobrikkekrigen/",
     title: "Mikrobrikkekrigen",
     image: "/civita/mikrobrikker.webp",
+    date: "2024-04-09",
+    category: ["International", "China"],
   },
   {
     id: 2,
     url: "https://civita.no/notat/det-indiske-valget-er-india-pa-vei-bort-fra-sin-demokratiske-tradisjon/",
     title: "Det indiske valget",
     image: "/civita/india.webp",
+    date: "2024-04-19",
+    category: ["Democracy", "International", "India"],
   },
   {
     id: 3,
     url: "https://civita.no/podcast/digitale-utfordringer-del-3-kampen-om-mikrochipene/",
     title: "Kampen om mikrochipene",
     image: "/civita/podkast.webp",
+    date: "2024-04-09",
+    category: ["International", "China"],
   },
   {
     id: 4,
     url: "https://civita.no/notat/har-norsk-offentlig-sektor-et-produktivitetsproblem/",
     title: "Norsk offentlig sektor og produktivitet",
     image: "/civita/offentlig_sektor.webp",
+    date: "2024-04-09",
+    category: ["Public Expenditures", "Norway", "Economy", "Welfare"],
   },
 ];
 
@@ -182,10 +190,11 @@ export default function AboutPage({
           <img
             src="/profile_image.jpg"
             alt="Profile Image"
-            className="w-40 h-40 object-cover rounded-full border-2 border-background shrink-0"
+            className="w-40 h-40 object-cover rounded-full border border-danger shrink-0"
           />
           <div className="mt-5 xs:mt-0 xl:mt-5">
-            <h1 className="text-lg sm:text-2xl font-bold">
+
+            <h1 className="text-2xl font-bold">
               {t("profile-heading")}
             </h1>
             <h2 className="text-base text-background sm:text-1xl italic mt-1">
@@ -364,14 +373,15 @@ export default function AboutPage({
                                 <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
                                 <a href={item.url}>
                                     <div className="flex flex-row flex-wrap mb-4 items-center overflow-hidden 
-                                                    bg-gray-200/10 shadow-lg dark:bg-gray-950 text-background
+                                                    bg-gray-200/10 shadow-lg dark:bg-primary/30 text-gray-300
+                                                    dark:rounded-lg
                                                     hover:scale-102 hover:transition-transform 
                                                     transition-colors duration-600 ease-in-out
                                                     hover:shadow-xl hover:text-white">
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4
+                                        className="w-full h-38 sm:h-28 sm:w-45 object-cover sm:mr-4
                                                    mask-b-from-90% sm:mask-r-from-90% sm:mask-b-from-100%"
                                     />
                                     <h2 className="font-bold text-base 2xs:text-xl md:text-2xl flex-1
