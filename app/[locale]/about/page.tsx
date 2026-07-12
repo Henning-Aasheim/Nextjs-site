@@ -242,12 +242,14 @@ export default function AboutPage({
                     </p>
 
                     <div className="flex justify-center lg:justify-start">
-                    <a href={cvHref} className="mb-3 font-bold text-lg font-default 
-                                                text-background bg-danger/70
-                                                border-2 border-background 
-                                                hover:text-white hover:border-white" 
+                    <a href={cvHref} className="mb-3 font-bold text-lg font-default  text-background bg-danger/70
+                                                border-2 border-background hover:text-white hover:border-white
+                                                hover:bg-danger/60
+                                                dark:rounded-3xl dark:text-gray-300 dark:border dark:border-danger
+                                                dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+                                                dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40" 
                     download>
-                        <div className="p-3 hover:bg-gray-200/5">
+                        <div className="p-3">
                             <FileDown className="inline mr-2 mb-0.5" />
                             {t("resume")}
                         </div>
@@ -255,7 +257,7 @@ export default function AboutPage({
                     </div>
             </section>
 
-            {/* EXPERIENCE, using data array and background <ref: index=10406213 firstWord=1 lastWord=20/> */}
+            {/* EXPERIENCE */}
             <section className="bg-secondary px-5 sm:px-10 py-5
                      dark:rounded-lg
                      dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
@@ -300,7 +302,7 @@ export default function AboutPage({
                     </div>
             </section>
 
-            {/* EDUCATION, using data array and background <ref: index=10406209 firstWord=1 lastWord=20/> */}
+            {/* EDUCATION */}
             <section className="bg-danger px-5 sm:px-10 py-5
                      dark:rounded-lg
                      dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
@@ -345,7 +347,7 @@ export default function AboutPage({
                     </div>
             </section>
 
-            {/* PREVIOUS WORK, with background <ref: index=10406219 firstWord=1 lastWord=25/>, <ref: index=10406210 firstWord=1 lastWord=20/> */}
+            {/* PREVIOUS WORK */}
             <section className="bg-primary px-5 sm:px-10 py-5
                      dark:rounded-lg
                      dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
