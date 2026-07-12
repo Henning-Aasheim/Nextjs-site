@@ -72,7 +72,7 @@ export default async function Article({ params }: ArticleProps) {
 
         <article className="article-body prose mx-auto prose-ul:marker:text-black prose-h2:scroll-mt-24 prose-h3:scroll-mt-24 prose-h2:text-3xl
                             dark:prose-h2:text-white dark:prose-h3:text-gray-300 dark:prose-p:text-gray-300 dark:prose-em:text-white
-                            dark:prose-strong:text-white dark:prose-li:text-gray-300 dark:prose-ul:marker:text-white">
+                            dark:prose-strong:text-white dark:prose-li:text-gray-300 dark:prose-ul:marker:text-white dark:prose-a:text-white">
           <ArticleContent />
         </article>
 
