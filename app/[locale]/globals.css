@@ -195,6 +195,17 @@ html {
   @apply font-tegomin
 }
 
+.categoryBadge,
+.categoryFilterButton {
+  @apply font-default;
+}
+
+:lang(ja) .categoryBadge,
+:lang(ja) .categoryFilterButton {
+  font-family: var(--font-tegomin), var(--font-default);
+  font-size: 1rem; /* bumped up from the 0.65–0.75rem badge/button sizes */
+}
+
 @layer components {
   .article-body {
     counter-reset: section-counter;

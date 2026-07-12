@@ -62,29 +62,29 @@ export function ArticlesList({ articles, category, }: { articles: ArticleContent
       {/* Filter bar */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         <button
-          onClick={() => setActive('all')}
-          className={`px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
-            ${active === 'all'
-              ? 'bg-primary text-white border-primary'
-              : 'bg-transparent text-primary/70 dark:text-white/60 border-primary/30 dark:border-white/20 hover:text-primary dark:hover:text-white'
-            }`}
-        >
-          {tCat('all')}
-        </button>
+            onClick={() => setActive('all')}
+            className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
+                ${active === 'all'
+                ? 'bg-primary text-white border-primary'
+                : 'bg-transparent text-primary/70 dark:text-white/60 border-primary/30 dark:border-white/20 hover:text-primary dark:hover:text-white'
+                }`}
+            >
+            {tCat('all')}
+            </button>
 
-        {ARTICLE_CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActive(cat)}
-            className={`px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
-              ${active === cat
-                ? CATEGORY_STYLES[cat].replace(/bg-\S+\/15/, 'bg-current/20')
-                : 'bg-transparent text-black/50 dark:text-white/50 border-black/20 dark:border-white/20 hover:text-black dark:hover:text-white'
-              }`}
-          >
-            {tCat(cat)}
-          </button>
-        ))}
+            {ARTICLE_CATEGORIES.map((cat) => (
+            <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
+                ${active === cat
+                    ? CATEGORY_STYLES[cat].replace(/bg-\S+\/15/, 'bg-current/20')
+                    : 'bg-transparent text-black/50 dark:text-white/50 border-black/20 dark:border-white/20 hover:text-black dark:hover:text-white'
+                }`}
+            >
+                {tCat(cat)}
+            </button>
+            ))}
       </div>
 
       {/* Grid */}
@@ -96,7 +96,7 @@ export function ArticlesList({ articles, category, }: { articles: ArticleContent
 
           return (
             <article key={article.id} className={`group hover:scale-105 transition-transform duration-100 mb-5
-                                                rounded-lg overflow-hidden
+                                                rounded-lg overflow-hidden text-gray-300 hover:text-white
                                                 ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}>
               <div className="flex justify-center mb-5">
                 <Link href={`/articles/${article.id}`} className="w-full">
@@ -110,7 +110,7 @@ export function ArticlesList({ articles, category, }: { articles: ArticleContent
                       <CategoryBadge category={article.frontmatter.category} />
                     </div>
                   </div>
-                  <h2 className="text-lg sm:text-2xl font-default font-semibold text-center text-gray-300 hover:text-white">
+                  <h2 className="text-lg sm:text-2xl font-default font-semibold text-center">
                     {article.frontmatter.title}
                   </h2>
                   <div className="font-default text-black/70 dark:text-gray-300">

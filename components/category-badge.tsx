@@ -50,7 +50,7 @@ export function CategoryBadge({
 
   return (
     <span
-      className={`inline-block rounded-full font-semibold uppercase tracking-wide backdrop-blur-sm whitespace-nowrap
+      className={`categoryBadge inline-block rounded-full font-semibold uppercase tracking-wide backdrop-blur-sm whitespace-nowrap
         ${variant === 'compact' ? 'text-[0.65rem] px-2 py-0.5' : 'text-xs px-3 py-1'}
         ${CATEGORY_STYLES[category]}`}
     >
