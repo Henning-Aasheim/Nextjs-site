@@ -14,7 +14,7 @@
 
 @theme {
   --font-default:
-    var(--font-cgaramond),
+    var(--font-asul),
     var(--font-yuji),
     system-ui,
     -apple-system,
@@ -22,6 +22,7 @@
     "Segoe UI",
     sans-serif;
 
+    /* This is only for the case where I decide to change the dark mode font */
   --font-dark:
     var(--font-asul),
     var(--font-yuji),
