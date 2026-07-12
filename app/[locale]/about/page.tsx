@@ -185,13 +185,13 @@ export default function AboutPage({
             className="w-40 h-40 object-cover rounded-full border-2 border-background shrink-0"
           />
           <div className="mt-5 xs:mt-0 xl:mt-5">
-            <h1 className="text-lg sm:text-2xl font-bold font-default">
+            <h1 className="text-lg sm:text-2xl font-bold">
               {t("profile-heading")}
             </h1>
-            <h2 className="text-base text-background sm:text-1xl font-default italic mt-1">
+            <h2 className="text-base text-background sm:text-1xl italic mt-1">
               {t("work-title")}
             </h2>
-            <h2 className="text-base text-background sm:text-1xl font-default mt-1">
+            <h2 className="text-base text-background sm:text-1xl mt-1">
               {t("employer")}
             </h2>
 
@@ -237,7 +237,7 @@ export default function AboutPage({
                     {t("heading")}
                     </h1>
 
-                    <p className="text-base sm:text-xl mb-10 text-left font-default text-gray-200 dark:text-gray-300">
+                    <p className="text-base sm:text-xl mb-10 text-left text-gray-200 dark:text-gray-300">
                     {t("description")}
                     </p>
 
@@ -264,7 +264,7 @@ export default function AboutPage({
                      dark:border dark:border-secondary/60
                      dark:shadow-[0_0_20px] dark:shadow-secondary/10">
                     <div className="mt-2 lg:mt-4">
-                        <h1 className="text-xl sm:text-3xl font-bold font-default">
+                        <h1 className="text-xl sm:text-3xl font-bold">
                             {t("experience-heading")}
                         </h1>
                         <ol className="list-disc list-inside mb-10 mt-8">
@@ -309,7 +309,7 @@ export default function AboutPage({
                      dark:border dark:border-danger/60
                      dark:shadow-[0_0_20px] dark:shadow-danger/10">
                     <div className="mt-2 lg:mt-4">
-                        <h1 className="text-xl sm:text-3xl font-bold font-default">
+                        <h1 className="text-xl sm:text-3xl font-bold">
                             {t("education-heading")}
                         </h1>
                         <ol className="list-disc list-inside mb-10 mt-8">
@@ -354,7 +354,7 @@ export default function AboutPage({
                      dark:border dark:border-primary/60
                      dark:shadow-[0_0_20px] dark:shadow-primary/10">
                     <div className="lg:mt-2">
-                        <h1 className="text-xl sm:text-3xl font-bold font-default mb-6">
+                        <h1 className="text-xl sm:text-3xl font-bold mb-6">
                             {t("previous-work")}
                         </h1>
 
@@ -372,7 +372,7 @@ export default function AboutPage({
                                         src={item.image}
                                         alt={item.title}
                                         className="w-full sm:h-full h-38 sm:w-45 object-cover sm:mr-4
-                                                mask-b-from-90% sm:mask-r-from-90% sm:mask-b-from-100%"
+                                                   mask-b-from-90% sm:mask-r-from-90% sm:mask-b-from-100%"
                                     />
                                     <h2 className="font-bold text-base 2xs:text-xl md:text-2xl flex-1
                                                     items-center sm:items-baseline 

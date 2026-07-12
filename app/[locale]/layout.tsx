@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond, Asul } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -50,6 +50,11 @@ const cgaramond = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 })
 
+const asul = Asul({
+  variable: '--font-asul',
+  weight: ["400", "700"],
+})
+
 // Metadata for the main page
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata>{
@@ -98,10 +103,11 @@ export default async function RootLayout({
                   ${yuji.variable} 
                   ${quint.variable} 
                   ${felipa.variable} 
-                  ${cgaramond.variable} h-full antialiased`}
+                  ${cgaramond.variable}
+                  ${asul.variable} h-full antialiased`}
 
     >
-      <body className="min-h-full flex flex-col font-default 
+      <body className="min-h-full flex flex-col font-default dark:font-dark
                      bg-background text-primary dark:text-white dark:bg-darkNavy">
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider attribute='class' enableSystem defaultTheme="system">
