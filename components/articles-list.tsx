@@ -47,7 +47,7 @@ export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
   `,
 }
 
-export function ArticlesList({ articles, category, }: { articles: ArticleContent[], category: ArticleCategory }) {
+export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
   const tCat = useTranslations('categories')
   const format = useFormatter()
   const [active, setActive] = useState<ArticleCategory | 'all'>('all')
