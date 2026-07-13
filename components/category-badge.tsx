@@ -40,11 +40,11 @@ export const TAG_STYLES: Record<ArticleCategory, string> = {
 }
 
 export const CATEGORY_TEXT: Record<ArticleCategory, string> = {
-  politics: `text-primary dark:text-primary`,
-  international: `text-secondary dark:text-secondary`,
-  economy: `text-danger dark:text-danger`,
-  society: `text-gold dark:text-gold`,
-  webDevelopment: `text-purple dark:text-purple`,
+  politics: `text-politics-text dark:text-politics-text`,
+  international: `text-international-text dark:text-international-text`,
+  economy: `text-economy-text dark:text-economy-text`,
+  society: `text-society-text dark:text-society-text`,
+  webDevelopment: `text-web-dev-text dark:text-web-dev-text`,
 }
 
 export function CategoryBadge({

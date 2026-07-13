@@ -70,6 +70,12 @@
 /* New dark-mode palette */
   --color-darkNavy: #020310;       /* page background: near-black deep blue */
   --color-darkNavyLight: #0a0e24;  /* component background: still dark, one notch up */
+
+  --color-politics-text: #4E4EBC;
+  --color-international-text: #64BC4E;
+  --color-economy-text: #BC4E4E;
+  --color-society-text: #BCA04E; /* same as --color-gold */
+  --color-web-dev-text: #BC4EA9;
 }
 
 :root {
