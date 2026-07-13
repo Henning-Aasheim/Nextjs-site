@@ -9,7 +9,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const {locale} = await params;
 
   setRequestLocale(locale);
-  console.log('This redirects to', locale)
 
   const t = await getTranslations('metaColophon');
 
@@ -27,7 +26,7 @@ export default function Colophon({ params }: { params: Promise<{ locale: string,
   
   const t = useTranslations('colophon');
 
-
+  console.log('This redirects to', locale)
   return (
     <div className="text-center pt-12">
 
