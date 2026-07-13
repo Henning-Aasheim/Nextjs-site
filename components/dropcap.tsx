@@ -1,3 +1,4 @@
+// components/dropcap.tsx
 import type { CSSProperties } from 'react'
 
 export function DropCap({
@@ -10,11 +11,11 @@ export function DropCap({
   className?: string
 }) {
   return (
-    <p
+    <div
       className={`dropcap ${className}`}
       style={{ '--dropcap-color': color } as CSSProperties}
     >
       {children}
-    </p>
+    </div>
   )
 }

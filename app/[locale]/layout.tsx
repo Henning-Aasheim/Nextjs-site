@@ -67,6 +67,7 @@ const tegomin = New_Tegomin({
 
 const ebgaramond = EB_Garamond({
   variable: '--font-ebgaramond',
+  subsets: ['latin', 'greek'],
   weight: ["400", "500", "600", "700", "800"]
 })
 

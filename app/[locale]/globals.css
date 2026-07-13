@@ -116,7 +116,8 @@ html {
   --dropcap-color: var(--color-background);
 }
 
-.dropcap:first-letter {
+.dropcap:first-letter,
+.dropcap > p:first-child::first-letter {
   @apply float-left;
   color: var(--dropcap-color);
   font-size: 4rem;
@@ -129,13 +130,15 @@ html {
   text-box-edge: cap alphabetic; /* trims to top of capital letters / baseline */
 }
 
-:lang(ja) .dropcap:first-letter {
+:lang(ja) .dropcap:first-letter,
+:lang(ja) .dropcap > p:first-child::first-letter {
   @apply font-default;
   font-size: 3.5rem;
   line-height: 1;
 }
 
-.dark .dropcap:first-letter {
+.dark .dropcap:first-letter,
+.dark .dropcap > p:first-child::first-letter {
   --dropcap-color: var(--color-danger);
 }
 
@@ -145,6 +148,20 @@ html {
 
 .dark .dropcap-library:first-letter {
   --dropcap-color: var(--color-white);
+}
+
+.dropcap-colophon:first-letter,
+.dropcap-colophon > p:first-child::first-letter {
+  font-size: 3.5rem;   /* scaled down from 4rem to match the shorter line box */
+  line-height: 1;
+  margin-top: 0.5rem;  /* re-eyeball this one visually — vertical alignment is font-metric-sensitive */
+}
+
+:lang(ja) .dropcap-colophon:first-letter,
+:lang(ja) .dropcap-colophon > p:first-child::first-letter {
+  font-size: 3.1rem;   /* scaled down from 4rem to match the shorter line box */
+  line-height: 1;
+  margin-top: 0.3rem;  /* re-eyeball this one visually — vertical alignment is font-metric-sensitive */
 }
 
 .dropcap-clamp-3 {
