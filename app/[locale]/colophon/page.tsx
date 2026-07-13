@@ -9,6 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const {locale} = await params;
 
   setRequestLocale(locale);
+  console.log('This redirects to', locale)
 
   const t = await getTranslations('metaColophon');
 
