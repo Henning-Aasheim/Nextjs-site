@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 import { BookMeta, BookEra } from '@/types'
 import { BookCard } from './book-card'
 
-const VISIBLE_COUNT = 6
+const VISIBLE_COUNT = 5
 
 const ERA_STYLES: Record<BookEra, string> = {
   archaic: `
@@ -64,7 +64,7 @@ export function LibraryCategory({
 
       {/* Desktop / tablet: fixed 8-column grid */}
       <div className="hidden lg:block">
-        <div className="grid grid-cols-6 gap-3 items-start">
+        <div className="grid grid-cols-5 gap-5 items-start">
           {visibleBooks.map((book) => (
             <BookCard key={book.id} book={book} yearLabel={book.yearLabel} />
           ))}

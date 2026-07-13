@@ -23,7 +23,7 @@ export default async function ArticlesPage({ params }: { params: Promise<{ local
 
   return (
     <div className="text-center pt-12 mb-10 w-10/11 mx-auto 2xl:w-5/6">
-      <h1 className="text-3xl font-bold mb-8 font-default">{t('heading')}</h1>
+      <h1 className="text-5xl font-bold mb-8 font-default">{t('heading')}</h1>
       <ArticlesList articles={articles} />
     </div>
   );

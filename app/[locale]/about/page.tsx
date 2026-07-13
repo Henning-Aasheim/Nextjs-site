@@ -190,7 +190,7 @@ export default function AboutPage({
           <img
             src="/profile_image.jpg"
             alt="Profile Image"
-            className="w-40 h-40 object-cover rounded-full border border-danger shrink-0"
+            className="w-40 h-40 object-cover rounded-full border-2 dark:border border-background dark:border-danger shrink-0"
           />
           <div className="mt-5 xs:mt-0 xl:mt-5">
 
