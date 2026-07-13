@@ -30,7 +30,8 @@ export default async function Colophon({ params }: { params: Promise<{ locale: s
       </h1>
 
       <div className='w-10/11 md:w-4/5 lg:w-1/2 mx-auto text-left mb-10
-                      prose prose-p:text-lg '>
+                      prose prose-p:text-lg
+                      dark:prose-p:text-gray-300 '>
         <ColophonContent />
       </div>
     </div>
