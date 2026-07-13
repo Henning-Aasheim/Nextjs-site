@@ -2,7 +2,7 @@ import { getAllArticles, getArticleData } from "../lib/articles"
 import Link from "next/link"
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import Hero from "@/components/hero";
-import { CategoryBadge } from "@/components/category-badge";
+import { CategoryText } from "@/components/category-badge";
 
 export default async function Home({
   params,
@@ -100,7 +100,7 @@ export default async function Home({
                               </span>
 
                               <div className="text-right sm:text-left sm:min-w-[7rem]">
-                                <CategoryBadge category={article.frontmatter.category} variant="compact" />
+                                <CategoryText category={article.frontmatter.category} />
                               </div>
                             </div>
 

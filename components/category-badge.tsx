@@ -39,6 +39,14 @@ export const TAG_STYLES: Record<ArticleCategory, string> = {
   webDevelopment: `text-purple border border-purple/40 dark:text-purple/90 dark:border-purple/40`,
 }
 
+export const CATEGORY_TEXT: Record<ArticleCategory, string> = {
+  politics: `text-primary dark:text-primary`,
+  international: `text-secondary dark:text-secondary`,
+  economy: `text-danger dark:text-danger`,
+  society: `text-gold dark:text-gold`,
+  webDevelopment: `text-purple dark:text-purple`,
+}
+
 export function CategoryBadge({
   category,
   variant = 'default',
@@ -59,6 +67,14 @@ export function CategoryBadge({
   )
 }
 
+export function CategoryText({ category }: { category: ArticleCategory }) {
+    const t = useTranslations('categoriesShort')
+
+    return <span className={`font-semibold uppercase ${CATEGORY_TEXT[category]}`}>{t(category)}</span>
+}
+
+
+// If I need it, it is here
 export function TagBadge({ category, tag }: { category: ArticleCategory; tag: string }) {
   return (
     <span
