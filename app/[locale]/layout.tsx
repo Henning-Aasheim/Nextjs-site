@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond, Asul, Cutive_Mono, New_Tegomin } from "next/font/google";
+import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond, Asul, Cutive_Mono, New_Tegomin, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -65,6 +65,11 @@ const tegomin = New_Tegomin({
   weight: '400'
 })
 
+const ebgaramond = EB_Garamond({
+  variable: '--font-ebgaramond',
+  weight: ["400", "500", "600", "700", "800"]
+})
+
 // Metadata for the main page
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata>{
@@ -116,7 +121,8 @@ export default async function RootLayout({
                   ${cgaramond.variable}
                   ${asul.variable}
                   ${cutive.variable}
-                  ${tegomin.variable} h-full antialiased`}
+                  ${tegomin.variable}
+                  ${ebgaramond.variable} h-full antialiased`}
 
     >
       <body className="min-h-full flex flex-col font-default dark:font-dark
