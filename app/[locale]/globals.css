@@ -190,7 +190,7 @@ html {
 }
 
 .navLinks {
-  @apply text-gray-300 font-bold hover:scale-110 hover:text-white
+  @apply text-gray-300 font-bold hover:scale-110 hover:text-white focus:text-white
 }
 
 .hero-top {
