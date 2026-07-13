@@ -39,12 +39,13 @@ export const TAG_STYLES: Record<ArticleCategory, string> = {
   webDevelopment: `text-purple border border-purple/40 dark:text-purple/90 dark:border-purple/40`,
 }
 
+// Keeping this if I want to make changes
 export const CATEGORY_TEXT: Record<ArticleCategory, string> = {
-  politics: `text-politics-text dark:text-politics-text`,
-  international: `text-international-text dark:text-international-text`,
-  economy: `text-economy-text dark:text-economy-text`,
-  society: `text-society-text dark:text-society-text`,
-  webDevelopment: `text-web-dev-text dark:text-web-dev-text`,
+  politics: `text-background dark:text-background`,
+  international: `text-background dark:text-background`,
+  economy: `text-background dark:text-background`,
+  society: `text-background dark:text-background`,
+  webDevelopment: `text-background dark:text-background`,
 }
 
 export function CategoryBadge({

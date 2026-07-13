@@ -116,6 +116,11 @@
         "heading": "Articles"
     },
 
+    "article-list":
+    {
+        "title": "Recent Articles"
+    },
+
     "categories": {
         "all": "All",
         "politics": "Politics",

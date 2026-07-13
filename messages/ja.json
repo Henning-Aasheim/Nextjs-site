@@ -114,6 +114,11 @@
         "heading": "記事の一覧"
     },
 
+    "article-list":
+    {
+        "title": "最新の記事の一覧"
+    },
+
     "categories": {
         "all": "すべて",
         "politics": "政治",

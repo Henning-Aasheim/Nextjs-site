@@ -114,6 +114,11 @@
         "heading": "Artikler"
     },
 
+    "article-list":
+    {
+        "title": "Nylige artikler"
+    },
+
     "categories": {
         "all": "Alle",
         "politics": "Politikk",
