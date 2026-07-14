@@ -137,6 +137,7 @@ html {
   line-height: 1;
   text-box-edge: ideographic-ink alphabetic; /* or just `text-box-trim: none;` */
   margin-top: 0.4rem; /* re-eyeball, since the trimmed box height changes */
+  text-box-trim: none
 }
 
 .dark .dropcap:first-letter,
@@ -166,6 +167,7 @@ html {
   margin-top: 0.3rem;  /* re-eyeball this one visually — vertical alignment is font-metric-sensitive */
   text-box-edge: ideographic-ink alphabetic; /* or just `text-box-trim: none;` */
   margin-top: 0.4rem; /* re-eyeball, since the trimmed box height changes */
+  text-box-trim: none
 }
 
 .dropcap-clamp-3 {
