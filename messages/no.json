@@ -116,7 +116,8 @@
 
     "article-list":
     {
-        "title": "Nylige artikler"
+        "title": "Nylige artikler",
+        "no-articles": "Ingen artikler i denne kategorien enda."
     },
 
     "categories": {
@@ -125,7 +126,8 @@
         "international": "Internasjonalt",
         "economy": "Økonomi",
         "society": "Samfunn",
-        "webDevelopment": "Webutvikling"
+        "webDevelopment": "Webutvikling",
+        "no-articles": "Ingen artikler i denne kategorien enda."
     },
 
     "categoriesShort": {

@@ -96,7 +96,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
 
           return (
             <article key={article.id} className={`group hover:scale-105 transition-transform duration-100 mb-5
-                                                rounded-lg overflow-hidden text-gray-300 hover:text-white
+                                                rounded-lg overflow-hidden text-gray-300 hover:text-white h-[410px]
                                                 ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}>
               <div className="flex justify-center mb-5">
                 <Link href={`/articles/${article.id}`} className="w-full">
@@ -110,7 +110,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                       <CategoryBadge category={article.frontmatter.category} />
                     </div>
                   </div>
-                  <h2 className="text-lg sm:text-2xl font-default font-semibold text-center">
+                  <h2 className="text-lg sm:text-2xl font-default font-semibold text-center p-2">
                     {article.frontmatter.title}
                   </h2>
                   <div className="font-default text-black/70 dark:text-gray-300">
@@ -124,10 +124,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-black/50 dark:text-white/50 mt-10">
-          {/* Optional: add an "emptyState" key to messages if you want this translated */}
-          No articles in this category yet.
-        </p>
+        <p className="text-black/50 dark:text-white/50 mt-10">{tCat('no-articles')}</p>
       )}
     </>
   )

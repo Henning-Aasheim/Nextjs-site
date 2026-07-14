@@ -118,7 +118,8 @@
 
     "article-list":
     {
-        "title": "Recent Articles"
+        "title": "Recent Articles",
+        "no-articles": "No articles in this category yet."
     },
 
     "categories": {
@@ -127,7 +128,8 @@
         "international": "International",
         "economy": "Economy",
         "society": "Society",
-        "webDevelopment": "Web Development"
+        "webDevelopment": "Web Development",
+        "no-articles": "No articles in this category yet."
     },
 
     "categoriesShort": {

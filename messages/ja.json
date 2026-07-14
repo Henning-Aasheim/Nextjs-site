@@ -116,7 +116,8 @@
 
     "article-list":
     {
-        "title": "最新の記事の一覧"
+        "title": "最新の記事の一覧",
+        "no-articles": "この範疇にて記事はいまだ有らず。"
     },
 
     "categories": {
@@ -125,7 +126,8 @@
         "international": "国際",
         "economy": "経済",
         "society": "社会",
-        "webDevelopment": "ウェブ開発"
+        "webDevelopment": "ウェブ開発",
+        "no-articles": "この範疇にて記事はいまだ有らず。"
     },
 
     "categoriesShort": {
