@@ -27,6 +27,12 @@ export interface ArticleContent {
     content: string
 }
 
+export interface ColophonContent {
+    locale: string
+    frontmatter: ArticleMeta
+    content: string
+}
+
 export type Era = 'BCE'|'CE'
 
 export type YearValue = {

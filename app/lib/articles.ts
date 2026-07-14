@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { ArticleMeta, ArticleContent, ArticleCategory } from '@/types'
+import { ArticleMeta, ArticleContent, ArticleCategory, ColophonContent } from '@/types'
 
 import { remark } from 'remark'
 import html from 'remark-html'
@@ -15,6 +15,7 @@ export const ARTICLE_CATEGORIES: ArticleCategory[] = [
 ]
 
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles')
+const colophonDirectory = path.join(process.cwd(), 'content', 'colophon')
 
 export function getAllArticles(): ArticleContent[] {
   const fileNames = fs.readdirSync(articlesDirectory).filter((f) => f.endsWith('.mdx'))
@@ -39,6 +40,18 @@ export function getArticleById(id: string): ArticleContent | null {
   const { data, content } = matter(raw)
   return {
     id,
+    frontmatter: data as ArticleMeta,
+    content,
+  }
+}
+
+export function getArticleByLocale(locale: string): ColophonContent | null {
+  const filePath = path.join(colophonDirectory, `${locale}.mdx`)
+  if (!fs.existsSync(filePath)) return null
+  const raw = fs.readFileSync(filePath, 'utf8')
+  const { data, content } = matter(raw)
+  return {
+    locale,
     frontmatter: data as ArticleMeta,
     content,
   }
