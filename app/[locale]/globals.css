@@ -135,6 +135,8 @@ html {
   @apply font-default;
   font-size: 3.5rem;
   line-height: 1;
+  text-box-edge: ideographic-ink alphabetic; /* or just `text-box-trim: none;` */
+  margin-top: 0.4rem; /* re-eyeball, since the trimmed box height changes */
 }
 
 .dark .dropcap:first-letter,
@@ -162,11 +164,18 @@ html {
   font-size: 3.1rem;   /* scaled down from 4rem to match the shorter line box */
   line-height: 1;
   margin-top: 0.3rem;  /* re-eyeball this one visually — vertical alignment is font-metric-sensitive */
+  text-box-edge: ideographic-ink alphabetic; /* or just `text-box-trim: none;` */
+  margin-top: 0.4rem; /* re-eyeball, since the trimmed box height changes */
 }
 
 .dropcap-clamp-3 {
   max-height: 6rem; /* 3 lines × leading-8 (2rem) */
   overflow: hidden;
+}
+
+:lang(ja) .dateText {
+  text-align: left;
+  padding-right: 0;
 }
 
 .nameLogo {

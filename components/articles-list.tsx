@@ -5,6 +5,7 @@ import { useTranslations, useFormatter } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ArticleContent, ArticleCategory } from '@/types'
 import { CategoryBadge, CATEGORY_STYLES } from './category-badge'
+import { Calendar } from 'lucide-react'
 
 const ARTICLE_CATEGORIES: ArticleCategory[] = [
   'politics',
@@ -95,29 +96,38 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
           const dateTime = new Date(article.frontmatter.date)
 
           return (
-            <article key={article.id} className={`group hover:scale-105 transition-transform duration-100 mb-5
-                                                rounded-lg overflow-hidden text-gray-300 hover:text-white h-[410px]
-                                                ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}>
-              <div className="flex justify-center mb-5">
-                <Link href={`/articles/${article.id}`} className="w-full">
-                  <div className="relative mb-2">
-                    <img
-                      src={article.frontmatter.image}
-                      alt={article.frontmatter.title}
-                      className="w-full aspect-3/2 object-cover"
-                    />
-                    <div className="absolute top-2 left-2">
-                      <CategoryBadge category={article.frontmatter.category} />
-                    </div>
+            <article
+              className={`group hover:scale-105 transition-transform duration-100 mb-5
+                          rounded-lg overflow-hidden text-gray-300 hover:text-white
+                          flex flex-col
+                          ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
+              key={article.id}
+            >
+              <Link href={`/articles/${article.id}`} className="flex flex-col">
+                {/* Image: 3:2 ratio, scales with the card's actual rendered width */}
+                <div className="relative w-full aspect-3/2 shrink-0">
+                  <img
+                    src={article.frontmatter.image}
+                    alt={article.frontmatter.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute top-2 left-2">
+                    <CategoryBadge category={article.frontmatter.category} />
                   </div>
-                  <h2 className="text-lg sm:text-2xl font-default font-semibold text-center p-2">
+                </div>
+
+                {/* Text: natural height, bounded by line-clamp so it can't run away */}
+                <div className="p-3">
+                  <h2 className="text-lg sm:text-xl font-default font-semibold text-center leading-7 line-clamp-2 min-h-14">
                     {article.frontmatter.title}
                   </h2>
-                  <div className="font-default text-black/70 dark:text-gray-300">
-                    {format.dateTime(dateTime, { dateStyle: 'long' })}
+
+                  <div className="flex items-center justify-start gap-1.5 text-sm text-gray-300 dark:text-gray-400 mt-2">
+                    <Calendar size={13} className="shrink-0" />
+                    <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </article>
           )
         })}

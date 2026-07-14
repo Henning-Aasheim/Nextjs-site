@@ -133,7 +133,7 @@ export function RecentArticlesList({
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 w-full text-sm text-white">
                       <div className="w-full flex justify-between sm:w-auto sm:justify-start sm:items-center sm:gap-2">
-                        <span className="sm:min-w-[9rem] text-right pr-10 lg:pr-15">
+                        <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15">
                           {format.dateTime(dateTime, { dateStyle: 'long' })}
                         </span>
                         <span className="sm:min-w-[7rem] text-right sm:text-left">
