@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond, Asul, Cutive_Mono, New_Tegomin, EB_Garamond } from "next/font/google";
+import { Playfair_Display, Playfair_Display_SC, Yuji_Syuku, Noto_Serif, Quintessential, Felipa, Cormorant_Garamond, Cutive_Mono, New_Tegomin, EB_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -50,10 +51,12 @@ const cgaramond = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 })
 
-const asul = Asul({
-  variable: '--font-asul',
-  weight: ["400", "700"],
-})
+const asul = localFont({
+  src: "./fonts/Asul-Regular-Extended.ttf",
+  variable: "--font-asul",
+  weight: "400",
+  display: "swap",
+});
 
 const cutive = Cutive_Mono({
   variable: '--font-cutive',

@@ -65,8 +65,8 @@ export default async function Article({ params }: ArticleProps) {
       </div>
 
       {/* [TOC] [article, fixed width, always centered] [spacer, same size as TOC] */}
-      <div className="lg:grid lg:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)_clamp(10rem,20vw,16rem)] lg:gap-5 lg:justify-center mx-auto">
-        <aside className="hidden lg:block sticky top-8 self-start">
+      <div className="md:grid md:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)] xl:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)_clamp(10rem,20vw,16rem)] md:gap-10 lg:justify-center mx-auto">
+        <aside className="hidden md:block sticky top-8 self-start">
           <TableOfContents headings={headings} />
         </aside>
 
