@@ -222,7 +222,7 @@ html {
 }
 
 .localeButton {
-  @apply block w-full py-2 px-10 text-white dark:text-gray-300 hover:bg-danger hover:text-background
+  @apply block w-full py-2 px-10 text-gray-300 dark:text-gray-300 hover:bg-white/20 hover:text-white
        dark:hover:bg-secondary/20 dark:hover:text-white cursor-pointer
 }
 

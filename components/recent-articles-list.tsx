@@ -89,10 +89,10 @@ export function RecentArticlesList({
         </button>
 
         {isOpen && (
-          <div className="absolute left-0 right-0 bg-secondary rounded-md py-2 mt-2 shadow-lg z-20
-                          dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
-                          dark:border dark:border-secondary/60
-                          dark:shadow-[0_0_20px] dark:shadow-secondary/10">
+          <div className="absolute left-0 right-0 bg-primary rounded-md py-2 mt-2 shadow-lg z-20
+                          dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
+                          dark:border dark:border-primary/60
+                          dark:shadow-[0_0_20px] dark:shadow-primary/10">
             <button
               onClick={() => selectCategory('all')}
               className={active === 'all' ? 'localeButton font-bold' : 'localeButton'}

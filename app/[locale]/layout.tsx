@@ -52,9 +52,19 @@ const cgaramond = Cormorant_Garamond({
 })
 
 const asul = localFont({
-  src: "./fonts/Asul-Regular-Extended.ttf",
+  src: [
+    {
+      path: "./fonts/Asul-Regular-Extended.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Asul-Bold-Extended.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-asul",
-  weight: "400",
   display: "swap",
 });
 
