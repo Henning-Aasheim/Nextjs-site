@@ -66,10 +66,12 @@
   --color-darkBg: #04000a;
   --color-darkAccent: #0a0019;
 
-  --color-danger: #9b5353;
+  --color-danger: #780000;
   --color-background: #dfc6af;
-  --color-primary: #65657e;
-  --color-secondary: #6c7869;
+  --color-primary: #58508d;
+  --color-secondary: #50868d;
+  --color-tertiary: #be9903;
+  --color-quarternary: #49053e;
 
 /* New dark-mode palette */
   --color-darkNavy: #020310;       /* page background: near-black deep blue */
@@ -81,6 +83,13 @@
   --color-society-text: #BCA04E; /* same as --color-gold */
   --color-web-dev-text: #BC4EA9;
 }
+
+ /*
+  --color-danger: #9b5353;
+  --color-background: #dfc6af;
+  --color-primary: #65657e;
+  --color-secondary: #6c7869;
+  */
 
 :root {
   --chart-grid-color: rgba(4, 0, 10, 0.08);

@@ -73,15 +73,15 @@ export default async function Home({
 
           {/* placeholder blocks 10/11 unchanged */}
           <div className="lg:col-span-3 lg:row-span-2 lg:row-start-7 
-                          bg-primary dark:rounded-lg
-                          dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
-                          dark:border dark:border-primary/60
-                          dark:shadow-[0_0_20px] dark:shadow-primary/10">10</div>
+                          bg-tertiary dark:rounded-lg
+                          dark:bg-[color-mix(in_srgb,var(--color-tertiary)_12%,var(--color-darkNavyLight))]
+                          dark:border dark:border-tertiary/60
+                          dark:shadow-[0_0_20px] dark:shadow-tertiary/10">10</div>
           <div className="lg:col-span-3 lg:row-span-2 lg:col-start-4 lg:row-start-7 
-                          bg-secondary dark:rounded-lg
-                          dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
-                          dark:border dark:border-secondary/60
-                          dark:shadow-[0_0_20px] dark:shadow-secondary/10">11</div>
+                          bg-quarternary dark:rounded-lg
+                          dark:bg-[color-mix(in_srgb,var(--color-quarternary)_12%,var(--color-darkNavyLight))]
+                          dark:border dark:border-quarternary/60
+                          dark:shadow-[0_0_20px] dark:shadow-quarternary/10">11</div>
         </div>
       </div>
     </div>  

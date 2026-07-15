@@ -51,7 +51,7 @@ export function RecentArticlesList({
       </h1>
 
       {/* Desktop / tablet: button row */}
-      <div className="hidden sm:flex flex-wrap gap-2 mt-4 mb-2">
+      <div className="hidden sm:flex flex-wrap gap-2 mt-4 pb-4 border-b border-white">
         <button
           onClick={() => setActive('all')}
           className={`categoryFilterButton px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border transition-colors cursor-pointer
@@ -79,7 +79,7 @@ export function RecentArticlesList({
       </div>
 
       {/* Mobile: dropdown */}
-      <div ref={dropdownRef} className="relative sm:hidden mt-4 mb-2">
+      <div ref={dropdownRef} className="relative sm:hidden mt-4 pb-4 border-white border-solid border-b">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="categoryFilterButton flex items-center justify-between w-full px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wide border border-white/30 text-white/80 cursor-pointer"

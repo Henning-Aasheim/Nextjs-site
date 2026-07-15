@@ -71,7 +71,7 @@ export function CategoryBadge({
 export function CategoryText({ category }: { category: ArticleCategory }) {
     const t = useTranslations('categoriesShort')
 
-    return <span className={`font-semibold uppercase ${CATEGORY_TEXT[category]}`}>{t(category)}</span>
+    return <span className={`font-semibold uppercase pr-2 sm:pr-0 ${CATEGORY_TEXT[category]}`}>{t(category)}</span>
 }
 
 

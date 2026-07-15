@@ -35,13 +35,13 @@ export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
     dark:shadow-[0_0_20px] dark:shadow-danger/10
   `,
   society: `
-    bg-gold
+    bg-tertiary
     dark:bg-[color-mix(in_srgb,var(--color-gold)_12%,var(--color-darkNavyLight))]
     dark:border dark:border-gold/60
     dark:shadow-[0_0_20px] dark:shadow-gold/10
   `,
   webDevelopment: `
-    bg-purple
+    bg-quarternary
     dark:bg-[color-mix(in_srgb,var(--color-purple)_12%,var(--color-darkNavyLight))]
     dark:border dark:border-purple/60
     dark:shadow-[0_0_20px] dark:shadow-purple/10
