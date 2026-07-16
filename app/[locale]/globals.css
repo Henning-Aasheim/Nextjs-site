@@ -117,6 +117,13 @@ html {
   text-size-adjust: 100%;
 }
 
+.hero-shrink {
+  --bleed: calc(50vw - 50%);
+  width: calc(100% + var(--bleed) * 2 * var(--progress));
+  margin-left: calc(var(--bleed) * -1 * var(--progress));
+  border-radius: calc(0.75rem * (1 - var(--progress)));
+}
+
 .article{
   @apply flex flex-col gap-3 font-default tracking-wide text-base sm:text-lg
 }

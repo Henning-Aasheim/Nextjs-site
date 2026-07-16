@@ -1,12 +1,19 @@
+'use client'
+
+import type { CSSProperties } from 'react'
+import { useScrollProgress } from '@/hooks/useScrollProgress'
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-export default function Hero({ t }: { t: (key: string) => string }) {
+export default function Hero() {
 
-  const trsl = useTranslations('hero')
+  const t = useTranslations('home')
+  const { ref, progress } = useScrollProgress<HTMLDivElement>(200)
 
   return (
-  <div className="lg:mx-auto bg-secondary h-full rounded-xl
+  <div ref={ref}
+      style={{ '--progress': progress } as CSSProperties}
+      className="hero-shrink lg:mx-auto bg-secondary h-full rounded-xl
                  dark:rounded-lg overflow-hidden
                  dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                  dark:border dark:border-primary/60
@@ -15,7 +22,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
     {/* Labels */}
     <div className='relative z-10 text-white hidden xs:block'>
 
-    <span className='hero-top absolute mt-5 left-10'>{trsl('left')}</span>
+    <span className='hero-top absolute mt-5 left-10'>{t('left')}</span>
 
     <div className='absolute mt-8 hidden md:block transform
                     left-7/24  -translate-x-7/24
@@ -23,7 +30,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
                     xl:left-9/40 xl:-translate-x-9/40 
                     border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
-    <span className='hero-top left-1/2 transform -translate-x-1/2'>{trsl('centre')}</span>
+    <span className='hero-top left-1/2 transform -translate-x-1/2'>{t('centre')}</span>
 
     <div className='absolute mt-8 hidden md:block transform
                     left-17/24  -translate-x-17/24
@@ -31,7 +38,7 @@ export default function Hero({ t }: { t: (key: string) => string }) {
                     xl:left-31/40 xl:-translate-x-31/40 
                     border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
-    <span className='hero-top right-10 text-right'>{trsl('right')}</span>
+    <span className='hero-top right-10 text-right'>{t('right')}</span>
 
   </div>
 
