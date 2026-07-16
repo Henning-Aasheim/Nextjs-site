@@ -14,7 +14,7 @@ export default function Header() {
 
 
     return (
-        <header className="w-screen py-6 px-5 md:px-10 bg-primary
+        <header className="w-screen py-6 px-5 md:px-10 bg-secondary
                     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                     dark:border-b dark:border-primary/60
                     dark:shadow-[0_4px_20px] dark:shadow-primary/10">

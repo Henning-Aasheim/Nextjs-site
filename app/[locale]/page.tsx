@@ -36,7 +36,7 @@ export default async function Home({
 
 {/* HERO */}
 
-        <div className="h-full lg:">
+        <div className="h-full max-w-[1200px] mx-auto">
             <Hero t={t} />
           </div>
 
