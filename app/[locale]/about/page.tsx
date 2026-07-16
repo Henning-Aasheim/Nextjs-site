@@ -174,25 +174,23 @@ export default function AboutPage({
 
   return (
     <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5">
-    <div className="flex flex-col gap-5 xl:grid xl:grid-cols-[16rem_1fr] xl:gap-5 text-white">
+    <div className="flex flex-col gap-5">
 
       {/* PROFILE IMAGE */}
       <div className="flex-none text-white xl:col-start-1 xl:row-start-1">
-        <div className="xl:sticky xl:top-30 bg-danger p-5
-                 dark:rounded-lg
+        <div className="bg-danger p-5 rounded-lg
                  dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                  dark:border dark:border-danger/60
                  dark:shadow-[0_0_20px] dark:shadow-danger/10
-                 flex flex-col items-center justify-center text-center gap-0
-                 xs:flex-row xs:items-center xs:justify-center xs:text-left xs:gap-5
-                 xl:flex-col xl:items-center xl:justify-center xl:text-center xl:gap-0">
+                 flex items-center justify-center
+                 flex-row text-left gap-5">
           {/* The top-30 has to change when the warning banner is removed */}
           <img
             src="/profile_image.jpg"
             alt="Profile Image"
             className="w-40 h-40 object-cover rounded-full border-2 dark:border border-background dark:border-danger shrink-0"
           />
-          <div className="mt-5 xs:mt-0 xl:mt-5">
+          <div className="">
 
             <h1 className="text-2xl font-bold">
               {t("profile-heading")}
@@ -205,8 +203,7 @@ export default function AboutPage({
             </h2>
 
             <div className="mt-4">
-              <ul className="flex flex-row flex-wrap gap-4
-                              justify-center xs:justify-start xl:justify-center">
+              <ul className="flex flex-row flex-wrap gap-4 justify-start">
                 <li>
                   <a href="https://bsky.app/profile/henningaasheim.bsky.social" target="_blank" rel="noopener noreferrer">
                     <FaBluesky className="soMeButton" />
@@ -237,21 +234,21 @@ export default function AboutPage({
       <div className="flex flex-col gap-5 xl:col-start-2 xl:row-start-1">
 
             {/* INTRODUCTION + RESUME */}
-            <section className="bg-primary px-5 sm:px-10 py-5
+            <section className=" px-5 sm:px-10 py-5
                      dark:rounded-lg
                      dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                      dark:border dark:border-primary/60
                      dark:shadow-[0_0_20px] dark:shadow-primary/10">
-                    <h1 className="text-xl sm:text-3xl font-bold text-white mb-2">
+                    <h1 className="text-xl sm:text-3xl font-bold mb-2">
                     {t("heading")}
                     </h1>
 
-                    <p className="text-base sm:text-xl mb-10 text-left text-gray-200 dark:text-gray-300">
+                    <p className="text-base sm:text-xl mb-10 text-left dark:text-gray-300">
                     {t("description")}
                     </p>
 
                     <div className="flex justify-center lg:justify-start">
-                    <a href={cvHref} className="mb-3 font-bold text-lg text-background bg-danger/70
+                    <a href={cvHref} className="mb-3 px-3 font-bold text-lg text-background bg-danger rounded-full
                                                 border-2 border-background hover:text-white hover:border-white
                                                 hover:bg-danger/60
                                                 dark:rounded-3xl dark:text-gray-300 dark:border dark:border-danger
@@ -267,7 +264,7 @@ export default function AboutPage({
             </section>
 
             {/* EXPERIENCE */}
-            <section className="bg-secondary px-5 sm:px-10 py-5
+            <section className="px-5 sm:px-10 py-5
                      dark:rounded-lg
                      dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
                      dark:border dark:border-secondary/60
@@ -312,7 +309,7 @@ export default function AboutPage({
             </section>
 
             {/* EDUCATION */}
-            <section className="bg-danger px-5 sm:px-10 py-5
+            <section className="px-5 sm:px-10 py-5
                      dark:rounded-lg
                      dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                      dark:border dark:border-danger/60
@@ -357,7 +354,7 @@ export default function AboutPage({
             </section>
 
             {/* PREVIOUS WORK */}
-            <section className="bg-primary px-5 sm:px-10 py-5
+            <section className="px-5 sm:px-10 py-5
                      dark:rounded-lg
                      dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                      dark:border dark:border-primary/60
@@ -373,11 +370,11 @@ export default function AboutPage({
                                 <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
                                 <a href={item.url}>
                                     <div className="flex flex-row flex-wrap mb-4 items-center overflow-hidden 
-                                                    bg-gray-200/10 shadow-lg dark:bg-primary/30 text-gray-300
-                                                    dark:rounded-lg
+                                                    shadow-lg dark:bg-primary/30
+                                                    dark:rounded-lg bg-bgDark
                                                     hover:scale-102 hover:transition-transform 
                                                     transition-colors duration-600 ease-in-out
-                                                    hover:shadow-xl hover:text-white">
+                                                    hover:shadow-xl hover:text-gray-600">
                                     <img
                                         src={item.image}
                                         alt={item.title}
