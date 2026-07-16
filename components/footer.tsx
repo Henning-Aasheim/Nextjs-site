@@ -43,13 +43,13 @@ export default function Footer() {
                     <div className="text-lg font-bold mb-2 text-white border-gray-300 border-b">{t('titleCol_1')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b hover:text-background">{t('link1_col2')}</Link>
+                            <Link href='/' className="footer-links">{t('link1_col2')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/about' className="hover:border-b hover:text-background">{t('link2_col2')}</Link>
+                            <Link href='/about' className="footer-links">{t('link2_col2')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/articles' className="hover:border-b hover:text-background">{t('link3_col2')}</Link>
+                            <Link href='/articles' className="footer-links">{t('link3_col2')}</Link>
                         </li>
                     </ul>
                 </div>
@@ -60,13 +60,13 @@ export default function Footer() {
                     <div className="text-lg font-bold mb-2 text-white border-gray-300 border-b">{t('titleCol_2')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/colophon' className="hover:border-b hover:text-background">{t('link1_col3')}</Link>
+                            <Link href='/colophon' className="footer-links">{t('link1_col3')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/library' className="hover:border-b hover:text-background">{t('link2_col3')}</Link>
+                            <Link href='/library' className="footer-links">{t('link2_col3')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b hover:text-background">{t('link3_col3')}</Link>
+                            <Link href='/' className="footer-links">{t('link3_col3')}</Link>
                         </li>
                     </ul>
                 </div>
@@ -77,13 +77,13 @@ export default function Footer() {
                     <div className="text-lg font-bold mb-2 text-white border-gray-300 border-b">{t('titleCol_3')}</div>
                     <ul className="flex-col text-gray-300 dark:text-white/70">
                         <li className="mb-2">
-                            <Link href='/' className="hover:border-b hover:text-background">{t('link1_col4')}</Link>
+                            <Link href='/' className="footer-links">{t('link1_col4')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/about' className="hover:border-b hover:text-background">{t('link2_col4')}</Link>
+                            <Link href='/about' className="footer-links">{t('link2_col4')}</Link>
                         </li>
                         <li className="mb-2">
-                            <Link href='/articles' className="hover:border-b hover:text-background">{t('link3_col4')}</Link>
+                            <Link href='/articles' className="footer-links">{t('link3_col4')}</Link>
                         </li>
                     </ul>
                 </div>

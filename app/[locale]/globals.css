@@ -67,7 +67,8 @@
   --color-darkAccent: #0a0019;
 
   --color-danger: #780000;
-  --color-background: #dfc6af;
+  --color-background: #f9f1e6; /*  */
+  --color-bgDark: #dfc6af;
   --color-primary: #58508d;
   --color-secondary: #50868d;
   --color-tertiary: #be9903;
@@ -251,6 +252,10 @@ html {
 :lang(ja) .categoryFilterButton {
   font-family: var(--font-tegomin), var(--font-default);
   font-size: 1rem; /* bumped up from the 0.65–0.75rem badge/button sizes */
+}
+
+.footer-links {
+  @apply hover:border-b hover:text-danger
 }
 
 @layer components {

@@ -45,19 +45,19 @@ export function RecentArticlesList({
   }
 
   return (
-    <div className="text-white py-10 w-10/11 mx-auto">
-      <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-white border-solid border-b">
+    <div className="py-10 w-10/11 mx-auto">
+      <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600 border-solid border-b">
         {t('title')}
       </h1>
 
       {/* Desktop / tablet: button row */}
-      <div className="hidden sm:flex flex-wrap gap-2 mt-4 pb-4 border-b border-white">
+      <div className="hidden sm:flex flex-wrap gap-2 mt-4 pb-4 border-b border-gray-600">
         <button
           onClick={() => setActive('all')}
           className={`categoryFilterButton px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border transition-colors cursor-pointer
             ${active === 'all'
-              ? 'bg-white text-secondary border-white'
-              : 'bg-transparent text-white/60 border-white/30 hover:text-white'
+              ? 'bg-white text-black border-gray-600'
+              : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
             }`}
         >
           {tCat('all')}
@@ -69,8 +69,8 @@ export function RecentArticlesList({
             onClick={() => setActive(cat)}
             className={`categoryFilterButton px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border transition-colors cursor-pointer
               ${active === cat
-                ? 'bg-white text-secondary border-white'
-                : 'bg-transparent text-white/60 border-white/30 hover:text-white'
+                ? 'bg-white text-black border-gray-600'
+                : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
               }`}
           >
             {tCat(cat)}
@@ -79,7 +79,7 @@ export function RecentArticlesList({
       </div>
 
       {/* Mobile: dropdown */}
-      <div ref={dropdownRef} className="relative sm:hidden mt-4 pb-4 border-white border-solid border-b">
+      <div ref={dropdownRef} className="relative sm:hidden mt-4 pb-4 border-gray-600 border-solid border-b">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="categoryFilterButton flex items-center justify-between w-full px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wide border border-white/30 text-white/80 cursor-pointer"
@@ -89,7 +89,7 @@ export function RecentArticlesList({
         </button>
 
         {isOpen && (
-          <div className="absolute left-0 right-0 bg-primary rounded-md py-2 mt-2 shadow-lg z-20
+          <div className="absolute left-0 right-0 bg-bg-dark rounded-md py-2 mt-2 shadow-lg z-20
                           dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-primary/60
                           dark:shadow-[0_0_20px] dark:shadow-primary/10">
@@ -121,17 +121,17 @@ export function RecentArticlesList({
             return (
               <li
                 key={article.id}
-                className="group w-full mx-auto border-b border-white py-4 hover:bg-primary dark:hover:bg-secondary/20"
+                className="group w-full mx-auto border-b border-gray-600 py-4 hover:bg-bgDark dark:hover:bg-secondary/20"
               >
                 <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6">
                   <div className="flex items-center">
-                    <span className="min-w-[2rem] text-2xl font-display text-lightBg text-center">
+                    <span className="min-w-[2rem] text-2xl font-display text-center">
                       {displayNumber}
                     </span>
                   </div>
 
                   <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 w-full text-sm text-white">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 w-full text-sm">
                       <div className="w-full flex justify-between sm:w-auto sm:justify-start sm:items-center sm:gap-2">
                         <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15">
                           {format.dateTime(dateTime, { dateStyle: 'long' })}
@@ -153,7 +153,7 @@ export function RecentArticlesList({
         </ul>
 
         {visible.length === 0 && (
-          <p className="text-white/60 py-6 text-center">{t('no-articles')}</p>
+          <p className="text-gray-500 py-6 text-center">{t('no-articles')}</p>
         )}
       </div>
     </div>
