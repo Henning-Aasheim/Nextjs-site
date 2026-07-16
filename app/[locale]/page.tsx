@@ -44,7 +44,7 @@ export default async function Home({
 
 {/* Newest article — unchanged */}
 
-          <div className="mt-10 pb-10 dark:rounded-lg border-b border-gray-600/30
+          <div className="lg:mt-30 pb-30 dark:rounded-lg border-b border-gray-600/30
                           dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-danger/60
                           dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40">
