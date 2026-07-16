@@ -52,15 +52,22 @@ export default async function Home({
             {newestArticle && (
               <section className="m-5">
                 <span className="text-right my-5">{t('newestArticle')}</span>
-                <div className="">
-                  <Link href={`/articles/${newestArticle.id}`} className="block">
-                    <div className="text-8xl mb-2">{newestArticle.title}</div>
-                    <div className="relative w-full mx-auto min-h-[1rem] text-gray-600 text-sm">
-                      <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
-                      <span className="absolute right-0 uppercase text-secondary">{newestArticle.category}</span>
+                <div className="w-full">
+                  <Link href={`/articles/${newestArticle.id}`} className="w-full">
+
+                    <div className="w-1/2 block">
+                      <div className="text-8xl mb-2">{newestArticle.title}</div>
+                        <div className="relative w-full mx-auto min-h-[1rem] text-gray-600 text-sm">
+                          <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
+                          <span className="absolute right-0 uppercase text-secondary">{newestArticle.category}</span>
+                        </div>
+                        <p className="mt-3 text-sm">{newestArticle.excerpt}</p>
                     </div>
-                    <p className="mt-3 text-sm">{newestArticle.excerpt}</p>
-                    <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 aspect-3/2 object-cover max-h-[20rem]" />
+
+                    <div className="w-1/2 right-0 block">
+                      <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 aspect-3/2 object-cover max-h-[20rem]" />
+                    </div>
+
                   </Link>
                 </div>
               </section>
