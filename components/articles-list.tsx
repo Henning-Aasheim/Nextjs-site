@@ -17,33 +17,28 @@ const ARTICLE_CATEGORIES: ArticleCategory[] = [
 
 export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
   politics: `
-    bg-primary
-    dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
-    dark:border dark:border-primary/60
+    bg-bgDark border-l-5 border-primary
+    dark:bg-darkNavyLight dark:border-primary/60
     dark:shadow-[0_0_20px] dark:shadow-primary/10
   `,
   international: `
-    bg-secondary
-    dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
-    dark:border dark:border-secondary/60
+    bg-bgDark border-l-5 border-secondary
+    dark:bg-darkNavyLight dark:border-secondary/60
     dark:shadow-[0_0_20px] dark:shadow-secondary/10
   `,
   economy: `
-    bg-danger
-    dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-    dark:border dark:border-danger/60
+    bg-bgDark border-l-5 border-danger
+    dark:bg-darkNavyLight dark:border-danger/60
     dark:shadow-[0_0_20px] dark:shadow-danger/10
   `,
   society: `
-    bg-tertiary
-    dark:bg-[color-mix(in_srgb,var(--color-gold)_12%,var(--color-darkNavyLight))]
-    dark:border dark:border-gold/60
+    bg-bgDark border-l-5 border-gold
+    dark:bg-darkNavyLight dark:border-gold/60
     dark:shadow-[0_0_20px] dark:shadow-gold/10
   `,
   webDevelopment: `
-    bg-quarternary
-    dark:bg-[color-mix(in_srgb,var(--color-purple)_12%,var(--color-darkNavyLight))]
-    dark:border dark:border-purple/60
+    bg-bgDark border-l-5 border-purple
+    dark:bg-darkNavyLight dark:border-purple/60
     dark:shadow-[0_0_20px] dark:shadow-purple/10
   `,
 }
@@ -98,12 +93,14 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
           return (
             <article
               className={`group hover:scale-105 transition-transform duration-100 mb-5
-                          rounded-lg overflow-hidden text-gray-300 hover:text-white
+                          rounded-lg overflow-hidden
+                          text-gray-800 hover:text-primary
+                          dark:text-gray-300 dark:hover:text-white
                           flex flex-col
                           ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
               key={article.id}
             >
-              <Link href={`/articles/${article.id}`} className="flex flex-col">
+              <Link href={`/articles/${article.id}`} className="flex flex-col rounded-lg">
                 {/* Image: 3:2 ratio, scales with the card's actual rendered width */}
                 <div className="relative w-full aspect-3/2 shrink-0">
                   <img
@@ -122,7 +119,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                     {article.frontmatter.title}
                   </h2>
 
-                  <div className="flex items-center justify-start gap-1.5 text-sm text-gray-300 dark:text-gray-400 mt-2">
+                  <div className="flex items-center justify-start gap-1.5 text-sm text-gray-500 dark:text-gray-400 mt-2">
                     <Calendar size={13} className="shrink-0" />
                     <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
                   </div>
