@@ -57,7 +57,8 @@
         "newestArticle": "Newest Article",
         "left": "Tinkerer",
         "centre": "Curious",
-        "right":"Athlete"
+        "right":"Athlete",
+        "articleButton": "Read the Article"
 
     },
 

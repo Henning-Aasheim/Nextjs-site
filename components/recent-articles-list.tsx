@@ -45,18 +45,18 @@ export function RecentArticlesList({
   }
 
   return (
-    <div className="py-10 w-10/11 mx-auto">
-      <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600 border-solid border-b">
+    <div className="py-10 mx-auto">
+      <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600/30 border-solid border-b">
         {t('title')}
       </h1>
 
       {/* Desktop / tablet: button row */}
-      <div className="hidden sm:flex flex-wrap gap-2 mt-4 pb-4 border-b border-gray-600">
+      <div className="hidden sm:flex flex-wrap gap-2 mt-4 pb-4 border-b border-gray-600/30">
         <button
           onClick={() => setActive('all')}
           className={`categoryFilterButton px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border transition-colors cursor-pointer
             ${active === 'all'
-              ? 'bg-white text-black border-gray-600'
+              ? 'bg-white text-black border-gray-600/30'
               : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
             }`}
         >
@@ -69,7 +69,7 @@ export function RecentArticlesList({
             onClick={() => setActive(cat)}
             className={`categoryFilterButton px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border transition-colors cursor-pointer
               ${active === cat
-                ? 'bg-white text-black border-gray-600'
+                ? 'bg-white text-black border-gray-600/30'
                 : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
               }`}
           >
@@ -79,17 +79,17 @@ export function RecentArticlesList({
       </div>
 
       {/* Mobile: dropdown */}
-      <div ref={dropdownRef} className="relative sm:hidden mt-4 pb-4 border-gray-600 border-solid border-b">
+      <div ref={dropdownRef} className="relative sm:hidden mt-4 pb-4 border-gray-600/30 border-solid border-b">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="categoryFilterButton flex items-center justify-between w-full px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wide border border-white/30 text-white/80 cursor-pointer"
+          className="categoryFilterButton flex items-center justify-between w-full px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wide border border-gray-600 cursor-pointer"
         >
           {active === 'all' ? tCat('all') : tCat(active)}
           <ChevronDown size={16} className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
         </button>
 
         {isOpen && (
-          <div className="absolute left-0 right-0 bg-bg-dark rounded-md py-2 mt-2 shadow-lg z-20
+          <div className="absolute left-0 right-0 bg-bgDark rounded-md py-2 mt-2 shadow-lg z-20
                           dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-primary/60
                           dark:shadow-[0_0_20px] dark:shadow-primary/10">
@@ -121,7 +121,7 @@ export function RecentArticlesList({
             return (
               <li
                 key={article.id}
-                className="group w-full mx-auto border-b border-gray-600 py-4 hover:bg-bgDark dark:hover:bg-secondary/20"
+                className="group w-full mx-auto border-b border-gray-600/30 py-4 hover:bg-bgDark dark:hover:bg-secondary/20"
               >
                 <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6">
                   <div className="flex items-center">

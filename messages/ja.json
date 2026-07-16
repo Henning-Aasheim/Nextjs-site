@@ -57,7 +57,8 @@
         "newestArticle": "最新の記事",
         "left": "政治学者",
         "centre": "好奇心",
-        "right":"体育家"
+        "right":"体育家",
+        "articleButton": "記事を読む"
     },
 
     "metaAbout":

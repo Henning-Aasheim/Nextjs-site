@@ -36,7 +36,7 @@ export default async function Home({
 
 {/* HERO */}
 
-        <div className="h-full max-w-[1200px] mx-auto">
+        <div className="h-full max-w-[1200px] mx-auto lg:mt-30">
             <Hero />
           </div>
 
@@ -44,39 +44,46 @@ export default async function Home({
 
 {/* Newest article — unchanged */}
 
-          <div className="lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4 
-                          bg-background dark:rounded-lg
+          <div className="mt-10 pb-10 dark:rounded-lg border-b border-gray-600/30
                           dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-danger/60
                           dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40">
             {newestArticle && (
               <section className="m-5">
-                <span className="text-right my-5">{t('newestArticle')}</span>
-                <div className="w-full">
-                  <Link href={`/articles/${newestArticle.id}`} className="w-full">
 
-                    <div className="w-1/2 block">
-                      <div className="text-8xl mb-2">{newestArticle.title}</div>
-                        <div className="relative w-full mx-auto min-h-[1rem] text-gray-600 text-sm">
-                          <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
-                          <span className="absolute right-0 uppercase text-secondary">{newestArticle.category}</span>
-                        </div>
-                        <p className="mt-3 text-sm">{newestArticle.excerpt}</p>
-                    </div>
-
-                    <div className="w-1/2 right-0 block">
-                      <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 aspect-3/2 object-cover max-h-[20rem]" />
-                    </div>
-
-                  </Link>
+                <div className="flex flex-wrap items-center justify-start gap-2 my-5 text-sm text-gray-500 dark:text-gray-400">
+                  <span>{t('newestArticle')}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
+                  <span aria-hidden="true">·</span>
+                  <span className="uppercase text-secondary">{newestArticle.category}</span>
                 </div>
+
+                
+                  <div className="flex flex-col sm:flex-row gap-6 items-start">
+
+                    {/* Text column */}
+                    <div className="flex-1 order-2 sm:order-1">
+                      <div className="text-3xl sm:text-5xl lg:text-8xl mb-2">{newestArticle.title}</div>
+                      <p className="mt-3 md:text-lg max-w-[42ch] sm:pr-6">{newestArticle.excerpt}</p>
+                      <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-gray-200 bg-secondary rounded-full">{t('articleButton')}</Link>
+                    </div>
+
+                    {/* Image column */}
+                    <img
+                      src={newestArticle.image}
+                      alt={newestArticle.title}
+                      className="order-1 sm:order-2 w-full sm:w-2/5 shrink-0 aspect-3/2 object-cover max-h-[20rem] self-center"
+                    />
+                  </div>
+                
               </section>
             )}
           </div>
 
 {/* Blog div */}
 
-          <div className="bg-background dark:rounded-lg
+          <div className="mt-10 dark:rounded-lg
                           dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-secondary/60
                           dark:shadow-[0_0_20px] dark:shadow-secondary/10">

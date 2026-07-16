@@ -56,7 +56,8 @@
         "newestArticle": "Nyeste artikkel",
         "left": "Statsviter",
         "centre": "Nysgjerrig",
-        "right":"Idrettsutøver"
+        "right":"Idrettsutøver",
+        "articleButton": "Les artikkelen"
     },
 
     "metaAbout":
