@@ -51,16 +51,16 @@ export default async function Home({
                           dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40">
             {newestArticle && (
               <section className="m-5">
-                <h2 className="text-4xl text-center my-5">{t('newestArticle')}</h2>
-                <div className="max-w-[20rem] mx-auto">
+                <span className="text-right my-5">{t('newestArticle')}</span>
+                <div className="">
                   <Link href={`/articles/${newestArticle.id}`} className="block">
-                    <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 lg:w-full aspect-3/2 object-cover max-h-[20rem] mx-auto" />
-                    <div className="text-2xl mb-2">{newestArticle.title}</div>
+                    <div className="text-8xl mb-2">{newestArticle.title}</div>
                     <div className="relative w-full mx-auto min-h-[1rem] text-gray-600 text-sm">
                       <span className="absolute left-0 ">{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
                       <span className="absolute right-0 uppercase text-secondary">{newestArticle.category}</span>
                     </div>
                     <p className="mt-3 text-sm">{newestArticle.excerpt}</p>
+                    <img src={newestArticle.image} alt={newestArticle.title} className="mb-2 aspect-3/2 object-cover max-h-[20rem]" />
                   </Link>
                 </div>
               </section>
