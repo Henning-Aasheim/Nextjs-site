@@ -44,12 +44,12 @@ export default async function Home({
 
 {/* Newest article — unchanged */}
 
-          <div className="lg:mt-30 pb-30 dark:rounded-lg border-b border-gray-600/30
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 dark:rounded-lg border-b border-gray-600/30
                           dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-danger/60
                           dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40">
             {newestArticle && (
-              <section className="m-5">
+              <section className="m-5 px-2 s:px-10">
 
                 <div className="flex flex-wrap items-center justify-start gap-2 my-5 text-sm text-gray-500 dark:text-gray-400">
                   <span>{t('newestArticle')}</span>
@@ -83,7 +83,7 @@ export default async function Home({
 
 {/* Blog div */}
 
-          <div className="mt-10 dark:rounded-lg
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 md:px-10 border-b border-gray-600/30 dark:rounded-lg
                           dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-secondary/60
                           dark:shadow-[0_0_20px] dark:shadow-secondary/10">

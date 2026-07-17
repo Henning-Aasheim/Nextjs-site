@@ -45,7 +45,7 @@ export function RecentArticlesList({
   }
 
   return (
-    <div className="py-10 mx-auto">
+    <div className="mx-auto">
       <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600/30 border-solid border-b">
         {t('title')}
       </h1>
