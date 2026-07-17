@@ -210,11 +210,11 @@ html {
 }
 
 .experienceTitle {
-  @apply text-lg font-bold group-hover:text-background
+  @apply text-lg font-bold group-hover:text-danger
 }
 
 .experienceSubtitle {
-  @apply text-base italic group-hover:text-background
+  @apply text-base italic group-hover:text-danger
 }
 
 .experienceDate {
@@ -226,7 +226,7 @@ html {
 }
 
 .experienceIcons {
-  @apply block absolute left-0 top-1 fill-gray-800 dark:fill-white group-hover:fill-background
+  @apply block absolute left-0 top-1 fill-gray-800 dark:fill-white group-hover:fill-danger
 }
 
 .localeButton {
@@ -262,7 +262,7 @@ html {
 }
 
 .footer-links {
-  @apply hover:border-b hover:text-danger
+  @apply hover:border-b hover:text-tertiary
 }
 
 @layer components {

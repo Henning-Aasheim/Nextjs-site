@@ -26,7 +26,7 @@ export default function Footer() {
                 <div className="inline-block lg:col-span-2">
                     <div className="mb-4 text-left">
                         <div className="inline-block align-middle">
-                            <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-background border"></img>
+                            <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-tertiary border"></img>
                         </div>
                         <div className="inline-block ml-4 align-middle text-lg md:text-xl lg:text-2xl font-bold text-white">{t('author')}</div>
                     </div>

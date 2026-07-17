@@ -56,7 +56,7 @@ export function RecentArticlesList({
           onClick={() => setActive('all')}
           className={`categoryFilterButton px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border transition-colors cursor-pointer
             ${active === 'all'
-              ? 'bg-white text-black border-gray-600/30'
+              ? 'bg-secondary text-white border-gray-600/30'
               : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
             }`}
         >

@@ -65,8 +65,8 @@ export default async function Home({
                     {/* Text column */}
                     <div className="flex-1 order-2 sm:order-1">
                       <div className="text-3xl sm:text-5xl lg:text-8xl mb-2">{newestArticle.title}</div>
-                      <p className="mt-3 md:text-lg max-w-[42ch] sm:pr-6">{newestArticle.excerpt}</p>
-                      <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-gray-200 bg-secondary rounded-full">{t('articleButton')}</Link>
+                      <p className="mt-3 md:text-lg max-w-[42ch] sm:pr-6 text-gray-500">{newestArticle.excerpt}</p>
+                      <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-lg text-gray-200 hover:text-white bg-secondary rounded-full">{t('articleButton')}</Link>
                     </div>
 
                     {/* Image column */}
