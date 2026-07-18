@@ -130,7 +130,7 @@ html {
 
 .dropcap {
   @apply leading-8; /* 2rem — this defines the paragraph's own line height, untouched */
-  --dropcap-color: var(--color-background);
+  --dropcap-color: var(--color-white);
 }
 
 .dropcap:first-letter,

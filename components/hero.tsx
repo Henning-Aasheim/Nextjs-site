@@ -4,6 +4,7 @@ import type { CSSProperties } from 'react'
 import { useScrollProgress } from '@/hooks/useScrollProgress'
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export default function Hero() {
 
@@ -65,6 +66,8 @@ export default function Hero() {
           <p className="dropcap text-white xl:text-lg lg:pr-25 xl:pr-50">
             {t('description')}
           </p>
+          <Link href='/about' className='inline-block mt-3 px-5 py-2 text-xl
+                                        text-secondary hover:scale-105 hover:shadow-lg bg-white rounded-full'>{t('about')}</Link>
         </div>
       </div>
     </div>
