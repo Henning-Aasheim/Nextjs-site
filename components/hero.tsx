@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function Hero() {
 
   const t = useTranslations('home')
-  const { ref, progress } = useScrollProgress<HTMLDivElement>(200)
+  const { ref, progress } = useScrollProgress<HTMLDivElement>(250)
 
   return (
   <div ref={ref}

@@ -69,7 +69,7 @@ export function RecentArticlesList({
             onClick={() => setActive(cat)}
             className={`categoryFilterButton px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border transition-colors cursor-pointer
               ${active === cat
-                ? 'bg-white text-black border-gray-600/30'
+                ? 'bg-secondary/30 text-secondary border-gray-600/30'
                 : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
               }`}
           >
@@ -121,9 +121,9 @@ export function RecentArticlesList({
             return (
               <li
                 key={article.id}
-                className="group w-full mx-auto border-b border-gray-600/30 py-4 hover:bg-bgDark dark:hover:bg-secondary/20"
+                className="group w-full mx-auto border-b border-gray-600/30 hover:bg-bgDark dark:hover:bg-secondary/20"
               >
-                <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6">
+                <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 py-4">
                   <div className="flex items-center">
                     <span className="min-w-[2rem] text-2xl font-display text-center">
                       {displayNumber}
@@ -133,7 +133,7 @@ export function RecentArticlesList({
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 w-full text-sm">
                       <div className="w-full flex justify-between sm:w-auto sm:justify-start sm:items-center sm:gap-2">
-                        <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15">
+                        <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15 text-gray-500">
                           {format.dateTime(dateTime, { dateStyle: 'long' })}
                         </span>
                         <span className="sm:min-w-[7rem] text-right sm:text-left">

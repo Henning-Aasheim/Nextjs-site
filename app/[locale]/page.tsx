@@ -34,6 +34,12 @@ export default async function Home({
     <div className="w-full">
       <div className="m-4 xs:m-6">
 
+{/* NAME */}
+
+        <div className="max-w-[1200px] mx-auto lg:mt-30 text-8xl text-center">
+          <span>{t('name')}</span>
+        </div>
+
 {/* HERO */}
 
         <div className="h-full max-w-[1200px] mx-auto lg:mt-30">
@@ -66,7 +72,7 @@ export default async function Home({
                     <div className="flex-1 order-2 sm:order-1">
                       <div className="text-3xl sm:text-5xl lg:text-8xl mb-2">{newestArticle.title}</div>
                       <p className="mt-3 md:text-lg max-w-[42ch] sm:pr-6 text-gray-500">{newestArticle.excerpt}</p>
-                      <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-lg text-gray-200 hover:text-white bg-secondary rounded-full">{t('articleButton')}</Link>
+                      <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-lg text-gray-200 hover:text-white hover:shadow-lg bg-secondary rounded-full">{t('articleButton')}</Link>
                     </div>
 
                     {/* Image column */}
