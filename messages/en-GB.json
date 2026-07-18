@@ -52,8 +52,7 @@
     "home": 
     {
         "name": "Henning Åsheim",
-        "header1": "Henning",
-        "header2": "Åsheim",
+        "header": "Who am I?",
         "description": "My name is Henning Åsheim and I am a political scientist currently working as a research assistant at the University of Oslo. On a daily basis, I work with both research and teaching, and my strength lies in quantitative methods. I am also interested in programming and work a lot with collecting, processing and analysing data. In addition, I am interested in politics and what is happening both in the Norwegian society and in the world at large. This site is a presentation of me, as well as including a blog where I write about what interests me.",
         "articles": "Recent Articles",
         "newestArticle": "Newest Article",

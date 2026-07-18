@@ -61,9 +61,7 @@ export default function Hero() {
       {/* Text side */}
       <div className="w-full lg:w-2/3 lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2">
         <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
-          <h1 className="nameLogo text-white">{t('header1')}</h1>
-          <h1 className="nameLogo lg:ml-4 text-background dark:text-danger">{t('header2')}</h1>
-
+          <h1 className="nameLogo text-white">{t('header')}</h1>
           <p className="dropcap text-white xl:text-lg lg:pr-25 xl:pr-50">
             {t('description')}
           </p>
