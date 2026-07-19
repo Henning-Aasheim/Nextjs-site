@@ -3,6 +3,7 @@ import Link from "next/link"
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
 import Hero from "@/components/hero";
 import { RecentArticlesList } from "@/components/recent-articles-list";
+import Shinshu from '../icons/shinshu.svg'
 
 export default async function Home({
   params,
@@ -36,8 +37,9 @@ export default async function Home({
 
 {/* NAME */}
 
-        <div className="max-w-[1200px] mx-auto mt-10 md:mt-15 lg:mt-30 text-5xl xs:text-8xl text-center">
-          <span>{t('name')}</span>
+        <div className="max-w-[1200px] mx-auto mt-10 md:mt-15 lg:mt-30 text-5xl xs:text-8xl flex flex-row">
+          <span className="w-4/9"><Shinshu className="h-50 fill-gray-800 float-right pr-20"/></span>
+          <span className="w-5/9 pl-20 border-l border-gray-400">{t('name')}</span>
         </div>
 
 {/* HERO */}
@@ -101,6 +103,9 @@ export default async function Home({
                           dark:bg-[color-mix(in_srgb,var(--color-tertiary)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-tertiary/60
                           dark:shadow-[0_0_20px] dark:shadow-tertiary/10">10</div>
+
+
+
           <div className="bg-background dark:rounded-lg
                           dark:bg-[color-mix(in_srgb,var(--color-quarternary)_12%,var(--color-darkNavyLight))]
                           dark:border dark:border-quarternary/60
