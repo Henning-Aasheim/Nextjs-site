@@ -77,9 +77,15 @@ export function CategoryBadge({
 }
 
 export function CategoryText({ category }: { category: ArticleCategory }) {
-    const t = useTranslations('categoriesShort')
+    const t = useTranslations('categories')
+    const tShort = useTranslations('categoriesShort')
 
-    return <span className={`font-semibold uppercase pr-2 sm:pr-0 text-secondary ${CATEGORY_TEXT[category]}`}>{t(category)}</span>
+    return (
+        <span className={`font-semibold uppercase pr-2 sm:pr-0 text-secondary ${CATEGORY_TEXT[category]}`}>
+            <span className="hidden lg:inline">{t(category)}</span>
+            <span className="lg:hidden">{tShort(category)}</span>
+        </span>
+    )
 }
 
 

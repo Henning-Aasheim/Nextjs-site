@@ -6,71 +6,86 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
+function HeroText({ t }: { t: ReturnType<typeof useTranslations> }) {
+  return (
+    <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
+      <h1 className="nameLogo text-white">{t('header')}</h1>
+      <p className="dropcap text-white xl:text-lg lg:pr-25 xl:pr-50">
+        {t('description')}
+      </p>
+      <Link href='/about' className='inline-block mt-3 px-5 py-2 text-xl
+                                    text-secondary hover:scale-105 hover:shadow-lg bg-white rounded-full'>{t('about')}</Link>
+    </div>
+  )
+}
+
 export default function Hero() {
 
   const t = useTranslations('home')
   const { ref, progress } = useScrollProgress<HTMLDivElement>(250)
 
   return (
-  <div ref={ref}
-      style={{ '--progress': progress } as CSSProperties}
-      className="hero-shrink lg:mx-auto bg-secondary h-full rounded-xl
-                 dark:rounded-lg overflow-hidden
-                 dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
-                 dark:border dark:border-primary/60
-                 dark:shadow-[0_0_20px] dark:shadow-primary/10">
-                  
-    {/* Labels */}
-    <div className='relative z-10 text-white hidden xs:block'>
+    <div className="relative">
+      <div ref={ref}
+          style={{ '--progress': progress } as CSSProperties}
+          className="hero-shrink lg:mx-auto bg-secondary h-full rounded-xl
+                     dark:rounded-lg overflow-hidden
+                     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
+                     dark:border dark:border-primary/60
+                     dark:shadow-[0_0_20px] dark:shadow-primary/10">
+                      
+        {/* Labels */}
+        <div className='relative z-10 text-white hidden xs:block'>
 
-    <span className='hero-top absolute mt-5 left-10'>{t('left')}</span>
+        <span className='hero-top absolute mt-5 left-10'>{t('left')}</span>
 
-    <div className='absolute mt-8 hidden md:block transform
-                    left-7/24  -translate-x-7/24
-                    lg:left-1/4  lg:-translate-x-1/4
-                    xl:left-9/40 xl:-translate-x-9/40 
-                    border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
+        <div className='absolute mt-8 hidden md:block transform
+                        left-7/24  -translate-x-7/24
+                        lg:left-1/4  lg:-translate-x-1/4
+                        xl:left-9/40 xl:-translate-x-9/40 
+                        border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
-    <span className='hero-top left-1/2 transform -translate-x-1/2'>{t('centre')}</span>
+        <span className='hero-top left-1/2 transform -translate-x-1/2'>{t('centre')}</span>
 
-    <div className='absolute mt-8 hidden md:block transform
-                    left-17/24  -translate-x-17/24
-                    lg:left-3/4 lg:-translate-x-3/4 
-                    xl:left-31/40 xl:-translate-x-31/40 
-                    border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
+        <div className='absolute mt-8 hidden md:block transform
+                        left-17/24  -translate-x-17/24
+                        lg:left-3/4 lg:-translate-x-3/4 
+                        xl:left-31/40 xl:-translate-x-31/40 
+                        border-b border-white md:w-[15vw] lg:w-[clamp(1rem,18vw,19rem)]' />
 
-    <span className='hero-top right-10 text-right'>{t('right')}</span>
+        <span className='hero-top right-10 text-right'>{t('right')}</span>
 
-  </div>
-
-    {/* Main content wrapper should also stretch */}
-    <div className="relative flex flex-col lg:block min-h-[40vh] lg:h-full">
-      {/* Image side */}
-      <div className="w-full lg:w-[65%] ml-auto lg:h-full">
-        <Image
-          src="/profile_image.jpg"
-          alt="Profile Image"
-          width={800}
-          height={1000}
-          className="
-            mask-b-from-20% lg:mask-l-from-50% lg:mask-b-from-100%
-            w-full h-full object-cover    // h-full instead of h-auto
-          "
-        />
       </div>
 
-      {/* Text side */}
-      <div className="w-full lg:w-2/3 lg:absolute lg:top-1/2 lg:left-0 lg:-translate-y-1/2">
-        <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
-          <h1 className="nameLogo text-white">{t('header')}</h1>
-          <p className="dropcap text-white xl:text-lg lg:pr-25 xl:pr-50">
-            {t('description')}
-          </p>
-          <Link href='/about' className='inline-block mt-3 px-5 py-2 text-xl
-                                        text-secondary hover:scale-105 hover:shadow-lg bg-white rounded-full'>{t('about')}</Link>
+        {/* Main content wrapper should also stretch */}
+        <div className="relative flex flex-col lg:block min-h-[40vh] lg:h-full">
+          {/* Image side */}
+          <div className="w-full lg:w-[65%] ml-auto lg:h-full">
+            <Image
+              src="/profile_image.jpg"
+              alt="Profile Image"
+              width={800}
+              height={1000}
+              className="
+                mask-b-from-20% lg:mask-l-from-50% lg:mask-b-from-100%
+                w-full h-full object-cover
+              "
+            />
+          </div>
+
+          {/* Text side: mobile only, stacked normally below the image */}
+          <div className="w-full -mt-16 xs:-mt-30 md:mt-0 lg:hidden z-5">
+            <HeroText t={t} />
+          </div>
         </div>
       </div>
+
+      {/* Text side: desktop — positioned against the outer, non-shrinking
+          wrapper so it stays put on screen while the background behind it
+          grows/shrinks with scroll */}
+      <div className="hidden lg:block absolute top-1/2 left-0 w-2/3 -translate-y-1/2">
+        <HeroText t={t} />
+      </div>
     </div>
-  </div>
-);
+  );
 }

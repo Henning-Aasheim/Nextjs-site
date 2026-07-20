@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import { useTranslations, useFormatter } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { ArticleContent, ArticleCategory } from '@/types'
-import { CategoryBadge, CATEGORY_STYLES } from './category-badge'
+import type { ArticleContent, ArticleCategory } from '@/types'
+import { CategoryBadge, CATEGORY_STYLES, CATEGORY_COLOR_VARS } from './category-badge'
 import { Calendar } from 'lucide-react'
+import type { CSSProperties } from "react";
 
 const ARTICLE_CATEGORIES: ArticleCategory[] = [
   'politics',
@@ -86,20 +87,21 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 
                       w-4/5 sm:w-3/5 md:w-4/5 2xl:w-10/11
-                      mx-auto md:gap-10">
+                      mx-auto gap-10">
         {filtered.map((article) => {
           const dateTime = new Date(article.frontmatter.date)
 
           return (
             <article
+              style={{ '--category-color': CATEGORY_COLOR_VARS[article.frontmatter.category] } as CSSProperties}
               className={`group hover:scale-105 transition-transform duration-100 mb-5
                           rounded-lg overflow-hidden
-                          text-gray-800 hover:text-primary
-                          dark:text-gray-300 dark:hover:text-white
+                          text-gray-800 hover:text-(--category-color)
+                          dark:text-gray-300 dark:hover:text-(--category-color)
                           flex flex-col h-full
                           ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
               key={article.id}
-            >
+>
               <Link href={`/articles/${article.id}`} className="flex flex-col flex-1 rounded-lg">
                 {/* Image: 3:2 ratio, scales with the card's actual rendered width */}
                 <div className="relative w-full aspect-3/2 shrink-0">
