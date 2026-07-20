@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations, useFormatter } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ArticleContent, ArticleCategory } from '@/types'
@@ -27,6 +27,30 @@ export function RecentArticlesList({
   const format = useFormatter()
   const [active, setActive] = useState<ArticleCategory | 'all'>('all')
 
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateScrollState = () => {
+    const el = scrollRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 4)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+  }
+
+  useEffect(() => {
+    updateScrollState()
+    const el = scrollRef.current
+    if (!el) return
+
+    el.addEventListener('scroll', updateScrollState)
+    window.addEventListener('resize', updateScrollState)
+    return () => {
+      el.removeEventListener('scroll', updateScrollState)
+      window.removeEventListener('resize', updateScrollState)
+    }
+  }, [])
+
   const filtered =
     active === 'all'
       ? articles
@@ -40,14 +64,18 @@ export function RecentArticlesList({
         {t('title')}
       </h1>
 
-      {/* Filter row: single line, scrollable on narrow screens */}
+      {/* Filter row: single line, scrollable, edge-fades only when there's more to scroll */}
       <div
-        className="
+        ref={scrollRef}
+        className={`
           flex flex-nowrap gap-2 lg:gap-4 mt-4 lg:mt-6 pb-4 lg:pb-6
           overflow-x-auto
           [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
           border-b border-gray-600/30
-        "
+          transition-[mask-image]
+          ${canScrollLeft ? 'mask-l-from-70%' : ''}
+          ${canScrollRight ? 'mask-r-from-70%' : ''}
+        `}
       >
         <button
           onClick={() => setActive('all')}
