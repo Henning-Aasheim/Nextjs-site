@@ -61,8 +61,8 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
             onClick={() => setActive('all')}
             className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
                 ${active === 'all'
-                ? 'bg-primary text-white border-primary'
-                : 'bg-transparent text-primary/70 dark:text-white/60 border-primary/30 dark:border-white/20 hover:text-primary dark:hover:text-white'
+                ? 'bg-secondary text-white border-secondary'
+                : 'bg-transparent text-secondary/80 dark:text-white/60 border-secondary/60 dark:border-white/20 hover:text-secondary dark:hover:text-white'
                 }`}
             >
             {tCat('all')}
@@ -119,8 +119,8 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                     {article.frontmatter.title}
                   </h2>
 
-                  <div className="flex items-center justify-start gap-1.5 text-sm text-gray-500 dark:text-gray-400 mt-2">
-                    <Calendar size={13} className="shrink-0" />
+                  <div className="flex items-center justify-start gap-1.5 text-gray-500 dark:text-gray-400 mt-2">
+                    <Calendar size={15} className="shrink-0" />
                     <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
                   </div>
                 </div>
