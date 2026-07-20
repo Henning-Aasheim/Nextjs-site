@@ -19,7 +19,7 @@ export default async function ArticlesPage({ params }: { params: Promise<{ local
   setRequestLocale(locale);
 
   const t = await getTranslations('articles');
-  const articles = getAllArticles();
+  const articles = await getAllArticles();
 
   return (
     <div className="text-center pt-12 mb-10 w-10/11 mx-auto 2xl:w-5/6">

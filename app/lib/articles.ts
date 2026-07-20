@@ -17,20 +17,29 @@ export const ARTICLE_CATEGORIES: ArticleCategory[] = [
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles')
 const colophonDirectory = path.join(process.cwd(), 'content', 'colophon')
 
-export function getAllArticles(): ArticleContent[] {
+export async function getAllArticles(): Promise<ArticleContent[]> {
   const fileNames = fs.readdirSync(articlesDirectory).filter((f) => f.endsWith('.mdx'))
 
-  return fileNames.map((fileName) => {
-    const id = fileName.replace(/\.mdx$/, '')
-    const fullPath = path.join(articlesDirectory, fileName)
-    const raw = fs.readFileSync(fullPath, 'utf8')
-    const { data, content } = matter(raw)
-    return {
-      id,
-      frontmatter: data as ArticleMeta,
-      content,
-    }
-  }).sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1));
+  const articles = await Promise.all(
+    fileNames.map(async (fileName) => {
+      const id = fileName.replace(/\.mdx$/, '')
+      const fullPath = path.join(articlesDirectory, fileName)
+      const raw = fs.readFileSync(fullPath, 'utf8')
+      const { data, content } = matter(raw)
+
+      const processedContent = await remark().use(html).process(content)
+      const excerpt = getExcerptFromHtml(processedContent.toString(), 160)
+
+      return {
+        id,
+        frontmatter: data as ArticleMeta,
+        content,
+        excerpt,
+      }
+    })
+  )
+
+  return articles.sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1))
 }
 
 export function getArticleById(id: string): ArticleContent | null {
@@ -42,6 +51,7 @@ export function getArticleById(id: string): ArticleContent | null {
     id,
     frontmatter: data as ArticleMeta,
     content,
+    excerpt: '',
   }
 }
 

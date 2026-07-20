@@ -25,6 +25,7 @@ export interface ArticleContent {
     id: string
     frontmatter: ArticleMeta
     content: string
+    excerpt: string
 }
 
 export interface ColophonContent {

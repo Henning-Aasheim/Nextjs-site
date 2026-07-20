@@ -16,7 +16,7 @@ export default async function Home({
   const t = await getTranslations({ locale, namespace: "home" });
   const format = await getFormatter({ locale });
 
-  const allArticlesData = getAllArticles();
+  const allArticlesData = await getAllArticles();
 
   const sortedArticles = [...allArticlesData].sort((a, b) => {
     const aTime = new Date(a.frontmatter.date).getTime();

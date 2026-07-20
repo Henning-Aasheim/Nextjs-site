@@ -96,11 +96,11 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                           rounded-lg overflow-hidden
                           text-gray-800 hover:text-primary
                           dark:text-gray-300 dark:hover:text-white
-                          flex flex-col
+                          flex flex-col h-full
                           ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
               key={article.id}
             >
-              <Link href={`/articles/${article.id}`} className="flex flex-col rounded-lg">
+              <Link href={`/articles/${article.id}`} className="flex flex-col flex-1 rounded-lg">
                 {/* Image: 3:2 ratio, scales with the card's actual rendered width */}
                 <div className="relative w-full aspect-3/2 shrink-0">
                   <img
@@ -113,13 +113,17 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                   </div>
                 </div>
 
-                {/* Text: natural height, bounded by line-clamp so it can't run away */}
-                <div className="p-3">
-                  <h2 className="text-lg sm:text-xl font-default font-semibold text-center leading-7 line-clamp-2 min-h-14">
+                {/* Text: fills remaining height, date pinned to bottom */}
+                <div className="p-3 flex flex-col flex-1 mx-2">
+                  <h2 className="text-lg sm:text-xl font-default font-semibold text-center leading-7 line-clamp-2">
                     {article.frontmatter.title}
                   </h2>
 
-                  <div className="flex items-center justify-start gap-1.5 text-gray-500 dark:text-gray-400 mt-2">
+                  <p className="mt-2 text-left text-gray-500 dark:text-gray-400 line-clamp-3">
+                    {article.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-start gap-1.5 text-gray-500 dark:text-gray-400 mt-auto pt-2">
                     <Calendar size={15} className="shrink-0" />
                     <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
                   </div>
