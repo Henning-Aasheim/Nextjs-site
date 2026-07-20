@@ -53,14 +53,14 @@ export default async function Article({ params }: ArticleProps) {
   const dateTime = new Date(frontmatter.date)
 
   return (
-    <section className="mx-auto p-10 m-5">
+    <section className="m-5 xs:m-10">
       <div className="max-w-[700px] mx-auto">
         <img
           src={frontmatter.image}
           alt={frontmatter.title}
           className="object-cover aspect-3/2 mx-auto w-full"
         />
-        <h1 className="text-xl sm:text-4xl font-bold text-center py-5 mx-auto text-primary dark:text-white">{frontmatter.title}</h1>
+        <h1 className="text-xl sm:text-4xl font-bold text-center py-5 mx-auto dark:text-white">{frontmatter.title}</h1>
         <div className="text-black/70 dark:text-white/70 pb-5 text-center">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
       </div>
 
@@ -70,10 +70,19 @@ export default async function Article({ params }: ArticleProps) {
           <TableOfContents headings={headings} />
         </aside>
 
-        <article className="article-body prose mx-auto prose-ul:marker:text-black prose-h2:scroll-mt-24 prose-h3:scroll-mt-24 prose-h2:text-3xl
-                            prose-p:text-xl prose-ul:text-xl prose-h3:text-2xl
-                            dark:prose-h2:text-white dark:prose-h3:text-gray-300 dark:prose-p:text-gray-300 dark:prose-em:text-white
-                            dark:prose-strong:text-white dark:prose-li:text-gray-300 dark:prose-ul:marker:text-white dark:prose-a:text-white">
+        <article className="article-body prose mx-auto
+                            prose-h2:scroll-mt-24 prose-h2:text-xl md:prose-h2:text-3xl 
+                            prose-h3:scroll-mt-24 prose-h3:text-lg md:prose-h3:text-2xl
+                            md:prose-p:text-xl 
+                            md:prose-ul:text-xl prose-ul:marker:text-black 
+                            dark:prose-h2:text-white 
+                            dark:prose-h3:text-gray-300 
+                            dark:prose-p:text-gray-300
+                            dark:prose-ul:marker:text-white
+                            dark:prose-li:text-gray-300
+                            dark:prose-a:text-white
+                            dark:prose-em:text-white
+                            dark:prose-strong:text-white">
           <ArticleContent />
         </article>
 
