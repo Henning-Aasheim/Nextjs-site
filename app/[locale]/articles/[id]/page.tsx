@@ -4,6 +4,9 @@ import { routing } from "@/i18n/routing";
 import { getFormatter, setRequestLocale } from 'next-intl/server';
 import { notFound } from "next/navigation";
 import { TableOfContents } from "@/components/toc";
+import { CATEGORY_COLOR_VARS } from "@/components/category-badge";
+import type { ArticleCategory } from "@/types";
+import type { CSSProperties } from "react";
 
 interface ArticleProps {
   params: Promise<{ id: string, locale: string }>;
@@ -37,7 +40,7 @@ export default async function Article({ params }: ArticleProps) {
   const format = await getFormatter()
 
   let ArticleContent: React.ComponentType
-  let frontmatter: { image: string; title: string; date: string }
+  let frontmatter: { image: string; title: string; date: string; category: ArticleCategory }
 
   try {
     const mod = await import(`@/content/articles/${id}.mdx`)
@@ -52,15 +55,17 @@ export default async function Article({ params }: ArticleProps) {
 
   const dateTime = new Date(frontmatter.date)
 
+  const categoryColor = CATEGORY_COLOR_VARS[frontmatter.category]
+
   return (
-    <section className="m-5 xs:m-10">
+    <section className="m-5 xs:m-10" style={{ '--category-color': categoryColor } as CSSProperties}>
       <div className="max-w-[700px] mx-auto">
         <img
           src={frontmatter.image}
           alt={frontmatter.title}
           className="object-cover aspect-3/2 mx-auto w-full"
         />
-        <h1 className="text-xl sm:text-4xl font-bold text-center py-5 mx-auto dark:text-white">{frontmatter.title}</h1>
+        <h1 className="text-xl sm:text-4xl font-bold text-center py-5 mx-auto text-(--category-color) dark:text-white">{frontmatter.title}</h1>
         <div className="text-black/70 dark:text-white/70 pb-5 text-center">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
       </div>
 
@@ -71,8 +76,8 @@ export default async function Article({ params }: ArticleProps) {
         </aside>
 
         <article className="article-body prose mx-auto
-                            prose-h2:scroll-mt-24 prose-h2:text-xl md:prose-h2:text-3xl 
-                            prose-h3:scroll-mt-24 prose-h3:text-lg md:prose-h3:text-2xl
+                            prose-h2:scroll-mt-24 prose-h2:text-xl md:prose-h2:text-3xl prose-h2:text-(--category-color)
+                            prose-h3:scroll-mt-24 prose-h3:text-lg md:prose-h3:text-2xl prose-h3:text-(--category-color)
                             md:prose-p:text-xl 
                             md:prose-ul:text-xl prose-ul:marker:text-black 
                             dark:prose-h2:text-white 

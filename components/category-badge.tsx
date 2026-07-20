@@ -48,6 +48,14 @@ export const CATEGORY_TEXT: Record<ArticleCategory, string> = {
   webDevelopment: `text-background dark:text-background`,
 }
 
+export const CATEGORY_COLOR_VARS: Record<ArticleCategory, string> = {
+  politics: 'var(--color-politics-text)',
+  international: 'var(--color-international-text)',
+  economy: 'var(--color-economy-text)',
+  society: 'var(--color-society-text)',
+  webDevelopment: 'var(--color-web-dev-text)',
+}
+
 export function CategoryBadge({
   category,
   variant = 'default',

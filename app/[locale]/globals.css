@@ -78,11 +78,11 @@
   --color-darkNavy: #020310;       /* page background: near-black deep blue */
   --color-darkNavyLight: #0a0e24;  /* component background: still dark, one notch up */
 
-  --color-politics-text: #4E4EBC;
-  --color-international-text: #64BC4E;
-  --color-economy-text: #BC4E4E;
-  --color-society-text: #BCA04E; /* same as --color-gold */
-  --color-web-dev-text: #BC4EA9;
+  --color-politics-text: #58508d;
+  --color-international-text: #50868d;
+  --color-economy-text: #780000;
+  --color-society-text: #be9903; /* same as --color-gold */
+  --color-web-dev-text: #49053e;
 }
 
  /*
@@ -273,9 +273,9 @@ html {
 
   .article-body h2 {
     position: relative;
-    padding-left: 2.2rem; /* reserve space for the "§ 01" marker */
+    padding-left: 2.2rem;
     padding-top: 0.5rem;
-    border-top: 1px solid var(--color-primary);
+    border-top: 1px solid var(--category-color, var(--color-primary));
   }
 
   .article-body h2::before {
@@ -285,7 +285,7 @@ html {
     left: 0;
     top: 0.25rem;
     font-size: 0.875rem;
-    color: var(--color-primary);
+    color: var(--category-color, var(--color-primary));
     white-space: nowrap;
     padding-top: 0.5rem;
   }

@@ -43,10 +43,10 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
 
   return (
     <nav className="text-sm sticky top-8 self-start w-[clamp(10rem,20vw,16rem)]">
-      <p className="font-semibold text-xl mb-4 text-black/80 dark:text-white/80 border-b border-primary dark:border-gray-300">
+      <p className="font-semibold text-xl mb-4 text-(--category-color) dark:text-white/80 border-b border-(--category-color) dark:border-gray-300">
         {t('title')}
       </p>
-      <ol className="space-y-1 border-l border-black/10 dark:border-gray-400">
+      <ol className="space-y-1 border-l border-(--category-color) dark:border-gray-400">
         {numbered.map((h) => {
           const isActive = activeId === h.id
           return (
@@ -64,7 +64,7 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
                   'block py-1 border-l-2 -ml-px transition-colors',
                   h.level === 3 ? 'pl-6' : 'pl-3 font-medium',
                   isActive
-                    ? 'border-primary dark:border-white text-primary dark:text-white'
+                    ? 'border-(--category-color) text-(--category-color)'
                     : 'border-transparent text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white',
                 ].join(' ')}
               >
