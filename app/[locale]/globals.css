@@ -242,6 +242,10 @@ html {
   @apply text-gray-300 font-bold hover:scale-110 hover:text-white focus:text-white
 }
 
+.navLinks.navLinks-active {
+  color: white;
+}
+
 .hero-top {
   @apply absolute mt-5 uppercase text-sm md:text-base font-cutive
 }
