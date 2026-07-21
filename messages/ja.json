@@ -116,7 +116,9 @@
     "article-list":
     {
         "title": "最新の記事の一覧",
-        "no-articles": "この範疇にて記事はいまだ有らず。"
+        "no-articles": "この範疇にて記事はいまだ有らず。",
+        "cardView": "カード表示",
+        "listView": "リスト表示"
     },
 
     "categories": {

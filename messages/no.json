@@ -116,7 +116,9 @@
     "article-list":
     {
         "title": "Nylige artikler",
-        "no-articles": "Ingen artikler i denne kategorien enda."
+        "no-articles": "Ingen artikler i denne kategorien enda.",
+        "cardView": "Kortvisning",
+        "listView": "Listevisning"
     },
 
     "categories": {

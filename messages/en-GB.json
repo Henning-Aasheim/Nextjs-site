@@ -119,7 +119,9 @@
     "article-list":
     {
         "title": "Recent Articles",
-        "no-articles": "No articles in this category yet."
+        "no-articles": "No articles in this category yet.",
+        "cardView": "Card view",
+        "listView": "List view"
     },
 
     "categories": {

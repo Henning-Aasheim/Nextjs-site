@@ -48,7 +48,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
             <ExpandableText dropcapClassName='dropcap-library'>{t('description')}</ExpandableText>
           </div>
 
-          <p className="dropcap dropcap-library hidden lg:block">
+          <p className="dropcap dropcap-library hidden lg:block lg:max-w-[800px] lg:mx-auto">
             {t('description')}
           </p>
         </div>
