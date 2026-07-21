@@ -75,7 +75,7 @@ const civita: CivitaItem[] = [
     url: "https://civita.no/podcast/digitale-utfordringer-del-3-kampen-om-mikrochipene/",
     title: "Kampen om mikrochipene",
     image: "/civita/podkast.webp",
-    date: "2024-04-09",
+    date: "2024-07-19",
     category: "international",
     excerpt: "Hva er mikrochiper og hvorfor er de så viktige i dagens samfunn? Blir den neste store konflikten en microchip-krig?",
   },
@@ -84,7 +84,7 @@ const civita: CivitaItem[] = [
     url: "https://civita.no/notat/har-norsk-offentlig-sektor-et-produktivitetsproblem/",
     title: "Norsk offentlig sektor og produktivitet",
     image: "/civita/offentlig_sektor.webp",
-    date: "2024-04-09",
+    date: "2025-04-02",
     category: "economy",
     excerpt: "Hvor effektiv er egentlig norsk offentlig sektor? Og hva får vi igjen for pengene? Er produktivitet i offentlig sektor mulig å måle?",
   },
@@ -383,7 +383,7 @@ export default function AboutPage({
                             {t("previous-work")}
                         </h1>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                           {civita.map((item) => {
                           const dateTime = new Date(item.date)
 
@@ -391,7 +391,7 @@ export default function AboutPage({
                               <article
                                 key={item.id}
                                 style={{ '--category-color': CATEGORY_COLOR_VARS[item.category] } as CSSProperties}
-                                className={`group hover:scale-105 transition-transform duration-100 mb-5
+                                className={`group hover:scale-105 transition-transform duration-100
                                             rounded-lg overflow-hidden
                                             text-gray-800 hover:text-(--category-color)
                                             dark:text-gray-300 dark:hover:text-(--category-color)
