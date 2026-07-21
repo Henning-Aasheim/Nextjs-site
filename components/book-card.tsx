@@ -32,11 +32,11 @@ export function BookCard({
 
         {/* Text: below the image, natural height */}
         <div className="px-2 py-2 text-left">
-          <h2 className="text-sm lg:text-lg font-bold leading-tight line-clamp-2 text-white">
+          <h2 className="text-sm lg:text-lg font-bold leading-tight line-clamp-2 ">
             {book.title}
           </h2>
-          <p className="text-xs lg:text-sm text-gray-200 truncate">{book.author}</p>
-          {yearLabel && <p className="text-xs lg:text-sm text-gray-300 dark:text-gray-400">{yearLabel}</p>}
+          <p className="text-xs lg:text-sm text-gray-400 truncate">{book.author}</p>
+          {yearLabel && <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400">{yearLabel}</p>}
         </div>
       </Link>
     </div>

@@ -10,31 +10,31 @@ const VISIBLE_COUNT = 5
 
 const ERA_STYLES: Record<BookEra, string> = {
   archaic: `
-    bg-primary
+    text-primary
     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
     dark:border dark:border-primary/60
     dark:shadow-[0_0_20px] dark:shadow-primary/10
   `,
   classical: `
-    bg-secondary
+    text-secondary
     dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
     dark:border dark:border-secondary/60
     dark:shadow-[0_0_20px] dark:shadow-secondary/10
   `,
   medieval: `
-    bg-danger
+    text-danger
     dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
     dark:border dark:border-danger/60
     dark:shadow-[0_0_20px] dark:shadow-danger/10
   `,
   earlyModern: `
-    bg-primary
+    text-tertiary
     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
     dark:border dark:border-primary/60
     dark:shadow-[0_0_20px] dark:shadow-primary/10
   `,
   modern: `
-    bg-secondary
+    text-quarternary
     dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
     dark:border dark:border-secondary/60
     dark:shadow-[0_0_20px] dark:shadow-secondary/10
@@ -58,7 +58,7 @@ export function LibraryCategory({
 
   return (
     <section className={`mb-5 p-5 sm:p-6 dark:rounded-lg ${ERA_STYLES[era]}`}>
-      <h3 className="text-3xl sm:text-4xl font-default font-bold mb-6 text-white">
+      <h3 className="text-3xl sm:text-4xl font-default font-bold mb-6">
         {t(`eras.${era}` as 'eras.archaic')}
       </h3>
 
@@ -74,7 +74,7 @@ export function LibraryCategory({
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setExpanded((v) => !v)}
-              className="flex items-center gap-2 font-bold text-white hover:text-background cursor-pointer"
+              className="flex items-center gap-2 font-bold cursor-pointer"
             >
               {expanded ? t('showLess') : t('loadMore')}
               {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}

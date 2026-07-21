@@ -33,11 +33,11 @@ export default function Library({ params }: { params: Promise<Params> }) {
 
   return (
     <div className="text-center mt-5 mx-auto w-10/11 md:w-4/5 max-w-[1200px]">
-      <div className='mx-auto bg-danger dark:rounded-lg mb-5 text-gray-300 p-5
+      <div className='mx-auto dark:rounded-lg mb-5 p-5
                       dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
                       dark:border dark:border-danger/60
                       dark:shadow-[0_0_20px] dark:shadow-danger/10'>
-        <h1 className="text-5xl mb-5 font-default font-bold mx-auto text-white">
+        <h1 className="text-5xl mb-5 font-default font-bold mx-auto">
           {t('title')}
         </h1>
 

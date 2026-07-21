@@ -163,7 +163,7 @@ html {
 }
 
 .dropcap-library {
-  --dropcap-color: var(--color-white);
+  --dropcap-color: var(--color-gray-800);
 }
 
 .dark .dropcap-library:first-letter {

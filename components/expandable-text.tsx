@@ -22,7 +22,7 @@ export function ExpandableText({
 
       <button
         onClick={() => setExpanded((v) => !v)}
-        className="mt-2 flex items-center gap-1 font-bold text-white hover:text-danger cursor-pointer"
+        className="mt-2 flex items-center gap-1 font-bold cursor-pointer"
       >
         {expanded ? t('showLess') : t('loadMore')}
         {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
