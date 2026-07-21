@@ -1,13 +1,13 @@
-import { useTranslations } from "next-intl";
-import { setRequestLocale, getTranslations } from "next-intl/server";
-import { use } from "react";
-import { FileDown } from "lucide-react";
-import { Metadata } from "next";
-import { FaBluesky, FaGithub, FaLinkedin } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
-import Shinshu from "../../icons/shinshu.svg";
-import CivitaIcon from "../../icons/civita.svg";
-import UiO from "../../icons/uio_segl.svg";
+import { useTranslations } from "next-intl"
+import { setRequestLocale, getTranslations } from "next-intl/server"
+import { use } from "react"
+import { FileDown } from "lucide-react"
+import { Metadata } from "next"
+import { FaBluesky, FaGithub, FaLinkedin } from "react-icons/fa6"
+import { IoMdMail } from "react-icons/io"
+import Shinshu from "../../icons/shinshu.svg"
+import CivitaIcon from "../../icons/civita.svg"
+import UiO from "../../icons/uio_segl.svg"
 
 // This is the metadata for the page
 export async function generateMetadata({
@@ -33,7 +33,7 @@ const localeToCvPath: Record<string, string> = {
   no: "/resumes/cv-no.pdf",
   "en-GB": "/resumes/cv-en-GB.pdf",
   // ja: "/resumes/cv-ja-JP.pdf",
-};
+}
 
 // ---- Data: previous Civita work (unchanged) <ref: index=10406203 firstWord=1 lastWord=40/> ----
 
@@ -44,7 +44,8 @@ const civita = [
     title: "Mikrobrikkekrigen",
     image: "/civita/mikrobrikker.webp",
     date: "2024-04-09",
-    category: ["International", "China"],
+    category: "international",
+    excerpt: "Mikrobrikken er viktig for Norge og Vesten og Kina har blitt en rival. Dette notatet ser på kampen om den digitale utviklingen, en ideologisk kamp der Vesten kriger med Kina for å holde på den teknologiske ledelsen.",
   },
   {
     id: 2,
@@ -52,7 +53,8 @@ const civita = [
     title: "Det indiske valget",
     image: "/civita/india.webp",
     date: "2024-04-19",
-    category: ["Democracy", "International", "India"],
+    category: "international",
+    excerpt: "Den sittende statsministeren, Narendra Modi, vinner trolig valget. Kan Modis autokratiske tendenser bli et problem? Er demokratiet i fare? Og hva skjer med Indias voksende økonomi?",
   },
   {
     id: 3,
@@ -60,7 +62,8 @@ const civita = [
     title: "Kampen om mikrochipene",
     image: "/civita/podkast.webp",
     date: "2024-04-09",
-    category: ["International", "China"],
+    category: "international",
+    excerpt: "Hva er mikrochiper og hvorfor er de så viktige i dagens samfunn? Blir den neste store konflikten en microchip-krig?",
   },
   {
     id: 4,
@@ -68,9 +71,10 @@ const civita = [
     title: "Norsk offentlig sektor og produktivitet",
     image: "/civita/offentlig_sektor.webp",
     date: "2024-04-09",
-    category: ["Public Expenditures", "Norway", "Economy", "Welfare"],
+    category: "economy",
+    excerpt: "Hvor effektiv er egentlig norsk offentlig sektor? Og hva får vi igjen for pengene? Er produktivitet i offentlig sektor mulig å måle?",
   },
-];
+]
 
 // ---- Data: Experience items (replaces repeated JSX in the experience section) ----
 // Mirrors the three list items from the original experience block
@@ -110,7 +114,7 @@ const experienceItems: ExperienceItem[] = [
     subtitleKey: "experience-3-employer",
     dateKey: "experience-3-date",
   },
-];
+]
 
 // ---- Data: Education items (replaces repeated JSX in the education section) ----
 // Mirrors the four list items from the original education block:
@@ -154,7 +158,7 @@ const educationItems: EducationItem[] = [
     subtitleKey: "education-4-university",
     dateKey: "education-4-date",
   },
-];
+]
 
 // ---- Main page component ----
 
@@ -163,14 +167,14 @@ export default function AboutPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = use(params);
+  const { locale } = use(params)
 
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = useTranslations("about");
+  const t = useTranslations("about")
 
-  const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"]; // default to Norwegian
+  const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"] // default to Norwegian
 
   return (
     <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5">
