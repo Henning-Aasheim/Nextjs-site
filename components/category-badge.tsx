@@ -1,31 +1,54 @@
 import { useTranslations } from 'next-intl'
 import { ArticleCategory } from '@/types'
 
-export const CATEGORY_STYLES: Record<ArticleCategory, string> = {
+export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
   politics: `
-    bg-primary/15 text-primary border border-primary/40
-    dark:bg-[color-mix(in_srgb,var(--color-primary)_20%,var(--color-darkNavyLight))]
-    dark:text-white dark:border-primary/50
+    bg-bgDark border-l-5 border-primary
+    dark:bg-darkNavyLight dark:border-primary/60
+    dark:shadow-[0_0_20px] dark:shadow-primary/10
   `,
   international: `
-    bg-secondary/15 text-secondary border border-secondary/40
-    dark:bg-[color-mix(in_srgb,var(--color-secondary)_20%,var(--color-darkNavyLight))]
-    dark:text-white dark:border-secondary/50
+    bg-bgDark border-l-5 border-secondary
+    dark:bg-darkNavyLight dark:border-secondary/60
+    dark:shadow-[0_0_20px] dark:shadow-secondary/10
   `,
   economy: `
-    bg-danger/15 text-danger border border-danger/40
-    dark:bg-[color-mix(in_srgb,var(--color-danger)_20%,var(--color-darkNavyLight))]
-    dark:text-white dark:border-danger/50
+    bg-bgDark border-l-5 border-danger
+    dark:bg-darkNavyLight dark:border-danger/60
+    dark:shadow-[0_0_20px] dark:shadow-danger/10
   `,
   society: `
-    bg-gold/15 text-darkGold border border-gold/40
-    dark:bg-[color-mix(in_srgb,var(--color-gold)_20%,var(--color-darkNavyLight))]
-    dark:text-white dark:border-gold/50
+    bg-bgDark border-l-5 border-gold
+    dark:bg-darkNavyLight dark:border-gold/60
+    dark:shadow-[0_0_20px] dark:shadow-gold/10
   `,
   webDevelopment: `
-    bg-purple/15 text-purple border border-purple/40
-    dark:bg-[color-mix(in_srgb,var(--color-purple)_25%,var(--color-darkNavyLight))]
-    dark:text-white dark:border-purple/50
+    bg-bgDark border-l-5 border-purple
+    dark:bg-darkNavyLight dark:border-purple/60
+    dark:shadow-[0_0_20px] dark:shadow-purple/10
+  `,
+}
+
+export const CATEGORY_STYLES: Record<ArticleCategory, string> = {
+  politics: `
+    bg-primary text-white border border-primary
+    dark:bg-primary dark:text-white dark:border-primary/70
+  `,
+  international: `
+    bg-secondary text-white border border-secondary
+    dark:bg-secondary dark:text-white dark:border-secondary/70
+  `,
+  economy: `
+    bg-danger text-white border border-danger
+    dark:bg-danger dark:text-white dark:border-danger/70
+  `,
+  society: `
+    bg-gold text-darkNavy border border-gold
+    dark:bg-gold dark:text-darkNavy dark:border-gold/70
+  `,
+  webDevelopment: `
+    bg-purple text-white border border-purple
+    dark:bg-purple dark:text-white dark:border-purple/70
   `,
 }
 

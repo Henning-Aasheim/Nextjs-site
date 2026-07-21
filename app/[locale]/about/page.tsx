@@ -1,13 +1,17 @@
-import { useTranslations } from "next-intl"
+import { useTranslations, useFormatter } from "next-intl"
 import { setRequestLocale, getTranslations } from "next-intl/server"
 import { use } from "react"
-import { FileDown } from "lucide-react"
+import { FileDown, Calendar } from "lucide-react"
 import { Metadata } from "next"
 import { FaBluesky, FaGithub, FaLinkedin } from "react-icons/fa6"
 import { IoMdMail } from "react-icons/io"
 import Shinshu from "../../icons/shinshu.svg"
 import CivitaIcon from "../../icons/civita.svg"
 import UiO from "../../icons/uio_segl.svg"
+import type { CSSProperties } from "react"
+import type { ArticleCategory } from "@/types"
+import { CategoryBadge, CATEGORY_CARD_STYLES, CATEGORY_COLOR_VARS } from "@/components/category-badge"
+
 
 // This is the metadata for the page
 export async function generateMetadata({
@@ -37,7 +41,17 @@ const localeToCvPath: Record<string, string> = {
 
 // ---- Data: previous Civita work (unchanged) <ref: index=10406203 firstWord=1 lastWord=40/> ----
 
-const civita = [
+interface CivitaItem {
+  id: number
+  url: string
+  title: string
+  image: string
+  date: string
+  category: ArticleCategory
+  excerpt: string
+}
+
+const civita: CivitaItem[] = [
   {
     id: 1,
     url: "https://civita.no/notat/mikrobrikkekrigen/",
@@ -173,6 +187,7 @@ export default function AboutPage({
   setRequestLocale(locale);
 
   const t = useTranslations("about")
+  const format = useFormatter()
 
   const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"] // default to Norwegian
 
@@ -368,35 +383,54 @@ export default function AboutPage({
                             {t("previous-work")}
                         </h1>
 
-                        <div>
-                            {civita.map((item) => (
-                            <article key={item.id} className="group">
-                                <div className="xs:w-4/5 sm:w-full mx-auto max-w-75 sm:max-w-none">
-                                <a href={item.url}>
-                                    <div className="flex flex-row flex-wrap mb-4 items-center overflow-hidden 
-                                                    shadow-lg dark:bg-primary/30
-                                                    dark:rounded-lg bg-bgDark
-                                                    hover:scale-102 hover:transition-transform 
-                                                    transition-colors duration-600 ease-in-out
-                                                    hover:shadow-xl hover:text-gray-600">
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-full h-38 sm:h-28 sm:w-45 object-cover sm:mr-4
-                                                   mask-b-from-90% sm:mask-r-from-90% sm:mask-b-from-100%"
-                                    />
-                                    <h2 className="font-bold text-base 2xs:text-xl md:text-2xl flex-1
-                                                    items-center sm:items-baseline 
-                                                    my-4 sm:my-0
-                                                    mx-3 sm:mx-0">
-                                        {item.title}
-                                    </h2>
-                                    </div>
-                                </a>
-                                </div>
-                            </article>
-                            ))}
-                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {civita.map((item) => {
+                          const dateTime = new Date(item.date)
+
+                          return (
+                              <article
+                                key={item.id}
+                                style={{ '--category-color': CATEGORY_COLOR_VARS[item.category] } as CSSProperties}
+                                className={`group hover:scale-105 transition-transform duration-100 mb-5
+                                            rounded-lg overflow-hidden
+                                            text-gray-800 hover:text-(--category-color)
+                                            dark:text-gray-300 dark:hover:text-(--category-color)
+                                            flex flex-col
+                                            ${CATEGORY_CARD_STYLES[item.category]}`}
+                              >
+                              <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-1 rounded-lg">
+                                  {/* Image */}
+                                  <div className="relative w-full aspect-3/2 shrink-0">
+                                  <img
+                                      src={item.image}
+                                      alt={item.title}
+                                      className="absolute inset-0 w-full h-full object-cover"
+                                  />
+                                  <div className="absolute top-2 left-2">
+                                      <CategoryBadge category={item.category} />
+                                  </div>
+                                  </div>
+
+                                  {/* Text */}
+                                  <div className="p-3 flex flex-col flex-1 mx-2">
+                                  <h2 className="text-lg sm:text-xl font-default font-semibold text-left leading-7 line-clamp-2">
+                                      {item.title}
+                                  </h2>
+
+                                  <p className="mt-2 text-left text-gray-500 dark:text-gray-400 line-clamp-3">
+                                      {item.excerpt}
+                                  </p>
+
+                                  <div className="flex items-center justify-start gap-1.5 text-gray-500 dark:text-gray-400 mt-auto pt-2">
+                                      <Calendar size={15} className="shrink-0" />
+                                      <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
+                                  </div>
+                                  </div>
+                              </a>
+                              </article>
+                          )
+                          })}
+                      </div>
                     </div>
             </section>
 

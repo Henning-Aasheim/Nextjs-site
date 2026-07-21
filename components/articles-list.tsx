@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useTranslations, useFormatter } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import type { ArticleContent, ArticleCategory } from '@/types'
-import { CategoryBadge, CATEGORY_STYLES, CATEGORY_COLOR_VARS } from './category-badge'
+import { CategoryBadge, CATEGORY_CARD_STYLES, CATEGORY_STYLES, CATEGORY_COLOR_VARS } from './category-badge'
 import { Calendar } from 'lucide-react'
 import type { CSSProperties } from "react";
 
@@ -15,34 +15,6 @@ const ARTICLE_CATEGORIES: ArticleCategory[] = [
   'society',
   'webDevelopment',
 ]
-
-export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
-  politics: `
-    bg-bgDark border-l-5 border-primary
-    dark:bg-darkNavyLight dark:border-primary/60
-    dark:shadow-[0_0_20px] dark:shadow-primary/10
-  `,
-  international: `
-    bg-bgDark border-l-5 border-secondary
-    dark:bg-darkNavyLight dark:border-secondary/60
-    dark:shadow-[0_0_20px] dark:shadow-secondary/10
-  `,
-  economy: `
-    bg-bgDark border-l-5 border-danger
-    dark:bg-darkNavyLight dark:border-danger/60
-    dark:shadow-[0_0_20px] dark:shadow-danger/10
-  `,
-  society: `
-    bg-bgDark border-l-5 border-gold
-    dark:bg-darkNavyLight dark:border-gold/60
-    dark:shadow-[0_0_20px] dark:shadow-gold/10
-  `,
-  webDevelopment: `
-    bg-bgDark border-l-5 border-purple
-    dark:bg-darkNavyLight dark:border-purple/60
-    dark:shadow-[0_0_20px] dark:shadow-purple/10
-  `,
-}
 
 export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
   const tCat = useTranslations('categories')
