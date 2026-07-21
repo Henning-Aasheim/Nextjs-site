@@ -64,7 +64,7 @@ export default async function Article({ params }: ArticleProps) {
 
   return (
     <section className="m-5 xs:m-10" style={{ '--category-color': categoryColor } as CSSProperties}>
-      <div className="max-w-[1100px] mx-auto mb-10">
+      <div className="max-w-[1200px] mx-auto mb-10">
         <ArticleHero
           title={frontmatter.title}
           lede={excerpt}
