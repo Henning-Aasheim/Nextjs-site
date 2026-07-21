@@ -208,7 +208,7 @@ html {
 }
 
 .nameLogo {
-  @apply mb-6 font-bold lg:inline-block text-center xl:text-left text-6xl s:text-5xl sm:text-6xl
+  @apply mb-6 font-bold lg:inline-block text-center xl:text-left text-4xl s:text-5xl sm:text-6xl
 }
 
 :lang(ja) .nameLogo {
