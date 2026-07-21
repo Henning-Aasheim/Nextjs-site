@@ -139,7 +139,7 @@ html {
 }
 
 .dropcap {
-  @apply leading-8; /* 2rem — this defines the paragraph's own line height, untouched */
+  @apply leading-7 sm:leading-8; /* 1.75rem on mobile, 2rem from sm up */
   --dropcap-color: var(--color-white);
 }
 
@@ -147,14 +147,22 @@ html {
 .dropcap > p:first-child::first-letter {
   @apply float-left;
   color: var(--dropcap-color);
-  font-size: 4rem;
-  line-height: 1;        /* removes ambiguous half-leading entirely — box now hugs the glyph */
+  font-size: 3.5rem;      /* 2 × 1.75rem — matches mobile leading-7 */
+  line-height: 1;
   padding-right: 0.05em;
   padding-bottom: 0;
-  margin-top: 0.65rem;
+  margin-top: 0.55rem;    /* re-eyeballed for the smaller size */
   overflow: hidden;
-  text-box-trim: trim-both; /* This fixes the CSS on mobile. If this is not included the drop cap gets placed wrong and has an unwanted padding on the bottom */
-  text-box-edge: cap alphabetic; /* trims to top of capital letters / baseline */
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+@media (min-width: 640px) {
+  .dropcap:first-letter,
+  .dropcap > p:first-child::first-letter {
+    font-size: 4rem;      /* 2 × 2rem — matches leading-8 from sm up */
+    margin-top: 0.65rem;  /* your existing tuned value */
+  }
 }
 
 :lang(ja) .dropcap:first-letter,
@@ -208,10 +216,18 @@ html {
 }
 
 .nameLogo {
-  @apply mb-6 font-bold lg:inline-block text-center xl:text-left text-4xl s:text-5xl sm:text-6xl
+  @apply text-5xl xs:text-8xl
 }
 
 :lang(ja) .nameLogo {
+  @apply md:text-7xl lg:text-8xl md:pt-7 lg:pt-0
+}
+
+.heroTitle {
+  @apply mb-6 font-bold lg:inline-block text-center xl:text-left text-4xl s:text-5xl sm:text-6xl
+}
+
+:lang(ja) .heroTitle {
   @apply font-default first-letter:font-default text-4xl 2xs:text-5xl
 }
 

@@ -9,7 +9,7 @@ import Link from 'next/link';
 function HeroText({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
     <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
-      <h1 className="nameLogo text-white">{t('header')}</h1>
+      <h1 className="heroTitle text-white">{t('header')}</h1>
       <p className="dropcap text-white xl:text-lg lg:pr-25 xl:pr-50">
         {t('description')}
       </p>
