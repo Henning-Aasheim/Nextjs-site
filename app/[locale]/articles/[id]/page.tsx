@@ -1,9 +1,10 @@
-import { getAllArticleIds, getArticleById } from "@/app/lib/articles";
+import { getAllArticleIds, getArticleById, getArticleData } from "@/app/lib/articles";
 import { extractHeadings } from "@/app/lib/toc";
 import { routing } from "@/i18n/routing";
-import { getFormatter, setRequestLocale } from 'next-intl/server';
+import { getFormatter, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from "next/navigation";
 import { TableOfContents } from "@/components/toc";
+import { ArticleHero } from "@/components/article-hero";
 import { CATEGORY_COLOR_VARS } from "@/components/category-badge";
 import type { ArticleCategory } from "@/types";
 import type { CSSProperties } from "react";
@@ -38,6 +39,7 @@ export default async function Article({ params }: ArticleProps) {
   const { id, locale } = await params
   setRequestLocale(locale)
   const format = await getFormatter()
+  const tCat = await getTranslations('categories')
 
   let ArticleContent: React.ComponentType
   let frontmatter: { image: string; title: string; date: string; category: ArticleCategory }
@@ -53,25 +55,29 @@ export default async function Article({ params }: ArticleProps) {
   const rawArticle = getArticleById(id)
   const headings = rawArticle ? extractHeadings(rawArticle.content) : []
 
+  const { excerpt } = await getArticleData(id)
+
   const dateTime = new Date(frontmatter.date)
 
   const categoryColor = CATEGORY_COLOR_VARS[frontmatter.category]
+  const categoryLabel = tCat(frontmatter.category)
 
   return (
     <section className="m-5 xs:m-10" style={{ '--category-color': categoryColor } as CSSProperties}>
-      <div className="max-w-[700px] mx-auto">
-        <img
-          src={frontmatter.image}
-          alt={frontmatter.title}
-          className="object-cover aspect-3/2 mx-auto w-full"
+      <div className="max-w-[1100px] mx-auto mb-10">
+        <ArticleHero
+          title={frontmatter.title}
+          lede={excerpt}
+          image={frontmatter.image}
+          color={categoryColor}
+          categoryLabel={categoryLabel}
+          date={dateTime}
         />
-        <h1 className="text-xl sm:text-4xl font-bold text-center py-5 mx-auto text-(--category-color) dark:text-white">{frontmatter.title}</h1>
-        <div className="text-black/70 dark:text-white/70 pb-5 text-center">{format.dateTime(dateTime, { dateStyle: 'long' })}</div>
       </div>
 
       {/* [TOC] [article, fixed width, always centered] [spacer, same size as TOC] */}
       <div className="md:grid md:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)] xl:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)_clamp(10rem,20vw,16rem)] md:gap-10 lg:justify-center mx-auto">
-        <aside className="hidden md:block sticky top-8 self-start">
+        <aside className="md:sticky md:top-8 md:self-start">
           <TableOfContents headings={headings} />
         </aside>
 

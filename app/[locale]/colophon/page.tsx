@@ -36,7 +36,7 @@ export default async function Colophon({ params }: { params: Promise<{ locale: s
       </h1>
 
       <div className="md:grid md:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)] xl:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)_clamp(10rem,20vw,16rem)] md:gap-10 lg:justify-center mx-auto">
-        <aside className="hidden md:block sticky top-8 self-start">
+        <aside className="md:sticky md:top-8 md:self-start">
           <TableOfContents headings={headings} />
         </aside>
 
