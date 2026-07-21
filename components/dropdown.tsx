@@ -25,3 +25,26 @@ export const useOutsideClick = <T extends HTMLElement>(
     }
   }, [ref, callback])
 }
+
+export const useCloseOnScroll = <T extends HTMLElement>(
+  ref: RefObject<T | null>,
+  callback: () => void
+) => {
+  useEffect(() => {
+    const handleScroll = (event: Event) => {
+      if (
+        ref.current &&
+        event.target instanceof Node &&
+        ref.current.contains(event.target)
+      ) {
+        return // scroll happened inside the dropdown itself — leave it open
+      }
+      callback()
+    }
+
+    document.addEventListener('scroll', handleScroll, { capture: true, passive: true })
+    return () => {
+      document.removeEventListener('scroll', handleScroll, { capture: true })
+    }
+  }, [ref, callback])
+}

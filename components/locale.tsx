@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { useTranslations } from 'next-intl'
 import { Earth } from 'lucide-react'
 import { useRef, useState } from 'react'
-import { useOutsideClick } from './dropdown'
+import { useOutsideClick, useCloseOnScroll } from './dropdown'
 
 export default function LocaleSwitcher() {
 
@@ -25,6 +25,7 @@ export default function LocaleSwitcher() {
   const dropdownRef = useRef(null);
 
   useOutsideClick(dropdownRef, () => setIsOpen(false));
+  useCloseOnScroll(dropdownRef, () => setIsOpen(false))
 
   return (
     <div ref={dropdownRef} className="relative">
@@ -33,10 +34,11 @@ export default function LocaleSwitcher() {
       </button>
       {isOpen && (
         <div className='absolute left-0 py-2 w-50 mt-2 md:left-auto md:right-0 
-                      bg-secondary rounded-md shadow-lg z-20 text-gray-300
-                        dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
-                        dark:border dark:border-secondary/60
-                        dark:shadow-[0_0_20px] dark:shadow-secondary/10'>
+              rounded-md shadow-lg z-20 text-gray-300
+              bg-[color-mix(in_srgb,var(--color-secondary)_90%,white)]
+              dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
+              dark:border dark:border-secondary/60
+              dark:shadow-[0_0_20px] dark:shadow-secondary/10'>
           <button onClick={() => switchLocale('en-GB')} className={locale === 'en-GB' ? 'localeButton font-bold' : 'localeButton'}>{t('en')}</button>
           <button onClick={() => switchLocale('ja')}    className={locale === 'ja'    ? 'localeButton font-bold' : 'localeButton'}>{t('ja')}</button>
           <button onClick={() => switchLocale('no')}    className={locale === 'no'    ? 'localeButton font-bold' : 'localeButton'}>{t('no')}</button>
