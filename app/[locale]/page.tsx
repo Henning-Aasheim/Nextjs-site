@@ -38,8 +38,8 @@ export default async function Home({
 {/* NAME */}
 
         <div className="max-w-[1200px] mx-auto mt-10 md:mt-15 lg:mt-30 text-5xl xs:text-8xl flex flex-row">
-          <span className="w-4/9"><Shinshu className="h-50 fill-gray-800 float-right pr-20"/></span>
-          <span className="w-5/9 pl-20 border-l border-gray-400">{t('name')}</span>
+          <div className="w-full md:w-5/13"><Shinshu className="h-50 mx-auto fill-gray-800 md:float-right md:pr-20"/></div>
+          <div className="hidden md:inline md:w-8/13 md:pl-20 md:border-l md:border-gray-400">{t('name')}</div>
         </div>
 
 {/* HERO */}
