@@ -3,8 +3,6 @@ import { routing } from '@/i18n/routing';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import remarkGfm from 'remark-gfm';
 import { formatBookYear } from '@/app/lib/yearFormat';
 
 export const dynamic = 'error';
@@ -61,7 +59,9 @@ export default async function BookPage(
   const yearLabel = formatBookYear(tDate, {
     year: book.year,
     yearRange: book.yearRange,
-  });
+  })
+
+  const { default: BookContent } = await import(`@/content/books/${locale}/${id}.mdx`)
 
   return (
     <main>
@@ -77,14 +77,7 @@ export default async function BookPage(
         </header>
 
         <section className='my-8'>
-          <MDXRemote
-            source={book.content}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-              },
-            }}
-          />
+          <BookContent />
         </section>
       </article>
     </main>

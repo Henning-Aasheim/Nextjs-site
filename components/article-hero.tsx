@@ -23,7 +23,7 @@ function ArticleHeroText({
     <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
       <span className="hero-top block !static !mt-0 text-white">{categoryLabel}</span>
 
-      <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+      <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight">
         {title}
       </h1>
 
@@ -63,13 +63,13 @@ export function ArticleHero({
       <div
         ref={ref}
         style={{ '--progress': progress } as CSSProperties}
-        className="hero-shrink lg:mx-auto bg-(--category-color) h-full rounded-xl
+        className="hero-shrink lg:mx-auto bg-(--category-color) rounded-xl
                    dark:rounded-lg overflow-hidden
                    dark:bg-[color-mix(in_srgb,var(--category-color)_12%,var(--color-darkNavyLight))]
                    dark:border dark:border-[color-mix(in_srgb,var(--category-color)_60%,transparent)]
                    dark:shadow-[0_0_20px] dark:shadow-[color-mix(in_srgb,var(--category-color)_10%,transparent)]"
       >
-        <div className="relative flex flex-col lg:block min-h-[40vh] lg:h-full">
+        <div className="relative flex flex-col lg:block">
           {/* Image side */}
           <div className="relative w-full lg:w-[65%] ml-auto aspect-3/2">
             <Image

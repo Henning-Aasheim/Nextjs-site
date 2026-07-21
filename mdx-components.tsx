@@ -16,6 +16,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   }
 }
 
-// How to solve Uncoaught Error: Expected component `COMPONENT_NAME` to be defined: you likely forgot to import, pass, or provide it.
+// How to solve Uncaught Error: Expected component `COMPONENT_NAME` to be defined: you likely forgot to import, pass, or provide it.
 //
-// Solution: 
+// Solution: The problem was that I used MDXRemote for the books, and import() for all the others. This meant that the components never worked on books, but did on articles and the colophon. Now the rendering engines have been harmonised.
