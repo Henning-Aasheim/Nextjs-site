@@ -1,11 +1,12 @@
-import { useTranslations } from 'next-intl';
-import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { use } from 'react';
-import { Metadata } from 'next';
-import { getAllBooks, sortBooksByDate, groupBooksByEra, BOOK_ERAS } from '@/app/lib/books';
-import { formatBookYear } from '@/app/lib/yearFormat';
-import { LibraryCategory } from '@/components/library-category';
-import { ExpandableText } from '@/components/expandable-text';
+import { useTranslations } from 'next-intl'
+import { setRequestLocale, getTranslations } from 'next-intl/server'
+import { use } from 'react'
+import { Metadata } from 'next'
+import { getAllBooks, sortBooksByDate, groupBooksByEra, BOOK_ERAS } from '@/app/lib/books'
+import { formatBookYear } from '@/app/lib/yearFormat'
+import { LibraryCategory } from '@/components/library-category'
+import { ExpandableText } from '@/components/expandable-text'
+import { FeaturedBook } from '@/components/featured-book'
 
 type Params = { locale: string };
 
@@ -13,23 +14,25 @@ export async function generateMetadata(
   { params }: { params: Promise<Params> }
 ): Promise<Metadata> {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations('metaLibrary');
-  return { title: t('title'), description: t('description') };
+  setRequestLocale(locale)
+  const t = await getTranslations('metaLibrary')
+  return { title: t('title'), description: t('description') }
 }
 
 export default function Library({ params }: { params: Promise<Params> }) {
-  const { locale } = use(params);
-  setRequestLocale(locale);
+  const { locale } = use(params)
+  setRequestLocale(locale)
 
-  const t = useTranslations('library');
-  const tDate = useTranslations('Date');
+  const t = useTranslations('library')
+  const tDate = useTranslations('Date')
 
   const books = sortBooksByDate(getAllBooks(locale)).map((book) => ({
     ...book,
     yearLabel: formatBookYear(tDate, { year: book.year, yearRange: book.yearRange }),
-  }));
-  const grouped = groupBooksByEra(books);
+  }))
+  const grouped = groupBooksByEra(books)
+
+  const featured = books[books.length - 1]
 
   return (
     <div className="text-center mt-5 mx-auto w-10/11 md:w-4/5 max-w-[1200px]">
@@ -53,6 +56,10 @@ export default function Library({ params }: { params: Promise<Params> }) {
           </p>
         </div>
       </div>
+
+      {featured?.era && (
+        <FeaturedBook book={featured} yearLabel={featured.yearLabel} era={featured.era} />
+      )}
 
       <div className="mx-auto text-left">
         {BOOK_ERAS.map((era) => (

@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import { useTranslations } from "next-intl";
-import { Link } from '@/i18n/navigation';
+import { useTranslations } from "next-intl"
+import { Link } from '@/i18n/navigation'
 
 export default function Footer() {
 
-    const t = useTranslations('footer');
+    const t = useTranslations('footer')
 
-    const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear()
 
     return (
     <footer className="text-sm sm:text-base mt-auto px-6 py-6 text-center font-default

@@ -45,5 +45,5 @@ export default function LocaleSwitcher() {
         </div>
       )}
     </div>
-    )
+  )
 }

@@ -1,35 +1,35 @@
 import { getAllArticles, getArticleData } from "../lib/articles"
 import Link from "next/link"
-import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server";
-import Hero from "@/components/hero";
-import { RecentArticlesList } from "@/components/recent-articles-list";
+import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server"
+import Hero from "@/components/hero"
+import { RecentArticlesList } from "@/components/recent-articles-list"
 import Shinshu from '../icons/shinshu.svg'
 
 export default async function Home({
   params,
 }: {
-  params: { locale: string };
+  params: { locale: string }
 }) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+  const { locale } = await params
+  setRequestLocale(locale)
 
-  const t = await getTranslations({ locale, namespace: "home" });
-  const format = await getFormatter({ locale });
+  const t = await getTranslations({ locale, namespace: "home" })
+  const format = await getFormatter({ locale })
 
-  const allArticlesData = await getAllArticles();
+  const allArticlesData = await getAllArticles()
 
   const sortedArticles = [...allArticlesData].sort((a, b) => {
-    const aTime = new Date(a.frontmatter.date).getTime();
-    const bTime = new Date(b.frontmatter.date).getTime();
-    return bTime - aTime;
-  });
+    const aTime = new Date(a.frontmatter.date).getTime()
+    const bTime = new Date(b.frontmatter.date).getTime()
+    return bTime - aTime
+  })
 
-  const newestArticleMeta = sortedArticles[0] ?? null;
+  const newestArticleMeta = sortedArticles[0] ?? null
   const newestArticle = newestArticleMeta
     ? await getArticleData(newestArticleMeta.id)
-    : null;
+    : null
 
-  const totalArticles = allArticlesData.length;
+  const totalArticles = allArticlesData.length
 
   return (
     <div className="w-full">
