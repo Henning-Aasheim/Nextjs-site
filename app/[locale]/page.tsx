@@ -38,7 +38,7 @@ export default async function Home({
 {/* NAME */}
 
         <div className="max-w-[1200px] mx-auto mt-10 md:mt-15 lg:mt-30 flex flex-row">
-          <div className="w-full md:w-5/13"><Shinshu className="h-50 mx-auto fill-gray-800 md:float-right md:pr-20"/></div>
+          <div className="w-full md:w-5/13"><Shinshu className="h-50 mx-auto fill-gray-800 dark:fill-secondary/60 md:float-right md:pr-20"/></div>
           <div className="nameLogo hidden md:inline md:w-8/13 md:pl-20 md:border-l md:border-gray-400">{t('name')}</div>
         </div>
 
@@ -52,14 +52,11 @@ export default async function Home({
 
 {/* Newest article — unchanged */}
 
-          <div className="mt-10 md:mt-30 pb-10 md:pb-30 dark:rounded-lg border-b border-gray-600/30
-                          dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-                          dark:border dark:border-danger/60
-                          dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40">
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">
             {newestArticle && (
               <section className="m-5 px-2 s:px-10">
 
-                <div className="flex flex-wrap items-center justify-start gap-2 my-5 text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex flex-wrap items-center justify-start gap-2 my-5 text-sm text-gray-500 dark:text-white/60">
                   <span>{t('newestArticle')}</span>
                   <span aria-hidden="true">·</span>
                   <span>{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
@@ -73,8 +70,10 @@ export default async function Home({
                     {/* Text column */}
                     <div className="flex-1 order-2 sm:order-1">
                       <div className="text-3xl sm:text-5xl lg:text-8xl mb-2">{newestArticle.title}</div>
-                      <p className="mt-3 md:text-lg max-w-[42ch] sm:pr-6 text-gray-500">{newestArticle.excerpt}</p>
-                      <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-lg text-gray-200 hover:text-white hover:shadow-lg bg-secondary rounded-full hover:scale-105">{t('articleButton')}</Link>
+                      <p className="mt-3 md:text-lg max-w-[42ch] sm:pr-6 text-gray-500 dark:text-white/60">{newestArticle.excerpt}</p>
+                      <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-lg text-gray-200 
+                                                                              hover:text-white hover:shadow-lg bg-secondary 
+                                                                              rounded-full hover:scale-105 dark:bg-secondary/60">{t('articleButton')}</Link>
                     </div>
 
                     {/* Image column */}
@@ -91,25 +90,16 @@ export default async function Home({
 
 {/* Blog div */}
 
-          <div className="mt-10 md:mt-30 pb-10 md:pb-30 md:px-10 border-b border-gray-600/30 dark:rounded-lg
-                          dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
-                          dark:border dark:border-secondary/60
-                          dark:shadow-[0_0_20px] dark:shadow-secondary/10">
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 md:px-10 border-b border-gray-600/30 dark:border-white/40">
             <RecentArticlesList articles={sortedArticles} totalArticles={totalArticles} />
           </div>
 
           {/* placeholder blocks 10/11 unchanged */}
-          <div className="bg-background dark:rounded-lg
-                          dark:bg-[color-mix(in_srgb,var(--color-tertiary)_12%,var(--color-darkNavyLight))]
-                          dark:border dark:border-tertiary/60
-                          dark:shadow-[0_0_20px] dark:shadow-tertiary/10">10</div>
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">10</div>
 
 
 
-          <div className="bg-background dark:rounded-lg
-                          dark:bg-[color-mix(in_srgb,var(--color-quarternary)_12%,var(--color-darkNavyLight))]
-                          dark:border dark:border-quarternary/60
-                          dark:shadow-[0_0_20px] dark:shadow-quarternary/10">11</div>
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">11</div>
         </div>
       </div>
     </div>  

@@ -28,11 +28,7 @@ export default function Hero() {
     <div className="relative">
       <div ref={ref}
           style={{ '--progress': progress } as CSSProperties}
-          className="hero-shrink lg:mx-auto bg-secondary h-full rounded-xl
-                     dark:rounded-lg overflow-hidden
-                     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
-                     dark:border dark:border-primary/60
-                     dark:shadow-[0_0_20px] dark:shadow-primary/10">
+          className="hero-shrink lg:mx-auto bg-secondary dark:bg-secondary/60 h-full rounded-xl overflow-hidden">
                       
         {/* Labels */}
         <div className='relative z-10 text-white hidden xs:block'>

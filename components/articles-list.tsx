@@ -104,6 +104,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                             text-gray-800 hover:text-(--category-color)
                             dark:text-gray-300 dark:hover:text-(--category-color)
                             flex flex-col h-full
+                            bg-black/5 dark:bg-white/10 border-l-5
                             ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
                 key={article.id}
               >

@@ -2,31 +2,11 @@ import { useTranslations } from 'next-intl'
 import { ArticleCategory } from '@/types'
 
 export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
-  politics: `
-    bg-bgDark border-l-5 border-primary
-    dark:bg-darkNavyLight dark:border-primary/60
-    dark:shadow-[0_0_20px] dark:shadow-primary/10
-  `,
-  international: `
-    bg-bgDark border-l-5 border-secondary
-    dark:bg-darkNavyLight dark:border-secondary/60
-    dark:shadow-[0_0_20px] dark:shadow-secondary/10
-  `,
-  economy: `
-    bg-bgDark border-l-5 border-danger
-    dark:bg-darkNavyLight dark:border-danger/60
-    dark:shadow-[0_0_20px] dark:shadow-danger/10
-  `,
-  society: `
-    bg-bgDark border-l-5 border-gold
-    dark:bg-darkNavyLight dark:border-gold/60
-    dark:shadow-[0_0_20px] dark:shadow-gold/10
-  `,
-  webDevelopment: `
-    bg-bgDark border-l-5 border-purple
-    dark:bg-darkNavyLight dark:border-purple/60
-    dark:shadow-[0_0_20px] dark:shadow-purple/10
-  `,
+  politics: `border-primary`,
+  international: `border-secondary`,
+  economy: `border-danger`,
+  society: `border-gold`,
+  webDevelopment: `border-purple`,
 }
 
 export const CATEGORY_STYLES: Record<ArticleCategory, string> = {
@@ -104,7 +84,7 @@ export function CategoryText({ category }: { category: ArticleCategory }) {
     const tShort = useTranslations('categoriesShort')
 
     return (
-        <span className={`font-semibold uppercase pr-2 sm:pr-0 text-secondary ${CATEGORY_TEXT[category]}`}>
+        <span className={`font-semibold uppercase pr-2 sm:pr-0 text-secondary dark:text-secondary ${CATEGORY_TEXT[category]}`}>
             <span className="hidden lg:inline">{t(category)}</span>
             <span className="lg:hidden">{tShort(category)}</span>
         </span>

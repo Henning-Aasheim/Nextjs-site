@@ -60,7 +60,7 @@ export function RecentArticlesList({
 
   return (
     <div className="mx-auto">
-      <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600/30 border-solid border-b">
+      <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600/30 dark:border-white/40 border-solid border-b">
         {t('title')}
       </h1>
 
@@ -71,7 +71,7 @@ export function RecentArticlesList({
           flex flex-nowrap gap-2 lg:gap-4 mt-4 lg:mt-6 pb-4 lg:pb-6
           overflow-x-auto
           [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
-          border-b border-gray-600/30
+          border-b border-gray-600/30 dark:border-white/40
           transition-[mask-image]
           ${canScrollLeft ? 'mask-l-from-70%' : ''}
           ${canScrollRight ? 'mask-r-from-70%' : ''}
@@ -81,8 +81,8 @@ export function RecentArticlesList({
           onClick={() => setActive('all')}
           className={`categoryFilterButton shrink-0 px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-xs lg:text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
             ${active === 'all'
-              ? 'bg-secondary text-white border-gray-600/30'
-              : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
+              ? 'bg-secondary dark:bg-secondary/60 text-white border-gray-600/30 dark:border-white/40 hover:dark:text-white/80'
+              : 'bg-transparent text-gray-600/60 dark:text-white/60 border-gray-600/30 dark:border-white/40 hover:text-gray-600 hover:dark:text-white/80'
             }`}
         >
           {tCat('all')}
@@ -94,8 +94,8 @@ export function RecentArticlesList({
             onClick={() => setActive(cat)}
             className={`categoryFilterButton shrink-0 px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-xs lg:text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
               ${active === cat
-                ? 'bg-secondary/30 text-secondary border-gray-600/30'
-                : 'bg-transparent text-gray-600/60 border-gray-600/30 hover:text-gray-600'
+                ? 'bg-secondary/30 text-secondary border-gray-600/30 dark:border-white/40 dark:text-white/60 hover:dark:text-white/80'
+                : 'bg-transparent text-gray-600/60 border-gray-600/30 dark:border-white/40 hover:text-gray-600 hover:dark:text-white/80 dark:text-white/60'
               }`}
           >
             <span className="hidden lg:inline">{tCat(cat)}</span>
@@ -113,7 +113,7 @@ export function RecentArticlesList({
             return (
               <li
                 key={article.id}
-                className="group w-full mx-auto border-b border-gray-600/30 hover:bg-bgDark dark:hover:bg-secondary/20"
+                className="group w-full mx-auto border-b border-gray-600/30 dark:border-white/40 hover:bg-black/5 dark:hover:bg-secondary/20"
               >
                 <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-6">
                   <div className="flex items-center">
@@ -125,7 +125,7 @@ export function RecentArticlesList({
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 lg:gap-6 w-full text-sm">
                       <div className="w-full flex justify-between sm:w-auto sm:justify-start sm:items-center sm:gap-2 lg:gap-3">
-                        <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15 text-gray-500">
+                        <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15 text-gray-500 dark:text-white/60">
                           {format.dateTime(dateTime, { dateStyle: 'long' })}
                         </span>
                         <span className="sm:min-w-[7rem] lg:min-w-[12rem] text-right sm:text-left">

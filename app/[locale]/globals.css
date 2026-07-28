@@ -63,8 +63,8 @@
   --color-darkBlue: #181b46;
   --color-orange: #e45f23;
   --color-orangeDark: #ba4b17;
-  --color-darkBg: #04000a;
-  --color-darkAccent: #0a0019;
+  --color-darkBg: #100902; /* #04000a; */
+  --color-darkAccent: #1e1206; /* #0a0019; */
 
   --color-danger: #780000;
   --color-background: #f9f1e6; /*  */
@@ -177,7 +177,7 @@ html {
 
 .dark .dropcap:first-letter,
 .dark .dropcap > p:first-child::first-letter {
-  --dropcap-color: var(--color-danger);
+  --dropcap-color: var(--color-white);
 }
 
 .dropcap-library {
