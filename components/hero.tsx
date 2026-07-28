@@ -14,7 +14,7 @@ function HeroText({ t }: { t: ReturnType<typeof useTranslations> }) {
         {t('description')}
       </p>
       <Link href='/about' className='inline-block mt-3 px-5 py-2 text-xl
-                                    text-secondary hover:scale-105 hover:shadow-lg bg-white rounded-full'>{t('about')}</Link>
+                                    text-cyan hover:scale-105 hover:shadow-lg bg-white rounded-full'>{t('about')}</Link>
     </div>
   )
 }
@@ -28,7 +28,7 @@ export default function Hero() {
     <div className="relative">
       <div ref={ref}
           style={{ '--progress': progress } as CSSProperties}
-          className="hero-shrink lg:mx-auto bg-secondary dark:bg-secondary/60 h-full rounded-xl overflow-hidden">
+          className="hero-shrink lg:mx-auto bg-cyan dark:bg-cyan/60 h-full rounded-xl overflow-hidden">
                       
         {/* Labels */}
         <div className='relative z-10 text-white hidden xs:block'>

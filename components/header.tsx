@@ -24,7 +24,7 @@ export default function Header() {
       href === '/' ? pathname === '/' : pathname.startsWith(href);
 
     return (
-        <header className="w-full py-6 px-5 md:px-10 bg-secondary dark:bg-secondary/60">
+        <header className="w-full py-6 px-5 md:px-10 bg-cyan dark:bg-cyan/60">
           <nav className="max-w-[1200px] mx-auto flex flex-col md:flex-row md:items-center md:justify-end gap-4 md:gap-10 w-full">
 
 

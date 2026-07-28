@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react'
 
 export function DropCap({
   children,
-  color = 'var(--color-danger)',
+  color = 'var(--color-red)',
   className = '',
 }: {
   children: React.ReactNode

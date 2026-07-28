@@ -204,7 +204,7 @@ export default function AboutPage({
             <img
               src="/profile_image.jpg"
               alt="Profile Image"
-              className="w-40 h-40 object-cover rounded-full shrink-0 bg-secondary dark:bg-secondary/60"
+              className="w-40 h-40 object-cover rounded-full shrink-0 bg-cyan dark:bg-cyan/60"
             />
             <div className="">
 
@@ -237,7 +237,7 @@ export default function AboutPage({
                   </li>
                   <li>
                     <a href="mailto:henning.aasheim@outlook.com">
-                      <IoMdMail className="inline w-7 h-7 hover:text-secondary" />
+                      <IoMdMail className="inline w-7 h-7 hover:text-cyan" />
                     </a>
                   </li>
                 </ul>
@@ -263,8 +263,8 @@ export default function AboutPage({
               <div className="flex justify-center lg:justify-start">
                 <a href={cvHref} className="mb-3 px-3 font-bold text-lg text-gray-20 
                                             text-gray-300 hover:text-white hover:shadow-lg
-                                            bg-secondary rounded-full hover:scale-105 
-                                            dark:bg-secondary/60"
+                                            bg-cyan rounded-full hover:scale-105 
+                                            dark:bg-cyan/60"
                   download>
                   <div className="p-3">
                     <FileDown className="inline mr-2 mb-0.5" />

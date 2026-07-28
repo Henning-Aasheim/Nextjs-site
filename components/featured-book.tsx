@@ -6,11 +6,11 @@ import { useScrollProgress } from '@/hooks/useScrollProgress'
 import { BookMeta, BookEra } from '@/types'
 
 export const ERA_COLOR_VARS: Record<BookEra, string> = {
-  archaic: 'var(--color-primary)',
-  classical: 'var(--color-secondary)',
-  medieval: 'var(--color-danger)',
-  earlyModern: 'var(--color-tertiary)',
-  modern: 'var(--color-quarternary)',
+  archaic: 'var(--color-violet)',
+  classical: 'var(--color-cyan)',
+  medieval: 'var(--color-red)',
+  earlyModern: 'var(--color-yellow)',
+  modern: 'var(--color-purple)',
 }
 
 function FeaturedBookText({

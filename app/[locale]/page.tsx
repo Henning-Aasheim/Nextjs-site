@@ -63,7 +63,7 @@ export default async function Home({
                   <span aria-hidden="true">·</span>
                   <span>{format.dateTime(new Date(newestArticle.date), { dateStyle: 'long' })}</span>
                   <span aria-hidden="true">·</span>
-                  <span className="uppercase text-secondary">{newestArticle.category}</span>
+                  <span className="uppercase text-cyan">{newestArticle.category}</span>
                 </div>
 
                 
@@ -74,8 +74,8 @@ export default async function Home({
                       <div className="text-3xl sm:text-5xl lg:text-8xl mb-2">{newestArticle.title}</div>
                       <p className="mt-3 md:text-lg max-w-[42ch] sm:pr-6 text-gray-500 dark:text-white/60">{newestArticle.excerpt}</p>
                       <Link href={`/articles/${newestArticle.id}`} className="inline-block mt-5 px-5 py-2 text-lg text-gray-200 
-                                                                              hover:text-white hover:shadow-lg bg-secondary 
-                                                                              rounded-full hover:scale-105 dark:bg-secondary/60">{t('articleButton')}</Link>
+                                                                              hover:text-white hover:shadow-lg bg-cyan 
+                                                                              rounded-full hover:scale-105 dark:bg-cyan/60">{t('articleButton')}</Link>
                     </div>
 
                     {/* Image column */}

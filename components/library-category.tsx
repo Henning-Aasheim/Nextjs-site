@@ -9,11 +9,11 @@ import { BookCard } from './book-card'
 const VISIBLE_COUNT = 5
 
 const ERA_STYLES: Record<BookEra, string> = {
-  archaic: `text-primary`,
-  classical: `text-secondary`,
-  medieval: `text-danger`,
-  earlyModern: `text-tertiary`,
-  modern: `text-quarternary`,
+  archaic: `text-violet`,
+  classical: `text-cyan`,
+  medieval: `text-red`,
+  earlyModern: `text-yellow`,
+  modern: `text-purple`,
 }
 
 export function LibraryCategory({

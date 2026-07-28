@@ -2,44 +2,44 @@ import { useTranslations } from 'next-intl'
 import { ArticleCategory } from '@/types'
 
 export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
-  politics: `border-primary`,
-  international: `border-secondary`,
-  economy: `border-danger`,
-  society: `border-tertiary`,
-  webDevelopment: `border-quarternary`,
+  politics: `border-violet`,
+  international: `border-cyan`,
+  economy: `border-red`,
+  society: `border-yellow`,
+  webDevelopment: `border-purple`,
 }
 
 export const CATEGORY_STYLES: Record<ArticleCategory, string> = {
   politics: `
-    bg-primary text-white
-    dark:bg-primary dark:text-white
+    bg-violet text-white
+    dark:bg-violet dark:text-white
   `,
   international: `
-    bg-secondary text-white
-    dark:bg-secondary dark:text-white
+    bg-cyan text-white
+    dark:bg-cyan dark:text-white
   `,
   economy: `
-    bg-danger text-white
-    dark:bg-danger dark:text-white
+    bg-red text-white
+    dark:bg-red dark:text-white
   `,
   society: `
-    bg-tertiary text-black
-    dark:bg-tertiary dark:text-black
+    bg-yellow text-black
+    dark:bg-yellow dark:text-black
   `,
   webDevelopment: `
-    bg-quarternary text-white
-    dark:bg-quarternary dark:text-white
+    bg-purple text-white
+    dark:bg-purple dark:text-white
   `,
 }
 
 // Outline-only, lighter weight — used for the tag system, always
 // tied to the parent article's category color.
 export const TAG_STYLES: Record<ArticleCategory, string> = {
-  politics: `text-primary border border-primary/40 dark:text-primary/90 dark:border-primary/40`,
-  international: `text-secondary border border-secondary/40 dark:text-secondary/90 dark:border-secondary/40`,
-  economy: `text-danger border border-danger/40 dark:text-danger/90 dark:border-danger/40`,
-  society: `text-tertiary border border-gold/40 dark:text-gold dark:border-gold/40`,
-  webDevelopment: `text-quarternary border border-purple/40 dark:text-purple/90 dark:border-purple/40`,
+  politics: `text-violet border border-violet/40 dark:text-violet/90 dark:border-violet/40`,
+  international: `text-cyan border border-cyan/40 dark:text-cyan/90 dark:border-cyan/40`,
+  economy: `text-red border border-red/40 dark:text-red/90 dark:border-red/40`,
+  society: `text-yellow border border-gold/40 dark:text-gold dark:border-gold/40`,
+  webDevelopment: `text-purple border border-purple/40 dark:text-purple/90 dark:border-purple/40`,
 }
 
 // Keeping this if I want to make changes
@@ -84,7 +84,7 @@ export function CategoryText({ category }: { category: ArticleCategory }) {
     const tShort = useTranslations('categoriesShort')
 
     return (
-        <span className={`font-semibold uppercase pr-2 sm:pr-0 text-secondary dark:text-secondary ${CATEGORY_TEXT[category]}`}>
+        <span className={`font-semibold uppercase pr-2 sm:pr-0 text-cyan dark:text-cyan ${CATEGORY_TEXT[category]}`}>
             <span className="hidden lg:inline">{t(category)}</span>
             <span className="lg:hidden">{tShort(category)}</span>
         </span>

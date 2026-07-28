@@ -10,7 +10,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear()
 
     return (
-    <footer className="text-sm sm:text-base mt-auto px-6 py-6 text-center font-default bg-secondary dark:bg-secondary/60">
+    <footer className="text-sm sm:text-base mt-auto px-6 py-6 text-center font-default bg-cyan dark:bg-cyan/60">
         <div className="w-10/11 xs:6/8 mx-auto">
 
     {/* Upper part of the footer */}
@@ -22,7 +22,7 @@ export default function Footer() {
                 <div className="inline-block lg:col-span-2">
                     <div className="mb-4 text-left">
                         <div className="inline-block align-middle">
-                            <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-tertiary border"></img>
+                            <img src='/profile_image.jpg' className="w-12 h-12 object-cover rounded-full mx-auto border-yellow border"></img>
                         </div>
                         <div className="inline-block ml-4 align-middle text-lg md:text-xl lg:text-2xl font-bold text-white">{t('author')}</div>
                     </div>
@@ -89,7 +89,7 @@ export default function Footer() {
 
     {/* Lower part of the footer */}
 
-            <div className="mb-5 border-solid border-b border-gray-300 dark:border-secondary"/>
+            <div className="mb-5 border-solid border-b border-gray-300 dark:border-cyan"/>
 
             <div className="text-gray-300">
                 © {currentYear} {t('copyright')} {t('description')}

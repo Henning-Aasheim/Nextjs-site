@@ -40,8 +40,8 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
           aria-label={t('cardView')}
           className={`p-2 rounded-full border transition-colors cursor-pointer
             ${view === 'cards'
-              ? 'bg-secondary text-white border-secondary'
-              : 'bg-transparent text-secondary/80 dark:text-white/60 border-secondary/60 dark:border-white/20 hover:text-secondary dark:hover:text-white'
+              ? 'bg-cyan text-white border-cyan'
+              : 'bg-transparent text-cyan/80 dark:text-white/60 border-cyan/60 dark:border-white/20 hover:text-cyan dark:hover:text-white'
             }`}
         >
           <LayoutGrid size={18} />
@@ -52,8 +52,8 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
           aria-label={t('listView')}
           className={`p-2 rounded-full border transition-colors cursor-pointer
             ${view === 'list'
-              ? 'bg-secondary text-white border-secondary'
-              : 'bg-transparent text-secondary/80 dark:text-white/60 border-secondary/60 dark:border-white/20 hover:text-secondary dark:hover:text-white'
+              ? 'bg-cyan text-white border-cyan'
+              : 'bg-transparent text-cyan/80 dark:text-white/60 border-cyan/60 dark:border-white/20 hover:text-cyan dark:hover:text-white'
             }`}
         >
           <ListIcon size={18} />
@@ -66,8 +66,8 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
             onClick={() => setActive('all')}
             className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
                 ${active === 'all'
-                ? 'bg-secondary text-white border-secondary'
-                : 'bg-transparent text-secondary/80 dark:text-white/60 border-secondary/60 dark:border-white/20 hover:text-secondary dark:hover:text-white'
+                ? 'bg-cyan text-white border-cyan'
+                : 'bg-transparent text-cyan/80 dark:text-white/60 border-cyan/60 dark:border-white/20 hover:text-cyan dark:hover:text-white'
                 }`}
             >
             {tCat('all')}
@@ -151,7 +151,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
               <li
                 style={{ '--category-color': CATEGORY_COLOR_VARS[article.frontmatter.category] } as CSSProperties}
                 key={article.id}
-                className={`group hover:bg-bgDark dark:hover:bg-secondary/20 border-l-4 ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
+                className={`group hover:bg-bgDark dark:hover:bg-cyan/20 border-l-4 ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
               >
                 <div className='w-full h-full border-b border-gray-600/30'>
                   <Link

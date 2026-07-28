@@ -83,7 +83,7 @@ export function RecentArticlesList({
           onClick={() => setActive('all')}
           className={`categoryFilterButton shrink-0 px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-xs lg:text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
             ${active === 'all'
-              ? 'bg-secondary dark:bg-secondary/60 text-white border-gray-600/30 dark:border-white/40 hover:dark:text-white/80'
+              ? 'bg-cyan dark:bg-cyan/60 text-white border-gray-600/30 dark:border-white/40 hover:dark:text-white/80'
               : 'bg-transparent text-gray-600/60 dark:text-white/60 border-gray-600/30 dark:border-white/40 hover:text-gray-600 hover:dark:text-white/80'
             }`}
         >
@@ -98,7 +98,7 @@ export function RecentArticlesList({
             onClick={() => setActive(cat)}
             className={`categoryFilterButton shrink-0 px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-xs lg:text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
               ${active === cat
-                ? 'bg-secondary/30 text-secondary border-gray-600/30 dark:border-white/40 dark:text-white/60 hover:dark:text-white/80'
+                ? 'bg-cyan/30 text-cyan border-gray-600/30 dark:border-white/40 dark:text-white/60 hover:dark:text-white/80'
                 : 'bg-transparent text-gray-600/60 border-gray-600/30 dark:border-white/40 hover:text-gray-600 hover:dark:text-white/80 dark:text-white/60'
               }`}
           >
@@ -122,7 +122,7 @@ export function RecentArticlesList({
             return (
               <li
                 key={article.id}
-                className="group w-full mx-auto border-b border-gray-600/30 dark:border-white/40 hover:bg-black/5 dark:hover:bg-secondary/20"
+                className="group w-full mx-auto border-b border-gray-600/30 dark:border-white/40 hover:bg-black/5 dark:hover:bg-cyan/20"
               >
                 <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-6 md:pl-6">
                   <div className="flex items-center">
