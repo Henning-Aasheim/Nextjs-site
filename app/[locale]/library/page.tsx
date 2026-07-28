@@ -35,42 +35,46 @@ export default function Library({ params }: { params: Promise<Params> }) {
   const featured = books[books.length - 1]
 
   return (
-    <div className="text-center mt-5 mx-auto w-10/11 md:w-4/5 max-w-[1200px]">
-      <div className='mx-auto dark:rounded-lg mb-5 p-5'>
+    <div className='m-4 xs:m-6'>
+      <div className="max-w-[1200px] mx-auto">
 
-        <h1 className="text-5xl mb-5 font-default font-bold mx-auto">
-          {t('title')}
-        </h1>
+        <div className='mt-10 md:mt-30 pb-10 md:pb-30 mx-auto'>
+          <section className='m-5 px-2 s:px-10'>
 
-        <div className="text-lg text-left">
+            <h1 className="text-5xl mb-5 font-default font-bold text-center">
+            {t('title')}
+          </h1>
 
-          {/* Mobile: collapsible preview */}
-          <div className="lg:hidden">
-            <ExpandableText dropcapClassName='dropcap-library'>{t('description')}</ExpandableText>
+          <div className="text-lg text-left">
+
+            {/* Mobile: collapsible preview */}
+            <div className="lg:hidden">
+              <ExpandableText dropcapClassName='dropcap-library'>{t('description')}</ExpandableText>
+            </div>
+
+            <p className="dropcap dropcap-library hidden lg:block">
+              {t('description')}
+            </p>
+
           </div>
-
-          <p className="dropcap dropcap-library hidden lg:block">
-            {t('description')}
-          </p>
-
+          </section>
         </div>
 
-      </div>
+        {featured?.era && (
+          <FeaturedBook book={featured} yearLabel={featured.yearLabel} era={featured.era} />
+        )}
 
-      {featured?.era && (
-        <FeaturedBook book={featured} yearLabel={featured.yearLabel} era={featured.era} />
-      )}
+        <div className="mx-auto text-left">
 
-      <div className="mx-auto text-left">
-        
-        {BOOK_ERAS.map((era) => (
-          <LibraryCategory
-            key={era}
-            era={era}
-            books={grouped[era]}
-          />
-        ))}
+          {BOOK_ERAS.map((era) => (
+            <LibraryCategory
+              key={era}
+              era={era}
+              books={grouped[era]}
+            />
+          ))}
 
+        </div>
       </div>
     </div>
   );

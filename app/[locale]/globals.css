@@ -54,35 +54,20 @@
   --breakpoint-xs: 475px;
   --breakpoint-2xs: 350px;
 
-  --color-lightText: #1a4b6e;
-  --color-lightBg: #f7fafc;
-  --color-lightAccent: #ffffff;
-  --color-purple: #49053e;
-  --color-gold: #b89d4f; /* #d4aa04 */
-  --color-darkGold: #ad8f44;
-  --color-darkBlue: #181b46;
-  --color-orange: #e45f23;
-  --color-orangeDark: #ba4b17;
-  --color-darkBg: #100902; /* #04000a; */
-  --color-darkAccent: #1e1206; /* #0a0019; */
 
-  --color-danger: #780000;
-  --color-background: #f9f1e6; /*  */
-  --color-bgDark: #f4e5d1; /* dfc6af */
-  --color-primary: #58508d;
-  --color-secondary: #50868d;
-  --color-tertiary: #be9903;
-  --color-quarternary: #49053e;
+  --color-darkBg: rgb(16, 9, 2);
+  --color-danger: rgb(120, 0, 0);
+  --color-background: rgb(249, 241, 230);
+  --color-primary: rgb(88, 80, 141);
+  --color-secondary: rgb(80, 134, 141);
+  --color-tertiary: rgb(190, 153, 3);
+  --color-quarternary: rgb(73, 5, 62);
 
-/* New dark-mode palette */
-  --color-darkNavy: #020310;       /* page background: near-black deep blue */
-  --color-darkNavyLight: #0a0e24;  /* component background: still dark, one notch up */
-
-  --color-politics-text: #58508d;
-  --color-international-text: #50868d;
-  --color-economy-text: #780000;
-  --color-society-text: #be9903; /* same as --color-gold */
-  --color-web-dev-text: #49053e;
+  --color-politics-text: rgb(88, 80, 141);
+  --color-international-text: rgb(80, 134, 141);
+  --color-economy-text: rgb(120, 0, 0);
+  --color-society-text: rgb(190, 153, 3);
+  --color-web-dev-text: rgb(73, 5, 62);
 }
 
  /*
@@ -97,7 +82,7 @@
   --chart-tick-color: rgba(4, 0, 10, 0.65);
   --chart-border-color: rgba(4, 0, 10, 0.2);
   --chart-legend-color: rgba(4, 0, 10, 0.8);
-  --chart-tooltip-bg: rgba(255, 255, 255, 0.95);
+  --chart-tooltip-bg: rgb(249, 241, 230, 0.90);
   --chart-tooltip-text: rgba(4, 0, 10, 0.9);
   --chart-tooltip-border: rgba(4, 0, 10, 0.1);
 }
@@ -107,7 +92,7 @@
   --chart-tick-color: rgba(255, 255, 255, 0.65);
   --chart-border-color: rgba(255, 255, 255, 0.25);
   --chart-legend-color: rgba(255, 255, 255, 0.85);
-  --chart-tooltip-bg: rgba(10, 14, 36, 0.95);
+  --chart-tooltip-bg: rgba(16, 9, 2, 0.9);
   --chart-tooltip-text: rgba(255, 255, 255, 0.92);
   --chart-tooltip-border: rgba(101, 101, 126, 0.6);
 }
@@ -321,11 +306,11 @@ html {
   }
 
   .dark .article-body h2::before {
-    color: var(--color-gold);
+    color: var(--category-color);
   }
 
   .dark .article-body h2 {
-    border-top: 1px solid var(--color-gold);
+    border-top: 1px solid var(--category-color);
   }
 }
 

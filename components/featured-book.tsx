@@ -47,11 +47,7 @@ export function FeaturedBook({
     <div
       ref={ref}
       style={{ '--category-color': color, '--progress': progress } as CSSProperties}
-      className="hero-shrink mx-auto bg-(--category-color) rounded-xl
-                 dark:rounded-lg overflow-hidden
-                 dark:bg-[color-mix(in_srgb,var(--category-color)_12%,var(--color-darkNavyLight))]
-                 dark:border dark:border-[color-mix(in_srgb,var(--category-color)_60%,transparent)]
-                 dark:shadow-[0_0_20px] dark:shadow-[color-mix(in_srgb,var(--category-color)_10%,transparent)]"
+      className="hero-shrink mx-auto bg-(--category-color)/60 rounded-xl overflow-hidden"
     >
       <div className="flex flex-col sm:flex-row items-center sm:items-stretch">
         {/* Text side */}

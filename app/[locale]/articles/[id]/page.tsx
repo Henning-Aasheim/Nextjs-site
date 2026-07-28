@@ -87,11 +87,11 @@ export default async function Article({ params }: ArticleProps) {
                             md:prose-p:text-xl 
                             md:prose-ul:text-xl prose-ul:marker:text-black 
                             dark:prose-h2:text-white 
-                            dark:prose-h3:text-gray-300 
-                            dark:prose-p:text-gray-300
+                            dark:prose-h3:text-white/80
+                            dark:prose-p:text-white/60
                             dark:prose-ul:marker:text-white
-                            dark:prose-li:text-gray-300
-                            dark:prose-a:text-white
+                            dark:prose-li:text-white/60
+                            dark:prose-a:text-white/80
                             dark:prose-em:text-white
                             dark:prose-strong:text-white">
           <ArticleContent />
