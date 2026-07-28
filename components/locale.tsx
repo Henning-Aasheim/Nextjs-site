@@ -36,8 +36,7 @@ export default function LocaleSwitcher() {
         <div className='absolute left-0 py-2 w-50 mt-2 md:left-auto md:right-0 
               rounded-md shadow-lg z-20 text-gray-300
               bg-[color-mix(in_srgb,var(--color-secondary)_90%,white)]
-              dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
-              dark:border dark:border-secondary/60
+              dark:bg-[color-mix(in_srgb,var(--color-secondary)_80%,var(--color-black))]
               dark:shadow-[0_0_20px] dark:shadow-secondary/10'>
           <button onClick={() => switchLocale('en-GB')} className={locale === 'en-GB' ? 'localeButton font-bold' : 'localeButton'}>{t('en')}</button>
           <button onClick={() => switchLocale('ja')}    className={locale === 'ja'    ? 'localeButton font-bold' : 'localeButton'}>{t('ja')}</button>

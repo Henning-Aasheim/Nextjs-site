@@ -5,30 +5,30 @@ export const CATEGORY_CARD_STYLES: Record<ArticleCategory, string> = {
   politics: `border-primary`,
   international: `border-secondary`,
   economy: `border-danger`,
-  society: `border-gold`,
-  webDevelopment: `border-purple`,
+  society: `border-tertiary`,
+  webDevelopment: `border-quarternary`,
 }
 
 export const CATEGORY_STYLES: Record<ArticleCategory, string> = {
   politics: `
-    bg-primary text-white border border-primary
-    dark:bg-primary dark:text-white dark:border-primary/70
+    bg-primary text-white
+    dark:bg-primary dark:text-white
   `,
   international: `
-    bg-secondary text-white border border-secondary
-    dark:bg-secondary dark:text-white dark:border-secondary/70
+    bg-secondary text-white
+    dark:bg-secondary dark:text-white
   `,
   economy: `
-    bg-danger text-white border border-danger
-    dark:bg-danger dark:text-white dark:border-danger/70
+    bg-danger text-white
+    dark:bg-danger dark:text-white
   `,
   society: `
-    bg-gold text-darkNavy border border-gold
-    dark:bg-gold dark:text-darkNavy dark:border-gold/70
+    bg-tertiary text-black
+    dark:bg-tertiary dark:text-black
   `,
   webDevelopment: `
-    bg-purple text-white border border-purple
-    dark:bg-purple dark:text-white dark:border-purple/70
+    bg-quarternary text-white
+    dark:bg-quarternary dark:text-white
   `,
 }
 
@@ -38,8 +38,8 @@ export const TAG_STYLES: Record<ArticleCategory, string> = {
   politics: `text-primary border border-primary/40 dark:text-primary/90 dark:border-primary/40`,
   international: `text-secondary border border-secondary/40 dark:text-secondary/90 dark:border-secondary/40`,
   economy: `text-danger border border-danger/40 dark:text-danger/90 dark:border-danger/40`,
-  society: `text-darkGold border border-gold/40 dark:text-gold dark:border-gold/40`,
-  webDevelopment: `text-purple border border-purple/40 dark:text-purple/90 dark:border-purple/40`,
+  society: `text-tertiary border border-gold/40 dark:text-gold dark:border-gold/40`,
+  webDevelopment: `text-quarternary border border-purple/40 dark:text-purple/90 dark:border-purple/40`,
 }
 
 // Keeping this if I want to make changes
