@@ -27,9 +27,12 @@ export default function Header() {
         <header className="w-full py-6 px-5 md:px-10 bg-secondary dark:bg-secondary/60">
           <nav className="max-w-[1200px] mx-auto flex flex-col md:flex-row md:items-center md:justify-end gap-4 md:gap-10 w-full">
 
-  {/* Top row on mobile: locale + dark mode on the left, hamburger on the right.
-      On desktop this whole block collapses to just the locale/darkmode group,
-      right-aligned via the parent nav's md:justify-end. */}
+
+            {/* Top row on mobile: locale + dark mode on the left, hamburger on the right.
+            On desktop this whole block collapses to just the locale/darkmode group,
+            right-aligned via the parent nav's md:justify-end. */}
+
+
             <div className='flex w-full md:w-auto gap-8 justify-between md:justify-end items-center order-1 md:order-2'>
 
               <div className="flex items-center gap-8">
@@ -37,12 +40,16 @@ export default function Header() {
                 <DarkMode />
               </div>
 
-  {/* Mobile menu button */}
+
+              {/* Mobile menu button */}
+
 
               <button
                 className={`md:hidden ${isOpen ? "text-red-500 hover:scale-110 cursor-pointer" : "toggleButtons"}`}
                 onClick={() => setIsOpen(!isOpen)}
               >
+
+
                 {isOpen ? (
 
                   // Close icon (X)
@@ -84,7 +91,7 @@ export default function Header() {
               </button>
             </div>
 
-{/* Links: centred in the mobile dropdown, right-aligned in the desktop row */}
+            {/* Links: centred in the mobile dropdown, right-aligned in the desktop row */}
 
             <div
               className={`
@@ -99,6 +106,8 @@ export default function Header() {
                 whitespace-nowrap
               `}
             >
+
+
               {NAV_LINKS.map(({ href, key, icon: Icon }) => (
                 <Link
                   key={href}
@@ -112,6 +121,9 @@ export default function Header() {
                   <span>{t(key)}</span>
                 </Link>
               ))}
+
+
+              
             </div>
           </nav>
         </header>

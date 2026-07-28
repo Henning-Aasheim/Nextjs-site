@@ -193,250 +193,238 @@ export default function AboutPage({
 
   return (
     <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5">
-    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5">
 
-      {/* PROFILE IMAGE */}
-      <div className="flex-none text-white xl:col-start-1 xl:row-start-1">
-        <div className="bg-danger p-5 rounded-lg
-                 dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-                 dark:border dark:border-danger/60
-                 dark:shadow-[0_0_20px] dark:shadow-danger/10
+        {/* PROFILE IMAGE */}
+        <div className="flex-none text-white xl:col-start-1 xl:row-start-1">
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40
                  flex items-center justify-center
                  flex-row text-left gap-5">
-          {/* The top-30 has to change when the warning banner is removed */}
-          <img
-            src="/profile_image.jpg"
-            alt="Profile Image"
-            className="w-40 h-40 object-cover rounded-full border-2 dark:border border-background dark:border-danger shrink-0"
-          />
-          <div className="">
+            {/* The top-30 has to change when the warning banner is removed */}
+            <img
+              src="/profile_image.jpg"
+              alt="Profile Image"
+              className="w-40 h-40 object-cover rounded-full border-2 dark:border border-background dark:border-danger shrink-0"
+            />
+            <div className="">
 
-            <h1 className="text-2xl font-bold">
-              {t("profile-heading")}
-            </h1>
-            <h2 className="text-base text-background sm:text-1xl italic mt-1">
-              {t("work-title")}
-            </h2>
-            <h2 className="text-base text-background sm:text-1xl mt-1">
-              {t("employer")}
-            </h2>
+              <h1 className="text-2xl font-bold">
+                {t("profile-heading")}
+              </h1>
+              <h2 className="text-base text-background sm:text-1xl italic mt-1">
+                {t("work-title")}
+              </h2>
+              <h2 className="text-base text-background sm:text-1xl mt-1">
+                {t("employer")}
+              </h2>
 
-            <div className="mt-4">
-              <ul className="flex flex-row flex-wrap gap-4 justify-start">
-                <li>
-                  <a href="https://bsky.app/profile/henningaasheim.bsky.social" target="_blank" rel="noopener noreferrer">
-                    <FaBluesky className="soMeButton" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/Henning-Aasheim" target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="soMeButton" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin className="soMeButton" />
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:henning.aasheim@outlook.com">
-                    <IoMdMail className="inline w-7 h-7 hover:text-background" />
-                  </a>
-                </li>
-              </ul>
+              <div className="mt-4">
+                <ul className="flex flex-row flex-wrap gap-4 justify-start">
+                  <li>
+                    <a href="https://bsky.app/profile/henningaasheim.bsky.social" target="_blank" rel="noopener noreferrer">
+                      <FaBluesky className="soMeButton" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Henning-Aasheim" target="_blank" rel="noopener noreferrer">
+                      <FaGithub className="soMeButton" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/henning-%C3%A5sheim-8114232a2/" target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin className="soMeButton" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:henning.aasheim@outlook.com">
+                      <IoMdMail className="inline w-7 h-7 hover:text-background" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* CONTENT COLUMN */}
-      <div className="flex flex-col gap-5 xl:col-start-2 xl:row-start-1">
+        {/* CONTENT COLUMN */}
+        <div className="flex flex-col gap-5 xl:col-start-2 xl:row-start-1">
 
-            {/* INTRODUCTION + RESUME */}
-            <section className=" px-5 sm:px-10 py-5
-                     dark:rounded-lg
-                     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
-                     dark:border dark:border-primary/60
-                     dark:shadow-[0_0_20px] dark:shadow-primary/10">
-                    <h1 className="text-xl sm:text-3xl font-bold mb-2">
-                    {t("heading")}
-                    </h1>
+          {/* INTRODUCTION + RESUME */}
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">
+            <section className="m-5 px-2 s:px-10">
+              <h1 className="text-xl sm:text-3xl font-bold mb-2">
+                {t("heading")}
+              </h1>
 
-                    <p className="text-base sm:text-xl mb-10 text-left dark:text-gray-300">
-                    {t("description")}
-                    </p>
+              <p className="text-base sm:text-xl mb-10 text-left dark:text-gray-300">
+                {t("description")}
+              </p>
 
-                    <div className="flex justify-center lg:justify-start">
-                    <a href={cvHref} className="mb-3 px-3 font-bold text-lg text-background bg-danger rounded-full
-                                                border-2 border-background hover:text-white hover:border-white
-                                                hover:bg-danger/60
-                                                dark:rounded-3xl dark:text-gray-300 dark:border dark:border-danger
-                                                dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-                                                dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40" 
-                    download>
-                        <div className="p-3">
-                            <FileDown className="inline mr-2 mb-0.5" />
-                            {t("resume")}
+              <div className="flex justify-center lg:justify-start">
+                <a href={cvHref} className="mb-3 px-3 font-bold text-lg text-background bg-danger rounded-full
+                                              border-2 border-background hover:text-white hover:border-white
+                                              hover:bg-danger/60
+                                              dark:rounded-3xl dark:text-gray-300 dark:border dark:border-danger
+                                              dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
+                                              dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40"
+                  download>
+                  <div className="p-3">
+                    <FileDown className="inline mr-2 mb-0.5" />
+                    {t("resume")}
+                  </div>
+                </a>
+              </div>
+            </section>
+          </div>
+
+          {/* EXPERIENCE */}
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">
+            <section className="m-5 px-2 s:px-10">
+              <div className="mt-2 lg:mt-4">
+                <h1 className="text-xl sm:text-3xl font-bold">
+                  {t("experience-heading")}
+                </h1>
+                <ol className="list-disc list-inside mb-10 mt-8">
+                  {experienceItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <li
+                        key={item.id}
+                        className="mb-5 list-none flex items-center"
+                      >
+                        <div className="experienceItems group">
+                          <span>
+                            <Icon
+                              width={60}
+                              height={60}
+                              className="experienceIcons"
+                            />
+                          </span>
+                          <div className="flex flex-col ml-8 pl-15">
+                            <h2 className="experienceTitle sm:text-2xl">
+                              {t(item.titleKey)}
+                            </h2>
+                            <h3 className="experienceSubtitle sm:text-1xl">
+                              {t(item.subtitleKey)}
+                            </h3>
+                            <time className="experienceDate">
+                              {t(item.dateKey)}
+                            </time>
+                          </div>
                         </div>
-                    </a>
-                    </div>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
             </section>
+          </div>
 
-            {/* EXPERIENCE */}
-            <section className="px-5 sm:px-10 py-5
-                     dark:rounded-lg
-                     dark:bg-[color-mix(in_srgb,var(--color-secondary)_12%,var(--color-darkNavyLight))]
-                     dark:border dark:border-secondary/60
-                     dark:shadow-[0_0_20px] dark:shadow-secondary/10">
-                    <div className="mt-2 lg:mt-4">
-                        <h1 className="text-xl sm:text-3xl font-bold">
-                            {t("experience-heading")}
-                        </h1>
-                        <ol className="list-disc list-inside mb-10 mt-8">
-                            {experienceItems.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                                <li
-                                key={item.id}
-                                className="mb-5 list-none flex items-center"
-                                >
-                                <div className="experienceItems group">
-                                    <span>
-                                    <Icon
-                                        width={60}
-                                        height={60}
-                                        className="experienceIcons"
-                                    />
-                                    </span>
-                                    <div className="flex flex-col ml-8 pl-15">
-                                    <h2 className="experienceTitle sm:text-2xl">
-                                        {t(item.titleKey)}
-                                    </h2>
-                                    <h3 className="experienceSubtitle sm:text-1xl">
-                                        {t(item.subtitleKey)}
-                                    </h3>
-                                    <time className="experienceDate">
-                                        {t(item.dateKey)}
-                                    </time>
-                                    </div>
-                                </div>
-                                </li>
-                            );
-                            })}
-                        </ol>
-                    </div>
+          {/* EDUCATION */}
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">
+            <section className="m-5 px-2 s:px-10">
+              <div className="mt-2 lg:mt-4">
+                <h1 className="text-xl sm:text-3xl font-bold">
+                  {t("education-heading")}
+                </h1>
+                <ol className="list-disc list-inside mb-10 mt-8">
+                  {educationItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <li
+                        key={item.id}
+                        className="mb-5 list-none flex items-center"
+                      >
+                        <div className="experienceItems group">
+                          <span>
+                            <Icon
+                              width={60}
+                              height={60}
+                              className="experienceIcons"
+                            />
+                          </span>
+                          <div className="flex flex-col ml-8 pl-15">
+                            <h2 className="experienceTitle sm:text-2xl">
+                              {t(item.titleKey)}
+                            </h2>
+                            <h3 className="experienceSubtitle sm:text-1xl">
+                              {t(item.subtitleKey)}
+                            </h3>
+                            <time className="experienceDate">
+                              {t(item.dateKey)}
+                            </time>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
             </section>
+          </div>
 
-            {/* EDUCATION */}
-            <section className="px-5 sm:px-10 py-5
-                     dark:rounded-lg
-                     dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-                     dark:border dark:border-danger/60
-                     dark:shadow-[0_0_20px] dark:shadow-danger/10">
-                    <div className="mt-2 lg:mt-4">
-                        <h1 className="text-xl sm:text-3xl font-bold">
-                            {t("education-heading")}
-                        </h1>
-                        <ol className="list-disc list-inside mb-10 mt-8">
-                            {educationItems.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                                <li
-                                key={item.id}
-                                className="mb-5 list-none flex items-center"
-                                >
-                                <div className="experienceItems group">
-                                    <span>
-                                        <Icon
-                                            width={60}
-                                            height={60}
-                                            className="experienceIcons"
-                                        />
-                                    </span>
-                                    <div className="flex flex-col ml-8 pl-15">
-                                        <h2 className="experienceTitle sm:text-2xl">
-                                            {t(item.titleKey)}
-                                        </h2>
-                                        <h3 className="experienceSubtitle sm:text-1xl">
-                                            {t(item.subtitleKey)}
-                                        </h3>
-                                        <time className="experienceDate">
-                                            {t(item.dateKey)}
-                                        </time>
-                                    </div>
-                                </div>
-                                </li>
-                            );
-                            })}
-                        </ol>
-                    </div>
-            </section>
+          {/* PREVIOUS WORK */}
+          <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">
+            <section className="m-5 px-2 s:px-10">
+              <div className="lg:mt-2">
+                <h1 className="text-xl sm:text-3xl font-bold mb-6">
+                  {t("previous-work")}
+                </h1>
 
-            {/* PREVIOUS WORK */}
-            <section className="px-5 sm:px-10 py-5
-                     dark:rounded-lg
-                     dark:bg-[color-mix(in_srgb,var(--color-primary)_12%,var(--color-darkNavyLight))]
-                     dark:border dark:border-primary/60
-                     dark:shadow-[0_0_20px] dark:shadow-primary/10">
-                    <div className="lg:mt-2">
-                        <h1 className="text-xl sm:text-3xl font-bold mb-6">
-                            {t("previous-work")}
-                        </h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  {civita.map((item) => {
+                    const dateTime = new Date(item.date)
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                          {civita.map((item) => {
-                          const dateTime = new Date(item.date)
-
-                          return (
-                              <article
-                                key={item.id}
-                                style={{ '--category-color': CATEGORY_COLOR_VARS[item.category] } as CSSProperties}
-                                className={`group hover:scale-105 transition-transform duration-100
+                    return (
+                      <article
+                        key={item.id}
+                        style={{ '--category-color': CATEGORY_COLOR_VARS[item.category] } as CSSProperties}
+                        className={`group hover:scale-105 transition-transform duration-100
                                             rounded-lg overflow-hidden
                                             text-gray-800 hover:text-(--category-color)
                                             dark:text-gray-300 dark:hover:text-(--category-color)
-                                            flex flex-col
+                                            flex flex-col bg-black/5 dark:bg-white/10
                                             ${CATEGORY_CARD_STYLES[item.category]}`}
-                              >
-                              <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-1 rounded-lg">
-                                  {/* Image */}
-                                  <div className="relative w-full aspect-3/2 shrink-0">
-                                  <img
-                                      src={item.image}
-                                      alt={item.title}
-                                      className="absolute inset-0 w-full h-full object-cover"
-                                  />
-                                  <div className="absolute top-2 left-2">
-                                      <CategoryBadge category={item.category} />
-                                  </div>
-                                  </div>
+                      >
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-1 rounded-lg">
+                          {/* Image */}
+                          <div className="relative w-full aspect-3/2 shrink-0">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                            <div className="absolute top-2 left-2">
+                              <CategoryBadge category={item.category} />
+                            </div>
+                          </div>
 
-                                  {/* Text */}
-                                  <div className="p-3 flex flex-col flex-1 mx-2">
-                                  <h2 className="text-lg sm:text-xl font-default font-semibold text-left leading-7 line-clamp-2">
-                                      {item.title}
-                                  </h2>
+                          {/* Text */}
+                          <div className="p-3 flex flex-col flex-1 mx-2">
+                            <h2 className="text-lg sm:text-xl font-default font-semibold text-left leading-7 line-clamp-2">
+                              {item.title}
+                            </h2>
 
-                                  <p className="mt-2 text-left text-gray-500 dark:text-gray-400 line-clamp-3">
-                                      {item.excerpt}
-                                  </p>
+                            <p className="mt-2 text-left text-gray-500 dark:text-gray-400 line-clamp-3">
+                              {item.excerpt}
+                            </p>
 
-                                  <div className="flex items-center justify-start gap-1.5 text-gray-500 dark:text-gray-400 mt-auto pt-2">
-                                      <Calendar size={15} className="shrink-0" />
-                                      <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
-                                  </div>
-                                  </div>
-                              </a>
-                              </article>
-                          )
-                          })}
-                      </div>
-                    </div>
+                            <div className="flex items-center justify-start gap-1.5 text-gray-500 dark:text-gray-400 mt-auto pt-2">
+                              <Calendar size={15} className="shrink-0" />
+                              <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
+                            </div>
+                          </div>
+                        </a>
+                      </article>
+                    )
+                  })}
+                </div>
+              </div>
             </section>
-
+          </div>
         </div>
 
-    </div>
+      </div>
     </div>
   );
 }

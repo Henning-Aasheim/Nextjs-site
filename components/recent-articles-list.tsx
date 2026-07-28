@@ -24,6 +24,7 @@ export function RecentArticlesList({
   const t = useTranslations('article-list')
   const tCat = useTranslations('categories')
   const tCatShort = useTranslations('categoriesShort')
+
   const format = useFormatter()
   const [active, setActive] = useState<ArticleCategory | 'all'>('all')
 
@@ -77,6 +78,7 @@ export function RecentArticlesList({
           ${canScrollRight ? 'mask-r-from-70%' : ''}
         `}
       >
+
         <button
           onClick={() => setActive('all')}
           className={`categoryFilterButton shrink-0 px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-xs lg:text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
@@ -87,6 +89,8 @@ export function RecentArticlesList({
         >
           {tCat('all')}
         </button>
+
+
 
         {ARTICLE_CATEGORIES.map((cat) => (
           <button
@@ -102,10 +106,15 @@ export function RecentArticlesList({
             <span className="lg:hidden">{tCatShort(cat)}</span>
           </button>
         ))}
+
+
       </div>
 
       <div className="w-full overflow-hidden">
         <ul className="grid grid-cols-1 w-full items-start text-left">
+
+
+
           {visible.map((article) => {
             const displayNumber = totalArticles - articles.indexOf(article)
             const dateTime = new Date(article.frontmatter.date)
@@ -115,7 +124,7 @@ export function RecentArticlesList({
                 key={article.id}
                 className="group w-full mx-auto border-b border-gray-600/30 dark:border-white/40 hover:bg-black/5 dark:hover:bg-secondary/20"
               >
-                <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-6">
+                <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-6 md:pl-6">
                   <div className="flex items-center">
                     <span className="min-w-[2rem] text-2xl font-display text-center">
                       {displayNumber}
@@ -142,6 +151,9 @@ export function RecentArticlesList({
               </li>
             )
           })}
+
+
+
         </ul>
 
         {visible.length === 0 && (

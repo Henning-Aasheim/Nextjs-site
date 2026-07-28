@@ -77,12 +77,11 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
             <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
-                ${active === cat
-                    ? CATEGORY_STYLES[cat].replace(/bg-\S+\/15/, 'bg-current/20')
-                    : 'bg-transparent text-black/50 dark:text-white/50 border-black/20 dark:border-white/20 hover:text-black dark:hover:text-white'
-                }`}
-            >
+                className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm 
+                            font-semibold uppercase tracking-wide border transition-colors cursor-pointer
+                            ${active === cat ? CATEGORY_STYLES[cat].replace(/bg-\S+\/15/, 'bg-current/20') : 
+                              'bg-transparent text-black/50 dark:text-white/50 border-black/20 dark:border-white/20 hover:text-black dark:hover:text-white'
+                            }`}>
                 {tCat(cat)}
             </button>
             ))}
@@ -150,10 +149,14 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
 
             return (
               <li
+                style={{ '--category-color': CATEGORY_COLOR_VARS[article.frontmatter.category] } as CSSProperties}
                 key={article.id}
-                className="group border-b border-gray-600/30 hover:bg-bgDark dark:hover:bg-secondary/20"
+                className={`group hover:bg-bgDark dark:hover:bg-secondary/20 border-l-4 ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
               >
-                <Link
+                <div className='w-full h-full border-b border-gray-600/30'>
+                  <Link
+                  style={{ '--category-color': CATEGORY_COLOR_VARS[article.frontmatter.category] } as CSSProperties}
+                  key={article.id}
                   href={`/articles/${article.id}`}
                   className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-5"
                 >
@@ -180,6 +183,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                     </div>
                   </div>
                 </Link>
+                </div>
               </li>
             )
           })}

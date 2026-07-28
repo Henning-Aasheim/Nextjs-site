@@ -48,6 +48,8 @@ export default async function Home({
             <Hero />
           </div>
 
+{/* I have to see if I can do something with this div. I now have a lot of divs saying the same, find something that doesn't break the scroll */}
+
         <div className="flex flex-col max-w-[1200px] mx-auto">
 
 {/* Newest article — unchanged */}
@@ -94,12 +96,14 @@ export default async function Home({
             <RecentArticlesList articles={sortedArticles} totalArticles={totalArticles} />
           </div>
 
-          {/* placeholder blocks 10/11 unchanged */}
+{/* placeholder blocks 10/11 unchanged */}
           <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">10</div>
 
 
-
+{/* placeholder blocks 10/11 unchanged */}
           <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">11</div>
+
+
         </div>
       </div>
     </div>  
