@@ -36,10 +36,8 @@ export default function Library({ params }: { params: Promise<Params> }) {
 
   return (
     <div className="text-center mt-5 mx-auto w-10/11 md:w-4/5 max-w-[1200px]">
-      <div className='mx-auto dark:rounded-lg mb-5 p-5
-                      dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-                      dark:border dark:border-danger/60
-                      dark:shadow-[0_0_20px] dark:shadow-danger/10'>
+      <div className='mx-auto dark:rounded-lg mb-5 p-5'>
+
         <h1 className="text-5xl mb-5 font-default font-bold mx-auto">
           {t('title')}
         </h1>
@@ -51,10 +49,12 @@ export default function Library({ params }: { params: Promise<Params> }) {
             <ExpandableText dropcapClassName='dropcap-library'>{t('description')}</ExpandableText>
           </div>
 
-          <p className="dropcap dropcap-library hidden lg:block lg:max-w-[800px] lg:mx-auto">
+          <p className="dropcap dropcap-library hidden lg:block">
             {t('description')}
           </p>
+
         </div>
+
       </div>
 
       {featured?.era && (
@@ -62,6 +62,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
       )}
 
       <div className="mx-auto text-left">
+        
         {BOOK_ERAS.map((era) => (
           <LibraryCategory
             key={era}
@@ -69,6 +70,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
             books={grouped[era]}
           />
         ))}
+
       </div>
     </div>
   );

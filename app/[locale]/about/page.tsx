@@ -204,17 +204,17 @@ export default function AboutPage({
             <img
               src="/profile_image.jpg"
               alt="Profile Image"
-              className="w-40 h-40 object-cover rounded-full border-2 dark:border border-background dark:border-danger shrink-0"
+              className="w-40 h-40 object-cover rounded-full shrink-0 bg-secondary dark:bg-secondary/60"
             />
             <div className="">
 
               <h1 className="text-2xl font-bold">
                 {t("profile-heading")}
               </h1>
-              <h2 className="text-base text-background sm:text-1xl italic mt-1">
+              <h2 className="text-base text-white/60 sm:text-1xl italic mt-1">
                 {t("work-title")}
               </h2>
-              <h2 className="text-base text-background sm:text-1xl mt-1">
+              <h2 className="text-base text-white/60 sm:text-1xl mt-1">
                 {t("employer")}
               </h2>
 
@@ -237,7 +237,7 @@ export default function AboutPage({
                   </li>
                   <li>
                     <a href="mailto:henning.aasheim@outlook.com">
-                      <IoMdMail className="inline w-7 h-7 hover:text-background" />
+                      <IoMdMail className="inline w-7 h-7 hover:text-secondary" />
                     </a>
                   </li>
                 </ul>
@@ -256,17 +256,15 @@ export default function AboutPage({
                 {t("heading")}
               </h1>
 
-              <p className="text-base sm:text-xl mb-10 text-left dark:text-gray-300">
+              <p className="text-base sm:text-xl mb-10 text-left dark:text-white/60">
                 {t("description")}
               </p>
 
               <div className="flex justify-center lg:justify-start">
-                <a href={cvHref} className="mb-3 px-3 font-bold text-lg text-background bg-danger rounded-full
-                                              border-2 border-background hover:text-white hover:border-white
-                                              hover:bg-danger/60
-                                              dark:rounded-3xl dark:text-gray-300 dark:border dark:border-danger
-                                              dark:bg-[color-mix(in_srgb,var(--color-danger)_12%,var(--color-darkNavyLight))]
-                                              dark:shadow-[0_0_20px] dark:shadow-danger/10 dark:hover:shadow-danger/40"
+                <a href={cvHref} className="mb-3 px-3 font-bold text-lg text-gray-20 
+                                            text-gray-300 hover:text-white hover:shadow-lg
+                                            bg-secondary rounded-full hover:scale-105 
+                                            dark:bg-secondary/60"
                   download>
                   <div className="p-3">
                     <FileDown className="inline mr-2 mb-0.5" />
