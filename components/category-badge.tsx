@@ -38,7 +38,7 @@ export const TAG_STYLES: Record<ArticleCategory, string> = {
   politics: `text-violet border border-violet/40 dark:text-violet/90 dark:border-violet/40`,
   international: `text-cyan border border-cyan/40 dark:text-cyan/90 dark:border-cyan/40`,
   economy: `text-red border border-red/40 dark:text-red/90 dark:border-red/40`,
-  society: `text-yellow border border-gold/40 dark:text-gold dark:border-gold/40`,
+  society: `text-yellow border border-gold/40 dark:text-gold dark:border-yellow/40`,
   webDevelopment: `text-purple border border-purple/40 dark:text-purple/90 dark:border-purple/40`,
 }
 
@@ -52,11 +52,11 @@ export const CATEGORY_TEXT: Record<ArticleCategory, string> = {
 }
 
 export const CATEGORY_COLOR_VARS: Record<ArticleCategory, string> = {
-  politics: 'var(--color-politics-text)',
-  international: 'var(--color-international-text)',
-  economy: 'var(--color-economy-text)',
-  society: 'var(--color-society-text)',
-  webDevelopment: 'var(--color-web-dev-text)',
+  politics: 'var(--color-violet)',
+  international: 'var(--color-cyan)',
+  economy: 'var(--color-red)',
+  society: 'var(--color-yellow)',
+  webDevelopment: 'var(--color-purple)',
 }
 
 export function CategoryBadge({

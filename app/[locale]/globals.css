@@ -62,12 +62,6 @@
   --color-cyan: #50868d;
   --color-yellow: #be9903;
   --color-purple: #49053e;
-
-  --color-politics-text: #58508d;
-  --color-international-text: #50868d;
-  --color-economy-text: #780000;
-  --color-society-text: #be9903; /* same as --color-gold */
-  --color-web-dev-text: #49053e;
 }
 
  /*
