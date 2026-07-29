@@ -36,7 +36,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
 
   return (
     <div className='m-4 xs:m-6'>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-300 mx-auto">
 
         <div className='mt-10 md:mt-30 pb-10 md:pb-30 mx-auto'>
           <section className='m-5 px-2 s:px-10'>

@@ -21,7 +21,7 @@ function ArticleHeroText({
 
   return (
     <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
-      <span className="hero-top block !static !mt-0 text-white xl:mb-10">{categoryLabel}</span>
+      <span className="hero-top block static! mt-0! text-white xl:mb-10">{categoryLabel}</span>
 
       <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-white leading-tight">
         {title}

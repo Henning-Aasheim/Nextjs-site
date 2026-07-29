@@ -71,7 +71,7 @@ export function RecentArticlesList({
         className={`
           flex flex-nowrap gap-2 lg:gap-4 mt-4 lg:mt-6 pb-4 lg:pb-6
           overflow-x-auto
-          [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+          [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden
           border-b border-gray-600/30 dark:border-white/40
           transition-[mask-image]
           ${canScrollLeft ? 'mask-l-from-70%' : ''}
@@ -126,7 +126,7 @@ export function RecentArticlesList({
               >
                 <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-6 md:pl-6">
                   <div className="flex items-center">
-                    <span className="min-w-[2rem] text-2xl font-display text-center">
+                    <span className="min-w-8 text-2xl font-display text-center">
                       {displayNumber}
                     </span>
                   </div>
@@ -134,15 +134,15 @@ export function RecentArticlesList({
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 lg:gap-6 w-full text-sm">
                       <div className="w-full flex justify-between sm:w-auto sm:justify-start sm:items-center sm:gap-2 lg:gap-3">
-                        <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15 text-gray-500 dark:text-white/60">
+                        <span className="dateText sm:min-w-36 text-right pr-10 lg:pr-15 text-gray-500 dark:text-white/60">
                           {format.dateTime(dateTime, { dateStyle: 'long' })}
                         </span>
-                        <span className="sm:min-w-[7rem] lg:min-w-[12rem] text-right sm:text-left">
+                        <span className="sm:min-w-28 lg:min-w-48 text-right sm:text-left">
                           <CategoryText category={article.frontmatter.category} />
                         </span>
                       </div>
 
-                      <h2 className="sm:min-w-[9rem] text-lg font-default font-semibold text-wrap">
+                      <h2 className="sm:min-w-36 text-lg font-default font-semibold text-wrap">
                         {article.frontmatter.title}
                       </h2>
                     </div>

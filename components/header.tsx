@@ -25,7 +25,7 @@ export default function Header() {
 
     return (
         <header className="w-full py-6 px-5 md:px-10 bg-cyan dark:bg-cyan/60">
-          <nav className="max-w-[1200px] mx-auto flex flex-col md:flex-row md:items-center md:justify-end gap-4 md:gap-10 w-full">
+          <nav className="max-w-300 mx-auto flex flex-col md:flex-row md:items-center md:justify-end gap-4 md:gap-10 w-full">
 
 
             {/* Top row on mobile: locale + dark mode on the left, hamburger on the right.

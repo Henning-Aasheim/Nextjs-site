@@ -192,7 +192,7 @@ export default function AboutPage({
   const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"] // default to Norwegian
 
   return (
-    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-[1300px] mx-auto pt-5 mb-5">
+    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-300 mx-auto pt-5 mb-5">
       <div className="flex flex-col gap-5">
 
         {/* PROFILE IMAGE */}

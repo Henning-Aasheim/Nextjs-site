@@ -161,7 +161,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                   className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-5"
                 >
                   <div className="flex items-center">
-                    <span className="min-w-[2rem] text-2xl font-display text-center">
+                    <span className="min-w-8 text-2xl font-display text-center">
                       {displayNumber}
                     </span>
                   </div>
@@ -169,10 +169,10 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 lg:gap-6 w-full text-sm">
                       <div className="w-full flex justify-between sm:w-auto sm:justify-start sm:items-center sm:gap-2 lg:gap-3">
-                        <span className="dateText sm:min-w-[9rem] text-right pr-10 lg:pr-15 text-gray-500">
+                        <span className="dateText sm:min-w-36 text-right pr-10 lg:pr-15 text-gray-500">
                           {format.dateTime(dateTime, { dateStyle: 'long' })}
                         </span>
-                        <span className="sm:min-w-[7rem] lg:min-w-[12rem] text-right sm:text-left">
+                        <span className="sm:min-w-28 lg:min-w-48 text-right sm:text-left">
                           <CategoryText category={article.frontmatter.category} />
                         </span>
                       </div>

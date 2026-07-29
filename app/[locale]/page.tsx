@@ -37,20 +37,20 @@ export default async function Home({
 
 {/* NAME */}
 
-        <div className="max-w-[1200px] mx-auto mt-10 md:mt-15 lg:mt-30 flex flex-row">
+        <div className="max-w-300 mx-auto mt-10 md:mt-15 lg:mt-30 flex flex-row">
           <div className="w-full md:w-5/13"><Shinshu className="h-50 mx-auto fill-gray-800 dark:fill-white md:float-right md:pr-20"/></div>
           <div className="nameLogo hidden md:inline md:w-8/13 md:pl-20 md:border-l md:border-gray-400">{t('name')}</div>
         </div>
 
 {/* HERO */}
 
-        <div className="h-full max-w-[1200px] mx-auto mt-10 md:mt-15 lg:mt-30">
+        <div className="h-full max-w-300 mx-auto mt-10 md:mt-15 lg:mt-30">
             <Hero />
           </div>
 
 {/* I have to see if I can do something with this div. I now have a lot of divs saying the same, find something that doesn't break the scroll */}
 
-        <div className="flex flex-col max-w-[1200px] mx-auto">
+        <div className="flex flex-col max-w-300 mx-auto">
 
 {/* Newest article — unchanged */}
 
@@ -82,7 +82,7 @@ export default async function Home({
                     <img
                       src={newestArticle.image}
                       alt={newestArticle.title}
-                      className="order-1 sm:order-2 w-full sm:w-2/5 shrink-0 aspect-3/2 object-cover max-h-[20rem] self-center"
+                      className="order-1 sm:order-2 w-full sm:w-2/5 shrink-0 aspect-3/2 object-cover max-h-80 self-center"
                     />
                   </div>
                 

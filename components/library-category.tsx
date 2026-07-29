@@ -67,7 +67,7 @@ export function LibraryCategory({
               flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth
               px-12 xs:px-16 pb-4
               mask-l-from-70% mask-r-from-70%
-              [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+              [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden
               "
           >
               {books.map((book) => (
