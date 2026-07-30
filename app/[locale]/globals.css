@@ -94,6 +94,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scrollbar-gutter: stable;
 }
 
 ::selection {
