@@ -116,16 +116,12 @@ html {
 .navLinks {
   color: var(--color-gray-300);
   font-weight: 700;
-}
 
-.navLinks:hover {
-  scale: 1.1;
-  color: white;
-}
-
-.navLinks:focus {
-  scale: 1.1;
-  color: white;
+  &:hover,
+  &:focus-visible {
+    scale: 1.1;
+    color: white;
+  }
 }
 
 .navLinks.navLinks-active {
@@ -137,11 +133,12 @@ html {
 .toggleButtons {
   color: var(--color-gray-300);
   cursor: pointer;
-}
 
-.toggleButtons:hover {
-  scale: 1.1;
-  color: white;
+  &:hover,
+  &:focus-visible {
+    scale: 1.1;
+    color: white;
+  }
 }
 
 /* Dropdown locale menu */
@@ -153,12 +150,14 @@ html {
   padding-inline: calc(var(--spacing) * 10);
   color: var(--color-gray-300);
   cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: white;
+    background-color: rgba(from var(--color-white) r g b / 0.3);
+  }
 }
 
-.localeButton:hover {
-  color: white;
-  background-color: rgba(from var(--color-white) r g b / 0.3);
-}
 
 .dark .localeButton:hover {
   background-color: rgba(from var(--color-white) r g b / 0.3);
@@ -299,10 +298,11 @@ html {
   display: inline;
   width: calc(var(--spacing) * 6);
   height: calc(var(--spacing) * 6);
-}
 
-.soMeButton:hover {
-  fill: var(--color-cyan);
+  &:hover,
+  &:focus-visible {
+    fill: var(--color-cyan);
+  }
 }
 
 
@@ -538,25 +538,25 @@ html {
     padding-left: 2.2rem;
     padding-top: 0.5rem;
     border-top: 1px solid var(--category-color, var(--color-violet));
-  }
 
-  .article-body h2::before {
-    counter-increment: section-counter;
-    content: "§ " counter(section-counter, decimal-leading-zero);
-    position: absolute;
-    left: 0;
-    top: 0.25rem;
-    font-size: 0.875rem;
-    color: var(--category-color, var(--color-violet));
-    white-space: nowrap;
-    padding-top: 0.5rem;
-  }
-
-  .dark .article-body h2::before {
-    color: rgba(from var(--category-color) r g b / 0.8 );
+    &::before {
+      counter-increment: section-counter;
+      content: "§ " counter(section-counter, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 0.25rem;
+      font-size: 0.875rem;
+      color: var(--category-color, var(--color-violet));
+      white-space: nowrap;
+      padding-top: 0.5rem;
+    }
   }
 
   .dark .article-body h2 {
     border-top: 1px solid rgba(from var(--category-color) r g b / 0.8 );
+
+    &::before {
+      color: rgba(from var(--category-color) r g b / 0.8 );
+    }
   }
 }
