@@ -23,8 +23,8 @@ export const CATEGORY_STYLES: Record<ArticleCategory, string> = {
     dark:bg-red dark:text-white
   `,
   society: `
-    bg-yellow text-black
-    dark:bg-yellow dark:text-black
+    bg-yellow text-white
+    dark:bg-yellow dark:text-white
   `,
   webDevelopment: `
     bg-purple text-white

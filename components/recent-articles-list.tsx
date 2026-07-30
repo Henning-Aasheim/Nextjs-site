@@ -122,7 +122,7 @@ export function RecentArticlesList({
             return (
               <li
                 key={article.id}
-                className="group w-full mx-auto border-b border-gray-600/30 dark:border-white/40 hover:bg-black/5 dark:hover:bg-cyan/20"
+                className="group w-full mx-auto border-b border-gray-600/30 dark:border-white/40 hover:bg-black/5 dark:hover:bg-white/10"
               >
                 <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-6 md:pl-6">
                   <div className="flex items-center">

@@ -103,7 +103,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
                             text-gray-800 hover:text-(--category-color)
                             dark:text-gray-300 dark:hover:text-(--category-color)
                             flex flex-col h-full
-                            bg-black/5 dark:bg-white/10 border-l-5
+                            bg-black/8 dark:bg-white/10 border-l-5
                             ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
                 key={article.id}
               >
@@ -151,7 +151,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
               <li
                 style={{ '--category-color': CATEGORY_COLOR_VARS[article.frontmatter.category] } as CSSProperties}
                 key={article.id}
-                className={`group hover:bg-bgDark dark:hover:bg-cyan/20 border-l-4 ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
+                className={`group hover:bg-black/5 dark:hover:bg-white/10 border-l-4 ${CATEGORY_CARD_STYLES[article.frontmatter.category]}`}
               >
                 <div className='w-full h-full border-b border-gray-600/30'>
                   <Link
