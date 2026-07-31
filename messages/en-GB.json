@@ -124,6 +124,12 @@
         "listView": "List view"
     },
 
+    "cardListToggle":
+    {
+        "cardView": "Card view",
+        "listView": "List view"
+    },
+
     "categories": {
         "all": "All",
         "politics": "Politics",

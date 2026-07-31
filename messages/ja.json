@@ -121,6 +121,12 @@
         "listView": "リスト表示"
     },
 
+    "cardListToggle":
+    {
+        "cardView": "カード表示",
+        "listView": "リスト表示"
+    },
+
     "categories": {
         "all": "すべて",
         "politics": "政治",

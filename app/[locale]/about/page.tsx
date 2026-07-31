@@ -11,6 +11,8 @@ import UiO from "../../icons/uio_segl.svg"
 import type { CSSProperties } from "react"
 import type { ArticleCategory } from "@/types"
 import { CategoryBadge, CATEGORY_CARD_STYLES, CATEGORY_COLOR_VARS } from "@/components/category-badge"
+import Cards from "@/components/cards"
+import { civitaToCard } from "@/app/lib/content"
 
 
 // This is the metadata for the page
@@ -41,7 +43,7 @@ const localeToCvPath: Record<string, string> = {
 
 // ---- Data: previous Civita work (unchanged) <ref: index=10406203 firstWord=1 lastWord=40/> ----
 
-interface CivitaItem {
+export interface CivitaItem {
   id: number
   url: string
   title: string
@@ -190,6 +192,8 @@ export default function AboutPage({
   const format = useFormatter()
 
   const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"] // default to Norwegian
+
+  const cards = civita.map(civitaToCard)
 
   return (
     <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-300 mx-auto pt-5 mb-5">
@@ -364,62 +368,14 @@ export default function AboutPage({
           {/* PREVIOUS WORK */}
           <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">
             <section className="m-5 px-2 s:px-10">
-              <div className="lg:mt-2">
-                <h1 className="text-xl sm:text-3xl font-bold mb-6">
-                  {t("previous-work")}
-                </h1>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  {civita.map((item) => {
-                    const dateTime = new Date(item.date)
-
-                    return (
-                      <article
-                        key={item.id}
-                        style={{ '--category-color': CATEGORY_COLOR_VARS[item.category] } as CSSProperties}
-                        className={`group hover:scale-105 transition-transform duration-100
-                                            rounded-lg overflow-hidden
-                                            text-gray-800 hover:text-(--category-color)
-                                            dark:text-gray-300 dark:hover:text-(--category-color)
-                                            flex flex-col bg-black/5 dark:bg-white/10
-                                            ${CATEGORY_CARD_STYLES[item.category]}`}
-                      >
-                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex flex-col flex-1 rounded-lg">
-                          {/* Image */}
-                          <div className="relative w-full aspect-3/2 shrink-0">
-                            <img
-                              src={item.image}
-                              alt={item.title}
-                              className="absolute inset-0 w-full h-full object-cover"
-                            />
-                            <div className="absolute top-2 left-2">
-                              <CategoryBadge category={item.category} />
-                            </div>
-                          </div>
-
-                          {/* Text */}
-                          <div className="p-3 flex flex-col flex-1 mx-2">
-                            <h2 className="text-lg sm:text-xl font-default font-semibold text-left leading-7 line-clamp-2">
-                              {item.title}
-                            </h2>
-
-                            <p className="mt-2 text-left text-gray-500 dark:text-gray-400 line-clamp-3">
-                              {item.excerpt}
-                            </p>
-
-                            <div className="flex items-center justify-start gap-1.5 text-gray-500 dark:text-gray-400 mt-auto pt-2">
-                              <Calendar size={15} className="shrink-0" />
-                              <span>{format.dateTime(dateTime, { dateStyle: 'long' })}</span>
-                            </div>
-                          </div>
-                        </a>
-                      </article>
-                    )
-                  })}
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {cards.map((item) => {
+                  return <Cards items={item} key={item.id}></Cards>
+                })}
               </div>
             </section>
           </div>
+
         </div>
 
       </div>

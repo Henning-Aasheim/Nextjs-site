@@ -121,6 +121,12 @@
         "listView": "Listevisning"
     },
 
+    "cardListToggle":
+    {
+        "cardView": "Kortvisning",
+        "listView": "Listevisning"
+    },
+
     "categories": {
         "all": "Alle",
         "politics": "Politikk",
