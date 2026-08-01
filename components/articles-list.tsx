@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations, useFormatter } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import type { ArticleContent, ArticleCategory } from '@/types'
 import { articleToCard, articleToList } from '@/app/lib/content'
 import Cards from './cards'
@@ -11,7 +11,7 @@ import { CardListButtons, CategoryButtons } from './toggle-buttons'
 
 export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
 
-  const tCat = useTranslations('categories')
+  const t = useTranslations('categories')
 
   const [active, setActive] = useState<ArticleCategory | 'all'>('all')
   const [view, setView] = useState<'cards' | 'list'>('cards')
@@ -66,7 +66,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
       )}
 
       {filtered.length === 0 && (
-        <p className="text-black/50 dark:text-white/50 mt-10 text-center">{tCat('no-articles')}</p>
+        <p className="text-black/50 dark:text-white/50 mt-10 text-center">{t('no-articles')}</p>
       )}
     </>
   )

@@ -1,21 +1,20 @@
-import { useTranslations, useFormatter } from "next-intl"
+import { useTranslations } from "next-intl"
 import { setRequestLocale, getTranslations } from "next-intl/server"
 import { use } from "react"
-import { FileDown, Calendar } from "lucide-react"
+import { FileDown } from "lucide-react"
 import { Metadata } from "next"
 import { FaBluesky, FaGithub, FaLinkedin } from "react-icons/fa6"
 import { IoMdMail } from "react-icons/io"
 import Shinshu from "../../icons/shinshu.svg"
 import CivitaIcon from "../../icons/civita.svg"
 import UiO from "../../icons/uio_segl.svg"
-import type { CSSProperties } from "react"
 import type { ArticleCategory } from "@/types"
-import { CategoryBadge, CATEGORY_CARD_STYLES, CATEGORY_COLOR_VARS } from "@/components/category-badge"
 import Cards from "@/components/cards"
 import { civitaToCard } from "@/app/lib/content"
 
 
-// This is the metadata for the page
+// ---- This is the metadata for the page ----
+
 export async function generateMetadata({
   params,
 }: {
@@ -33,7 +32,7 @@ export async function generateMetadata({
   };
 }
 
-// ---- Data: CV path per locale <ref: index=10406232 firstWord=1 lastWord=25/> ----
+// ---- Data: CV path per locale ----
 
 const localeToCvPath: Record<string, string> = {
   no: "/resumes/cv-no.pdf",
@@ -41,7 +40,7 @@ const localeToCvPath: Record<string, string> = {
   // ja: "/resumes/cv-ja-JP.pdf",
 }
 
-// ---- Data: previous Civita work (unchanged) <ref: index=10406203 firstWord=1 lastWord=40/> ----
+// ---- Data: previous Civita work ----
 
 export interface CivitaItem {
   id: number
@@ -92,11 +91,7 @@ const civita: CivitaItem[] = [
   },
 ]
 
-// ---- Data: Experience items (replaces repeated JSX in the experience section) ----
-// Mirrors the three list items from the original experience block
-//   UiO, UiO, CivitaIcon, with translation keys:
-//   experience-1-title/employer/date, experience-2-..., experience-3-...
-// See original markup in <ref: index=10406202 firstWord=1 lastWord=35/> and <ref: index=10406206 firstWord=1 lastWord=30/>.
+// ---- Data: Experience items ----.
 
 type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
@@ -132,10 +127,7 @@ const experienceItems: ExperienceItem[] = [
   },
 ]
 
-// ---- Data: Education items (replaces repeated JSX in the education section) ----
-// Mirrors the four list items from the original education block:
-//   UiO, UiO, UiO, Shinshu with translation keys education-1-... through education-4-...
-// See original markup in <ref: index=10406209 firstWord=1 lastWord=40/> and related segments <ref: index=10406212 firstWord=1 lastWord=30/>.
+// ---- Data: Education items ----
 
 interface EducationItem {
   id: string;
@@ -178,20 +170,15 @@ const educationItems: EducationItem[] = [
 
 // ---- Main page component ----
 
-export default function AboutPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default function AboutPage({ params }: { params: Promise<{ locale: string }>}) {
   const { locale } = use(params)
 
   // Enable static rendering
   setRequestLocale(locale);
 
   const t = useTranslations("about")
-  const format = useFormatter()
 
-  const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"] // default to Norwegian
+  const cvHref = localeToCvPath[locale] ?? localeToCvPath["no"] // default to Norwegian (Why is this here?)
 
   const cards = civita.map(civitaToCard)
 

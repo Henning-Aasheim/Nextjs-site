@@ -24,6 +24,8 @@ export default async function ArticlesPage({ params }: { params: Promise<{ local
   return (
     <div className="pt-12 mb-10 w-10/11 mx-auto 2xl:w-5/6">
       <h1 className="text-center text-5xl font-bold mb-8 font-default">{t('heading')}</h1>
+
+      {/* Uses a react hook, so getting the states has to be done in its own file */}
       <ArticlesList articles={articles} />
     </div>
   );
