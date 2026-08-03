@@ -92,6 +92,12 @@
   --chart-tooltip-border: rgba(101, 101, 126, 0.6);
 }
 
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -157,6 +163,14 @@ html {
     color: white;
     background-color: rgba(from var(--color-white) r g b / 0.3);
   }
+}
+
+
+
+/* SECTIONS */
+
+.sections {
+  margin-top: calc(var(--spacing) * 10);
 }
 
 
@@ -595,6 +609,9 @@ html {
 /* Breakpoint: md */
 
 @media (min-width: 768px) {
+  .sections {
+    margin-top: calc(var(--spacing) * 15);
+  }
   :lang(ja) .nameLogo {
     font-size: var(--text-7xl); /* 4.5rem (72px) */ 
     line-height: var(--text-7xl--line-height); /* 1 */
@@ -609,6 +626,9 @@ html {
 /* Breakpoint: lg */
 
 @media (min-width: 1024px) {
+  .sections {
+    margin-top: calc(var(--spacing) * 30);
+  }
   :lang(ja) .nameLogo {
     font-size: var(--text-8xl);
     line-height: var(--text-8xl--line-height);

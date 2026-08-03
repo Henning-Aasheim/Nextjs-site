@@ -41,7 +41,9 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
       {/* View toggle */}
       <CardListButtons view={view} onChange={setView}></CardListButtons>
       {/* Filter bar */}
-      <CategoryButtons active={active} onChange={setActive}></CategoryButtons>
+      <div className='mb-10'>
+        <CategoryButtons active={active} onChange={setActive}></CategoryButtons>
+      </div>
 
       {view === 'cards' ? (
         /* Grid */

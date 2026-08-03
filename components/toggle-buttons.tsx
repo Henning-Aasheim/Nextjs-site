@@ -86,7 +86,7 @@ export function CategoryButtons({active, onChange }: { active: Active, onChange:
 
     return (
         <div ref={scrollRef}
-            className={`categoryFilter flex flex-nowrap [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden gap-3 mb-10 overflow-x-auto transition-[mask-image]
+            className={`categoryFilter flex flex-nowrap [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden gap-3 overflow-x-auto transition-[mask-image]
                         ${canScrollLeft ? 'mask-l-from-70%' : ''}
                         ${canScrollRight ? 'mask-r-from-70%' : ''}`}>
                 <button
