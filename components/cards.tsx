@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { CSSProperties } from "react";
-import { CATEGORY_CARD_STYLES, CATEGORY_COLOR_VARS, CategoryBadge } from "./category-badge";
+import { CATEGORY_COLOR_VARS, CategoryBadge } from "./category-badge";
 import { useFormatter } from "next-intl";
 import { ArticleCategory } from "@/types";
 

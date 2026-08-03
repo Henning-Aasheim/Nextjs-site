@@ -104,9 +104,9 @@ html {
 }
 
 .dark ::selection {
-  background-color: color-mix(in srgb, var(--color-yellow) 35%, var(--color-black));
-  color: white;
-}
+    background-color: color-mix(in srgb, var(--color-yellow) 70%, var(--color-black));
+    color: white;
+  }
 
 
 
@@ -160,11 +160,6 @@ html {
 }
 
 
-.dark .localeButton:hover {
-  background-color: rgba(from var(--color-white) r g b / 0.3);
-}
-
-
 
 /* LOGO AND NAME */
 
@@ -173,11 +168,11 @@ html {
 .nameLogo {
   font-size: var(--text-5xl); /* 3rem (48px) */ 
   line-height: var(--text-5xl--line-height); /* 1 */
-}
 
-:lang(ja) .nameLogo {
-  font-size: var(--text-base); /* 1rem (16px) */ 
-  line-height: var(--text-base--line-height); /* calc(1.5 / 1) */
+  :lang(ja) & {
+    font-size: var(--text-base); /* 1rem (16px) */ 
+    line-height: var(--text-base--line-height); /* calc(1.5 / 1) */
+  }
 }
 
 
@@ -194,9 +189,9 @@ html {
   line-height: var(--text-4xl--line-height); /* calc(2.5 / 2.25) */
 }
 
-:lang(ja) .heroTitle {
-  font-size: var(--text-4xl); /* 2.25rem (36px) */ 
-  line-height: var(--text-4xl--line-height); /* calc(2.5 / 2.25) */
+:lang(ja) & {
+    font-size: var(--text-8xl); /* 2.25rem (36px) */ 
+    line-height: var(--text-4xl--line-height); /* calc(2.5 / 2.25) */
 }
 
 .hero-shrink {
@@ -213,10 +208,10 @@ html {
   font-size: var(--text-sm); /* 0.875rem (14px) */ 
   line-height: var(--text-sm--line-height); /* calc(1.25 / 0.875) */
   font-family: var(--font-cutive);
-}
 
-:lang(ja) .hero-top {
-  font-family: var(--font-tegomin);
+  :lang(ja) & {
+    font-family: var(--font-tegomin);
+  }
 }
 
 
@@ -413,26 +408,26 @@ html {
   font-size: var(--text-lg); /* 1.125rem (18px) */ 
   line-height: var(--text-lg--line-height); /* calc(1.75 / 1.125) */
   font-weight: 700;
-  @apply group-hover:text-cyan/60
+  @apply group-hover:text-cyan dark:group-hover:text-cyan/60
 }
 
 .experienceSubtitle {
   font-size: var(--text-base); /* 1rem (16px) */ 
   line-height: var(--text-base--line-height); /* calc(1.5 / 1) */ 
   font-style: italic;
-  @apply group-hover:text-cyan/60
+  @apply group-hover:text-cyan dark:group-hover:text-cyan/60
 }
 
 .experienceDate {
   font-size: var(--text-sm); /* 0.875rem (14px) */ 
   line-height: var(--text-sm--line-height); /* calc(1.25 / 0.875) */
   color: var(--color-gray-400); 
-  @apply group-hover:text-cyan/60 
+  @apply group-hover:text-cyan dark:group-hover:text-cyan/60
 }
 
 .dark .experienceDate {
   color: rgba(from var(--color-white) r g b / 0.6);
-  @apply group-hover:text-cyan/60
+  @apply group-hover:text-cyan dark:group-hover:text-cyan/60
 }
 
 .experienceItems {
@@ -445,12 +440,12 @@ html {
   left: 0; 
   top: var(--spacing); 
   fill: var(--color-gray-800); 
-  @apply group-hover:fill-cyan/90 
-}
+  @apply group-hover:fill-cyan;
 
-.dark .experienceIcons {
-  fill: white;
-  @apply group-hover:fill-cyan/90 
+  .dark & {
+    fill: white;
+    @apply group-hover:fill-cyan/90 
+  }
 }
 
 
@@ -525,6 +520,10 @@ html {
 }
 
 
+.categoryFilter {
+  justify-content: flex-start;
+}
+
 
 .categoryBadge,
 .categoryFilterButton {
@@ -535,6 +534,7 @@ html {
 :lang(ja) .categoryFilterButton {
   font-family: var(--font-tegomin), var(--font-default);
   font-size: 1rem; /* bumped up from the 0.65–0.75rem badge/button sizes */
+  text-wrap: nowrap;
 }
 
 .footer-links:hover {
@@ -587,6 +587,9 @@ html {
     font-size: var(--text-6xl); /* 3.75rem (60px) */ 
     line-height: var(--text-6xl--line-height); /* 1 */
   }
+  :lang(ja) .categoryFilter {
+    justify-content: center safe;
+  }
 }
 
 /* Breakpoint: md */
@@ -613,6 +616,9 @@ html {
   }
   .heroTitle {
     display: inline-block;
+  }
+  .categoryFilter {
+    justify-content: center;
   }
 }
 

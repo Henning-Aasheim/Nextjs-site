@@ -30,7 +30,7 @@ export default async function Colophon({ params }: { params: Promise<{ locale: s
   const headings = rawArticle ? extractHeadings(rawArticle.content) : []
 
   return (
-    <div className="p-10 m-5 mx-auto">
+    <main className="p-10 m-5 mx-auto">
       <h1 className="text-5xl mb-6 font-default font-bold w-4/5 xl:w-0.4 mx-auto text-center">
         {t('title')}
       </h1>
@@ -49,6 +49,6 @@ export default async function Colophon({ params }: { params: Promise<{ locale: s
 
         <div aria-hidden />
       </div>
-    </div>
+    </main>
   );
 }

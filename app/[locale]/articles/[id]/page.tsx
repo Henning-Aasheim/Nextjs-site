@@ -63,8 +63,8 @@ export default async function Article({ params }: ArticleProps) {
   const categoryLabel = tCat(frontmatter.category)
 
   return (
-    <section className="m-5 xs:m-10" style={{ '--category-color': categoryColor } as CSSProperties}>
-      <div className="max-w-300 mx-auto mb-10">
+    <main className="m-5 xs:m-10" style={{ '--category-color': categoryColor } as CSSProperties}>
+      <section className="max-w-300 mx-auto mb-10">
         <ArticleHero
           title={frontmatter.title}
           lede={excerpt}
@@ -73,7 +73,7 @@ export default async function Article({ params }: ArticleProps) {
           categoryLabel={categoryLabel}
           date={dateTime}
         />
-      </div>
+      </section>
 
       {/* [TOC] [article, fixed width, always centered] [spacer, same size as TOC] */}
       <div className="md:grid md:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)] xl:grid-cols-[clamp(10rem,20vw,16rem)_minmax(0,700px)_clamp(10rem,20vw,16rem)] md:gap-10 lg:justify-center mx-auto">
@@ -99,6 +99,6 @@ export default async function Article({ params }: ArticleProps) {
 
         <div aria-hidden />
       </div>
-    </section>
+    </main>
   );
 }

@@ -35,7 +35,7 @@ export default function Library({ params }: { params: Promise<Params> }) {
   const featured = books[books.length - 1]
 
   return (
-    <div className='m-4 xs:m-6'>
+    <main className='m-4 xs:m-6'>
       <div className="max-w-300 mx-auto">
 
         <div className='mt-10 md:mt-30 pb-10 md:pb-30 mx-auto'>
@@ -76,6 +76,6 @@ export default function Library({ params }: { params: Promise<Params> }) {
 
         </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -183,11 +183,11 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
   const cards = civita.map(civitaToCard)
 
   return (
-    <div className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-300 mx-auto pt-5 mb-5">
+    <main className="relative w-10/11 md:w-4/5 xl:w-2/3 max-w-300 mx-auto pt-5 mb-5">
       <div className="flex flex-col gap-5">
 
         {/* PROFILE IMAGE */}
-        <div className="flex-none text-white xl:col-start-1 xl:row-start-1">
+        <div className="flex-none text-black dark:text-white xl:col-start-1 xl:row-start-1">
           <div className="mt-10 md:mt-30 pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40
                  flex items-center justify-center
                  flex-row text-left gap-5">
@@ -202,10 +202,10 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
               <h1 className="text-2xl font-bold">
                 {t("profile-heading")}
               </h1>
-              <h2 className="text-base text-white/60 sm:text-1xl italic mt-1">
+              <h2 className="text-base text-black dark:text-white/60 sm:text-1xl italic mt-1">
                 {t("work-title")}
               </h2>
-              <h2 className="text-base text-white/60 sm:text-1xl mt-1">
+              <h2 className="text-base text-black/80 dark:text-white/60 sm:text-1xl mt-1">
                 {t("employer")}
               </h2>
 
@@ -366,6 +366,6 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
         </div>
 
       </div>
-    </div>
+    </main>
   );
 }

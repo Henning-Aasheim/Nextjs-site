@@ -1,7 +1,10 @@
+'use client'
+
 import { useTranslations } from "next-intl"
 import { LayoutGrid, ListIcon } from "lucide-react"
 import { ArticleCategory } from "@/types"
 import { CATEGORY_STYLES } from "./category-badge"
+import { useEffect, useRef, useState } from "react"
 
 type View = 'cards' | 'list'
 
@@ -57,11 +60,38 @@ export function CategoryButtons({active, onChange }: { active: Active, onChange:
 
     const t = useTranslations('categories')
 
+    const scrollRef = useRef<HTMLDivElement>(null)
+      const [canScrollLeft, setCanScrollLeft] = useState(false)
+      const [canScrollRight, setCanScrollRight] = useState(false)
+    
+      const updateScrollState = () => {
+        const el = scrollRef.current
+        if (!el) return
+        setCanScrollLeft(el.scrollLeft > 4)
+        setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+      }
+    
+      useEffect(() => {
+        updateScrollState()
+        const el = scrollRef.current
+        if (!el) return
+    
+        el.addEventListener('scroll', updateScrollState)
+        window.addEventListener('resize', updateScrollState)
+        return () => {
+          el.removeEventListener('scroll', updateScrollState)
+          window.removeEventListener('resize', updateScrollState)
+        }
+      }, [])
+
     return (
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div ref={scrollRef}
+            className={`categoryFilter flex flex-nowrap [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden gap-3 mb-10 overflow-x-auto transition-[mask-image]
+                        ${canScrollLeft ? 'mask-l-from-70%' : ''}
+                        ${canScrollRight ? 'mask-r-from-70%' : ''}`}>
                 <button
                     onClick={() => onChange('all')}
-                    className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
+                    className={`categoryFilterButton shrink-0 px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide border transition-colors cursor-pointer
                         ${active === 'all'
                         ? 'bg-cyan text-white border-cyan'
                         : 'bg-transparent text-cyan/80 dark:text-white/60 border-cyan/60 dark:border-white/20 hover:text-cyan dark:hover:text-white'

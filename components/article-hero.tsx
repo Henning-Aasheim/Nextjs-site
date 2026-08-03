@@ -63,7 +63,7 @@ export function ArticleHero({
       <div
         ref={ref}
         style={{ '--progress': progress } as CSSProperties}
-        className="hero-shrink lg:mx-auto bg-(--category-color)/60 rounded-xl overflow-hidden"
+        className="hero-shrink lg:mx-auto bg-(--category-color) dark:bg-(--category-color)/60 rounded-xl overflow-hidden"
       >
         <div className="relative flex flex-col lg:block">
           {/* Image side */}

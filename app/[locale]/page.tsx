@@ -32,7 +32,7 @@ export default async function Home({
   const totalArticles = allArticlesData.length
 
   return (
-    <div className="w-full">
+    <main className="w-full">
       <div className="m-4 xs:m-6">
 
 {/* NAME */}
@@ -106,6 +106,6 @@ export default async function Home({
 
         </div>
       </div>
-    </div>  
+    </main>  
   )
 }
