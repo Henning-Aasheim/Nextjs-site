@@ -1,5 +1,5 @@
 import { ArticleCategory } from "@/types";
-import { CATEGORY_COLOR_VARS, CATEGORY_CARD_STYLES, CategoryText } from "./category-badge";
+import { CATEGORY_COLOR_VARS, CategoryText } from "./category-badge";
 import { CSSProperties } from "react";
 import { useFormatter } from "next-intl";
 import Link from "next/link";
@@ -13,7 +13,15 @@ export type List = {
     external?: boolean
 }
 
-export default function List({ items, displayNumber }: { items: List, displayNumber: number }) {
+export const LIST_STYLE_COMPLEX: Record<ArticleCategory, string> = {
+  politics: `border-violet border-l-4`,
+  international: `border-cyan border-l-4`,
+  economy: `border-red border-l-4`,
+  society: `border-yellow border-l-4`,
+  webDevelopment: `border-purple border-l-4`,
+}
+
+export default function List({ items, displayNumber, border }: { items: List, displayNumber: number, border?: boolean }) {
 
     const format = useFormatter()
     const dateTime = new Date(items.date)
@@ -49,7 +57,7 @@ export default function List({ items, displayNumber }: { items: List, displayNum
     return (
         <li style={{ '--category-color': CATEGORY_COLOR_VARS[items.category] } as CSSProperties}
             key={items.id}
-            className={`group hover:bg-black/5 dark:hover:bg-white/10 border-l-4 ${CATEGORY_CARD_STYLES[items.category]}`}>
+            className={`group hover:bg-black/5 dark:hover:bg-white/10 ${border === true ? LIST_STYLE_COMPLEX[items.category] : ''}`}>
 
             <div className='w-full h-full border-b border-gray-600/30'>
 

@@ -68,7 +68,10 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
         <ul className="w-4/5 sm:w-3/5 md:w-4/5 2xl:w-10/11 mx-auto flex flex-col">
           {filtered_list.map((item) => {
             return (
-              <List items={item} displayNumber={displayNumber.get(item.id)!} key={item.id}></List> /* The ! operator asserts that the value is not undefined */
+              <List items={item} 
+                    displayNumber={displayNumber.get(item.id)!} 
+                    border={true} 
+                    key={item.id}></List> /* The ! operator asserts that the value is not undefined */
             )
           })}
         </ul>
@@ -77,7 +80,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
       {filtered.length === 0 && (
         <p className="text-black/50 dark:text-white/50 mt-10 text-center">{t('no-articles')}</p>
       )}
-      
+
     </>
   )
 }
