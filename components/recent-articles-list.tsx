@@ -59,7 +59,10 @@ export function RecentArticlesList({
 
           {visible_list.map((item) => {
             return (
-              <List items={item} displayNumber={displayNumber.get(item.id)!} border={false} key={item.id}></List> /* The ! operator asserts that the value is not undefined */
+              <List items={item} 
+                    displayNumber={displayNumber.get(item.id)!} 
+                    border={false} 
+                    key={item.id}></List> /* The ! operator asserts that the value is not undefined */
             )
           })}
         </ul>

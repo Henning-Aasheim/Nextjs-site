@@ -281,7 +281,7 @@ html {
 .dropcap:first-letter,
 .dropcap > p:first-child::first-letter {
   float: left;
-  color: var(--dropcap-color);
+  color: inherit;
   font-size: 3.5rem;      /* 2 × 1.75rem — matches mobile leading-7 */
   line-height: 1;
   padding-right: 0.05em;
