@@ -6,13 +6,13 @@ import { Link } from '@/i18n/navigation'
 import { ArticleContent, ArticleCategory } from '@/types'
 import { CategoryText } from './category-badge'
 import { CategoryButtons } from './toggle-buttons'
+import { articleToList } from '@/app/lib/content'
+import List from './lists'
 
 export function RecentArticlesList({
   articles,
-  totalArticles,
 }: {
   articles: ArticleContent[]
-  totalArticles: number
 }) {
   const t = useTranslations('article-list')
 
@@ -25,6 +25,23 @@ export function RecentArticlesList({
       : articles.filter((a) => a.frontmatter.category === active)
 
   const visible = filtered.slice(0, 5)
+
+  /* ---- LIST ITEMS ---- */
+
+  const listItems = articles.map(articleToList) /* Sets the type of each article metadata to a list item */
+
+  const displayNumber = new Map<string | number, number>() /* maps article IDs to their display numbers */
+
+  listItems.forEach((item, index) => {
+    displayNumber.set(item.id, listItems.length - index) /* Assigns a display number to each list item based on its position */
+  })
+
+  const filtered_list =
+    active === 'all'
+      ? listItems
+      : listItems.filter((item) => item.category === active)
+
+  const visible_list = filtered_list.slice(0, 5)
 
   return (
     <div className="mx-auto">
@@ -40,47 +57,11 @@ export function RecentArticlesList({
       <div className="w-full overflow-hidden">
         <ul className="grid grid-cols-1 w-full items-start text-left">
 
-
-
-          {visible.map((article) => {
-            const displayNumber = totalArticles - articles.indexOf(article)
-            const dateTime = new Date(article.frontmatter.date)
-
+          {visible_list.map((item) => {
             return (
-              <li
-                key={article.id}
-                className="group w-full mx-auto border-b border-gray-600/30 dark:border-white/40 hover:bg-black/5 dark:hover:bg-white/10"
-              >
-                <Link href={`/articles/${article.id}`} className="flex w-full items-stretch gap-6 lg:gap-8 py-4 lg:py-6 md:pl-6">
-                  <div className="flex items-center">
-                    <span className="min-w-8 text-2xl font-display text-center">
-                      {displayNumber}
-                    </span>
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 lg:gap-6 w-full text-sm">
-                      <div className="w-full flex justify-between sm:w-auto sm:justify-start sm:items-center sm:gap-2 lg:gap-3">
-                        <span className="dateText sm:min-w-36 text-right pr-10 lg:pr-15 text-gray-500 dark:text-white/60">
-                          {format.dateTime(dateTime, { dateStyle: 'long' })}
-                        </span>
-                        <span className="sm:min-w-28 lg:min-w-48 text-right sm:text-left">
-                          <CategoryText category={article.frontmatter.category} />
-                        </span>
-                      </div>
-
-                      <h2 className="sm:min-w-36 text-lg font-default font-semibold text-wrap">
-                        {article.frontmatter.title}
-                      </h2>
-                    </div>
-                  </div>
-                </Link>
-              </li>
+              <List items={item} displayNumber={displayNumber.get(item.id)!} key={item.id}></List> /* The ! operator asserts that the value is not undefined */
             )
           })}
-
-
-
         </ul>
 
         {visible.length === 0 && (

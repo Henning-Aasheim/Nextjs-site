@@ -29,8 +29,6 @@ export default async function Home({
     ? await getArticleData(newestArticleMeta.id)
     : null
 
-  const totalArticles = allArticlesData.length
-
   return (
     <main className="w-full max-w-7xl mx-auto">
       <div className="m-4 xl:m-0">
@@ -47,10 +45,6 @@ export default async function Home({
         <div className="sections h-full">
           <Hero />
         </div>
-
-        {/* I have to see if I can do something with this div. I now have a lot of divs saying the same, find something that doesn't break the scroll */}
-
-
 
         {/* Newest article — unchanged */}
 
@@ -93,7 +87,7 @@ export default async function Home({
         {/* Blog div */}
 
         <section className="sections pb-10 md:pb-30 md:px-10 border-b border-gray-600/30 dark:border-white/40">
-          <RecentArticlesList articles={sortedArticles} totalArticles={totalArticles} />
+          <RecentArticlesList articles={sortedArticles} />
         </section>
 
         {/* placeholder blocks 10/11 unchanged */}
@@ -102,8 +96,6 @@ export default async function Home({
 
         {/* placeholder blocks 10/11 unchanged */}
         <section className="sections pb-10 md:pb-30 border-b border-gray-600/30 dark:border-white/40">11</section>
-
-
 
       </div>
     </main>

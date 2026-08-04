@@ -44,10 +44,13 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
     <>
       {/* View toggle */}
       <CardListButtons view={view} onChange={setView}></CardListButtons>
+
+
       {/* Filter bar */}
       <div className='mb-10'>
         <CategoryButtons active={active} onChange={setActive}></CategoryButtons>
       </div>
+
 
       {view === 'cards' ? (
         /* Grid */
@@ -74,6 +77,7 @@ export function ArticlesList({ articles }: { articles: ArticleContent[] }) {
       {filtered.length === 0 && (
         <p className="text-black/50 dark:text-white/50 mt-10 text-center">{t('no-articles')}</p>
       )}
+      
     </>
   )
 }
