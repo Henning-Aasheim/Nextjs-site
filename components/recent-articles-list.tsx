@@ -28,9 +28,9 @@ export function RecentArticlesList({
 
   return (
     <div className="mx-auto">
-      <h1 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600/30 dark:border-white/40 border-solid border-b">
+      <h2 className="text-2xl sm:text-4xl pb-3 mx-auto border-gray-600/30 dark:border-white/40 border-solid border-b">
         {t('title')}
-      </h1>
+      </h2>
 
       {/* Filter row: single line, scrollable, edge-fades only when there's more to scroll */}
       <div className='mt-5 pb-5 border-b border-gray-600/30 dark:border-white/40'>
