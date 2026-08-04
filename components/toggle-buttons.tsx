@@ -3,8 +3,31 @@
 import { useTranslations } from "next-intl"
 import { LayoutGrid, ListIcon } from "lucide-react"
 import { ArticleCategory } from "@/types"
-import { CATEGORY_STYLES } from "./category-badge"
 import { useEffect, useRef, useState } from "react"
+
+export const FILTER_CATEGORY_STYLES: Record<ArticleCategory, string> = {
+  politics: `
+    bg-violet/20 border-violet text-black
+    dark:bg-violet/20 dark:text-white
+  `,
+  international: `
+    bg-cyan/20 border-cyan text-black
+    dark:bg-cyan/20 dark:text-white
+  `,
+  economy: `
+    bg-red/20 border-red text-black
+    dark:bg-red/20 dark:text-white
+  `,
+  society: `
+    bg-yellow/20 border-yellow text-black
+    dark:bg-yellow/20 dark:text-white
+  `,
+  webDevelopment: `
+    bg-purple/20 border-purple text-black
+    dark:bg-purple/20 dark:text-white
+  `,
+}
+
 
 type View = 'cards' | 'list'
 
@@ -106,8 +129,8 @@ export function CategoryButtons({active, onChange }: { active: Active, onChange:
                         onClick={() => onChange(cat)}
                         className={`categoryFilterButton px-4 py-1.5 rounded-full text-sm 
                                     font-semibold uppercase tracking-wide border transition-colors cursor-pointer
-                                    ${active === cat ? CATEGORY_STYLES[cat].replace(/bg-\S+\/15/, 'bg-current/20') : 
-                                      'bg-transparent text-black/50 dark:text-white/50 border-black/20 dark:border-white/20 hover:text-black dark:hover:text-white'
+                                    ${active === cat ? FILTER_CATEGORY_STYLES[cat] : 
+                                      'bg-transparent text-black/50 dark:text-white/50 border-black/20 dark:border-white/20 hover:text-black/80 dark:hover:text-white'
                                     }`}>
                         {t(cat)}
                     </button>

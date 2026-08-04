@@ -31,7 +31,7 @@ export default async function Home({
 
   return (
     <main className="w-full max-w-7xl mx-auto">
-      <div className="m-4 xl:m-0">
+      <div className="m-8 xl:m-0">
 
         {/* NAME */}
 

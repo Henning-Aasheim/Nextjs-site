@@ -41,7 +41,7 @@ export default async function Colophon({ params }: { params: Promise<{ locale: s
         </aside>
 
         <div className='mx-auto text-left mb-10
-                        prose prose-p:text-lg
+                        prose prose-p:text-lg prose-p:leading-relaxed
                         dark:prose-h2:text-white dark:prose-h3:text-gray-300 dark:prose-p:text-gray-300 dark:prose-em:text-white
                         dark:prose-strong:text-white dark:prose-li:text-gray-300 dark:prose-ul:marker:text-white dark:prose-a:text-white '>
           <ColophonContent />

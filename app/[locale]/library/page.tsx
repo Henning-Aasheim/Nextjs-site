@@ -49,10 +49,10 @@ export default function Library({ params }: { params: Promise<Params> }) {
 
             {/* Mobile: collapsible preview */}
             <div className="lg:hidden">
-              <ExpandableText dropcapClassName='dropcap-library'>{t('description')}</ExpandableText>
+              <ExpandableText dropcapClassName='dropcap'>{t('description')}</ExpandableText>
             </div>
 
-            <p className="dropcap dropcap-library hidden lg:block">
+            <p className="dropcap hidden lg:block">
               {t('description')}
             </p>
 
