@@ -3,7 +3,7 @@ import Link from "next/link"
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server"
 import Hero from "@/components/hero"
 import { RecentArticlesList } from "@/components/recent-articles-list"
-import Seal from '../icons/seal_attempt_1.svg'
+import Seal from '../icons/seal_attempt_2.svg'
 
 export default async function Home({
   params,
