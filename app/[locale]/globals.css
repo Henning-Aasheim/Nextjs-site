@@ -220,6 +220,9 @@ html {
 
   @media (min-width: 1024px) {
     display: inline-block;
+    font-size: var(--text-6xl);
+  line-height: var(--text-6xl--line-height);
+
   }
 
   @media (min-width: 1280px) {

@@ -66,7 +66,19 @@ const asul = localFont({
   ],
   variable: "--font-asul",
   display: "swap",
-});
+})
+
+const traditio = localFont({
+  src: [
+    {
+      path: "./fonts/Traditio.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-traditio",
+  display: "swap",
+})
 
 const cutive = Cutive_Mono({
   variable: '--font-cutive',
@@ -137,7 +149,9 @@ export default async function RootLayout({
                   ${asul.variable}
                   ${cutive.variable}
                   ${tegomin.variable}
-                  ${ebgaramond.variable} h-full antialiased`}
+                  ${ebgaramond.variable}
+                  ${traditio.variable}
+                   h-full antialiased`}
 
     >
       <body className="min-h-full flex flex-col font-default dark:font-dark
