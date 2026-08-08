@@ -71,7 +71,7 @@ const asul = localFont({
 const traditio = localFont({
   src: [
     {
-      path: "./fonts/Traditio.ttf",
+      path: "./fonts/traditio.ttf",
       weight: "400",
       style: "normal",
     },
