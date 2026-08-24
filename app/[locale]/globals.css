@@ -221,7 +221,8 @@ html {
   @media (min-width: 1024px) {
     display: inline-block;
     font-size: var(--text-6xl);
-  line-height: var(--text-6xl--line-height);
+    line-height: var(--text-6xl--line-height);
+    margin-bottom: 1rem;
 
   }
 

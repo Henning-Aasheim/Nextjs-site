@@ -10,10 +10,10 @@ function HeroText({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
     <div className="px-6 lg:px-8 py-8 space-y-4 mx-auto max-w-160 lg:m-0 lg:max-w-none">
       <h1 className="heroTitle text-white">{t('header')}</h1>
-      <p className="text-white xl:text-lg lg:pr-25 xl:pr-50">
+      <p className="text-white xl:text-lg lg:pr-25 xl:pr-50 mb-20">
         {t('description')}
       </p>
-      <Link href='/about' className='inline-block mt-3 px-5 py-2 text-xl
+      <Link href='/about' className='inline-block px-5 py-2 text-xl
                                     text-cyan hover:scale-105 hover:shadow-lg bg-white rounded-full'>{t('about')}</Link>
     </div>
   )
