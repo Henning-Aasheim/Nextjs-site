@@ -19,9 +19,11 @@ const ERA_STYLES: Record<BookEra, string> = {
 export function LibraryCategory({
   era,
   books,
+  locale,
 }: {
   era: BookEra
   books: (BookMeta & { yearLabel: string | null })[]
+  locale: string
 }) {
   const t = useTranslations('library')
   const [expanded, setExpanded] = useState(false)
@@ -43,7 +45,7 @@ export function LibraryCategory({
 
           <div className="grid grid-cols-5 gap-5 items-start">
             {visibleBooks.map((book) => (
-              <BookCard key={book.id} book={book} yearLabel={book.yearLabel} />
+              <BookCard key={book.id} book={book} yearLabel={book.yearLabel} locale={locale} />
             ))}
           </div>
 
@@ -72,7 +74,7 @@ export function LibraryCategory({
           >
               {books.map((book) => (
               <div key={book.id} className="w-36 xs:w-40 shrink-0 snap-center">
-                  <BookCard book={book} yearLabel={book.yearLabel} />
+                  <BookCard book={book} yearLabel={book.yearLabel} locale={locale} />
               </div>
               ))}
           </div>
