@@ -70,7 +70,7 @@ export default async function BookPage(
           <Image src={book.image} alt={book.title} width={400} height={600} className='mx-auto mb-4'/>
           <h1 className='text-2xl text-center mb-4'>{book.title}</h1>
           <div className='text-gray-600 dark:text-gray-400'>
-            <p className=''>{t('author')}: {book.author}</p>
+            <p className=''>{t('author')}: {new Intl.ListFormat(locale, {style: 'long', type: 'conjunction'}).format(book.author)}</p>
             {yearLabel && <p className=''>{yearLabel}</p>}
             {book.translator && <p>{t('translator')}: {new Intl.ListFormat(locale, {style: 'long', type: 'conjunction'}).format(book.translator)}</p>}
           </div>

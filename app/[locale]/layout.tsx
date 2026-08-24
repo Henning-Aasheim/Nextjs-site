@@ -42,7 +42,7 @@ const quint = Quintessential({
 })
 
 const felipa = Felipa({
-  variable: '--font-quint',
+  variable: '--font-felipa',
   weight: '400',
 })
 
@@ -109,6 +109,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("title"),
     description: t("description"),
     authors: [{ name: t('name')}],
+    icons: {
+      icon: [
+        {
+          media: '(prefers-color-scheme: light)',
+          url: 'images/icon.svg',
+        },
+        {
+          media: '(prefers-color-scheme: dark)',
+          url: 'images/icon_dark.svg',
+        }
+      ]
+    }
   };
 }
 

@@ -53,7 +53,7 @@ export type BookEra = 'archaic' | 'classical' | 'medieval' | 'earlyModern' | 'mo
 export type BookMeta = {
     id: string
     title: string
-    author: string
+    author: string[]
     date: string
     translator?: string[]
     image: string

@@ -8,6 +8,7 @@ import { IoMdMail } from "react-icons/io"
 import Shinshu from "../../icons/shinshu.svg"
 import CivitaIcon from "../../icons/civita.svg"
 import UiO from "../../icons/uio_segl.svg"
+import Sprakradet from "../../icons/sprakradet.svg"
 import type { ArticleCategory } from "@/types"
 import Cards from "@/components/cards"
 import { civitaToCard } from "@/app/lib/content"
@@ -104,6 +105,13 @@ interface ExperienceItem {
 }
 
 const experienceItems: ExperienceItem[] = [
+  {
+    id: "experience-0",
+    icon: Sprakradet,
+    titleKey: "experience-0-title",
+    subtitleKey: "experience-0-employer",
+    dateKey: "experience-0-date",
+  },
   {
     id: "experience-1",
     icon: UiO,
@@ -233,6 +241,7 @@ export default function AboutPage({ params }: { params: Promise<{ locale: string
                   </li>
                 </ul>
               </div>
+              
             </div>
           </div>
         </div>

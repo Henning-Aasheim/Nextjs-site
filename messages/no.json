@@ -50,22 +50,22 @@
 
     "home": 
     {
-        "name": "Henning Åsheim",
+        "name": "Henning\nÅsheim",
         "header": "Hvem er jeg?",
-        "description": "Mitt navn er Henning Åsheim og jeg er en statsviter som for tiden arbeider som vitenskapsassistent ved Universitetet i Oslo. Til daglig jobber jeg både med forskning og undervisning, og har min styrke innenfor kvantitative metoder. Jeg er også interessert i programmering og jobber mye med å innhente, bearbeide og analysere data. I tillegg er jeg interessert i politikk og det som foregår både i det norske samfunnet og i verden for øvrig. Denne siden er en presentasjon av meg, samt inkluderer en blogg hvor jeg skriver om det som interesserer meg.",
+        "description": "Mitt navn er Henning Åsheim, jeg er utdannet statsviter og jeg jobber nå som kvantitativ analytiker for Språkrådet.",
         "about": "Mer om meg",
         "articles": "Nylige artikler",
         "newestArticle": "Nyeste artikkel",
         "left": "Statsviter",
-        "centre": "Nysgjerrig",
-        "right":"Idrettsutøver",
+        "centre": "Analytiker",
+        "right":"Statistiker",
         "articleButton": "Les artikkelen"
     },
 
     "metaAbout":
     {
         "title": "Om Henning Åsheim",
-        "description": "Mitt navn er Henning Åsheim og dette er hva jeg gjør."
+        "description": "Mitt navn er Henning Åsheim og denne siden er en presentasjon av meg."
     },
 
     "about": 
@@ -77,9 +77,12 @@
         "employer": "Universitetet i Oslo",
         "resume": "Last ned CV",
         "experience-heading": "Erfaring",
+        "experience-0-title": "Kvantitativ analytiker",
+        "experience-0-employer": "Språkrådet",
+        "experience-0-date": "September 2026 - Nåværende",
         "experience-1-title": "Vitenskapsassistent",
         "experience-1-employer": "Universitetet i Oslo",
-        "experience-1-date": "August 2025 - Nåværende",
+        "experience-1-date": "Juli 2025 - Juni 2026",
         "experience-2-title": "Praktikant",
         "experience-2-employer": "Universitetet i Oslo",
         "experience-2-date": "Juni 2025 - August 2025",

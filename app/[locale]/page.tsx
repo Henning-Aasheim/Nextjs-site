@@ -3,7 +3,7 @@ import Link from "next/link"
 import { getFormatter, getTranslations, setRequestLocale } from "next-intl/server"
 import Hero from "@/components/hero"
 import { RecentArticlesList } from "@/components/recent-articles-list"
-import Seal from '../icons/seal_attempt_3.svg'
+import Seal from '../icons/seal_attempt_4.svg'
 
 export default async function Home({
   params,
@@ -35,9 +35,11 @@ export default async function Home({
 
         {/* NAME */}
 
-        <section className="sections flex flex-row">
-          <span className="w-full md:w-5/13"><Seal className="h-50 mx-auto fill-gray-800 dark:fill-white md:float-right md:pr-20" /></span>
-          <span className="nameLogo hidden md:inline md:w-8/13 md:pl-20 md:border-l md:border-gray-400">{t('name')}</span>
+        <section className="sections">
+          <div className='flex flex-row w-fit whitespace-pre-wrap mx-auto'>
+            <span className=""><Seal className="h-50 mx-auto fill-gray-800 dark:fill-white md:float-right md:pr-20" /></span>
+            <span className="nameLogo hidden md:inline md:pl-20 md:border-l md:border-gray-400">{t('name')}</span>
+          </div>
         </section>
 
         {/* HERO */}

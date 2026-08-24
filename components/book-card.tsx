@@ -5,9 +5,11 @@ import { BookMeta } from '@/types'
 export function BookCard({
   book,
   yearLabel,
+  locale,
 }: {
   book: BookMeta
   yearLabel: string | null
+  locale: string
 }) {
   return (
     <div className="group">
@@ -35,7 +37,7 @@ export function BookCard({
           <h2 className="text-sm lg:text-lg font-bold leading-tight line-clamp-2 ">
             {book.title}
           </h2>
-          <p className="text-xs lg:text-sm text-gray-400 dark:text-white/60 truncate">{book.author}</p>
+          <p className="text-xs lg:text-sm text-gray-400 dark:text-white/60 truncate">{new Intl.ListFormat(locale, {style: 'long', type: 'conjunction'}).format(book.author)}</p>
           {yearLabel && <p className="text-xs lg:text-sm text-gray-500 dark:text-white/80">{yearLabel}</p>}
         </div>
       </Link>

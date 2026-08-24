@@ -4,7 +4,7 @@ declare module '*.mdx' {
     image: string
     category: string
     title: string
-    author: string
+    author: string[]
     date: string
     language: string
   }
